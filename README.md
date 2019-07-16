@@ -12,3 +12,9 @@
   - 预置变量法
   - 覆盖变量法
 - 暂时未涉及和电池有关的更名和补丁。
+
+## Credits
+
+- 特别感谢：@宪武 整理出来的 `OpenCore` 部件补丁
+- Thanks to [Acidanthera](https://github.com/acidanthera) for providing [AppleALC](https://github.com/acidanthera/AppleALC), [HibernationFixup](https://github.com/acidanthera/HibernationFixup), [Lilu](https://github.com/acidanthera/Lilu), [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg), [VirtualSMC](https://github.com/acidanthera/VirtualSMC), [VoodooPS2](https://github.com/acidanthera/VoodooPS2), and [WhateverGreen](https://github.com/acidanthera/WhateverGreen).
+
