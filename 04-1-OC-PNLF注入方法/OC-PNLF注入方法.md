@@ -14,14 +14,17 @@
 
        亮度驱动下载地址：
 
-     - [WhateverGreen.kext (需 Lilu.kext)](https://github.com/acidanthera/WhateverGreen/releases)
+     - WhateverGreen.kext (需 Lilu.kext)
+       [https://github.com/acidanthera/WhateverGreen/releases](https://github.com/acidanthera/WhateverGreen/releases)
 
-     - [AppleBacklightFixup.kext (已合并入 WEG，源码相同)](https://bitbucket.org/RehabMan/applebacklightfixup/downloads/)
+     - AppleBacklightFixup.kext (已合并入 WEG，源码相同)
+       [https://bitbucket.org/RehabMan/applebacklightfixup/downloads/](https://bitbucket.org/RehabMan/applebacklightfixup/downloads/)
 
-     - [IntelBacklight.kext](https://bitbucket.org/RehabMan/os-x-acpi-backlight/downloads/)
+     - IntelBacklight.kext
+       [https://bitbucket.org/RehabMan/os-x-acpi-backlight/downloads/](https://bitbucket.org/RehabMan/os-x-acpi-backlight/downloads/)
 
-     - [ACPIBacklight.kext](https://bitbucket.org/RehabMan/os-x-intel-backlight/downloads/)
-
+     - ACPIBacklight.kext
+       [https://bitbucket.org/RehabMan/os-x-intel-backlight/downloads/](https://bitbucket.org/RehabMan/os-x-intel-backlight/downloads/)
    - 亮度补丁
 
      - 定制亮度补丁
@@ -57,8 +60,8 @@
 
 3. 注入方法选用原则
 
-   - 当注入的显卡 `AAPL`, `ig-platform-id` 和 **CPU 的 ID 匹配时**，推荐使用方法 1 或者方法 2。
-   - 当注入的显卡 `AAPL`, `ig-platform-id` **仿冒某一 CPU 的 ID 时**，推荐使用方法 3。
+   - 当注入的显卡 `AAPL, ig-platform-id` 和 **CPU 的 ID 匹配时**，推荐使用方法 1 或者方法 2。
+   - 当注入的显卡 `AAPL, ig-platform-id` **仿冒某一 CPU 的 ID 时**，推荐使用方法 3。
 
 4. 注意事项
 
