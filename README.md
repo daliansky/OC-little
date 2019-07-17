@@ -13,6 +13,9 @@
   - 覆盖变量法
 - 暂时未涉及和电池有关的更名和补丁。
 
+## 扩展阅读：
+[精解OpenCore](https://blog.daliansky.net/OpenCore-BootLoader.html)
+
 ## Credits
 
 - 特别感谢：@宪武 制作的适用于 **[OpenCore](https://github.com/acidanthera/OpenCorePkg)** 的 ACPI 部件补丁
