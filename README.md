@@ -11,12 +11,15 @@
   - 工作状态设定
   - 预置变量法
   - 覆盖变量法
-- 暂时未涉及和电池有关的更名和补丁。
+  
+  
 
 ## 扩展阅读：
 [精解OpenCore](https://blog.daliansky.net/OpenCore-BootLoader.html)
 
 ## Credits
 
-- 特别感谢：@宪武 制作的适用于 **[OpenCore](https://github.com/acidanthera/OpenCorePkg)** 的 ACPI 部件补丁
+- 特别感谢：
+  - @宪武 制作的适用于 **[OpenCore](https://github.com/acidanthera/OpenCorePkg)** 的 ACPI 部件补丁
+  - @[Bat.bat](https://github.com/williambj1) 审核完善
 - Thanks to [Acidanthera](https://github.com/acidanthera) for providing [AppleSupportPkg](https://github.com/acidanthera/AppleSupportPkg), [AptioFixPkg](https://github.com/acidanthera/AptioFixPkg), [MacInfoPkg](https://github.com/acidanthera/MacInfoPkg), [OCSupportPkg](https://github.com/acidanthera/OCSupportPkg) and [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg).
