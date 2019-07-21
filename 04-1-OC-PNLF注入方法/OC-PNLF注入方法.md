@@ -4,65 +4,61 @@
 
    - 亮度驱动：
 
-     - WhateverGreen.kext 内置亮度驱动
+     - WhateverGreen.kext 内置亮度驱动(需 Lilu.kext)
 
-       使用内置驱动需设置引导参数 `applbkl=1`（默认）。如果使用其他亮度驱动应当设置 `applbkl=0` 禁止其内置驱动。
+       默认情况下，WhateverGreen.kext会加载亮度驱动，如果使用其他亮度驱动应当禁用其内置的亮度驱动。禁用方法：
 
-     - AppleBacklightFixup.kext
+       - 添加引导参数 `applbkl=0` ；
+       - 修改驱动的 Info.plist\IOKitPersonalities\AppleIntelPanelA\IOProbeScore=5500 。
+       
+       下载：https://github.com/acidanthera/WhateverGreen/releases
+       
      - IntelBacklight.kext
+     
+       下载：https://bitbucket.org/RehabMan/os-x-intel-backlight/src/master/
+     
      - ACPIBacklight.kext
-
-       亮度驱动下载地址：
-
-     - WhateverGreen.kext (需 Lilu.kext)
-       [https://github.com/acidanthera/WhateverGreen/releases](https://github.com/acidanthera/WhateverGreen/releases)
-
-     - AppleBacklightFixup.kext (已合并入 WEG，源码相同)
-       [https://bitbucket.org/RehabMan/applebacklightfixup/downloads/](https://bitbucket.org/RehabMan/applebacklightfixup/downloads/)
-
-     - IntelBacklight.kext
-       [https://bitbucket.org/RehabMan/os-x-acpi-backlight/downloads/](https://bitbucket.org/RehabMan/os-x-acpi-backlight/downloads/)
-
-     - ACPIBacklight.kext
-       [https://bitbucket.org/RehabMan/os-x-intel-backlight/downloads/](https://bitbucket.org/RehabMan/os-x-intel-backlight/downloads/)
+     
+       下载：https://bitbucket.org/RehabMan/os-x-acpi-backlight/src/master/
+     
    - 亮度补丁
 
      - 定制亮度补丁
 
        - **SSDT-PNLF-SNB_IVY**: 2, 3 代 PNLF 亮度补丁。
+       
        - **SSDT-PNLF-Haswell_Broadwell**: 4、5 代 PNLF 亮度补丁。
+       
        - **SSDT-PNLF-SKL_KBL**: 6, 7 代 PNLF 亮度补丁。
+       
        - **SSDT-PNLF-CFL**: 8 代+ PNLF 亮度补丁。
-
+       
          ***以上补丁插入于`_SB`***。
-
+       
      - RehabMan 亮度补丁
-
+     
        - [https://github.com/RehabMan/OS-X-Clover-Laptop-Config/blob/master/hotpatch/SSDT-PNLF.dsl](https://github.com/RehabMan/OS-X-Clover-Laptop-Config/blob/master/hotpatch/SSDT-PNLF.dsl)
-
+     
        - [https://github.com/RehabMan/OS-X-Clover-Laptop-Config/blob/master/hotpatch/SSDT-PNLFCFL.dsl](https://github.com/RehabMan/OS-X-Clover-Laptop-Config/blob/master/hotpatch/SSDT-PNLFCFL.dsl)
-
+     
        - [https://github.com/RehabMan/OS-X-Clover-Laptop-Config/blob/master/hotpatch/SSDT-RMCF.dsl](https://github.com/RehabMan/OS-X-Clover-Laptop-Config/blob/master/hotpatch/SSDT-RMCF.dsl)
-
+     
          RehabMan 亮度补丁插入于 `_SB.PCI0.IGPU`。**要求显卡名称是 `IGPU`**。
 
-2. 常用的几种注入方法
+2. 常用注入方法
 
-   - 使用定制亮度补丁
-     - 驱动: 无 (`applbkl=0`)
-     - 补丁: 定制亮度补丁
-   - WhateverGreen + 定制亮度补丁
-     - 驱动: WhateverGreen (`applbkl=1`)
-     - 补丁: 定制亮度补丁
-   - AppleBacklightFixup.kext... + 定制亮度补丁
-     - 驱动: AppleBacklightFixup.kext... (`applbkl=0`)
-     - 补丁: 定制亮度补丁
+   - 驱动: WhateverGreen
+   - 补丁: 定制亮度补丁 或 RehabMan 亮度补丁
+   
+3. ACPI注入方法
 
-3. 注入方法选用原则
+   - 驱动: ACPIBacklight.kext（需禁用WhateverGreen.kext内置亮度驱动，见上文的禁用方法）
+   - 补丁: 见《ACPI亮度补丁》方法
 
-   - 当注入的显卡 `AAPL, ig-platform-id` 和 **CPU 的 ID 匹配时**，推荐使用方法 1 或者方法 2。
-   - 当注入的显卡 `AAPL, ig-platform-id` **仿冒某一 CPU 的 ID 时**，推荐使用方法 3。
+4. 其他注入方法
 
-4. 注意事项
+   按照驱动 + 补丁的原则自行尝试。
+
+5. 注意事项
 
    选用某一注入方法时，应清除其他方法有关的驱动、补丁、设置等。
