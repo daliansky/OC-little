@@ -6,53 +6,53 @@
 
      - WhateverGreen.kext 内置亮度驱动(需 Lilu.kext)
 
-       默认情况下，WhateverGreen.kext会加载亮度驱动，如果使用其他亮度驱动应当禁用其内置的亮度驱动。禁用方法：
+       默认情况下，WhateverGreen.kext 会加载亮度驱动，如果使用其他亮度驱动应当禁用其内置的亮度驱动。禁用方法：
 
        - 添加引导参数 `applbkl=0` ；
-       - 修改驱动的 Info.plist\IOKitPersonalities\AppleIntelPanelA\IOProbeScore=5500 。
-       
-       下载：https://github.com/acidanthera/WhateverGreen/releases
-       
+       - 修改驱动的 `Info.plist\IOKitPersonalities\AppleIntelPanelA\IOProbeScore=5500`。
+
+       下载：<https://github.com/acidanthera/WhateverGreen/releases>
+
      - IntelBacklight.kext
-     
-       下载：https://bitbucket.org/RehabMan/os-x-intel-backlight/src/master/
-     
+
+       下载：<https://bitbucket.org/RehabMan/os-x-intel-backlight/src/master/>
+
      - ACPIBacklight.kext
-     
-       下载：https://bitbucket.org/RehabMan/os-x-acpi-backlight/src/master/
-     
+
+       下载：<https://bitbucket.org/RehabMan/os-x-acpi-backlight/src/master/>
+
    - 亮度补丁
 
      - 定制亮度补丁
 
        - **SSDT-PNLF-SNB_IVY**: 2, 3 代 PNLF 亮度补丁。
-       
+
        - **SSDT-PNLF-Haswell_Broadwell**: 4、5 代 PNLF 亮度补丁。
-       
+
        - **SSDT-PNLF-SKL_KBL**: 6, 7 代 PNLF 亮度补丁。
-       
+
        - **SSDT-PNLF-CFL**: 8 代+ PNLF 亮度补丁。
-       
+
          ***以上补丁插入于`_SB`***。
-       
+
      - RehabMan 亮度补丁
-     
+
        - [https://github.com/RehabMan/OS-X-Clover-Laptop-Config/blob/master/hotpatch/SSDT-PNLF.dsl](https://github.com/RehabMan/OS-X-Clover-Laptop-Config/blob/master/hotpatch/SSDT-PNLF.dsl)
-     
+
        - [https://github.com/RehabMan/OS-X-Clover-Laptop-Config/blob/master/hotpatch/SSDT-PNLFCFL.dsl](https://github.com/RehabMan/OS-X-Clover-Laptop-Config/blob/master/hotpatch/SSDT-PNLFCFL.dsl)
-     
+
        - [https://github.com/RehabMan/OS-X-Clover-Laptop-Config/blob/master/hotpatch/SSDT-RMCF.dsl](https://github.com/RehabMan/OS-X-Clover-Laptop-Config/blob/master/hotpatch/SSDT-RMCF.dsl)
-     
-         RehabMan 亮度补丁插入于 `_SB.PCI0.IGPU`。**要求显卡名称是 `IGPU`**。
+
+      RehabMan 亮度补丁插入于 `_SB.PCI0.IGPU`。**要求显卡名称是 `IGPU`**。
 
 2. 常用注入方法
 
    - 驱动: WhateverGreen
    - 补丁: 定制亮度补丁 或 RehabMan 亮度补丁
-   
+
 3. ACPI注入方法
 
-   - 驱动: ACPIBacklight.kext（需禁用WhateverGreen.kext内置亮度驱动，见上文的禁用方法）
+   - 驱动: ACPIBacklight.kext（需禁用 WhateverGreen.kext内置亮度驱动，见上文的禁用方法）
    - 补丁: 见《ACPI亮度补丁》方法
 
 4. 其他注入方法

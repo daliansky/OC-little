@@ -38,9 +38,9 @@
      补丁组合：
 
      - ***SSDT-PTSWAK***：同上。
-     
+
      - ***SSDT-SleepFnF4-TP-LPC***：同上。
-     
+
      `注意`：其他TP机器可能需要***SSDT-SleepFnF4-TP-LPCB***，请核对你的`LPC`、`EC`名称。
 
 5. 其他机器实现 `PNP0C0E` 睡眠
