@@ -1,6 +1,6 @@
 # 新版OC更新说明
 
-- efi驱动
+- EFI 驱动
 
   - 主 efi
     - 更新 `BOOTx64.efi`

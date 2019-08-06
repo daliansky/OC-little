@@ -1,0 +1,1 @@
+ThinkPad电池补丁说明.md
