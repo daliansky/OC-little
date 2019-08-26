@@ -119,7 +119,7 @@ Replace：`00 A4 0A 00 A3 A3 A3 A3 A3`
           {
               If (HB1A)
               {
-                。。。
+              ...
     }
   ```
 
@@ -135,6 +135,6 @@ Replace：`00 A4 0A 00 A3 A3 A3 A3 A3`
           Noop
           Noop
           If (HB1A)
-          。。。
+          ...
     }
   ```
