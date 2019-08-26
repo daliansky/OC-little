@@ -1,6 +1,6 @@
 # OCI2C-TPXX补丁方法
 
-#### 说明
+## 说明
 
 本方法提供一种对 I2C 设备实施 Hotpatch 补丁的解决方案。本方法不涉及 I2C 补丁具体过程和细节。有关更多的 I2C 方面内容详见：
 
@@ -14,35 +14,35 @@
 
 - Q群：`837538729` (1 群已满)，`921143329` (2 群)
 
-#### 补丁原理和过程
+## 补丁原理和过程
 
 - 禁止原 I2C 设备。详见《预置变量法》。
 
-- 新建一个 I2C 设备`TPXX`，将原设备所有内容移植到`TPXX`中。
+- 新建一个 I2C 设备 `TPXX`，将原设备所有内容移植到 `TPXX` 中。
 
 - 修正 `TPXX` 有关内容：
 
-  - 原I2C设备`名称`全部替换为`TPXX`。
+  - 原 I2C 设备`名称`全部替换为 `TPXX`。
 
-  - `修正` _STA 部分为：
+  - **修正** `_STA` 部分为：
 
+    ```Swift
+        Method (_STA, 0, NotSerialized)
+           {
+               If (_OSI ("Darwin"))
+               {
+                   Return (0x0F)
+               }
+               Else
+               {
+                   Return (Zero)
+               }
+           }
     ```
- Method (_STA, 0, NotSerialized)
-    {
-        If (_OSI ("Darwin"))
-        {
-            Return (0x0F)
-        }
-        Else
-        {
-            Return (Zero)
-        }
-    }
-    ```
 
-  - `修正`禁止原I2C设备时用到的变量的`有关内容`，使其符合逻辑关系。
+  - **修正**禁止原 I2C 设备时用到的变量的`有关内容`，使其符合逻辑关系。
 
-  - `修正`涉及到系统变量OSYS的`有关内容`，使其符合逻辑关系。
+  - **修正**涉及到系统变量 OSYS 的`有关内容`，使其符合逻辑关系。
 
 - 排除错误。
 
@@ -52,27 +52,27 @@
 
 - 使用《预置变量法》禁止 `TPD1`。
 
-  ```
-   Scope (\)
-   {
-       If (_OSI ("Darwin"))
-       {
-           SDS1 = 0
-       }
-   }
+  ```Swift
+    Scope (\)
+    {
+        If (_OSI ("Darwin"))
+        {
+            SDS1 = 0
+        }
+    }
   ```
 
-- 新建设备`TPXX`，将原 `TPD1` 所有内容移植到 `TPXX` 中。
+- 新建设备 `TPXX`，将原 `TPD1` 所有内容移植到 `TPXX` 中。
 
-  ```
-   External(_SB.PCI0.I2C1, DeviceObj)
-   Scope (_SB.PCI0.I2C1)
-   {
-       Device (TPXX)
-       {
-          原TPD1内容
-       }
-   }
+  ```Swift
+    External(_SB.PCI0.I2C1, DeviceObj)
+    Scope (_SB.PCI0.I2C1)
+    {
+        Device (TPXX)
+        {
+           原TPD1内容
+        }
+    }
   ```
 
 - 修正 `TPXX` 内容
@@ -81,34 +81,33 @@
   
   - 补丁中 `_STA` 部分替换为：
   
-    ```
-    Method (_STA, 0, NotSerialized)
-    {
-        If (_OSI ("Darwin"))
+    ```Swift
+        Method (_STA, 0, NotSerialized)
         {
-            Return (0x0F)
+            If (_OSI ("Darwin"))
+            {
+                Return (0x0F)
+            }
+            Else
+            {
+                Return (Zero)
+            }
         }
-        Else
-        {
-            Return (Zero)
-        }
-    }
     ```
   
-  - 查找 `SDS1` (禁止 `TPD1`时用到的变量)，将原 `If (SDS1...)`修改为 `If (one)`。
+  - 查找 `SDS1` (禁止 `TPD1` 时用到的变量)，将原 `If (SDS1...)` 修改为 `If (one)`。
   
-  - 查找 `OSYS`，删除以下内容：
+  - 查找 `OSYS`，删除（注释掉）以下内容：
   
+    ```Swift
+        //If (LLess (OSYS, 0x07DC))
+        //{
+        //    SRXO (GPDI, One)
+        //}
     ```
-    //If (LLess (OSYS, 0x07DC))
-    //{
-    //    SRXO (GPDI, One)
-    //}
-    ```
   
-    注：OSYS小于`0x07DC`时，I2C设备不工作（`0x07DC`代表Windows8）。
+    注：`OSYS` 小于 `0x07DC` 时，I2C 设备不工作（`0x07DC`代表 Windows8）。
   
 - 添加外部引用 `External...` 修补所有错误。
 
 - I2C 补丁（略）
-
