@@ -7,34 +7,67 @@
 ## 主要内容
 
 - **总述** 
+
 - ACPI 二进制更名
+
 - 预置变量法
-- 仿冒设备 
-- 操作系统补丁 
+
+- 仿冒设备
+
+- `SSDT`补丁加载顺序
+
+- 操作系统补丁
+
 - 注入 X86
+
 - 仿冒 `EC` 
+
 - OC-`PNLF` 注入方法
+
 - `SBUS(SMBU)` 补丁
+
 - PS2 键盘映射 @OC-xlivans
+
 - 键盘无法输入的应急解决方案 `PS2N`
+
 - 添加丢失的部件 
+
 - OC `I2C-TPXX` 补丁方法
+
 - OC `GPIO` 补丁
+
 - OC Thinkpad 电池补丁
+
 - OC 其他电池补丁 
+
 - 禁用 `EHCx`
+
 - `PTSWAK` 综合补丁和扩展补丁 
+
 - `PNP0C0E` 睡眠修正方法 
+
 - `0D6D` 补丁
+
 - 仿冒以太网和重置以太网 `BSD Name`
+
 - 亮度快捷键补丁
+
 - `CMOS` 重置补丁
+
 - Dell 机器补丁列表
+
 - ACPIDebug
+
 - ACPI 定制 USB 端口
+
 - 禁止 PCI 设备
+
 - `HPET_RTC_TIMR` 三合一补丁
+
 - `CMOS` 内存和 `RTCMemoryFixup`
+
+- 禁止`S3`睡眠
+
 - 为了方便使用，整理了部分驱动列表，仅供参考：
 
   - config-Lilu-SMC-WEG-ALC 驱动列表
@@ -42,6 +75,7 @@
   - config-I2C 驱动列表
   - config-BCM 无线和蓝牙驱动列表
   - ~~config-I2C 禁止冲突原生驱动列表~~
+    
     > VoodooI2C 2.3 及以后不再需要屏蔽 `AppleIntelLpssI2C`
 
 ### Credits
