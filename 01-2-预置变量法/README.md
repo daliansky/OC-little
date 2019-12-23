@@ -50,35 +50,35 @@
 ```
 Device (RTC)
 {
-		......
-		Method (_STA, 0, NotSerialized)
-		{
-				If ((STAS == One))
-				{
-						Return (0x0F)
-				}
-				Else
-				{
-						Return (Zero)
-				}
-		}
-		......
+    ......
+    Method (_STA, 0, NotSerialized)
+    {
+            If ((STAS == One))
+            {
+                    Return (0x0F)
+            }
+            Else
+            {
+                    Return (Zero)
+            }
+    }
+    ......
 }
 Device (AWAC)
 {
-		......
-		Method (_STA, 0, NotSerialized)
-		{
-				If ((STAS == Zero))
-				{
-						Return (0x0F)
-				}
-				Else
-				{
-						Return (Zero)
-				}
-		}
-		......
+    ......
+    Method (_STA, 0, NotSerialized)
+    {
+            If ((STAS == Zero))
+            {
+                    Return (0x0F)
+            }
+            Else
+            {
+                    Return (Zero)
+            }
+    }
+    ......
 }
 ```
 
@@ -108,9 +108,9 @@ Device (AWAC)
       External (STAS, IntObj)
       Scope (\)
       {
-  				If (_OSI ("Darwin"))
-  				{
-  						STAS = One
+          If (_OSI ("Darwin"))
+          {
+              STAS = One
           }
       }
   ```
@@ -122,14 +122,14 @@ Device (AWAC)
 某原文：
 
 ```
-		Method (_STA, 0, NotSerialized)
-		{
-				If ((GPEN == Zero))
-				{
-						Return (Zero)
-				}
-				Return (0x0F)
-		}
+    Method (_STA, 0, NotSerialized)
+    {
+        If ((GPEN == Zero))
+        {
+            Return (Zero)
+        }
+        Return (0x0F)
+    }
 ```
 
 从原文可以看出，只要GPEN不等于0即可启用GPIO。采用 **预置变量法** 如下：
@@ -187,7 +187,7 @@ Device (AWAC)
 	}
 	Else
 	{
-      IM01 = XM01 //同原始ACPI变量的路径
+        IM01 = XM01 //同原始ACPI变量的路径
 	}
 ```
 

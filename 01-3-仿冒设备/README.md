@@ -2,7 +2,7 @@
 
 ## 综述
 
-​		在众多 `SSDT` 补丁当中，相当数量的补丁可以归纳为仿冒设备补丁，如：
+​在众多 `SSDT` 补丁当中，相当数量的补丁可以归纳为仿冒设备补丁，如：
 
 - 某些设备在ACPI中不存在，可是MAC系统需要它们。通过补丁对这些设备正确描述能够加载设备驱动。如《OC-PNLF注入方法》、《添加丢失的部件》、《仿冒以太网》等。
 - EC问题。如《仿冒EC》。
@@ -28,18 +28,18 @@
   - 仿冒补丁的 `_STA` 部分应包括以下内容，确保windows系统使用原始的ACPI。
 
     ```
-    	Method (_STA, 0, NotSerialized)
-    	{
-    			If (_OSI ("Darwin"))
-    			{
-    					......
-    					Return (0x0F)
-    			}
-    			Else
-    			{
-    					Return (Zero)
-    			}
-    	}
+        Method (_STA, 0, NotSerialized)
+        {
+            If (_OSI ("Darwin"))
+            {
+                ......
+                Return (0x0F)
+            }
+            Else
+            {
+                Return (Zero)
+            }
+        }
     ```
   
 - 示例

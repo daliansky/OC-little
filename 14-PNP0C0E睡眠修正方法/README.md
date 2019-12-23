@@ -62,39 +62,39 @@
 以下是 ***SSDT-LIDpatch*** 主要内容：
 
 ```
-        Method (_LID, 0, NotSerialized)
+    Method (_LID, 0, NotSerialized)
+    {
+        if(\_SB.PCI9.FNOK==1)
         {
-            if(\_SB.PCI9.FNOK==1)
-            {
-                Return (0) //返回 Zero,满足PNP0C0D睡眠条件之一
-            }
-            Else
-            {
-                Return (\_SB.LID0.XLID()) //返回原始值
-            }
+            Return (0) //返回 Zero,满足PNP0C0D睡眠条件之一
         }
+        Else
+        {
+            Return (\_SB.LID0.XLID()) //返回原始值
+        }
+    }
 ```
 
 以下是 ***睡眠按键补丁*** 主要内容：
 
 ```
-				If (\_SB.PCI9.MODE == 1) //PNP0C0E睡眠
-				{
-						\_SB.PCI9.FNOK =1 //按下睡眠按键
-						\_SB.PCI0.LPCB.EC.XQ13() //原始睡眠按键位置，示例是TP机器
-				}
-				Else //PNP0C0D睡眠
-				{
-						If (\_SB.PCI9.FNOK!=1)
-						{
-								\_SB.PCI9.FNOK =1 //按下睡眠按键
-						}
-						Else
-						{
-								\_SB.PCI9.FNOK =0 //再次按下睡眠按键
-						}
-						Notify (\_SB.LID, 0x80) //执行PNP0C0D睡眠
-				}
+    If (\_SB.PCI9.MODE == 1) //PNP0C0E睡眠
+    {
+        \_SB.PCI9.FNOK =1 //按下睡眠按键
+        \_SB.PCI0.LPCB.EC.XQ13() //原始睡眠按键位置，示例是TP机器
+    }
+    Else //PNP0C0D睡眠
+    {
+        If (\_SB.PCI9.FNOK!=1)
+        {
+                \_SB.PCI9.FNOK =1 //按下睡眠按键
+        }
+        Else
+        {
+                \_SB.PCI9.FNOK =0 //再次按下睡眠按键
+        }
+        Notify (\_SB.LID, 0x80) //执行PNP0C0D睡眠
+    }
 ```
 
 

@@ -28,16 +28,16 @@
 
     ```Swift
         Method (_STA, 0, NotSerialized)
-           {
-               If (_OSI ("Darwin"))
-               {
-                   Return (0x0F)
-               }
-               Else
-               {
-                   Return (Zero)
-               }
-           }
+        {
+            If (_OSI ("Darwin"))
+            {
+                Return (0x0F)
+            }
+            Else
+            {
+                Return (Zero)
+            }
+        }
     ```
 
   - **修正**禁止原 I2C 设备时用到的变量的`有关内容`，使其符合逻辑关系。

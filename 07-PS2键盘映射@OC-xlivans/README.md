@@ -27,7 +27,7 @@
   - 终端安装 `ioio`
 
     ```bash
-        ioio -s ApplePS2Keyboard LogScanCodes 1
+      ioio -s ApplePS2Keyboard LogScanCodes 1
     ```
 
   - **修改** `VoodooPS2Keyboard.kext\info\IOKitPersonalities\Platform Profile\Default\`**`LogScanCodes`** `=` **`1`**

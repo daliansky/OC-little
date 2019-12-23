@@ -82,45 +82,45 @@
 - 当系统加载时，ACPI 的 `_OSI` 会接收到一个参数，不同的系统，接收的参数不同，ACPI 执行的指令就不同。比如，系统是 **Win7**，这个参数是 `Windows 2009`，系统是 **Win8**，这个参数就是 `Windows 2012`。如：
 
   ```
-  If ((_OSI ("Windows 2009") || _OSI ("Windows 2013")))
-  {
-  		OperationRegion (PCF0, SystemMemory, 0xF0100000, 0x0200)
-  		Field (PCF0, ByteAcc, NoLock, Preserve)
-  		{
-  				HVD0,   32, 
-  				Offset (0x160), 
-  				TPR0,   8
-  		}
-  		......
-  }
-  ......
-  Method (_INI, 0, Serialized)  // _INI: Initialize
-  {
-  		OSYS = 0x07D0
-  		If (CondRefOf (\_OSI))
-  		{
-  				If (_OSI ("Windows 2001"))
-  				{
-  						OSYS = 0x07D1
-  				}
-  
-  				If (_OSI ("Windows 2001 SP1"))
-  				{
-  						OSYS = 0x07D1
-  				}
-  				......
-  				If (_OSI ("Windows 2013"))
-  				{
-  						OSYS = 0x07DD
-  				}
-  
-  				If (_OSI ("Windows 2015"))
-  				{
-  						OSYS = 0x07DF
-  				}
-  				......
-  		}
-  }
+    If ((_OSI ("Windows 2009") || _OSI ("Windows 2013")))
+    {
+        OperationRegion (PCF0, SystemMemory, 0xF0100000, 0x0200)
+        Field (PCF0, ByteAcc, NoLock, Preserve)
+        {
+            HVD0,   32, 
+            Offset (0x160), 
+            TPR0,   8
+        }
+        ......
+    }
+    ......
+    Method (_INI, 0, Serialized)  // _INI: Initialize
+    {
+        OSYS = 0x07D0
+        If (CondRefOf (\_OSI))
+        {
+            If (_OSI ("Windows 2001"))
+            {
+                OSYS = 0x07D1
+            }
+
+            If (_OSI ("Windows 2001 SP1"))
+            {
+                OSYS = 0x07D1
+            }
+            ......
+            If (_OSI ("Windows 2013"))
+            {
+                OSYS = 0x07DD
+            }
+
+            If (_OSI ("Windows 2015"))
+            {
+                OSYS = 0x07DF
+            }
+            ......
+        }
+    }
   ```
 
   ACPI 还定义了 `OSYS`。`OSYS` 和上述参数关系如下：

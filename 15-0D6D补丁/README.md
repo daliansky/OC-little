@@ -70,34 +70,34 @@
 - `Method 类型`之二：`Scope`
 
   ```Swift
-        Scope (_SB.PCI0.XHC)
+    Scope (_SB.PCI0.XHC)
+    {
+        Method (_PRW, 0, NotSerialized)
         {
-            Method (_PRW, 0, NotSerialized)
+            ...
+            If ((Local0 == 0x03))
             {
-                ...
-                If ((Local0 == 0x03))
-                {
-                    Return (Package (0x02)
-                    {
-                        0x6D,
-                        0x03
-                    })
-                }
-                If ((Local0 == One))
-                {
-                    Return (Package (0x02)
-                    {
-                        0x6D,
-                        One
-                    })
-                }
                 Return (Package (0x02)
                 {
                     0x6D,
-                    Zero
+                    0x03
                 })
             }
+            If ((Local0 == One))
+            {
+                Return (Package (0x02)
+                {
+                    0x6D,
+                    One
+                })
+            }
+            Return (Package (0x02)
+            {
+                0x6D,
+                Zero
+            })
         }
+    }
   ```
 
   这种情况并不常见。对于示例的情况，使用二进制更名 ***Name6D-03 to 00*** 即可。其他形式内容自行尝试。
