@@ -1,5 +1,5 @@
 //
-DefinitionBlock ("", "SSDT", 2, "hack", "SMBU", 0)
+DefinitionBlock ("", "SSDT", 2, "ACDT", "SMBU", 0)
 {
     External (_SB_.PCI0.SMBU, DeviceObj)
 

@@ -1,5 +1,5 @@
 // TPxx is my new's device
-DefinitionBlock("", "SSDT", 2, "hack", "I2C-TPXX", 0)
+DefinitionBlock("", "SSDT", 2, "ACDT", "I2C-TPXX", 0)
 {
     External(_SB.PCI0.I2C0, DeviceObj)
     External(TPDD, FieldUnitObj)

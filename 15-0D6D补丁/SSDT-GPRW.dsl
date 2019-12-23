@@ -3,7 +3,7 @@
 // Find:     47505257 02
 // Replace:  58505257 02
 //
-DefinitionBlock ("", "SSDT", 2, "hack", "GPRW", 0)
+DefinitionBlock ("", "SSDT", 2, "ACDT", "GPRW", 0)
 {
     External(XPRW, MethodObj)
     Method (GPRW, 2, NotSerialized)

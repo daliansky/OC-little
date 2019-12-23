@@ -22,6 +22,11 @@
   - 更名1：`_Q38` to `XQ38` (LenovoPRO13-up)
   - 更名2：`_Q39` to `XQ39` (LenovoPRO13-down)
   - 补丁： ***SSDT-BKeyQ38Q39-LenovoPRO13*** 
+  
+- dell-Latitude5480
+
+  - 更名： `BRT6`  to  `XRT6` (dell)
+  - 补丁： ***SSDT-BKeyBRT6-dell*** 
 
 ### 如何查找亮度快捷键的位置
 

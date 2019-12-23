@@ -1,5 +1,5 @@
 //
-DefinitionBlock("", "SSDT", 2, "hack", "PNLFACPI", 0)
+DefinitionBlock("", "SSDT", 2, "ACDT", "PNLFACPI", 0)
 {
     External(_SB.PCI0.IGPU, DeviceObj)
     External(_SB.PCI0.IGPU.DD1F._BCL, MethodObj)

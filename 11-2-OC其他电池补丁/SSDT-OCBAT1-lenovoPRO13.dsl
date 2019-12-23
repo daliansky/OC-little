@@ -17,6 +17,7 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "BAT1", 0)
     External(_SB.PCI0.LPCB.H_EC.ECAV, IntObj)
     External(_SB.PCI0.LPCB.H_EC.B1IC, FieldUnitObj)
     External(_SB.PCI0.LPCB.H_EC.B1DI, FieldUnitObj)
+    External(_SB.PCI0.LPCB.H_EC.ECRD, MethodObj)
     
     Method (B1B2, 2, NotSerialized)
     {
@@ -154,8 +155,8 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "BAT1", 0)
                     })
                     If (\_SB.PCI0.LPCB.H_EC.ECAV)
                     {
-                        Local0 = B1IC << One
-                        Local1 = B1DI | Local0
+                        Local0 = (ECRD (RefOf (B1IC)) << One)
+                        Local1 = (ECRD (RefOf (B1DI)) | Local0)
                         PKG1 [Zero] = Local1
                         Local2 = B1B2 (BCR0, BCR1)
                         Local2 = POSW (Local2)

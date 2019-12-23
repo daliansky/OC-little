@@ -1,5 +1,5 @@
 //
-DefinitionBlock ("", "SSDT", 2, "hack", "RMCF", 0)
+DefinitionBlock ("", "SSDT", 2, "ACDT", "RMCF", 0)
 {
     External(_SB.PCI0.LPCB.PS2K, DeviceObj)
     Scope (_SB.PCI0.LPCB.PS2K)
@@ -14,11 +14,14 @@ DefinitionBlock ("", "SSDT", 2, "hack", "RMCF", 0)
                     "1e=2c",
                 },
                 
+                //or
+                /*
                 "Custom ADB Map", Package()
                 {
                     Package(){},
                     "1e=06",
                 }
+                */
             },
         })
     }

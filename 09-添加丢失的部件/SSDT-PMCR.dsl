@@ -19,7 +19,7 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "PMCR", 0)
             {
                 If (_OSI ("Darwin"))
                 {
-                    Return (0x0F)
+                    Return (0x0B)
                 }
                 Else
                 {

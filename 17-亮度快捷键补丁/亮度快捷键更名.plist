@@ -36,6 +36,9 @@
 				<integer>0</integer>
 				<key>TableLength</key>
 				<integer>0</integer>
+				<key>TableSignature</key>
+				<data>
+				</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -67,6 +70,9 @@
 				<integer>0</integer>
 				<key>TableLength</key>
 				<integer>0</integer>
+				<key>TableSignature</key>
+				<data>
+				</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -98,6 +104,9 @@
 				<integer>0</integer>
 				<key>TableLength</key>
 				<integer>0</integer>
+				<key>TableSignature</key>
+				<data>
+				</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -129,6 +138,9 @@
 				<integer>0</integer>
 				<key>TableLength</key>
 				<integer>0</integer>
+				<key>TableSignature</key>
+				<data>
+				</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -139,7 +151,7 @@
 				<true/>
 				<key>Find</key>
 				<data>
-				X1ExOQ==
+				X1EzOQ==
 				</data>
 				<key>Limit</key>
 				<integer>0</integer>
@@ -151,7 +163,7 @@
 				</data>
 				<key>Replace</key>
 				<data>
-				WFExOQ==
+				WFEzOQ==
 				</data>
 				<key>ReplaceMask</key>
 				<data>
@@ -160,6 +172,9 @@
 				<integer>0</integer>
 				<key>TableLength</key>
 				<integer>0</integer>
+				<key>TableSignature</key>
+				<data>
+				</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -170,7 +185,7 @@
 				<true/>
 				<key>Find</key>
 				<data>
-				X1ExOA==
+				X1EzOA==
 				</data>
 				<key>Limit</key>
 				<integer>0</integer>
@@ -182,7 +197,7 @@
 				</data>
 				<key>Replace</key>
 				<data>
-				WFExOA==
+				WFEzOA==
 				</data>
 				<key>ReplaceMask</key>
 				<data>
@@ -191,6 +206,43 @@
 				<integer>0</integer>
 				<key>TableLength</key>
 				<integer>0</integer>
+				<key>TableSignature</key>
+				<data>
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>BRT6 to XRT6(dell)</string>
+				<key>Count</key>
+				<integer>0</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				QlJUNgKgC5M=
+				</data>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data>
+				</data>
+				<key>OemTableId</key>
+				<data>
+				</data>
+				<key>Replace</key>
+				<data>
+				WFJUNgKgC5M=
+				</data>
+				<key>ReplaceMask</key>
+				<data>
+				</data>
+				<key>Skip</key>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>0</integer>
+				<key>TableSignature</key>
+				<data>
+				</data>
 			</dict>
 		</array>
 	</dict>

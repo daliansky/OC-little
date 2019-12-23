@@ -1,5 +1,5 @@
 //
-DefinitionBlock ("", "SSDT", 2, "hack", "RMCF", 0)
+DefinitionBlock ("", "SSDT", 2, "ACDT", "RMCF", 0)
 {
     External(_SB.PCI0.LPCB.PS2K, DeviceObj)
     Scope (_SB.PCI0.LPCB.PS2K)
@@ -21,7 +21,7 @@ DefinitionBlock ("", "SSDT", 2, "hack", "RMCF", 0)
                     "e045=0",  // disable Fn+B
                     "e037=64", // PrtSc=F13
                     "57=65",   // F11=F14
-                    "58=66"    // F12=F15
+                    "58=66",   // F12=F15
                 },
             }
         })

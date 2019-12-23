@@ -1,5 +1,5 @@
 // TPxx is my new's device
-DefinitionBlock("", "SSDT", 2, "hack", "I2C-TPXX", 0)
+DefinitionBlock("", "SSDT", 2, "ACDT", "I2C-TPXX", 0)
 {
     External(_SB.PCI0.I2C1, DeviceObj)
     //External(OSYS, FieldUnitObj)
@@ -142,8 +142,8 @@ DefinitionBlock("", "SSDT", 2, "hack", "I2C-TPXX", 0)
 
             Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
             {
-                //Return (ConcatenateResTemplate (SBFB, SBFG))
-                Return (ConcatenateResTemplate (SBFB, SBFI))
+                Return (ConcatenateResTemplate (SBFB, SBFG))
+                //Return (ConcatenateResTemplate (SBFB, SBFI))
             }
         }
     }

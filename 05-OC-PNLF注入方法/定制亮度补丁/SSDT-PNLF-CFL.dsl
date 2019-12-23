@@ -1,5 +1,5 @@
 //
-DefinitionBlock("", "SSDT", 2, "hack", "PNLF", 0)
+DefinitionBlock("", "SSDT", 2, "ACDT", "PNLF", 0)
 {
     Scope(_SB)
     {
@@ -8,7 +8,7 @@ DefinitionBlock("", "SSDT", 2, "hack", "PNLF", 0)
             Name(_ADR, Zero)
             Name(_HID, EisaId ("APP0002"))
             Name(_CID, "backlight")
-            //CoffeeLake
+            //CoffeeLake+
             Name(_UID, 19)
             Method (_STA, 0, NotSerialized)
             {

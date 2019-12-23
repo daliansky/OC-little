@@ -1,5 +1,5 @@
 //Add new PS2N
-DefinitionBlock("", "SSDT", 2, "hack", "PS2N", 0)
+DefinitionBlock("", "SSDT", 2, "ACDT", "PS2N", 0)
 {
     External(_SB.PCI0.LPCB, DeviceObj)
     Scope (_SB.PCI0.LPCB)

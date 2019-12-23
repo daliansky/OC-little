@@ -1,5 +1,5 @@
 //
-DefinitionBlock ("", "SSDT", 2, "APPLE ", "EHCx_OFF", 0x00001000)
+DefinitionBlock ("", "SSDT", 2, "ACDT", "EHCx_OFF", 0x00001000)
 {
     Scope (\)
     {

@@ -1,5 +1,5 @@
 //
-DefinitionBlock("", "SSDT", 2, "hack", "PNLF", 0)
+DefinitionBlock("", "SSDT", 2, "ACDT", "PNLF", 0)
 {
     Scope(_SB)
     {

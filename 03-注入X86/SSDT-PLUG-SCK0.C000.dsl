@@ -1,7 +1,7 @@
 /*
  * XCPM power management compatibility table.
  */
-DefinitionBlock ("", "SSDT", 2, "CpuRef", "CpuPlug", 0x00003000)
+DefinitionBlock ("", "SSDT", 2, "ACDT", "CpuPlug", 0x00003000)
 {
     External (SCK0.C000, ProcessorObj)
 
@@ -17,7 +17,7 @@ DefinitionBlock ("", "SSDT", 2, "CpuRef", "CpuPlug", 0x00003000)
                     {
                         Arg4 = Buffer (One)
                             {
-                                 0x03                                             // .
+                                 0x03 
                             }
                         Return (One)
                     }
@@ -31,12 +31,12 @@ DefinitionBlock ("", "SSDT", 2, "CpuRef", "CpuPlug", 0x00003000)
 
             Arg4 = Buffer (One)
                 {
-                     0x00                                             // .
+                     0x00 
                 }
             Return (Zero)
         }
 
-        Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+        Method (_DSM, 4, NotSerialized)
         {
             Local0 = Package (0x02)
                 {
