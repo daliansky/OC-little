@@ -35,7 +35,7 @@ Replace：`00 A4 0A 0F A3` 【注： `00` = `{` ， `A4 0A 0F ` =`Return(0x0F) `
 
   ```Swift
     Method (_STA, 0, NotSerialized)
-  	{
+    {
           Return (0x0F)
           Noop
           TE** ()
