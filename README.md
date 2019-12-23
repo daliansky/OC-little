@@ -49,8 +49,20 @@
 
 - 特别感谢：
   - @宪武 制作的适用于 **[OpenCore](https://github.com/acidanthera/OpenCorePkg)** 的 ACPI 部件补丁
-  - @Bat.bat, @黑果小兵 审核完善
+  - @Bat.bat, @黑果小兵, @套陆 审核完善
 
-- 感谢：@冬瓜-X1C5th, @OC-xlivans, @Air 13 IWL-GZ-Big Orange (OC perfect), @子骏oc IWL, @大勇-小新air13-OC-划水小白 等等
+- 感谢：
+  - @冬瓜-X1C5th
+  - @OC-xlivans
+  - @Air 13 IWL-GZ-Big Orange (OC perfect)
+  - @子骏oc IWL
+  - @大勇-小新air13-OC-划水小白 
+  - ......
 
-- Thanks to [Acidanthera](https://github.com/acidanthera) for providing [AppleSupportPkg](https://github.com/acidanthera/AppleSupportPkg), ~~[AptioFixPkg](https://github.com/acidanthera/AptioFixPkg)~~(Achieved), [MacInfoPkg](https://github.com/acidanthera/MacInfoPkg), [OCSupportPkg](https://github.com/acidanthera/OCSupportPkg) and [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg).
+- Thanks: 
+  - [Acidanthera](https://github.com/acidanthera) Maintaining: 
+    - [AppleSupportPkg](https://github.com/acidanthera/AppleSupportPkg)
+    - ~~[AptioFixPkg](https://github.com/acidanthera/AptioFixPkg)~~(Achieved)
+    - [MacInfoPkg](https://github.com/acidanthera/MacInfoPkg)
+    - [OCSupportPkg](https://github.com/acidanthera/OCSupportPkg)
+    - [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg)
