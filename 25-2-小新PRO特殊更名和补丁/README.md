@@ -8,7 +8,7 @@
    
    ```
 	Find:		504E4C46 
-   	Replace:584E4C46 
+   Replace:	584E4C46 
    ```
    
    小新PRO的 DSDT 存在变量 `PNLF` ，通过以上更名规避变量 `PNLF` 和亮度补丁发生的冲突。
