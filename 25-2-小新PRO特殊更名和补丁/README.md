@@ -3,16 +3,16 @@
 ### 特殊更名和补丁
 
 - 特殊更名 
-   
+  
   PNLF renamed XNLF
-   
+  
   ```
 	Find:     504E4C46
-  Replace:  584E4C46 
+  Replace:  584E4C46
   ```
-   
+  
   小新PRO的 DSDT 存在变量 `PNLF` ，通过以上更名规避变量 `PNLF` 和亮度补丁发生的冲突。
-   
+  
 - 特殊补丁 
   
   - ***SSDT-S3-disable***   
