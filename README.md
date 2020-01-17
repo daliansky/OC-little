@@ -11,6 +11,7 @@
 - 预置变量法
 - 仿冒设备 
 -  `SSDT` 补丁加载顺序
+-  `AOAC`补丁方法
 - 操作系统补丁 
 - 注入 X86
 - 仿冒 `EC` 
@@ -21,23 +22,23 @@
 - 添加丢失的部件 
 - OC `I2C-TPXX` 补丁方法
 - OC `I2C-GPIO` 补丁
-- OC -Thinkpad电池补丁
-- OC其他电池补丁 
+- OC -Thinkpad 电池补丁
+- OC 其他电池补丁 
 - 禁用 EHCx
 - `PTSWAK` 综合补丁和扩展补丁 
 - `PNP0C0E` 睡眠修正方法 
 - `0D6D` 补丁
-- 仿冒以太网和重置以太网BSD Name 
+- 仿冒以太网和重置以太网 BSD Name 
 - 亮度快捷键补丁
-- CMOS重置补丁
+- `CMOS`重置补丁
 - ACPIDebug
-- ACPI定制USB端口
+- `ACPI`定制`USB`端口
 - 禁止PCI设备
-- HPET_RTC_TIMR三合一补丁
-- CMOS内存和 ***RTCMemoryFixup*** 
-- 禁止S3睡眠
-- Dell特殊补丁
-- 小新PRO特殊更名和补丁
+- `HPET_RTC_TIMR`三合一补丁
+- `CMOS`内存和 ***RTCMemoryFixup*** 
+- `AOAC`禁止独显
+- `Dell`特殊补丁
+- 小新 PRO13 特殊更名和补丁
 - 为了方便使用，整理了部分驱动列表，仅供参考：
 
   - config-1-Lilu-SMC-WEG-ALC驱动列表
