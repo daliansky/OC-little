@@ -11,7 +11,7 @@
   Replace:  584E4C46
   ```
   
-  小新PRO的 DSDT 存在变量 `PNLF` ，和亮度补丁名称有冲突之嫌，固使用以上更名规避。
+  小新PRO的 DSDT 存在变量 `PNLF` ， `PNLF` 和亮度补丁名称有冲突之嫌，固使用以上更名规避。
   
 - 特殊补丁
   
@@ -19,9 +19,12 @@
   
   - ***SSDT-DeepIdle*** ——参见《AOAC补丁方法》
   
-  - ***SSDT-FnQ-WakeScreen***   ——参见《AOAC补丁方法》
+  - ***SSDT-LIDpatch-AOAC*** ——参见《AOAC补丁方法》
   
-    以上补丁所要求的更名在对应补丁文件的注释里。
+  - ***SSDT-FnQ-AOACWake*** ——参见《AOAC补丁方法》
+  
+    **注** ：以上补丁所要求的更名在对应补丁文件的注释里。
+    
   
 - 其他补丁
 
