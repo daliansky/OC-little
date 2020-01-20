@@ -1,3 +1,4 @@
+// AOAC
 // In config ACPI, _S3 to XS3
 // Find:     5F53335F
 // Replace:  5853335F
