@@ -24,10 +24,7 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "Fn-AOAC", 0)
                 \_SB.PCI8.AOAC = Zero
                 //...
             }
-            Else
-            {
-                \_SB.PCI0.LPCB.H_EC.XQ50()
-            }
+            \_SB.PCI0.LPCB.H_EC.XQ50()
         }
     }
 }
