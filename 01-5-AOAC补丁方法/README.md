@@ -35,7 +35,13 @@
 
 ## AOAC补丁
 
--  ***SSDT-S3-disable*** —— **禁止`S3`睡眠** 补丁
+- **禁止`S3`睡眠** 补丁
+
+  - ***SSDT-NameS3-disable*** ——适用于 `Name` 类型
+
+  - ***SSDT-MethodS3-disable*** ——适用于 `Method` 类型
+
+    根据机器原始 `ACPI` 中描述 `S3` 的方法选用对应的补丁。
 
 -  ***SSDT-DeepIdle*** —— `DeepIdle` 补丁
 
