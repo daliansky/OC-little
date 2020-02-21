@@ -1,2 +1,5 @@
 .DS_Store
 ._*
+node_modules
+_book
+*.pdf
