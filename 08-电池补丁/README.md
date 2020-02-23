@@ -518,8 +518,8 @@ Method (SMTF, 1, NotSerialized)
      - 示例：
 
        ```Swift
-       Method (MHPF,1,N) --> `4D485046 01`
-       Method (BTST,2,S) --> `42545354 0A`
+       Method (MHPF,1,N) --> 4D485046 01
+       Method (BTST,2,S) --> 42545354 0A
        ```
 
    - 在输入上述方法定义的完整十六进制代码后，按 Next 或 Previous 进行全文搜索，一般只会出现一个结果，该结果就是我们在 MaciASL 编辑器里面看到的原始方法定义。
