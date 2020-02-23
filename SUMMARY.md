@@ -83,7 +83,8 @@
     * [08-1-Thinkpad](08-电池补丁/08-1-Thinkpad/README.md)
         * 各机型电池补丁
             * [SSDT-OCBAT0-TP_e30_s30.dsl](08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBAT0-TP_e30_s30.md)
-            * [SSDT-OCBAT0-TP_re80_tx70-80_x1c5th-6th_s12017_p51.dsl](08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBAT0-TP_re80_tx70-80_x1c5th-6th_s12017_p51.md)
+            * [SSDT-OCBAT0-TP_re80_tx70_x1c5th_s12017_p51.dsl](08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBAT0-TP_re80_tx70_x1c5th_s12017_p51.md)
+            * [SSDT-OCBAT0-TP_tx80_x1c6th.dsl](08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBAT0-TP_tx80_x1c6th.md)
             * [SSDT-OCBAT0-TP_wtx20-60_e40-70_x1c1th-3th.dsl](08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBAT0-TP_wtx20-60_e40-70_x1c1th-3th.md)
             * [SSDT-OCBATC-TP-LPC.dsl](08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBATC-TP-LPC.md)
             * [SSDT-OCBATC-TP-LPCB.dsl](08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBATC-TP-LPCB.md)
