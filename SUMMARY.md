@@ -88,12 +88,12 @@
             * [SSDT-OCBAT0-TP_wtx20-60_e40-70_x1c1th-3th.dsl](08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBAT0-TP_wtx20-60_e40-70_x1c1th-3th.md)
             * [SSDT-OCBATC-TP-LPC.dsl](08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBATC-TP-LPC.md)
             * [SSDT-OCBATC-TP-LPCB.dsl](08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBATC-TP-LPCB.md)
+            * [SSDT-NTFY.dsl](08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-NTFY.md)
         * 更名样本
             * [TP电池基本更名.plist](08-电池补丁/08-1-Thinkpad/更名样本/TP电池基本更名.md)
             * [TP电池Mutex置0更名.plist](08-电池补丁/08-1-Thinkpad/更名样本/TP电池Mutex置0更名.md)
             * [TP禁止BAT1更名.plist](08-电池补丁/08-1-Thinkpad/更名样本/TP禁止BAT1更名.md)
-            * [TP双物理电池Notify更名-LPC.plist](08-电池补丁/08-1-Thinkpad/更名样本/TP双物理电池Notify更名-LPC.md)
-            * [TP双物理电池Notify更名-LPCB.plist](08-电池补丁/08-1-Thinkpad/更名样本/TP双物理电池Notify更名-LPCB.md)
+            * [TP双物理电池Notify更名.plist](08-电池补丁/08-1-Thinkpad/更名样本/TP双物理电池Notify更名.md)
     * 08-2-其它品牌
         * [SSDT-OCBAT0-ASUS_FL5900U.dsl](08-电池补丁/08-2-其它品牌/SSDT-OCBAT0-ASUS_FL5900U.md)
         * [SSDT-OCBAT0-HP_840_G3.dsl](08-电池补丁/08-2-其它品牌/SSDT-OCBAT0-HP_840_G3.md)
