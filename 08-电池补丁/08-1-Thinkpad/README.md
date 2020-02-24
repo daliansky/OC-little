@@ -8,8 +8,7 @@
   - TP 电池基本更名
   - TP 电池 `Mutex` 置 `0` 更名
   - TP 禁止 `BAT1` 更名
-  - TP 双物理电池 `Notify` 更名- `LPC` 
-  - TP 双物理电池 `Notify` 更名- `LPCB` 
+  - TP 双物理电池 `Notify` 更名
 - 可能用到的补丁
   - ***SSDT-OCBAT0-TP***
   - ***SSDT-OCBATC-TP-`LPC`***
@@ -39,7 +38,7 @@
   - 更名
     - TP 电池基本更名
     - TP 电池 `Mutex` 置 `0` 更名
-    - TP 双物理电池 `Notify` 更名-`LPC` 或者 TP 双物理电池 `Notify` 更名-`LPCB`
+    - TP 双物理电池 `Notify` 更名
   - 补丁
     - ***SSDT-OCBAT0-TP***
     - ***SSDT-OCBATC-TP-`LPC`*** 或者 ***SSDT-OCBATC-TP-`LPCB`***
@@ -110,7 +109,7 @@
   }
   ```
 
-  ***详见`Notify`补丁--`SSDT-NTFY.dsl`***
+  ***详见 `Notify` 补丁 -- `SSDT-NTFY.dsl`***
 
   > 已验证机器为`ThinkPad T580`，补丁和更名如下：
 
