@@ -35,8 +35,8 @@
         * [SSDT-OCGPI0-GPHD.dsl](03-二进制更名与预置变量/03-1-OCI2C-GPIO补丁/SSDT-OCGPI0-GPHD.md)
     * [03-2-ASL-AML对照表](03-二进制更名与预置变量/03-2-ASL-AML对照表/ASL-AML对照表.md)
     * 补丁库
-        * [SSDT-AWAC.dsl](03-二进制更名与预置变量/03-2-ASL-AML对照表/补丁库/SSDT-AWAC.md)
-        * [SSDT-RTC_Y-AWAC_N.dsl](03-二进制更名与预置变量/03-2-ASL-AML对照表/补丁库/SSDT-RTC_Y-AWAC_N.md)
+        * [SSDT-AWAC.dsl](03-二进制更名与预置变量/补丁库/SSDT-AWAC.md)
+        * [SSDT-RTC_Y-AWAC_N.dsl](03-二进制更名与预置变量/补丁库/SSDT-RTC_Y-AWAC_N.md)
 * [04-操作系统补丁](04-操作系统补丁/README.md)
     * [操作系统更名.plist](04-操作系统补丁/操作系统更名.md)
     * [SSDT-OC-XOSI.dsl](04-操作系统补丁/SSDT-OC-XOSI.md)
