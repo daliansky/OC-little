@@ -1,5 +1,4 @@
 ```swift
-```swift
 // TPxx is my new's device
 DefinitionBlock("", "SSDT", 2, "OCLT", "I2C-TPXX", 0)
 {
@@ -271,6 +270,4 @@ DefinitionBlock("", "SSDT", 2, "OCLT", "I2C-TPXX", 0)
 
 }
 //EOF
-```
-
 ```

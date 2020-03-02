@@ -15,4 +15,3 @@ DefinitionBlock ("", "SSDT", 2, "OCLT", "RTCAWAC", 0x00000000)
 
 }
 ```
-
