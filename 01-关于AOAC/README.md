@@ -3,7 +3,16 @@
 ## AOAC技术
 
 - 新的笔记本电脑引入了一项新技术—— `AOAC` ，即：*Always On/Always Connected* 。 `AOAC` 由 `Intel` 公司提出，旨在电脑在睡眠或者休眠模式下仍然保持网络连接及资料传输。简单的说，  `AOAC` 的引入使笔记本像我们的手机一样，永不关机，永远在线。
-- 有关`AOAC`方面的内容请百度 `AOAC` 、 `联想AOAC` 、 `AOAC网卡` 等。
+
+- `AOAC` 机器的判断方法
+
+  - 用aml工具软件打开 `ACPI` 的 `FACP.aml` ，搜索 `Low Power S0 Idle` ，如果=1即属于 `AOAC` 机器。如：
+
+    ```
+    Low Power S0 Idle (V5) : 1
+    ```
+
+- 有关 `AOAC` 方面的内容请百度 `AOAC` 、 `联想AOAC` 、 `AOAC网卡` 等。
 
 ## AOAC问题
 
