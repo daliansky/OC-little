@@ -23,6 +23,8 @@ DefinitionBlock("", "SSDT", 2, "OCLT", "PTSWAK", 0)
     External(EXT2, MethodObj)
     External(EXT3, MethodObj)
     External(EXT4, MethodObj)
+    External(DGPU._ON, MethodObj)
+    External(DGPU._OFF, MethodObj)
 
     Scope (_SB)
     {
@@ -58,6 +60,12 @@ DefinitionBlock("", "SSDT", 2, "OCLT", "PTSWAK", 0)
             {
                 Arg0 = 3
             }
+            
+            If (CondRefOf (\DGPU._ON))
+            {
+                \DGPU._ON ()
+            }
+            
             If (CondRefOf(EXT1))
             {
                 EXT1(Arg0)
@@ -82,6 +90,12 @@ DefinitionBlock("", "SSDT", 2, "OCLT", "PTSWAK", 0)
                 \_SB.PCI9.FNOK =0
                 Arg0 = 3
             }
+        
+            If (CondRefOf (\DGPU._OFF))
+            {
+                \DGPU._OFF ()
+            }
+            
             If (CondRefOf(EXT3))
             {
                 EXT3(Arg0)
