@@ -6,91 +6,89 @@
 
 ## 主要内容
 
-- 总述 
+- 总述
 
-  - `ASL`语法基础
+  1. `ASL`语法基础
+  1. `SSDT` 补丁加载顺序
 
-  - `SSDT` 补丁加载顺序
+1. 关于`AOAC`
 
-- 关于`AOAC`
+   1. 禁止`S3`睡眠
+   1. `AOAC`禁用独显
+   1. 电源空闲管理
+   1. `AOAC`唤醒补丁
 
-  - 禁止`S3`睡眠
-  - `AOAC`禁用独显
-  - 电源空闲管理
-  - `AOAC`唤醒补丁
+1. 仿冒设备
 
-- 仿冒设备
-
-  - 仿冒`EC`
-  - RTC0
-  - 键盘无法输入的应急解决方案 `PS2N` 
-  - 仿冒环境光传感器
+   1. 仿冒`EC`
+   1. RTC0
+   1. 键盘无法输入的应急解决方案 `PS2N`
+   1. 仿冒环境光传感器
   
-- 二进制更名与预置变量
+1. 二进制更名与预置变量
 
-  - OC `I2C-GPIO` 补丁
-  - ASL-AML 对照表
+   1. OC `I2C-GPIO` 补丁
+   1. ASL-AML 对照表
 
-- 操作系统补丁
+1. 操作系统补丁
 
-- 注入设备
+1. 注入设备
 
-  - 注入 X86
-  - `PNLF` 注入方法
-  - `SBUS(SMBU)` 补丁
+   1. 注入 X86
+   1. `PNLF` 注入方法
+   1. `SBUS(SMBU)` 补丁
 
-- 添加缺失的部件 
+1. 添加缺失的部件
 
-- PS2 键盘映射 @OC-xlivans
+1. PS2 键盘映射 @OC-xlivans
 
-- 电池补丁
+1. 电池补丁
 
-  - Thinkpad
-  - 其它品牌
+   1. Thinkpad
+   1. 其它品牌
 
-- 禁用 EHCx
+1. 禁用 EHCx
 
-- `PTSWAK` 综合扩展补丁 
+1. `PTSWAK` 综合扩展补丁
 
-- `PNP0C0E` 睡眠修正方法 
+1. `PNP0C0E` 睡眠修正方法
 
-- `0D6D` 补丁
+1. `0D6D` 补丁
 
-  - 普通的`060D`补丁
+   1. 普通的 `060D` 补丁
+   1. 惠普特殊的 `060D` 补丁
 
-  - 惠普特殊的`060D`补丁
+1. 仿冒以太网和重置以太网 `BSD Name`
 
-- 仿冒以太网和重置以太网 BSD Name 
+1. 亮度快捷键
 
-- 亮度快捷键
+1. `CMOS` 相关
 
-- `CMOS`相关
+   1. `CMOS` 重置补丁
+   1. `CMOS` 内存和 ***RTCMemoryFixup***
 
-  - `CMOS`重置补丁
-  - `CMOS`内存和 ***RTCMemoryFixup*** 
+1. `ACPI` 定制 `USB` 端口
 
-- `ACPI`定制`USB`端口
+1. 禁止`PCI`设备
 
-- 禁止`PCI`设备
+1. ACPIDebug
 
-- ACPIDebug
+1. 品牌机器特殊补丁
 
-- 品牌机器特殊补丁
+   1. `Dell`机器特殊补丁
+   1. 小新 PRO13 特殊补丁
 
-  - `Dell`机器特殊补丁
-  - 小新 PRO13 特殊补丁
+1. `I2C` 专用部件
 
-- `I2C`专用部件
+1. 声卡 `IRQ` 补丁
 
-- 声卡`IRQ`补丁
+1. 常见驱动加载顺序：
 
-- 常见驱动加载顺序：
-
-  - config-1-Lilu-SMC-WEG-ALC 驱动列表
-  - config-2-PS2 键盘驱动列表
-  - config-3-BCM 无线和蓝牙驱动列表
-  - config-4-I2C 驱动列表
-  - config-5-PS2Smart 键盘驱动列表
+   1. config-1-Lilu-SMC-WEG-ALC 驱动列表
+   1. config-2-PS2 键盘驱动列表
+   1. config-3-BCM 无线和蓝牙驱动列表
+   1. config-4-I2C 驱动列表
+   1. config-5-PS2Smart 键盘驱动列表
 
 ### Credits
 
@@ -103,13 +101,11 @@
   - @OC-xlivans
   - @Air 13 IWL-GZ-Big Orange (OC perfect)
   - @子骏oc IWL
-  - @大勇-小新air13-OC-划水小白 
+  - @大勇-小新air13-OC-划水小白
   - ......
 
-- Thanks: 
-  - [Acidanthera](https://github.com/acidanthera) Maintaining: 
+- Thanks for:
+  - [Acidanthera](https://github.com/acidanthera) Maintaining:
     - [AppleSupportPkg](https://github.com/acidanthera/AppleSupportPkg)
-    - ~~[AptioFixPkg](https://github.com/acidanthera/AptioFixPkg)~~(Achieved)
     - [MacInfoPkg](https://github.com/acidanthera/MacInfoPkg)
-    - [OCSupportPkg](https://github.com/acidanthera/OCSupportPkg)
     - [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg)
