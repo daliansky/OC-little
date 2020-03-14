@@ -1,14 +1,12 @@
-```swift
-// PCIWake
-// NVMe path:_SB.PCI0.RP09.PXSX
+// PCI.LPCB-AOACWake
 //
-DefinitionBlock("", "SSDT", 2, "ACDT", "PCIWake", 0)
+DefinitionBlock("", "SSDT", 2, "ACDT", "AOACWake", 0)
 {
-    External(_SB.PCI0.RP09.PXSX, DeviceObj)
+    External(_SB.PCI0.LPCB, DeviceObj)
     External(_SB.PCI0.LPCB.H_EC._Q0D, MethodObj)
     External(_SB.PCI0.LPCB.H_EC.LID0._LID, MethodObj)
     
-    Scope (_SB.PCI0.RP09.PXSX)
+    Scope (_SB.PCI0.LPCB)
     {
         If (_OSI ("Darwin"))
         {
@@ -27,5 +25,3 @@ DefinitionBlock("", "SSDT", 2, "ACDT", "PCIWake", 0)
         }
     }
 }
-```
-

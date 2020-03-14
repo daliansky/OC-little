@@ -18,7 +18,7 @@
         * [SSDT-DeepIdle.dsl](01-关于AOAC/01-3-电源空闲管理/SSDT-DeepIdle.md)
     * [01-4-AOAC唤醒方法](01-关于AOAC/01-4-AOAC唤醒方法/README.md)
         * [SSDT-LIDpatch-AOAC.dsl](01-关于AOAC/01-4-AOAC唤醒方法/SSDT-LIDpatch-AOAC.md)
-        * [SSDT-PCIWake-AOAC.dsl](01-关于AOAC/01-4-AOAC唤醒方法/SSDT-PCIWake-AOAC.md)
+        * [SSDT-PCI.LPCB-Wake-AOAC.dsl](01-关于AOAC/01-4-AOAC唤醒方法/SSDT-PCI.LPCB-Wake-AOAC.md)
 * [02-仿冒设备](02-仿冒设备/README.md)
     * [02-1-仿冒EC](02-仿冒设备/02-1-仿冒EC/README.md)
         * [SSDT-EC.dsl](02-仿冒设备/02-1-仿冒EC/SSDT-EC.md)
@@ -123,7 +123,7 @@
         * [SSDT-0D6D-HP.dsl](12-060D补丁/12-2-惠普特殊的060D补丁/SSDT-0D6D-HP.md)
 * [13-仿冒以太网和重置以太网BSD Name](13-仿冒以太网和重置以太网BSD Name/README.md)
     * [SSDT-LAN.dsl](13-仿冒以太网和重置以太网BSD Name/SSDT-LAN.md)
-    * [清除所有网络.dsl](13-仿冒以太网和重置以太网BSD Name/清除所有网络.md)
+    * [清除所有网络](13-仿冒以太网和重置以太网BSD Name/清除所有网络.md)
 * [14-亮度快捷键](14-亮度快捷键/README.md)
     * [亮度快捷键更名.plist](14-亮度快捷键/亮度快捷键更名.md)
     * 补丁库
