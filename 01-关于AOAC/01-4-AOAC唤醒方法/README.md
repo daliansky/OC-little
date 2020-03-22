@@ -17,26 +17,26 @@
 - ***SSDT-PCI.LPCB-Wake-AOAC*** 
 
   ```
-  		......
-      Scope (_SB.PCI0.LPCB)
+  ......
+  Scope (_SB.PCI0.LPCB)
+  {
+      If (_OSI ("Darwin"))
       {
-          If (_OSI ("Darwin"))
+          Method (_PS0, 0, Serialized)
           {
-              Method (_PS0, 0, Serialized)
-              {
-  								\_SB.PCI0.LPCB.H_EC._Q0D()//小新PRO13开盖方法
-  								//定制内容：
-  								//依据《附件》的《PNP0C0D唤醒条件》，制作适合于自己的开盖补丁
-  								//或者使用通用开盖补丁
-  								//
-  								\_SB.PCI0.LPCB.H_EC._Q0A() //更新电源数据
-  						}
-              Method (_PS3, 0, Serialized)
-              {
-              }
+              \_SB.PCI0.LPCB.H_EC._Q0D()//小新PRO13开盖方法
+              //定制内容：
+              //依据《附件》的《PNP0C0D唤醒条件》，制作适合于自己的开盖补丁
+              //或者使用通用开盖补丁
+              //
+              \_SB.PCI0.LPCB.H_EC._Q0A() //更新电源数据
+          }
+          Method (_PS3, 0, Serialized)
+          {
           }
       }
-      ......
+  }
+  ......
   ```
   
 
@@ -45,17 +45,17 @@
 1  `_SB.PCI0.LPCB.H_EC._Q0D` 为小新PRO开盖方法。如果使用通用开盖补丁，将 `_PS0` 部分替换为以下内容，并同时使用 ***SSDT-LIDpatch-AOAC*** ，见后文。
 
 ```
+......
+Method (_PS0, 0, Serialized)
+{
+  \_SB.PCI0.LPCB.H_EC.LID0.AOAC = 1 //满足 PNP0C0D唤醒条件 之一
+    Notify (\_SB.PCI0.LPCB.H_EC.LID0, 0x80) //满足 PNP0C0D唤醒条件 之二
+  Sleep (200) //延时200
+    \_SB.PCI0.LPCB.H_EC.LID0.AOAC = 0 //恢复原始状态
+    //
+    \_SB.PCI0.LPCB.H_EC._Q0A() //更新电源数据
+}
   ......
-            	Method (_PS0, 0, Serialized)
-            	{
-								\_SB.PCI0.LPCB.H_EC.LID0.AOAC = 1 //满足 PNP0C0D唤醒条件 之一
-  								Notify (\_SB.PCI0.LPCB.H_EC.LID0, 0x80) //满足 PNP0C0D唤醒条件 之二
-								Sleep (200) //延时200
-  								\_SB.PCI0.LPCB.H_EC.LID0.AOAC = 0 //恢复原始状态
-									//
-  								\_SB.PCI0.LPCB.H_EC._Q0A() //更新电源数据
-              }
-  	......
 ```
 
   2  `_SB.PCI0.LPCB.H_EC._Q0A` 为小新PRO更新电源数据方法。**更新电源数据** 详细内容见后文。
