@@ -16,6 +16,8 @@ DefinitionBlock("", "SSDT", 2, "ACDT", "I2C-TPXX", 0)
     External(_SB.PCI0.TP7G, IntObj)
     External(_SB.PCI0.HIDD, MethodObj)
     External(_SB.PCI0.TP7D, MethodObj)
+    External(_SB.PCI0.I2CM, MethodObj)
+    External(_SB.PCI0.I2C1.I2CX, IntObj)
 
     Scope (\)
     {
@@ -165,7 +167,8 @@ DefinitionBlock("", "SSDT", 2, "ACDT", "I2C-TPXX", 0)
                 
             Method (_CRS, 0, NotSerialized)
             {
-                Return (ConcatenateResTemplate (SBFB, SBFG))
+                //Return (ConcatenateResTemplate (SBFB, SBFG))
+                Return (ConcatenateResTemplate (I2CM (I2CX, BADR, SPED), SBFG))
             }    
             
             Method (_STA, 0, Serialized)
