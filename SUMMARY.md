@@ -19,6 +19,8 @@
     * [01-4-AOAC唤醒方法](01-关于AOAC/01-4-AOAC唤醒方法/README.md)
         * [SSDT-LIDpatch-AOAC.dsl](01-关于AOAC/01-4-AOAC唤醒方法/SSDT-LIDpatch-AOAC.md)
         * [SSDT-PCI.LPCB-Wake-AOAC.dsl](01-关于AOAC/01-4-AOAC唤醒方法/SSDT-PCI.LPCB-Wake-AOAC.md)
+    * [01-5-AOAC-PRW全局更名](01-关于AOAC/01-5-AOAC-PRW全局更名/README.md)
+        * [config-PRW全局更名.plist](01-关于AOAC/01-5-AOAC-PRW全局更名/config-PRW全局更名.md)
 * [02-仿冒设备](02-仿冒设备/README.md)
     * [02-1-仿冒EC](02-仿冒设备/02-1-仿冒EC/README.md)
         * [SSDT-EC.dsl](02-仿冒设备/02-1-仿冒EC/SSDT-EC.md)
