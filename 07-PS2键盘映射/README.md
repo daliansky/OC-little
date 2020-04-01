@@ -86,3 +86,17 @@
 - 示例中的键盘路径是 `\_SB.PCI0.LPCB.PS2K`，使用时应保证其路径和 ACPI 的键盘路径一致。大多数 Thinkpad 机器的键盘路径是 `\_SB.PCI0.LPC.KBD` 或者 `\_SB.PCI0.LPCB.KBD`。
 
 - 补丁里使用了变量 `RMCF` ，如果其他**键盘补丁**里也使用了 `RMCF`，必须合并后使用。参见 ***SSDT-RMCF-PS2Map-dell***。`注`：***SSDT-RMCF-MouseAsTrackpad*** 用于强制开启触摸板设置选项。
+
+- 在 VoodooPS2 中，<kbd>PrtSc</kbd> 按键对应的 PS2 扫描码是 `e037`，即触摸板（以及 ThinkPad 机器的小红点）的开关。可以将该按键映射到 `F13`、并在「系统偏好设置」中将 `F13` 绑定到截图功能上：
+
+```Swift
+    ...
+    "Custom ADB Map", Package()
+    {
+        Package(){},
+        "e037=64", // PrtSc -> F13
+    }
+    ...
+```
+
+![](https://i.loli.net/2020/04/01/gQqVC2YKFweSARZ.png)
