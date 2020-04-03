@@ -6,7 +6,7 @@ DefinitionBlock("", "SSDT", 2, "OCLT", "EXT4", 0)
 
     Method (EXT1, 1, NotSerialized)
     {
-        If (5 == Arg0) {
+        If ((5 == Arg0) && CondRefOf (\_SB.PCI0.XHC.PMEE)) {
             \_SB.PCI0.XHC.PMEE = 0
         }
     }
