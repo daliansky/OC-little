@@ -8,7 +8,7 @@
 
 > 案例
 
-```swift
+```Swift
 Device (RTC)
 {
   Name (_HID, EisaId ("PNP0B00"))

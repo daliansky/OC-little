@@ -17,8 +17,6 @@
 
 ## **CMOS** 内存和 RTCMemoryFixup
 
-### 描述
-
 - 当 **AppleRTC** 与 **BIOS** 发生冲突而时，可以尝试使用 **RTCMemoryFixup** 模拟 **CMOS** 内存规避冲突。
 - **RTCMemoryFixup** 下载地址：<https://github.com/acidanthera/RTCMemoryFixup>
 
@@ -34,4 +32,3 @@
 ### 模拟 **CMOS** 内存方法
 
 详见《15-2-CMOS内存和RTCMemoryFixup》。
-

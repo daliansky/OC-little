@@ -6,19 +6,17 @@
 
 ## 补丁方法
 
-- 更名：`_S3 to XS3` 
+- 更名：`_S3 to XS3`
 
-  ```
-  Find		5F53335F
-  Replace	5853335F
+  ```text
+  Find    5F53335F
+  Replace 5853335F
   ```
 
 - 补丁
   - ***SSDT-NameS3-disable*** ：适用于 `ACPI` 描述 `S3` 的方法为 `Name` 类型的，绝大多数机器属于这种情况。
   - ***SSDT-MethodS3-disable*** ：适用于 `ACPI` 描述 `S3` 的方法为 `Method` 类型的。
 
-
 ## 注意事项
 
 - 根据机器原始 `ACPI` 描述 `S3` 的方法选用对应的补丁。
-

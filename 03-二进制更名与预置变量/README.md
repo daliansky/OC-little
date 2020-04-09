@@ -6,17 +6,17 @@
 
 ## 风险
 
-当OC引导其他系统时，ACPI二进制更名有可能对其他系统造成影响。
+当 OC 引导其他系统时，ACPI 二进制更名有可能对其他系统造成影响。
 
 ## 示例
 
-以启用`HPET`为例。我们希望它的`_STA` 返回 `0x0F`。
+以启用 `HPET` 为例。我们希望它的 `_STA` 返回 `0x0F`。
 
 二进制更名：
 
-Find：`00 A0 08 48 50`【注： `00` = `{` ， `A0` = `If` ......】
+Find：`00 A0 08 48 50`「注：`00` = `{`; `A0` = `If` ......」
 
-Replace：`00 A4 0A 0F A3` 【注： `00` = `{` ， `A4 0A 0F ` =`Return(0x0F) `  , `A3` =Noop，用于补齐字节数量】
+Replace：`00 A4 0A 0F A3` 「注：`00` = `{`; `A4 0A 0F` =`Return(0x0F)`; `A3` = `Noop`，用于补齐字节数量」
 
 - 原始代码
 
@@ -47,9 +47,9 @@ Replace：`00 A4 0A 0F A3` 【注： `00` = `{` ， `A4 0A 0F ` =`Return(0x0F) `
 
   实际情况，我们应尽可能保证更名后语法的完整性。下面是完整的 `Find`, `Replace` 数据。
   
-  Find：`00 A0 08 48 50 54 45 A4 0A 0F A4 00` 
+  Find：`00 A0 08 48 50 54 45 A4 0A 0F A4 00`
   
-  Replace：`00 A4 0A 0F A3 A3 A3 A3 A3 A3 A3 A3` 
+  Replace：`00 A4 0A 0F A3 A3 A3 A3 A3 A3 A3 A3`
   
   完整 `Replace` 后代码
   
@@ -74,7 +74,7 @@ Replace：`00 A4 0A 0F A3` 【注： `00` = `{` ， `A4 0A 0F ` =`Return(0x0F) `
 
   `Find` 二进制文件必须是 ***ACPI*** 原始文件，不可以被任何软件修改、保存过，也就是说它必须是机器提供的原始二进制文件。
 
--  `Find` 唯一性、正确性
+- `Find` 唯一性、正确性
 
    `Find` 数量只有一个，**除非** 我们本意就是对多处实施 `Find` 和 `Replace` 相同操作。
 
@@ -108,15 +108,13 @@ Replace：`00 A4 0A 0F A3` 【注： `00` = `{` ， `A4 0A 0F ` =`Return(0x0F) `
 
 ## 注意事项
 
-- 更新BIOS有可能造成更名失效。`Find` 、 `Replace` 字节数越多失效的可能性也越大。
-
-  
+- 更新BIOS有可能造成更名失效。`Find` & `Replace` 字节数越多失效的可能性也越大。
 
 ### 附：TP-W530 禁止 BAT1
 
-Find： `00 A0 4F 04 5C 48 38 44 52` 
+Find： `00 A0 4F 04 5C 48 38 44 52`
 
-Replace： `00 A4 00 A3 A3 A3 A3 A3 A3` 
+Replace： `00 A4 00 A3 A3 A3 A3 A3 A3`
 
 - 原始代码
 
@@ -138,7 +136,7 @@ Replace： `00 A4 00 A3 A3 A3 A3 A3 A3`
     {
           Return (Zero)
           Noop
-      		Noop
+          Noop
           Noop
           Noop
           Noop
@@ -165,28 +163,28 @@ Replace： `00 A4 00 A3 A3 A3 A3 A3 A3`
 某设备 _STA 原文：
 
 ```Swift
-    Method (_STA, 0, NotSerialized)
+Method (_STA, 0, NotSerialized)
+{
+    ECTP (Zero)
+    If ((SDS1 == 0x07))
     {
-        ECTP (Zero)
-        If ((SDS1 == 0x07))
-        {
-            Return (0x0F)
-        }
-        Return (Zero)
+        Return (0x0F)
     }
+    Return (Zero)
+}
 ```
 
 因某个原因我们需要禁用这个设备，为了达成目的 `_STA` 应返回 `Zero` 。从原文可以看出只要 `SDS1` 不等于 `0x07` 即可。采用 **预置变量法** 如下：
 
 ```Swift
-    Scope (\)
+Scope (\)
+{
+    External (SDS1, FieldUnitObj)
+    If (_OSI ("Darwin"))
     {
-        External (SDS1, FieldUnitObj)
-        If (_OSI ("Darwin"))
-        {
-            SDS1 = 0
-        }
+        SDS1 = 0
     }
+}
 ```
 
 ### 示例2
@@ -197,102 +195,102 @@ Replace： `00 A4 00 A3 A3 A3 A3 A3 A3`
 
 原文：
 
-```
+```Swift
 Device (RTC)
 {
-    ......
+    ...
     Method (_STA, 0, NotSerialized)
     {
             If ((STAS == One))
             {
-                    Return (0x0F)
+                Return (0x0F)
             }
             Else
             {
-                    Return (Zero)
+                Return (Zero)
             }
     }
-    ......
+    ...
 }
 Device (AWAC)
 {
-    ......
+    ...
     Method (_STA, 0, NotSerialized)
     {
             If ((STAS == Zero))
             {
-                    Return (0x0F)
+                Return (0x0F)
             }
             Else
             {
-                    Return (Zero)
+                Return (Zero)
             }
     }
-    ......
+    ...
 }
 ```
 
-从原文可以看出，只要STAS=1，就可以启用 RTC并同时禁用AWAC。采用 **预置变量法** 如下：
+从原文可以看出，只要 `STAS`=`1`，就可以启用 RTC 并同时禁用 `AWAC`。采用 **预置变量法** 如下：
 
-- 官方补丁 ***SSDT-AWAC*** 
+- 官方补丁 ***SSDT-AWAC***
 
-  ```
-      External (STAS, IntObj)
-      Scope (_SB)
-      {
-          Method (_INI, 0, NotSerialized)  // _INI: Initialize
-          {
-              If (_OSI ("Darwin"))
-              {
-                  STAS = One
-              }
-          }
-      }
-  ```
-
-  注：官方补丁引入了路径 `_SB._INI` ，使用时应确认 DSDT 以及其他补丁不存在 `_SB._INI` 。
-
-- 改进后补丁  ***SSDT-RTC_Y-AWAC_N*** 
-
-  ```
-      External (STAS, IntObj)
-      Scope (\)
+  ```Swift
+  External (STAS, IntObj)
+  Scope (_SB)
+  {
+      Method (_INI, 0, NotSerialized)  /* _INI: Initialize */
       {
           If (_OSI ("Darwin"))
           {
               STAS = One
           }
       }
+  }
+  ```
+
+  注：官方补丁引入了路径 `_SB._INI`，使用时应确认 DSDT 以及其他补丁不存在 `_SB._INI`。
+
+- 改进后补丁  ***SSDT-RTC_Y-AWAC_N***
+
+  ```Swift
+  External (STAS, IntObj)
+  Scope (\)
+  {
+      If (_OSI ("Darwin"))
+      {
+          STAS = One
+      }
+  }
   ```
 
 ### 示例3
 
- I2C 补丁时，可能需要启用 GPIO。参见《OCI2C-GPIO补丁》的 ***SSDT-OCGPI0-GPEN*** 。
+使用 I2C 补丁时，可能需要启用 `GPIO`。参见《OCI2C-GPIO补丁》的 ***SSDT-OCGPI0-GPEN***。
 
 某原文：
 
-```
-    Method (_STA, 0, NotSerialized)
+```Swift
+Method (_STA, 0, NotSerialized)
+{
+    If ((GPEN == Zero))
     {
-        If ((GPEN == Zero))
-        {
-            Return (Zero)
-        }
-        Return (0x0F)
+        Return (Zero)
     }
+    Return (0x0F)
+}
 ```
 
-从原文可以看出，只要GPEN不等于0即可启用GPIO。采用 **预置变量法** 如下：
+从原文可以看出，只要 `GPEN` 不等于 `0` 即可启用 `GPIO`。采用 **预置变量法** 如下：
 
-```
-    External(GPEN, FieldUnitObj)   
-    Scope (\)
+```Swift
+External(GPEN, FieldUnitObj)
+Scope (\)
+{
+    If (_OSI ("Darwin"))
     {
-        If (_OSI ("Darwin"))
-        {
-            GPEN = 1
-        }
+        GPEN = 1
     }
+}
 ```
 
 ### 示例4
@@ -300,46 +298,46 @@ Device (AWAC)
 当 `变量` 是只读类型时，解决方法如下：
 
 - 对原始 `变量` 更名
-- 补丁文件中重新定义一个同名 `变量` 
+- 补丁文件中重新定义一个同名 `变量`
 
 如：某原文：
 
-```
-  OperationRegion (PNVA, SystemMemory, PNVB, PNVL)
-  Field (PNVA, AnyAcc, Lock, Preserve)
-  {
-			......
-			IM01,   8,           
-			......
-  }
-  ......
-	If ((IM01 == 0x02))
-	{
-			......
-	}
+```Swift
+OperationRegion (PNVA, SystemMemory, PNVB, PNVL)
+Field (PNVA, AnyAcc, Lock, Preserve)
+{
+    ...
+    IM01,   8,
+    ...
+}
+...
+If ((IM01 == 0x02))
+{
+    ...
+}
 ```
 
 实际情况 `IM01` 不等于0x02，{...} 的内容无法被执行。为了更正错误采用 **二进制更名** 和 **SSDT补丁** ：
 
-**更名**： `IM01` rename `XM01` 
+**更名**： `IM01` rename `XM01`
 
-```
-	Find:		49 4D 30 31 08
-	Replace:58 4D 30 31 08
+```text
+Find:    49 4D 30 31 08
+Replace: 58 4D 30 31 08
 ```
 
 **补丁**：
 
-```
-	Name (IM01, 0x02)
-	If (_OSI ("Darwin"))
-	{
-	}
-	Else
-	{
-        IM01 = XM01 //同原始ACPI变量的路径
-	}
+```Swift
+Name (IM01, 0x02)
+If (_OSI ("Darwin"))
+{
+    ...
+}
+Else
+{
+      IM01 = XM01 /* 同原始ACPI变量的路径 */
+}
 ```
 
-**风险**：OC引导其他系统时可能无法恢复 `XM01` 。
-
+**风险**：OC引导其他系统时可能无法恢复 `XM01`。

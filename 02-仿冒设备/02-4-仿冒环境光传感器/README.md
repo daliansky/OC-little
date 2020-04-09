@@ -35,31 +35,31 @@ Device (ALSD)
   {
     Package (0x02)
     {
-      0x46, 
+      0x46,
       Zero
-    }, 
+    },
 
     Package (0x02)
     {
-      0x49, 
+      0x49,
       0x0A
-    }, 
+    },
 
     Package (0x02)
     {
-      0x55, 
+      0x55,
       0x50
-    }, 
+    },
 
     Package (0x02)
     {
-      0x64, 
+      0x64,
       0x012C
-    }, 
+    },
 
     Package (0x02)
     {
-      0x96, 
+      0x96,
       0x03E8
     }
   })
@@ -104,7 +104,7 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "ALS0", 0)
             {
                 Package (0x02)
                 {
-                    0x64, 
+                    0x64,
                     0x012C
                 }
             })

@@ -2,13 +2,12 @@
 
 ## 描述
 
-- 本补丁开启MAC系统自身的电源空闲管理，延长电池工作模式下的待机时间。
+- 本补丁开启 MAC 系统自身的电源空闲管理，延长电池工作模式下的待机时间。
 - 参阅：<https://pikeralpha.wordpress.com/2017/01/12/debugging-sleep-issues/>。
 
 ## SSDT补丁
 
 - ***SSDT-DeepIdle*** ——电源空闲管理补丁
-
 
 ## 注意事项
 
@@ -18,4 +17,3 @@
 ## 备注
 
 - ***SSDT-DeepIdle*** 主要内容来自 @Pike R.Alpha
-

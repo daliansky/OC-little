@@ -27,12 +27,12 @@
 
   - 仿冒补丁的 `_STA` 部分应包括以下内容，确保windows系统使用原始的ACPI。
 
-    ```
+    ```Swift
         Method (_STA, 0, NotSerialized)
         {
             If (_OSI ("Darwin"))
             {
-                ......
+                ...
                 Return (0x0F)
             }
             Else
@@ -48,11 +48,10 @@
     - 原始点输入设备名称：PS2M、MOU、MSS* 等
 
     - _CID：PNP0F13，PNP0F03，PNP0F0E，PNP0F0B，PNP0F12
-    
+
   - ***SSDT-RTC0*** — 仿冒RTC
 
     - 原始设备名称：RTC
     - _HID：PNP0B00
 
     **注意** ： `LPCB` 名称应和原始ACPI名称一致。
-

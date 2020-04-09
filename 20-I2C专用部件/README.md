@@ -18,13 +18,14 @@
 
 - 禁止原 I2C 设备。详见《二进制更名与预置变量》。
 
-  ```swift
-  // GPI0 enable
+  ```Swift
+  /*
+   * GPI0 enable
+   */
   DefinitionBlock("", "SSDT", 2, "OCLT", "GPI0", 0)
   {
       External(GPEN, FieldUnitObj)
       // External(GPHD, FieldUnitObj)
-      
       Scope (\)
       {
           If (_OSI ("Darwin"))
@@ -34,29 +35,28 @@
           }
       }
   }
-  //EOF
   ```
 
 - 新建一个 I2C 设备 `TPXX`，将原设备所有内容移植到 `TPXX` 中。
 
 - 修正 `TPXX` 有关内容：
 
-  - 原 I2C 设备`名称`全部替换为 `TPXX`。
+  - 原 I2C 设备`名称`全部替换为 `TPXX`
 
   - **修正** `_STA` 部分为：
 
     ```Swift
-        Method (_STA, 0, NotSerialized)
+    Method (_STA, 0, NotSerialized)
+    {
+        If (_OSI ("Darwin"))
         {
-            If (_OSI ("Darwin"))
-            {
-                Return (0x0F)
-            }
-            Else
-            {
-                Return (Zero)
-            }
+            Return (0x0F)
         }
+        Else
+        {
+            Return (Zero)
+        }
+    }
     ```
 
   - **修正**禁止原 I2C 设备时用到的变量的`有关内容`，使其符合逻辑关系。
@@ -72,26 +72,26 @@
 - 使用《预置变量法》禁止 `TPD1`。
 
   ```Swift
-    Scope (\)
-    {
-        If (_OSI ("Darwin"))
-        {
-            SDS1 = 0
-        }
-    }
+  Scope (\)
+  {
+      If (_OSI ("Darwin"))
+      {
+          SDS1 = 0
+      }
+  }
   ```
 
 - 新建设备 `TPXX`，将原 `TPD1` 所有内容移植到 `TPXX` 中。
 
   ```Swift
-    External(_SB.PCI0.I2C1, DeviceObj)
-    Scope (_SB.PCI0.I2C1)
-    {
-        Device (TPXX)
-        {
-           原TPD1内容
-        }
-    }
+  External(_SB.PCI0.I2C1, DeviceObj)
+  Scope (_SB.PCI0.I2C1)
+  {
+      Device (TPXX)
+      {
+         原TPD1内容
+      }
+  }
   ```
 
 - 修正 `TPXX` 内容
@@ -101,17 +101,17 @@
   - 补丁中 `_STA` 部分替换为：
   
     ```Swift
-        Method (_STA, 0, NotSerialized)
+    Method (_STA, 0, NotSerialized)
+    {
+        If (_OSI ("Darwin"))
         {
-            If (_OSI ("Darwin"))
-            {
-                Return (0x0F)
-            }
-            Else
-            {
-                Return (Zero)
-            }
+            Return (0x0F)
         }
+        Else
+        {
+            Return (Zero)
+        }
+    }
     ```
   
   - 查找 `SDS1` (禁止 `TPD1` 时用到的变量)，将原 `If (SDS1...)` 修改为 `If (one)`。
@@ -119,10 +119,10 @@
   - 查找 `OSYS`，删除（注释掉）以下内容：
   
     ```Swift
-        //If (LLess (OSYS, 0x07DC))
-        //{
-        //    SRXO (GPDI, One)
-        //}
+    //If (LLess (OSYS, 0x07DC))
+    //{
+    //    SRXO (GPDI, One)
+    //}
     ```
   
     注：`OSYS` 小于 `0x07DC` 时，I2C 设备不工作（`0x07DC`代表 Windows8）。

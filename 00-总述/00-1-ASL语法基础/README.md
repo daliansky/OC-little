@@ -52,13 +52,11 @@
 
 1. 根作用域 `\` 下有 `\_GPE`，`\_PR`，`\_SB`，`\_SI`，`\_TZ` 五个作用域。
 
-| 作用域  | 用途                   |
-| :-----: | :---------------------: |
-| `\_GPE` | ACPI 事件处理          |
-| `\_PR`  | 处理器                 |
-| `\_SB`  | 所有的设备和总线       |
-| `\_SI`  | 系统指示灯             |
-| `\_TZ`  | 热区，用于读取某些温度 |
+   - `\_GPE`--- ACPI 事件处理
+   - `\_PR` --- 处理器
+   - `\_SB` --- 所有的设备和总线
+   - `\_SI` --- 系统指示灯
+   - `\_TZ` --- 热区，用于读取某些温度
 
    > **不同属性的东西放在对应的作用域下。例如:**
 
@@ -208,7 +206,7 @@ Local0 = Local1
 |   --   | Decrement  | 整数自减 1 | `Local0--`<br/>`Decrement (Local0)`                          |
 |   ++   | Increment  | 整数自增 1 | `Local0++`<br/>`Increment (Local0)`                          |
 |   &    |    And     |   整数于   | `Local0 = 0x11 & 0x22`<br/>`And (0x11, 0x22, Local0)`        |
-| &#124; |     Or     |     或     | `Local0 = 0x01 `&#124;` 0x02`<br/>`Or (0x01, 0x02, Local0)`  |
+| &#124; |     Or     |     或     | `Local0 = 0x01`&#124;`0x02`<br/>`Or (0x01, 0x02, Local0)`  |
 |   ~    |    Not     |    取反    | `Local0 = ~(0x00)`<br/>`Not (0x00,Local0)`                   |
 |   无   |    Nor     |    异或    | `Nor (0x11, 0x22, Local0)`                                   |
 
@@ -220,7 +218,7 @@ Local0 = Local1
 | :----: | :-----------: | :----------: | :----------------------------------------------------------- |
 |   &&   |     LAnd      |    逻辑与    | `If (BOL1 && BOL2)`<br/>`If (LAnd(BOL1, BOL2))`              |
 |   !    |     LNot      |    逻辑反    | `Local0 = !0`<br/>`Store (LNot(0), Local0)`                  |
-| &#124; |      LOr      |    逻辑或    | `Local0 = (0 `&#124;` 1)`<br/>`Store (LOR(0, 1), Local0)`    |
+| &#124; |      LOr      |    逻辑或    | `Local0 = (0`&#124;`1)`<br/>`Store (LOR(0, 1), Local0)`    |
 |   <    |     LLess     |   逻辑小于   | `Local0 = (1 < 2)`<br/>`Store (LLess(1, 2), Local0)`         |
 |   <=   |  LLessEqual   | 逻辑小于等于 | `Local0 = (1 <= 2)`<br/>`Store (LLessEqual(1, 2), Local0)`   |
 |   >    |   LGreater    |   逻辑大于   | `Local0 = (1 > 2)`<br/>`Store (LGreater(1, 2), Local0)`      |

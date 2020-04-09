@@ -21,7 +21,7 @@
 
 - 目的
 
-  - 观察机器睡眠、唤醒后， `ACPI` 的 `_PTS`、` _WAK ` 接收 `Arg0` 的情况。
+  - 观察机器睡眠、唤醒后， `ACPI` 的 `_PTS`、`_WAK` 接收 `Arg0` 的情况。
 
 - 驱动和补丁
 
@@ -37,21 +37,20 @@
 
 - 观察控制台输出结果
 
-  - 打开控制台，搜索 `ABCD-` 
+  - 打开控制台，搜索 `ABCD-`
 
   - 完成一次睡眠、唤醒过程
 
   - 按下 ***SSDT-BKeyQxx-Debug*** 指定的键，观察控制台输出结果。一般情况下，显示结果如下：
 
-    ```
-    13:19:50.542733+0800	kernel	ACPIDebug: { "ABCD-_PTS-Arg0=", 0x3, }
-    13:19:55.541826+0800	kernel	ACPIDebug: { "ABCD-_WAK-Arg0=", 0x3, }
+    ```log
+    13:19:50.542733+0800  kernel  ACPIDebug: { "ABCD-_PTS-Arg0=", 0x3, }
+    13:19:55.541826+0800  kernel  ACPIDebug: { "ABCD-_WAK-Arg0=", 0x3, }
     ```
 
     以上显示结果是最近一次睡眠、唤醒后 `Arg0` 的值。
 
 ## 备注
 
-- Debug调试代码可以多样化，如：`\RMDT.P1`, `\RMDT.P2`, `\RMDT.P3` 等等，详见 ***SSDT-RMDT.dsl*** 
-- 以上驱动、主要补丁来自 [@RehabMan](https://github.com/rehabman) 
-
+- Debug调试代码可以多样化，如：`\RMDT.P1`, `\RMDT.P2`, `\RMDT.P3` 等等，详见 ***SSDT-RMDT.dsl***
+- 以上驱动、主要补丁来自 [@RehabMan](https://github.com/rehabman)

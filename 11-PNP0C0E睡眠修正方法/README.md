@@ -1,4 +1,4 @@
-# PNP0C0E睡眠修正方法
+# PNP0C0E 睡眠修正方法
 
 ## `PNP0C0E` 和 `PNP0C0D` 睡眠方式
 
@@ -14,7 +14,7 @@
 
   - 执行 `Notify(***.SLPB, 0x80)`。 `SLPB` 是 `PNP0C0E` 设备名称。
   
--  `PNP0C0D` 睡眠条件
+- `PNP0C0D` 睡眠条件
 
   - `_LID`  返回 `Zero` 。 `_LID` 是 `PNP0C0D` 设备当前状态。
   - 执行 `Notify(***.LID0, 0x80)`。 `LID0` 是 `PNP0C0D` 设备名称。
@@ -30,74 +30,72 @@
 
 ## 解决方案
 
-#### 关联的3个补丁
+### 关联的3个补丁
 
-- ***SSDT-PTSWAK*** ：定义变量 `FNOK` 和 ` MODE` ，捕捉 `FNOK` 的变化。见《PTSWAK综合扩展补丁》。
+- ***SSDT-PTSWAK*** ：定义变量 `FNOK` 和 `MODE` ，捕捉 `FNOK` 的变化。见《PTSWAK综合扩展补丁》。
 
-  -  `FNOK` 表示按键状态
-    -  `FNOK` =1：按下睡眠按键
-    -  `FNOK` =0：再次按下睡眠按键或者机器被唤醒后
-  -  `MODE` 设定睡眠模式
-    -  `MODE` =1：`PNP0C0E` 睡眠 
-    -  `MODE` =0：`PNP0C0D` 睡眠
+  - `FNOK` 表示按键状态
+    - `FNOK` =1：按下睡眠按键
+    - `FNOK` =0：再次按下睡眠按键或者机器被唤醒后
+  - `MODE` 设定睡眠模式
+    - `MODE` =1：`PNP0C0E` 睡眠
+    - `MODE` =0：`PNP0C0D` 睡眠
 
   注意：根据自己的需要设置 `MODE` ，但不可以更改 `FNOK` 。
 
 - ***SSDT-LIDpatch*** ：捕捉 `FNOK` 变化
 
-  - 如果 `FNOK` =1，盖子设备当前状态返回 `Zero` 
+  - 如果 `FNOK` =1，盖子设备当前状态返回 `Zero`
   - 如果 `FNOK` =0，盖子设备当前状态返回原始值
 
   注意： `PNP0C0D` 设备名称、路径要和ACPI一致。
 
--  ***睡眠按键补丁*** ：按键按下后，令 `FNOK` = `1` ，并根据不同的睡眠模式执行相应的操作
+- ***睡眠按键补丁*** ：按键按下后，令 `FNOK` = `1` ，并根据不同的睡眠模式执行相应的操作
 
   注意：`PNP0C0D` 设备名称、路径要和ACPI一致。
 
 #### 两种睡眠方式描述
 
--  `MODE` =1模式：当按下睡眠按键时， ***睡眠按键补丁*** 令 `FNOK=1`。 ***SSDT-PTSWAK*** 捕捉到 `FNOK` 为 `1`，强制令`Arg0=3`（否则`Arg0=5`）。待唤醒后恢复 `FNOK=0`。一次完整的 `PNP0C0E` 睡眠和唤醒过程结束。
--  `MODE` =0模式：当按下睡眠按键时，除了完成上述过程外， ***SSDT-LIDpatch*** 同时扑捉到 `FNOK=1` ，使 `_LID`  返回 `Zero` 并执行 `PNP0C0D` 睡眠。待唤醒后恢复 `FNOK=0`。一次完整的 `PNP0C0D` 睡眠和唤醒过程结束。
+- `MODE` =1模式：当按下睡眠按键时， ***睡眠按键补丁*** 令 `FNOK=1`。 ***SSDT-PTSWAK*** 捕捉到 `FNOK` 为 `1`，强制令`Arg0=3`（否则`Arg0=5`）。待唤醒后恢复 `FNOK=0`。一次完整的 `PNP0C0E` 睡眠和唤醒过程结束。
+- `MODE` =0模式：当按下睡眠按键时，除了完成上述过程外， ***SSDT-LIDpatch*** 同时扑捉到 `FNOK=1` ，使 `_LID`  返回 `Zero` 并执行 `PNP0C0D` 睡眠。待唤醒后恢复 `FNOK=0`。一次完整的 `PNP0C0D` 睡眠和唤醒过程结束。
 
 以下是 ***SSDT-LIDpatch*** 主要内容：
 
-```
-    Method (_LID, 0, NotSerialized)
+```Swift
+Method (_LID, 0, NotSerialized)
+{
+    if(\_SB.PCI9.FNOK==1)
     {
-        if(\_SB.PCI9.FNOK==1)
-        {
-            Return (0) //返回 Zero,满足PNP0C0D睡眠条件之一
-        }
-        Else
-        {
-            Return (\_SB.LID0.XLID()) //返回原始值
-        }
+        Return (0) /* 返回 Zero, 满足 PNP0C0D 睡眠条件之一 */
     }
+    Else
+    {
+        Return (\_SB.LID0.XLID()) /* 返回原始值 */
+    }
+}
 ```
 
 以下是 ***睡眠按键补丁*** 主要内容：
 
-```
-    If (\_SB.PCI9.MODE == 1) //PNP0C0E睡眠
+```Swift
+If (\_SB.PCI9.MODE == 1) /* PNP0C0E 睡眠 */
+{
+    \_SB.PCI9.FNOK =1 /* 按下睡眠按键 */
+    \_SB.PCI0.LPCB.EC.XQ13() /* 原始睡眠按键位置，示例是 TP 机器 */
+}
+Else /* PNP0C0D 睡眠 */
+{
+    If (\_SB.PCI9.FNOK!=1)
     {
-        \_SB.PCI9.FNOK =1 //按下睡眠按键
-        \_SB.PCI0.LPCB.EC.XQ13() //原始睡眠按键位置，示例是TP机器
+            \_SB.PCI9.FNOK =1 /* 按下睡眠按键 */
     }
-    Else //PNP0C0D睡眠
+    Else
     {
-        If (\_SB.PCI9.FNOK!=1)
-        {
-                \_SB.PCI9.FNOK =1 //按下睡眠按键
-        }
-        Else
-        {
-                \_SB.PCI9.FNOK =0 //再次按下睡眠按键
-        }
-        Notify (\_SB.LID, 0x80) //执行PNP0C0D睡眠
+            \_SB.PCI9.FNOK =0 /* 再次按下睡眠按键 */
     }
+    Notify (\_SB.LID, 0x80) /* 执行 PNP0C0D 睡眠 */
+}
 ```
-
-
 
 ### 更名和补丁组合示例:（Dell Latitude 5480 和 ThinkPad X1C5th）
 
@@ -119,7 +117,7 @@
 
   PTSWAK更名：`_PTS` to `ZPTS`、`_WAK` to `ZWAK`。
 
-  盖子状态更名： `_LID` to `XLID` 
+  盖子状态更名： `_LID` to `XLID`
 
   按键更名：`_Q13 to XQ13` (TP-Fn+F4)
   
@@ -143,7 +141,7 @@
 
   注意： `PNP0C0D` 设备名称、路径要和ACPI一致。
 
-- 查找睡眠按键位置、制作 ***睡眠按键补丁*** 
+- 查找睡眠按键位置、制作 ***睡眠按键补丁***
 
   - 一般情况下，睡眠按键是 `EC` 下的 `_Qxx`，这个 `_Qxx` 里包涵 `Notify(***.SLPB,0x80)` 指令。如果查找不到，DSDT 全文搜索 `Notify(***.SLPB,0x80)` ，找到其所在位置，逐步向上查找最初位置。
   - 参考示例制作睡眠按键补丁以及必要的更名。
@@ -163,8 +161,6 @@
 
 - 接入外显时，按下睡眠按键后，工作屏幕为外显（内屏灭）；再次按下睡眠按键，内屏、外显正常。
 
-  
-
 ## 注意事项
 
--  `PNP0C0E` 和 `PNP0C0D` 设备名称、路径要和ACPI一致。
+- `PNP0C0E` 和 `PNP0C0D` 设备名称、路径要和ACPI一致。

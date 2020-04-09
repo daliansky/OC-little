@@ -19,6 +19,5 @@
 
 ## 注意
 
-- 如果 ***SSDT-NDGP_OFF*** 和 ***SSDT-NDGP_PS3*** 均满足使用要求，优先使用 ***SSDT-NDGP_OFF*** 
+- 如果 ***SSDT-NDGP_OFF*** 和 ***SSDT-NDGP_PS3*** 均满足使用要求，优先使用 ***SSDT-NDGP_OFF***
 - 详细的屏蔽独显方法参考《SSDT屏蔽独显方法》
-

@@ -16,6 +16,7 @@
 - 问题解答：<https://github.com/XStar-Dev/xstar-dev.github.io/issues>
 
 ## Thanks
+
 - Rehabman（编写早期电池补丁教程并开发了 ACPIBatteryManager 电池驱动项目）
 - 宪武（ThinkPad 系列笔记本电池补丁示例）
 - GZ小白（电池热补丁收录）

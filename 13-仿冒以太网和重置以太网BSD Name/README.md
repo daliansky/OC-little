@@ -12,8 +12,6 @@
 
 - 在config中添加相关列表。
 
-  
-
 ## 附：重置以太网 `BSD Name` 为`en0`
 
 - 打开 **系统偏好设置** 的 **网络** 。
@@ -23,3 +21,4 @@
 - 再次进入系统后，再次打开 **系统偏好设置** 的 **网络** 。
 - 依次按顺序添加 **以太网** 和其他需要的网络，点击 **应用**。
 
+![](https://raw.githubusercontent.com/athlonreg/BlogImages/master/ClearNet.png)
