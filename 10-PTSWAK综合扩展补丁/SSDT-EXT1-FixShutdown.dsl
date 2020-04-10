@@ -1,6 +1,6 @@
 // Fix "restart after shutdown"
 // Credit RehabMan (Laptop-DSDT-Patch)
-DefinitionBlock("", "SSDT", 2, "OCLT", "EXT4", 0)
+DefinitionBlock("", "SSDT", 2, "OCLT", "EXT1", 0)
 {
     External (_SB_.PCI0.XHC_.PMEE, FieldUnitObj)
 
