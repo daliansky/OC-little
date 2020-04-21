@@ -1,4 +1,4 @@
-// PCI.LPCB-AOACWake
+// PCI0.LPCB-AOACWake
 //
 DefinitionBlock("", "SSDT", 2, "ACDT", "AOACWake", 0)
 {

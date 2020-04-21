@@ -33,7 +33,7 @@
 - 选择品质较好的 SSD：SLC>MLC>TLC>QLC（不确定）
 - 可能的话更新 SSD 固件以提高电源管理的效能
 - 使用 NVMeFix.kext 开启 SSD 的 APST
-- 启用主板 ASPM（BIOS 高级选项）
+- 启用 ASPM（BIOS 高级选项启用ASPM、补丁启用 L1）
 
 ## AOAC 睡眠、唤醒
 
@@ -51,7 +51,9 @@
 - 禁用独显补丁——参见《AOAC禁止独显》
 - 电源空闲管理补丁——参见《电源空闲管理》
 - AOAC唤醒补丁——参见《AOAC唤醒方法》
-- 《AOAC-PRW全局更名》
+- 秒醒补丁——参见《060D补丁》
+- 启用设备 LI ——参见《设置ASPM工作模式》，感谢 @iStar丶Forever 提供方法
+- 管控蓝牙WIFI——参见《睡眠自动关闭蓝牙WIFI》，感谢 @i5 ex900 0.66%/h 华星 OC Dreamn 提供方法
 
 ## 注意事项
 
