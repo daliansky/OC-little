@@ -4,6 +4,12 @@
 
 依据 OpenCore 0.5+ 的要求和建议，制作本部件补丁。
 
+## 在线手册
+
+本仓库依赖 GitBook 并使用 GitHub Actions 构建了 Pages 服务和 pdf 手册。
+  - [ocbook](https://blog.cloudops.ml/ocbook)
+  - [pdf](https://cdn.jsdelivr.net/gh/daliansky/OC-little/docs/OpenCore部件库.pdf)。
+
 ## 主要内容
 
 - **总述**
