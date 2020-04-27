@@ -7,8 +7,8 @@
 ## 在线手册
 
 本仓库依赖 GitBook 并使用 GitHub Actions 构建了 Pages 服务和 pdf 手册。
-  - [ocbook](https://blog.cloudops.ml/ocbook)
-  - [pdf](https://cdn.jsdelivr.net/gh/daliansky/OC-little/docs/OpenCore部件库.pdf)。
+  - [https://blog.cloudops.ml/ocbook](https://blog.cloudops.ml/ocbook)
+  - [OpenCore部件库](https://cdn.jsdelivr.net/gh/daliansky/OC-little/docs/OpenCore部件库.pdf)。
 
 ## 主要内容
 
