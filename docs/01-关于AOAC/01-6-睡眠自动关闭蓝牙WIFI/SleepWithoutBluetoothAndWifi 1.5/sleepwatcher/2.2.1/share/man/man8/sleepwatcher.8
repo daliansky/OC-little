@@ -1,0 +1,157 @@
+.Dd Fri Apr 2 2010       \" DATE 
+.Dt sleepwatcher 8       \" Program name and manual section number 
+.Os Darwin
+.\"
+.Sh NAME                 \" Section Header - required - don't modify 
+.Nm sleepwatcher
+.Nd daemon to monitor sleep, wakeup and idleness of a Mac
+.\"
+.Sh SYNOPSIS             \" Section Header - required - don't modify
+.Nm
+.Op Fl n                                 \" [-n]
+.Op Fl v                                 \" [-v]
+.Op Fl V                                 \" [-V]
+.Op Fl d                                 \" [-d]
+.Op Fl g                                 \" [-g]
+.Op Fl f Ar configfile                   \" [-f configfile]
+.Op Fl p Ar pidfile                      \" [-p pidfile]
+.Oo Fl a Ns                              \" [-a
+.Op allowsleepcommand                    \" [allowsleepcommand]
+.Oc                                      \" ]
+.Op Fl c Ar cantsleepcommand             \" [-c cantsleepcommand]
+.Op Fl s Ar sleepcommand                 \" [-s sleepcommand]
+.Op Fl w Ar wakeupcommand                \" [-w wakeupcommand]
+.Op Fl D Ar displaydimcommand            \" [-D displaydimcommand]
+.Op Fl E Ar displayundimcommand          \" [-E displayundimcommand]
+.Op Fl S Ar displaysleepcommand          \" [-S displaysleepcommand]
+.Op Fl W Ar displaywakeupcommand         \" [-W displaywakeupcommand]
+.Oo Fl t Ar timeout Fl i Ar idlecommand  \" [-t timeout -i idlecommand
+.Op Fl R Ar idleresumecommand            \" [-R idleresumecommand]
+.Oc                                      \" ]
+.Op Fl b Ar break Fl r Ar resumecommand  \" [-b break -r resumecommand]
+.Op Fl P Ar plugcommand  \" [-P plugcommand]
+.Op Fl U Ar unplugcommand\" [-U unplugcommand]
+.\"
+.Sh DESCRIPTION          \" Section Header - required - don't modify
+.Nm
+is a program that monitors sleep, wakeup and idleness of a Mac.
+It can be used to execute a Unix command when the Mac or the display of
+the Mac goes to sleep mode or wakes up, after a given time without user
+interaction or when the user resumes activity after a break or when
+the power supply of a Mac notebook is attached or detached.
+It also can send the Mac to sleep mode or retrieve the time since last
+user activity.
+.\"
+.Pp                      \" Inserts a space
+Command line options:
+.\"
+.Bl -tag -width -indent  \" Begins a tagged list 
+.It Fl n , Fl Fl now                \" Each item preceded by .It macro
+Sleep now and exit, ignoring other options.
+.It Fl v , Fl Fl version
+Display version and copyright information and exit.
+.It Fl V , Fl Fl verbose
+Log any action
+.Nm
+performs, either to stdout or, when running as daemon, to the syslog.
+.It Fl d , Fl Fl daemon
+Run as background daemon. Don't use this option when starting 
+.Nm
+via launchd(8).
+.It Fl g , Fl Fl getidletime
+Print the time (in 0.1 seconds) of no keyboard or mouse activity to stdout and exit,
+ignoring other options.
+.It Fl f Ar configfile , Fl Fl config Ar configfile
+Read additional configuration options from \fIconfigfile\fR.
+\fIconfigfile\fR contains options in the form \fBoption [ = value ]\fR where
+\fBoption\fR is one of the long command line options (without --).
+.Nm
+rereads its configuration file when it receives a hangup signal, SIGHUP.
+.It Fl p Ar pidfile , Fl Fl pidfile Ar pidfile
+Write the process id of
+.Nm
+to \fIpidfile\fR.
+.It Fl a Ns Oo Ar allowsleepcommand Oc , Fl Fl allowsleep Ns Op = Ns Ar allowsleepcommand
+Allow the Mac to idle sleep only when \fIallowsleepcommand\fR returns a zero
+exit code. Without \fIallowsleepcommand\fR, this option prevents idle sleep
+at all. When the \fB\-a\fR option is not used at all,
+.Nm
+allows idle sleep unconditionally. (Note: no space after the \fB-a\fR.)
+.It Fl c Ar cantsleepcommand , Fl Fl cantsleep Ar cantsleepcommand
+Execute \fIcantsleepcommand\fR when the Mac retracts an attempt to sleep
+that was previously allowed by the \fB-a\fR option, but vetoed by another process
+that wants to prevent idle sleep. Note that the kernel notifies
+.Nm
+about the retracted sleep only when it previously asked it if sleeping is allowed.
+There might be canceled idle sleep attempts without the \fB-a\fR and \fB-c\fR
+commands executed at all.
+.It Fl s Ar sleepcommand , Fl Fl sleep Ar sleepcommand
+Execute \fIsleepcommand\fR when the Mac is put to sleep mode.
+\fIsleepcommand\fR must not take longer than 15 seconds because
+after this timeout the sleep mode is forced by the system.
+.It Fl w Ar wakeupcommand , Fl Fl wakeup Ar wakeupcommand
+Execute \fIwakeupcommand\fR when the Mac wakes up from sleep mode.
+.It Fl D Ar displaydimcommand, Fl Fl displaydim Ar displaydimcommand
+Execute \fIdisplaydimcommand\fR when the display of the Mac is dimmed.
+Note that the \fIdisplaydimcommand\fR is executed when the Mac goes to
+sleep mode, too.
+.It Fl E Ar displayundimcommand, Fl Fl displayundim Ar displayundimcommand
+Execute \fIdisplayundimcommand\fR when the display of the Mac is undimmed
+without having gone to sleep.
+Note that the \fIdisplayundimcommand\fR is not executed when the Mac or
+the display of the Mac wakes up from sleep mode.
+.It Fl S Ar displaysleepcommand, Fl Fl displaysleep Ar displaysleepcommand
+Execute \fIdisplaysleepcommand\fR when the display of the Mac is put to sleep mode.
+.It Fl W Ar displaywakeupcommand, Fl Fl displaywakeup Ar displaywakeupcommand
+Execute \fIdisplaywakeupcommand\fR when the display of the Mac wakes up from sleep mode.
+Note that the \fIdisplaywakeupcommand\fR is executed when the Mac wakes up
+from sleep mode, too.
+.It Fl t Ar timeout , Fl Fl timeout Ar timeout
+Set the \fItimeout\fR (in 0.1 seconds) for the \fB-i\fR option,
+i. e. execute \fIidlecommand\fR after this time of no user interactivity.
+.It Fl i Ar idlecommand , Fl Fl idle Ar idlecommand
+Execute \fIidlecommand\fR after the time of no user interactivity
+set with the \fB-t\fR option.
+.It Fl R Ar idleresumecommand, Fl Fl idleresume Ar idleresumecommand
+Execute \fIidleresumecommand\fR when the user resumes input after the \fB-i\fR command
+was executed due to an idle time.
+.It Fl b Ar breakduration , Fl Fl break Ar breakduration
+Set the \fIbreakduration\fR (in 0.1 seconds) for the \fB-r\fR option,
+i. e. execute \fIresumecommand\fR when the user resumes input after a break
+of at least this duration.
+.It Fl r Ar resumecommand , Fl Fl resume Ar resumecommand
+Execute \fIresumecommand\fR when the user resumes keyboard or mouse activity
+after a break with a duration given with the \fB-b\fR option.
+.It Fl P Ar plugcommand , Fl Fl plug Ar plugcommand
+Execute \fIplugcommand\fR when a Mac notebook is connected to the power supply.
+.It Fl U Ar unplugcommand , Fl Fl unplug Ar unplugcommand
+Execute \fIunplugcommand\fR when a Mac notebook is disconnected from the power supply.
+.El                      \" Ends the list
+.\"
+.Sh SEE ALSO 
+.\" List links in ascending order by section, alphabetically within a section.
+.\" Please do not reference files that do not exist without filing a bug report
+.Xr pmset 1 ,
+.Xr launchd 8 ,
+.Xr SystemStarter 8
+.\"
+.Sh BUGS
+The \fB-t\fR \fB-i\fR and \fB-b\fR \fB-r\fR options only work when the Mac OS X GUI
+is running, so they cannot be used when
+.Nm
+is started as a system-wide
+.Xr launchd 8
+agent during system startup.
+.Pp
+Any user with execute permission for
+.Nm
+can send the Mac to sleep mode with the \fB-n\fR option, making the system
+unavailable for other (remote) users.
+.\"
+.Sh ACKNOWLEDGEMENTS
+Thanks to Daniel Griscom for the idea and code for the deny sleep feature.
+Thanks to Darren Creutz for the idea and code for the display sleep support.
+Thanks to Michael Lee for the ideas for idleness handling within
+.Nm .
+Thanks to Brian Jenkins for the idea and code for the power supply feature.
+And thanks to Louis Pan for the idea and code for the can't sleep callback.
