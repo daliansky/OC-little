@@ -1,0 +1,167 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww20060\viewh11880\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\partightenfactor0
+
+\f0\b\fs28 \cf0 SleepWatcher ReadMe
+\fs24 \
+
+\b0 \
+SleepWatcher is a command line tool (daemon) that monitors sleep, wakeup and idleness of a Mac. It can be used to execute a Unix command when the Mac or the display of the Mac goes to sleep mode or wakes up, after a given time without user interaction or when the user resumes activity after a break or when the power supply of a Mac notebook is attached or detached. It also can send the Mac to sleep mode or retrieve the time since last user activity.\
+\
+A little bit knowledge of the Unix command line is required to benefit from this software.\
+\
+The current version removes the installer packages and requires manual installation. This hopefully prevents people without sufficient Unix knowledge to install this software. When you don\'92t feel familiar with the following installation hints, you are probably not the target audience of this software.\
+\
+\
+
+\b Upgrade from Version 2.0.5 (or below)\
+
+\b0 \
+For the following steps, we assume that you have unpacked the SleepWatcher 2.2.1 download on your desktop, i. e. you have the folder ~/Desktop/sleepwatcher_2.2.1 with this ReadMe as ~/Desktop/sleepwatcher_2.2.1/ReadMe.rtf.\
+\
+\pard\tx560\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\partightenfactor0
+\cf0 1. Kill the running daemon and remove the old startup item:\
+\
+
+\f1 $ sudo killall sleepwatcher\
+$ sudo rm -rf /Library/StartupItems/SleepWatcher\
+
+\f0 \
+2. Copy the new binary and man page:\
+\
+
+\f1 $ sudo cp ~/Desktop/sleepwatcher_2.2.1/sleepwatcher /usr/local/sbin\
+$ sudo cp ~/Desktop/sleepwatcher_2.2.1/sleepwatcher.8 /usr/local/share/man/man8\
+
+\f0 \
+3. Copy the launchd agent configuration and the updated rc scripts (when you have modified them, compare your version and the new one and update them as required):\
+\
+
+\f1 $ sudo cp ~/Desktop/sleepwatcher_2.2.1/config/de.bernhard-baehr.sleepwatcher-20compatibility.plist /Library/LaunchDaemons/de.bernhard-baehr.sleepwatcher.plist\
+$ sudo cp ~/Desktop/sleepwatcher_2.2.1/config/rc.* /etc\
+
+\f0 \
+4. Load the launchd agent configuration, this starts the SleepWatcher daemon:\
+\
+
+\f1 $ sudo launchctl load /Library/LaunchDaemons/de.bernhard-baehr.sleepwatcher.plist\
+
+\f0 \
+Now SleepWatcher runs again in an environment that matches the version 2.0 environment: users of the Mac can create executable files .sleep and .wakeup in their home directories that are executed when the Mac goes to sleep mode or wakes up. When you reboot the Mac, SleepWatcher is started automatically via launchd.\
+\
+When you use SleepWatcher on a single user Mac and only want to execute your own .sleep and .wakeup scripts, it is suggested not to run SleepWatcher as a system wide daemon with root permissions, but to run your own instance of SleepWatcher. To achieve this, after performing the above steps 1 and 2, continue with step 5:\
+\
+5. Remove the old global rc scripts:\
+\
+
+\f1 $ sudo rm -f /etc/rc.sleep /etc/rc.wakeup\
+
+\f0 \
+6. Copy the launchd agent configuration for a local user instance of SleepWatcher:\
+\
+
+\f1 $ mkdir ~/Library/LaunchAgents\
+$ cp ~/Desktop/sleepwatcher_2.2.1/config/de.bernhard-baehr.sleepwatcher-20compatibility-localuser.plist ~/Library/LaunchAgents/de.bernhard-baehr.sleepwatcher.plist\
+
+\f0 \
+7. Load the local launchd agent configuration, this starts the SleepWatcher daemon with your user account:\
+\
+
+\f1 $ launchctl load ~/Library/LaunchAgents/de.bernhard-baehr.sleepwatcher.plist\
+
+\f0 \
+Now SleepWatcher runs as a user agent that is stopped when you log off from the Mac and that is restarted when you log in again. Note that you must run SleepWatcher as a user agent when you want to use the options -t -i or -b -r (execute a command after a given time of user inactivity or when the user resumes its activity after a break), because these options require the Mac OS X GUI running, and this is not the case when SleepWatcher is started as a system wide daemon while booting.\
+\
+\
+
+\b Upgrade from Version 2.1 and later\
+
+\b0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\partightenfactor0
+\cf0 For the following steps, we assume that you have unpacked the SleepWatcher 2.2.1 download on your desktop, i. e. you have the folder ~/Desktop/sleepwatcher_2.2.1 with this ReadMe as ~/Desktop/sleepwatcher_2.2.1/ReadMe.rtf.\
+\
+\pard\tx560\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\partightenfactor0
+\cf0 1. Replace /usr/local/sbin/sleepwatcher and /usr/local/share/man/man8:\
+\
+
+\f1 $ sudo cp ~/Desktop/sleepwatcher_2.2.1/sleepwatcher /usr/local/sbin\
+$ sudo cp ~/Desktop/sleepwatcher_2.2.1/sleepwatcher.8 /usr/local/share/man/man8\
+
+\f0 \
+2. Kill the running SleepWatcher processes and let launchd restart them:\
+\
+
+\f1 $ sudo killall sleepwatcher\
+
+\f0 \
+\
+
+\b Installation for new SleepWatcher users\
+
+\b0 \
+When you never have used SleepWatcher before, the following steps are suggests, assuming that you have unpacked the SleepWatcher 2.2.1 download on your desktop, i. e. you have the folder ~/Desktop/sleepwatcher_2.2.1 with this ReadMe as ~/Desktop/sleepwatcher_2.2.1/ReadMe.rtf.\
+\
+1. Install the SleepWatcher software:\
+\
+
+\f1 $ sudo mkdir -p /usr/local/sbin /usr/local/share/man/man8\
+$ sudo cp ~/Desktop/sleepwatcher_2.2.1/sleepwatcher /usr/local/sbin\
+$ sudo cp ~/Desktop/sleepwatcher_2.2.1/sleepwatcher.8 /usr/local/share/man/man8\
+
+\f0 \
+2. Read the man page and think about the features of SleepWatcher you want to use:\
+\
+
+\f1 $ man sleepwatcher\
+
+\f0 \
+3. Write small shell scripts that perform the actions you want to trigger by SleepWacher and test them.\
+\
+4. Test your scripts in combination with SleepWatcher, started in the foreground in a Terminal window, e. g.:\
+\
+
+\f1 $ /usr/local/sbin/sleepwatcher --verbose --sleep /path/to/your/sleepscript --wakeup /path/to/your/wakeupscript ...\
+
+\f0 \
+5. Put your SleepWatcher command line into a launchd agent configuration file. As an example you can use one of the plists from ~/Desktop/sleepwatcher_2.2.1/config. For more information about launchd and its configuration, see the man pages for launchd and launchd.plist and {\field{\*\fldinst{HYPERLINK "http://developer.apple.com/macosx/launchd.html"}}{\fldrslt http://developer.apple.com/macosx/launchd.html}}.\
+\
+6. Copy your launchd agent configuration to /Library/LaunchDaemons or ~/Library/LaunchAgents, depending on whether you need a system wide daemon or a user agent. \
+\
+7. Load the launchd agent configuration using launchctl (see examples above and the launchctl man page).\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\partightenfactor0
+\cf0 \
+\
+
+\b Version History\
+\
+
+\b0 24.12.2002	version 1.0		first public release\
+12.01.2003	version 1.0.1		SleepWatcher is now compatible with Mac OS X 10.1 (SleepWatcher 1.0.1 is compatible with Mac OS X 10.1-10.3)\
+05.05.2005	version 2.0		SleepWatcher evolved to a more general activity monitor (SleepWatcher 2.0 is compatible with Mac OS X 10.3-10.4)\
+08.06.2005	version 2.0.1		more robust /etc/rc.sleep and /etc/rc.wakeup scripts, installer packages no longer disturb directory permissions\
+31.12.2005	version 2.0.2		added -E option to execute a command when the display undims without having slept before, /etc/rc.sleep and\
+					/etc/rc.wakup now only execute sleep or wakeup scripts of users currently logged in\
+07.01.2006	version 2.0.3		Mac OS X 10.3 compatibility was broken in version 2.0.2\
+28.04.2006	version 2.0.4		SleepWatcher is now a Universal binary, /etc/rc.sleep and /etc/rc.wakeup now handle user names with more than eight characters correctly\
+02.11.2007	version 2.0.5		SleepWatcher is now compatible with Mac OS X 10.5\
+02.04.2010	version 2.1		added -b -r, -P and -U options; removed the installer packages and switched to launchd for starting SleepWatcher\
+					(SleepWatcher 2.1 runs with Mac OS X 10.5 or 10.6)\
+06.02.2011	version 2.1.1		fixed a bug in argument parsing (when using only the -P or -U option, SleepWatcher 2.1 complained about \'84no useful options\'93);\
+					now the idle timer (for the -t -i option) is reset when the Mac wakes up, so the idle command is executed even when the wakeup took place\
+					without user interactivity (scheduled wakeup or Wake On LAN)\
+25.07.2011	version 2.1.2		removes the syslog warning \'84IOHIDDeviceRegisterInputValueCallback called with a null context\'93 that appears with Mac OS X 10.7\
+28.08.2011	version 2.2		added the -c and -R options; improved specification of the command line syntax for SleepWatcher\
+19.04.2019	version 2.2.1		SleepWatcher now has a 64-bit executable. With the -b -r option, the resumecommand is no longer executed repeatedly when it takes\
+					a longer time (in the order of the -b break duration) to run. Added quotes in the su command of rc.sleep and rc.wakeup to handle\
+					home directories with spaces correctly.\
+\
+\
+Copyright (C) 2002-2019 Bernhard Baehr (bernhard.baehr@gmx.de)\
+\
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.\
+\
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\
+\
+You should have received a copy of the GNU General Public License along with this program. If not, see <{\field{\*\fldinst{HYPERLINK "http://www.gnu.org/licenses/"}}{\fldrslt http://www.gnu.org/licenses/}}>.}

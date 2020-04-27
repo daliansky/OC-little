@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+#	rc.wakeup
+#
+#	script to be executed on wakeup by the sleepwatcher daemon
+#
+#	17.11.2002 bb	created
+#	22.11.2002 bb	added .wakeup script handling
+#	22.12.2002 bb	quoted $home (might contain space)
+#	22.06.2003 adb  use nidump to detect home directories
+#	22.05.2005 bb	use nigrep (old method missed last account in
+#			the nidump output), check for interactive users
+#			(users with a /etc/shells shell), log .wakeup
+#			execution to the syslog
+#	15.08.2005 bb   added >/dev/null to grep command because of
+#			file descriptor problems with Mac OS X 10.3.9
+#	31.12.2005 bb	execute the wakeup script only for users currently
+#			logged in
+#	07.01.2006 bb   replaced "who -q" with "users" (Mac OS X 10.3 who
+#			does not support the -q option)
+#       20.04.2006 bb   ${name:0:8} instead of $name: users returns short
+#                       user names (8 chars), but the NI database can have
+#                       longer names
+#	26.06.2006 bb	modified "eval $var=$val" to use awk to get only
+#			the first word of $val for compatibility with user
+#			accounts from Active Directory
+#	20.08.2006 bb	rewritten using scutil (thanks to a hint of
+#			Nicholas Riley)
+#	04.10.2007 bb	in su: $name -> $user
+#	02.04.2010 bb	old nigrep code remove
+#	07.07.2012 bb	in the su command line, double quotes added ($home
+#			might contain space) (thanks to a hint of Michael
+#			Winestock)
+#
+
+for user in `echo 'show State:/Users/ConsoleUser' | scutil | awk '/kCGSSessionUserNameKey/ { print $3 }'`; do
+	home=`eval echo ~$user`
+	if [ -x "$home/.wakeup" ]; then
+		logger -t $0 "executing .wakeup of user $user"
+		su - $user -c "\"$home/.wakeup\""
+	fi
+done
