@@ -7,27 +7,28 @@
 ## 在线手册
 
 本仓库依赖 GitBook 并使用 GitHub Actions 构建了 Pages 服务和 pdf 手册。
-  - [https://blog.cloudops.ml/ocbook](https://blog.cloudops.ml/ocbook)
-  - [OpenCore部件库](https://cdn.jsdelivr.net/gh/daliansky/OC-little/docs/OpenCore部件库.pdf)
+  - [http://ocbook.tlhub.cn](http://ocbook.tlhub.cn)
+  - [OpenCore 部件库](https://cdn.jsdelivr.net/gh/daliansky/OC-little/docs/OpenCore部件库.pdf)
 
 ## 主要内容
 
 - **总述**
 
   1. `ASL`语法基础
-  1. `SSDT` 补丁加载顺序
+  2. `SSDT` 补丁加载顺序
 
 1. **关于`AOAC`**
 
    1. 禁止`S3`睡眠
-   1. `AOAC`禁用独显
-   1. 电源空闲管理
-   1. `AOAC`唤醒补丁
-   1. 设置`ASPM`工作模式
-   1. 睡眠自动关闭蓝牙`WIFI`
+   2. `AOAC`禁用独显
+   3. 电源空闲管理
+   4. `AOAC`唤醒补丁
+   5. 设置`ASPM`工作模式
+   6. 睡眠自动关闭蓝牙`WIFI`
 
 2. **仿冒设备**
-1. 仿冒`EC`
+
+   1. 仿冒`EC`
    2. RTC0
    3. 键盘无法输入的应急解决方案 `PS2N`
    4. 仿冒环境光传感器
@@ -95,10 +96,10 @@
 **常见驱动加载顺序：**
 
    1. config-1-Lilu-SMC-WEG-ALC 驱动列表
-   1. config-2-PS2 键盘驱动列表
-   1. config-3-BCM 无线和蓝牙驱动列表
-   1. config-4-I2C 驱动列表
-   1. config-5-PS2Smart 键盘驱动列表
+   2. config-2-PS2 键盘驱动列表
+   3. config-3-BCM 无线和蓝牙驱动列表
+   4. config-4-I2C 驱动列表
+   5. config-5-PS2Smart 键盘驱动列表
 
 ### Credits
 

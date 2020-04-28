@@ -28,6 +28,7 @@ jobs:
       - name: Build
         run: |
           gitbook build . ./docs
+          rm -rf ./docs/*.pdf
           gitbook pdf . ./docs/OpenCore部件库.pdf
           
       - name: Commit
