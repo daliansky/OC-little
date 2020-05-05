@@ -2664,6 +2664,8 @@
 </li>
 <li><p>&#x6709;&#x5173; <strong>&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8865;&#x4E01;</strong> &#x65B9;&#x9762;&#x7684;&#x7B80;&#x8981;&#x53D9;&#x8FF0;&#x89C1;&#x9644;&#x4EF6;&#x300A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8865;&#x4E01;&#x7531;&#x6765;&#x300B;&#x3002;</p>
 </li>
+<li><p>&#x5BF9;&#x4E8E; OpenCore &#x800C;&#x8A00;&#xFF0C;&#x5E94;&#x5F53;&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x66F4;&#x540D;&#x64CD;&#x4F5C;&#xFF0C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8865;&#x4E01;&#x672C;&#x610F;&#x662F;&#x7528;&#x4EE5;&#x8C03;&#x8BD5; ACPI&#xFF0C;&#x5F53;&#x8C03;&#x8BD5;&#x5B8C;&#x6210;&#x5E94;&#x6839;&#x636E;&#x5177;&#x4F53;&#x95EE;&#x9898;&#x8FDB;&#x884C;&#x8865;&#x4E01;&#x7684;&#x5236;&#x4F5C;&#xFF0C;&#x5728;&#x6B63;&#x5E38;&#x4F7F;&#x7528;&#x540E;&#x5E94;&#x5F53;&#x5220;&#x9664;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8865;&#x4E01;&#x3002;&#x5176;&#x4E2D;&#x67D0;&#x4E9B;&#x673A;&#x5668;&#x7531;&#x4E8E;&#x7528;&#x5230;&#x4E86;&#x5176;&#x5B83;&#x53D8;&#x91CF;(&#x5982; OSID)&#xFF0C;&#x800C;&#x4E14;&#x4E0E;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8865;&#x4E01;&#x4EA7;&#x751F;&#x4E86;&#x51B2;&#x7A81;&#xFF0C;&#x56E0;&#x6B64;&#x9700;&#x8981;&#x9996;&#x5148;&#x5C06;&#x5176;&#x8FDB;&#x884C;&#x66F4;&#x540D;&#x4EE5;&#x907F;&#x514D;&#x51B2;&#x7A81;&#x7684;&#x51FA;&#x73B0;&#xFF0C;&#x4F46;&#x8FD9;&#x4E9B;&#x51B2;&#x7A81;&#x7684;&#x53D8;&#x91CF;&#x4E0E;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8865;&#x4E01;&#x672C;&#x8D28;&#x4E0A;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5173;&#x7CFB;&#xFF0C;&#x5728;&#x8C03;&#x8BD5;&#x5B8C;&#x6210;&#x540E;&#x6B63;&#x5E38;&#x4F7F;&#x7528;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5747;&#x5E94;&#x5220;&#x9664;&#x3002;</p>
+</li>
 </ul>
 <h2 id="&#x66F4;&#x540D;">&#x66F4;&#x540D;</h2>
 <ul>
@@ -2672,11 +2674,16 @@
 Replace:  58534944
 </code></pre>
 </li>
+<li><p><strong>OSIF to XSIF</strong></p>
+<pre><code class="lang-text">Find:     4F534946
+Replace:  58534946
+</code></pre>
+</li>
 <li><p><strong>_OSI to XOSI</strong></p>
 <pre><code class="lang-text">Find:     5F4F5349
 Replace:  584F5349
 </code></pre>
-<p>&#x5F53; DSDT &#x5B58;&#x5728; <code>OSID</code> &#x65F6; (Dell &#x7B14;&#x8BB0;&#x672C;&#x7B49;)&#xFF0C;&#x8981;&#x6C42;&#x540C;&#x65F6;&#x4F7F;&#x7528; <code>OSID to XSID</code> &#x548C; <code>_OSI to XOSI</code> &#xFF0C;&#x5E76;&#x4E14; <code>OSID to XSID</code> &#x5728; <code>_OSI to XOSI</code> &#x4E4B;&#x524D;&#x3002;&#x5426;&#x5219;&#xFF0C;&#x53EA;&#x4F7F;&#x7528; <code>_OSI to XOSI</code>&#x3002;</p>
+<p>&#x5728;&#x539F;&#x59CB; DSDT &#x4E2D;&#x641C;&#x7D22; <code>OSI</code>&#xFF0C;&#x5982;&#x679C;&#x9664;&#x4E86; <code>_OSI</code> &#x51FD;&#x6570;&#x4EE5;&#x5916;&#x3001;&#x8FD8;&#x6709;&#x5176;&#x5B83;&#x5305;&#x542B; <code>OSI</code> &#x7684;&#x5B57;&#x6BB5;&#xFF08;&#x5982; Dell &#x7B14;&#x8BB0;&#x672C;&#x7684; <code>OSID</code>&#x3001;&#x90E8;&#x5206; ThinkPad &#x548C;&#x8054;&#x60F3;&#x7B14;&#x8BB0;&#x672C;&#x7684; <code>OSIF</code>&#xFF09;&#xFF0C;&#x5FC5;&#x987B;&#x5148;&#x6DFB;&#x52A0; &#x5BF9;&#x8FD9;&#x4E9B;&#x5305;&#x542B; <code>OSI</code> &#x5B57;&#x6BB5;&#x7684;&#x91CD;&#x547D;&#x540D;&#xFF08;&#x5982; <code>OSID to XSID</code>&#x3001;<code>OSIF to XSIF</code>&#xFF09;&#x3001;&#x7136;&#x540E;&#x518D;&#x6DFB;&#x52A0; <code>_OSI to XOSI</code>&#x3002;<br>&#x5982;&#x679C;&#x9664; <code>_OSI</code> &#x51FD;&#x6570;&#x4EE5;&#x5916;&#x65E0;&#x5176;&#x5B83;&#x5305;&#x542B; <code>OSI</code> &#x7684;&#x5B57;&#x6BB5;&#x3001;&#x76F4;&#x63A5;&#x6DFB;&#x52A0; <code>_OSI to XOSI</code> &#x5373;&#x53EF;&#x3002;</p>
 </li>
 </ul>
 <h2 id="&#x8865;&#x4E01;&#xFF1A;-ssdt-oc-xosi">&#x8865;&#x4E01;&#xFF1A; <strong><em>SSDT-OC-XOSI</em></strong></h2>
@@ -2829,7 +2836,7 @@ Replace:  584F5349
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"04-操作系统补丁","level":"1.6","depth":1,"next":{"title":"操作系统更名.plist","level":"1.6.1","depth":2,"path":"04-操作系统补丁/操作系统更名.md","ref":"04-操作系统补丁/操作系统更名.md","articles":[]},"previous":{"title":"SSDT-RTC_Y-AWAC_N.dsl","level":"1.5.3.2","depth":3,"path":"03-二进制更名与预置变量/补丁库/SSDT-RTC_Y-AWAC_N.md","ref":"03-二进制更名与预置变量/补丁库/SSDT-RTC_Y-AWAC_N.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"04-操作系统补丁/README.md","mtime":"2020-05-04T12:39:38.634Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-04T12:41:31.941Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"04-操作系统补丁","level":"1.6","depth":1,"next":{"title":"操作系统更名.plist","level":"1.6.1","depth":2,"path":"04-操作系统补丁/操作系统更名.md","ref":"04-操作系统补丁/操作系统更名.md","articles":[]},"previous":{"title":"SSDT-RTC_Y-AWAC_N.dsl","level":"1.5.3.2","depth":3,"path":"03-二进制更名与预置变量/补丁库/SSDT-RTC_Y-AWAC_N.md","ref":"03-二进制更名与预置变量/补丁库/SSDT-RTC_Y-AWAC_N.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"04-操作系统补丁/README.md","mtime":"2020-05-05T15:24:27.339Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-05T15:26:29.428Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
