@@ -4,6 +4,10 @@
 // Find:     4F534944
 // Replace:  58534944
 //
+// In config ACPI, OSIF to XSIF
+// Find:     4F534946
+// Replace:  58534946
+//
 // In config ACPI, _OSI to XOSI
 // Find:     5F4F5349
 // Replace:  584F5349
