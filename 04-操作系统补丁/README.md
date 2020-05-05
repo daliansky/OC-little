@@ -15,6 +15,13 @@
   Replace:  58534944
   ```
 
+- **OSIF to XSIF**
+
+  ```text
+  Find:     4F534946
+  Replace:  58534946
+  ```
+
 - **_OSI to XOSI**
 
   ```text
@@ -22,7 +29,8 @@
   Replace:  584F5349
   ```
 
-  当 DSDT 存在 `OSID` 时 (Dell 笔记本等)，要求同时使用 `OSID to XSID` 和 `_OSI to XOSI` ，并且 `OSID to XSID` 在 `_OSI to XOSI` 之前。否则，只使用 `_OSI to XOSI`。
+  在原始 DSDT 中搜索 `OSI`，如果除了 `_OSI` 函数以外、还有其它包含 `OSI` 的字段（如 Dell 笔记本的 `OSID`、部分 ThinkPad 和联想笔记本的 `OSIF`），必须先添加 对这些包含 `OSI` 字段的重命名（如 `OSID to XSID`、`OSIF to XSIF`）、然后再添加 `_OSI to XOSI`。  
+  如果除 `_OSI` 函数以外无其它包含 `OSI` 的字段、直接添加 `_OSI to XOSI` 即可。
 
 ## 补丁： ***SSDT-OC-XOSI***
 
