@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>SSDT-xh_OEMBD_XHC.dsl · GitBook</title>
+        <title>操作系统补丁前置更名.plist · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../17-禁止PCI设备/" />
+    <link rel="next" href="操作系统更名.html" />
     
     
-    <link rel="prev" href="SSDT-CB-01_XHC.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -705,9 +705,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="../04-操作系统补丁/">
+        <li class="chapter " data-level="1.6" data-path="./">
             
-                <a href="../04-操作系统补丁/">
+                <a href="./">
             
                     
                     04-操作系统补丁
@@ -719,9 +719,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="../04-操作系统补丁/操作系统补丁前置更名.html">
+        <li class="chapter active" data-level="1.6.1" data-path="操作系统补丁前置更名.html">
             
-                <a href="../04-操作系统补丁/操作系统补丁前置更名.html">
+                <a href="操作系统补丁前置更名.html">
             
                     
                     操作系统补丁前置更名.plist
@@ -732,9 +732,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" data-path="../04-操作系统补丁/操作系统更名.html">
+        <li class="chapter " data-level="1.6.2" data-path="操作系统更名.html">
             
-                <a href="../04-操作系统补丁/操作系统更名.html">
+                <a href="操作系统更名.html">
             
                     
                     操作系统更名.plist
@@ -745,9 +745,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" data-path="../04-操作系统补丁/SSDT-OC-XOSI.html">
+        <li class="chapter " data-level="1.6.3" data-path="SSDT-OC-XOSI.html">
             
-                <a href="../04-操作系统补丁/SSDT-OC-XOSI.html">
+                <a href="SSDT-OC-XOSI.html">
             
                     
                     SSDT-OC-XOSI.dsl
@@ -2155,9 +2155,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.18" data-path="./">
+        <li class="chapter " data-level="1.18" data-path="../16-ACPI定制USB端口/">
             
-                <a href="./">
+                <a href="../16-ACPI定制USB端口/">
             
                     
                     16-ACPI定制USB端口
@@ -2169,9 +2169,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.18.1" data-path="SSDT-CB-01_XHC.html">
+        <li class="chapter " data-level="1.18.1" data-path="../16-ACPI定制USB端口/SSDT-CB-01_XHC.html">
             
-                <a href="SSDT-CB-01_XHC.html">
+                <a href="../16-ACPI定制USB端口/SSDT-CB-01_XHC.html">
             
                     
                     SSDT-CB-01_XHC.dsl
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.18.2" data-path="SSDT-xh_OEMBD_XHC.html">
+        <li class="chapter " data-level="1.18.2" data-path="../16-ACPI定制USB端口/SSDT-xh_OEMBD_XHC.html">
             
-                <a href="SSDT-xh_OEMBD_XHC.html">
+                <a href="../16-ACPI定制USB端口/SSDT-xh_OEMBD_XHC.html">
             
                     
                     SSDT-xh_OEMBD_XHC.dsl
@@ -2655,7 +2655,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >SSDT-xh_OEMBD_XHC.dsl</a>
+        <a href=".." >操作系统补丁前置更名.plist</a>
     </h1>
 </div>
 
@@ -2670,614 +2670,86 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <pre><code class="lang-swift"><span class="hljs-comment">//</span>
-<span class="hljs-type">DefinitionBlock</span> (<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;SSDT&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-string">&quot;OCLT&quot;</span>, <span class="hljs-string">&quot;MY_OEMBD&quot;</span>, <span class="hljs-number">0x00000000</span>)
-{
-    <span class="hljs-type">External</span> (_SB_.<span class="hljs-type">CBID</span>, <span class="hljs-type">IntObj</span>)
-    <span class="hljs-type">External</span> (_SB_.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC_</span>.<span class="hljs-type">RHUB</span>, <span class="hljs-type">DeviceObj</span>)
-    <span class="hljs-type">External</span> (_SB_.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC_</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">HS01</span>, <span class="hljs-type">DeviceObj</span>)
-    <span class="hljs-type">External</span> (_SB_.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC_</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">HS02</span>, <span class="hljs-type">DeviceObj</span>)
-    <span class="hljs-type">External</span> (_SB_.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC_</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">HS03</span>, <span class="hljs-type">DeviceObj</span>)
-    <span class="hljs-type">External</span> (_SB_.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC_</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">HS04</span>, <span class="hljs-type">DeviceObj</span>)
-    <span class="hljs-type">External</span> (_SB_.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC_</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">HS05</span>, <span class="hljs-type">DeviceObj</span>)
-    <span class="hljs-type">External</span> (_SB_.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC_</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">HS06</span>, <span class="hljs-type">DeviceObj</span>)
-    <span class="hljs-type">External</span> (_SB_.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC_</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">HS07</span>, <span class="hljs-type">DeviceObj</span>)
-    <span class="hljs-type">External</span> (_SB_.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC_</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">HS08</span>, <span class="hljs-type">DeviceObj</span>)
-    <span class="hljs-type">External</span> (_SB_.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC_</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">HS09</span>, <span class="hljs-type">DeviceObj</span>)
-    <span class="hljs-type">External</span> (_SB_.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC_</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">HS10</span>, <span class="hljs-type">DeviceObj</span>)
-    <span class="hljs-type">External</span> (_SB_.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC_</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">SS01</span>, <span class="hljs-type">DeviceObj</span>)
-    <span class="hljs-type">External</span> (_SB_.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC_</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">SS02</span>, <span class="hljs-type">DeviceObj</span>)
-    <span class="hljs-type">External</span> (_SB_.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC_</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">SS03</span>, <span class="hljs-type">DeviceObj</span>)
-    <span class="hljs-type">External</span> (_SB_.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC_</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">SS04</span>, <span class="hljs-type">DeviceObj</span>)
-    <span class="hljs-type">External</span> (_SB_.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC_</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">SS05</span>, <span class="hljs-type">DeviceObj</span>)
-    <span class="hljs-type">External</span> (_SB_.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC_</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">SS06</span>, <span class="hljs-type">DeviceObj</span>)
-    <span class="hljs-type">External</span> (_SB_.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC_</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">USR1</span>, <span class="hljs-type">DeviceObj</span>)
-    <span class="hljs-type">External</span> (_SB_.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC_</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">USR2</span>, <span class="hljs-type">DeviceObj</span>)
-    <span class="hljs-comment">//External (CBID, UnknownObj)</span>
-
-    <span class="hljs-type">Scope</span> (\_SB.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC</span>.<span class="hljs-type">RHUB</span>)
-    {
-        <span class="hljs-type">Method</span> (<span class="hljs-type">GPLD</span>, <span class="hljs-number">2</span>, <span class="hljs-type">Serialized</span>)
-        {
-            <span class="hljs-type">Name</span> (<span class="hljs-type">PCKG</span>, <span class="hljs-type">Package</span> (<span class="hljs-number">0x01</span>)
-            {
-                <span class="hljs-type">Buffer</span> (<span class="hljs-number">0x10</span>){}
-            })
-            <span class="hljs-type">CreateField</span> (<span class="hljs-type">DerefOf</span> (<span class="hljs-type">PCKG</span> [<span class="hljs-type">Zero</span>]), <span class="hljs-type">Zero</span>, <span class="hljs-number">0x07</span>, <span class="hljs-type">REV</span>)
-            <span class="hljs-type">REV</span> = <span class="hljs-type">One</span>
-            <span class="hljs-type">CreateField</span> (<span class="hljs-type">DerefOf</span> (<span class="hljs-type">PCKG</span> [<span class="hljs-type">Zero</span>]), <span class="hljs-number">0x40</span>, <span class="hljs-type">One</span>, <span class="hljs-type">VISI</span>)
-            <span class="hljs-type">VISI</span> = <span class="hljs-type">Arg0</span>
-            <span class="hljs-type">CreateField</span> (<span class="hljs-type">DerefOf</span> (<span class="hljs-type">PCKG</span> [<span class="hljs-type">Zero</span>]), <span class="hljs-number">0x57</span>, <span class="hljs-number">0x08</span>, <span class="hljs-type">GPOS</span>)
-            <span class="hljs-type">GPOS</span> = <span class="hljs-type">Arg1</span>
-            <span class="hljs-type">Return</span> (<span class="hljs-type">PCKG</span>) <span class="hljs-comment">/* \_SB_.PCI0.XHC_.RHUB.GPLD.PCKG */</span>
-        }
-
-        <span class="hljs-type">Method</span> (<span class="hljs-type">GUPC</span>, <span class="hljs-number">1</span>, <span class="hljs-type">Serialized</span>)
-        {
-            <span class="hljs-type">Name</span> (<span class="hljs-type">PCKG</span>, <span class="hljs-type">Package</span> (<span class="hljs-number">0x04</span>)
-            {
-                <span class="hljs-type">Zero</span>, 
-                <span class="hljs-number">0xFF</span>, 
-                <span class="hljs-type">Zero</span>, 
-                <span class="hljs-type">Zero</span>
-            })
-            <span class="hljs-type">PCKG</span> [<span class="hljs-type">Zero</span>] = <span class="hljs-type">Arg0</span>
-            <span class="hljs-type">Return</span> (<span class="hljs-type">PCKG</span>) <span class="hljs-comment">/* \_SB_.PCI0.XHC_.RHUB.GUPC.PCKG */</span>
-        }
-
-        <span class="hljs-type">Method</span> (<span class="hljs-type">TPLD</span>, <span class="hljs-number">2</span>, <span class="hljs-type">Serialized</span>)
-        {
-            <span class="hljs-type">Name</span> (<span class="hljs-type">PCKG</span>, <span class="hljs-type">Package</span> (<span class="hljs-number">0x01</span>)
-            {
-                <span class="hljs-type">Buffer</span> (<span class="hljs-number">0x10</span>){}
-            })
-            <span class="hljs-type">CreateField</span> (<span class="hljs-type">DerefOf</span> (<span class="hljs-type">PCKG</span> [<span class="hljs-type">Zero</span>]), <span class="hljs-type">Zero</span>, <span class="hljs-number">0x07</span>, <span class="hljs-type">REV</span>)
-            <span class="hljs-type">REV</span> = <span class="hljs-type">One</span>
-            <span class="hljs-type">CreateField</span> (<span class="hljs-type">DerefOf</span> (<span class="hljs-type">PCKG</span> [<span class="hljs-type">Zero</span>]), <span class="hljs-number">0x40</span>, <span class="hljs-type">One</span>, <span class="hljs-type">VISI</span>)
-            <span class="hljs-type">VISI</span> = <span class="hljs-type">Arg0</span>
-            <span class="hljs-type">CreateField</span> (<span class="hljs-type">DerefOf</span> (<span class="hljs-type">PCKG</span> [<span class="hljs-type">Zero</span>]), <span class="hljs-number">0x57</span>, <span class="hljs-number">0x08</span>, <span class="hljs-type">GPOS</span>)
-            <span class="hljs-type">GPOS</span> = <span class="hljs-type">Arg1</span>
-            <span class="hljs-type">CreateField</span> (<span class="hljs-type">DerefOf</span> (<span class="hljs-type">PCKG</span> [<span class="hljs-type">Zero</span>]), <span class="hljs-number">0x4A</span>, <span class="hljs-number">0x04</span>, <span class="hljs-type">SHAP</span>)
-            <span class="hljs-type">SHAP</span> = <span class="hljs-type">One</span>
-            <span class="hljs-type">CreateField</span> (<span class="hljs-type">DerefOf</span> (<span class="hljs-type">PCKG</span> [<span class="hljs-type">Zero</span>]), <span class="hljs-number">0x20</span>, <span class="hljs-number">0x10</span>, <span class="hljs-type">WID</span>)
-            <span class="hljs-type">WID</span> = <span class="hljs-number">0x08</span>
-            <span class="hljs-type">CreateField</span> (<span class="hljs-type">DerefOf</span> (<span class="hljs-type">PCKG</span> [<span class="hljs-type">Zero</span>]), <span class="hljs-number">0x30</span>, <span class="hljs-number">0x10</span>, <span class="hljs-type">HGT</span>)
-            <span class="hljs-type">HGT</span> = <span class="hljs-number">0x03</span>
-            <span class="hljs-type">Return</span> (<span class="hljs-type">PCKG</span>) <span class="hljs-comment">/* \_SB_.PCI0.XHC_.RHUB.TPLD.PCKG */</span>
-        }
-
-        <span class="hljs-type">Method</span> (<span class="hljs-type">TUPC</span>, <span class="hljs-number">1</span>, <span class="hljs-type">Serialized</span>)
-        {
-            <span class="hljs-type">Name</span> (<span class="hljs-type">PCKG</span>, <span class="hljs-type">Package</span> (<span class="hljs-number">0x04</span>)
-            {
-                <span class="hljs-type">One</span>, 
-                <span class="hljs-type">Zero</span>, 
-                <span class="hljs-type">Zero</span>, 
-                <span class="hljs-type">Zero</span>
-            })
-            <span class="hljs-type">PCKG</span> [<span class="hljs-type">One</span>] = <span class="hljs-type">Arg0</span>
-            <span class="hljs-type">Return</span> (<span class="hljs-type">PCKG</span>) <span class="hljs-comment">/* \_SB_.PCI0.XHC_.RHUB.TUPC.PCKG */</span>
-        }
-    }
-
-    <span class="hljs-type">Scope</span> (\_SB.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">HS01</span>)
-    {
-        <span class="hljs-type">Method</span> (_UPC, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _UPC: USB Port Capabilities</span>
-        {
-            <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">Package</span> ()
-                {
-                    <span class="hljs-number">0xFF</span>,
-                    <span class="hljs-number">0x03</span>, 
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>
-                })
-            }
-
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GUPC</span> (<span class="hljs-type">One</span>))
-        }
-
-        <span class="hljs-type">Method</span> (_PLD, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _PLD: Physical Location of Device</span>
-        {
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GPLD</span> (<span class="hljs-type">One</span>, <span class="hljs-type">One</span>))
-        }
-    }
-
-    <span class="hljs-type">Scope</span> (\_SB.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">HS02</span>)
-    {
-        <span class="hljs-type">Method</span> (_UPC, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _UPC: USB Port Capabilities</span>
-        {
-            <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">Package</span> ()
-                {
-                    <span class="hljs-number">0xFF</span>,
-                    <span class="hljs-number">0x03</span>, 
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>
-                })
-            }
-
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GUPC</span> (<span class="hljs-type">One</span>))
-        }
-
-        <span class="hljs-type">Method</span> (_PLD, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _PLD: Physical Location of Device</span>
-        {
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GPLD</span> (<span class="hljs-type">One</span>, <span class="hljs-number">0x02</span>))
-        }
-    }
-
-    <span class="hljs-type">Scope</span> (\_SB.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">HS03</span>)
-    {
-        <span class="hljs-type">Method</span> (_UPC, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _UPC: USB Port Capabilities</span>
-        {
-            <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">Package</span> ()
-                {
-                    <span class="hljs-number">0xFF</span>,
-                    <span class="hljs-number">0x03</span>, 
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>
-                })
-            }
-
-            <span class="hljs-type">If</span> ((<span class="hljs-type">CBID</span> == <span class="hljs-number">0x07A6</span>))
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">GUPC</span> (<span class="hljs-type">Zero</span>))
-            }
-            <span class="hljs-type">Else</span>
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">GUPC</span> (<span class="hljs-type">One</span>))
-            }
-        }
-
-        <span class="hljs-type">Method</span> (_PLD, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _PLD: Physical Location of Device</span>
-        {
-            <span class="hljs-type">If</span> ((<span class="hljs-type">CBID</span> == <span class="hljs-number">0x07A6</span>))
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">GPLD</span> (<span class="hljs-type">Zero</span>, <span class="hljs-type">Zero</span>))
-            }
-            <span class="hljs-type">Else</span>
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">GPLD</span> (<span class="hljs-type">One</span>, <span class="hljs-number">0x03</span>))
-            }
-        }
-    }
-
-    <span class="hljs-type">Scope</span> (\_SB.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">HS04</span>)
-    {
-        <span class="hljs-type">Method</span> (_UPC, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _UPC: USB Port Capabilities</span>
-        {
-            <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">Package</span> ()
-                {
-                    <span class="hljs-number">0x00</span>,
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>
-                })
-            }
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GUPC</span> (<span class="hljs-type">One</span>))
-        }
-
-        <span class="hljs-type">Method</span> (_PLD, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _PLD: Physical Location of Device</span>
-        {
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GPLD</span> (<span class="hljs-type">Zero</span>, <span class="hljs-number">0x04</span>))
-        }
-    }
-
-    <span class="hljs-type">Scope</span> (\_SB.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">HS05</span>)
-    {
-        <span class="hljs-type">Method</span> (_UPC, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _UPC: USB Port Capabilities</span>
-        {
-            <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">Package</span> ()
-                {
-                    <span class="hljs-number">0xFF</span>,
-                    <span class="hljs-number">0xFF</span>, 
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>
-                })
-            }
-
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GUPC</span> (<span class="hljs-type">One</span>))
-        }
-
-        <span class="hljs-type">Method</span> (_PLD, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _PLD: Physical Location of Device</span>
-        {
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GPLD</span> (<span class="hljs-type">Zero</span>, <span class="hljs-number">0x05</span>))
-        }
-
-        <span class="hljs-type">Device</span> (<span class="hljs-type">CAM5</span>)
-        {
-            <span class="hljs-type">Name</span> (_ADR, <span class="hljs-number">0x05</span>)  <span class="hljs-comment">// _ADR: Address</span>
-            <span class="hljs-type">Name</span> (_PLD, <span class="hljs-type">Package</span> (<span class="hljs-number">0x01</span>)  <span class="hljs-comment">// _PLD: Physical Location of Device</span>
-            {
-                <span class="hljs-type">ToPLD</span> (
-                    <span class="hljs-type">PLD_Revision</span>           = <span class="hljs-number">0x1</span>,
-                    <span class="hljs-type">PLD_IgnoreColor</span>        = <span class="hljs-number">0x1</span>,
-                    <span class="hljs-type">PLD_Red</span>                = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_Green</span>              = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_Blue</span>               = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_Width</span>              = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_Height</span>             = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_UserVisible</span>        = <span class="hljs-number">0x1</span>,
-                    <span class="hljs-type">PLD_Dock</span>               = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_Lid</span>                = <span class="hljs-number">0x1</span>,
-                    <span class="hljs-type">PLD_Panel</span>              = <span class="hljs-string">&quot;FRONT&quot;</span>,
-                    <span class="hljs-type">PLD_VerticalPosition</span>   = <span class="hljs-string">&quot;UPPER&quot;</span>,
-                    <span class="hljs-type">PLD_HorizontalPosition</span> = <span class="hljs-string">&quot;CENTER&quot;</span>,
-                    <span class="hljs-type">PLD_Shape</span>              = <span class="hljs-string">&quot;UNKNOWN&quot;</span>,
-                    <span class="hljs-type">PLD_GroupOrientation</span>   = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_GroupToken</span>         = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_GroupPosition</span>      = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_Bay</span>                = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_Ejectable</span>          = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_EjectRequired</span>      = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_CabinetNumber</span>      = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_CardCageNumber</span>     = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_Reference</span>          = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_Rotation</span>           = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_Order</span>              = <span class="hljs-number">0x0</span>)
-
-            })
-        }
-
-        <span class="hljs-type">Device</span> (<span class="hljs-type">CAMC</span>)
-        {
-            <span class="hljs-type">Name</span> (_ADR, <span class="hljs-number">0x0D</span>)  <span class="hljs-comment">// _ADR: Address</span>
-            <span class="hljs-type">Name</span> (_PLD, <span class="hljs-type">Package</span> (<span class="hljs-number">0x01</span>)  <span class="hljs-comment">// _PLD: Physical Location of Device</span>
-            {
-                <span class="hljs-type">ToPLD</span> (
-                    <span class="hljs-type">PLD_Revision</span>           = <span class="hljs-number">0x1</span>,
-                    <span class="hljs-type">PLD_IgnoreColor</span>        = <span class="hljs-number">0x1</span>,
-                    <span class="hljs-type">PLD_Red</span>                = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_Green</span>              = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_Blue</span>               = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_Width</span>              = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_Height</span>             = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_UserVisible</span>        = <span class="hljs-number">0x1</span>,
-                    <span class="hljs-type">PLD_Dock</span>               = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_Lid</span>                = <span class="hljs-number">0x1</span>,
-                    <span class="hljs-type">PLD_Panel</span>              = <span class="hljs-string">&quot;FRONT&quot;</span>,
-                    <span class="hljs-type">PLD_VerticalPosition</span>   = <span class="hljs-string">&quot;UPPER&quot;</span>,
-                    <span class="hljs-type">PLD_HorizontalPosition</span> = <span class="hljs-string">&quot;CENTER&quot;</span>,
-                    <span class="hljs-type">PLD_Shape</span>              = <span class="hljs-string">&quot;UNKNOWN&quot;</span>,
-                    <span class="hljs-type">PLD_GroupOrientation</span>   = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_GroupToken</span>         = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_GroupPosition</span>      = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_Bay</span>                = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_Ejectable</span>          = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_EjectRequired</span>      = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_CabinetNumber</span>      = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_CardCageNumber</span>     = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_Reference</span>          = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_Rotation</span>           = <span class="hljs-number">0x0</span>,
-                    <span class="hljs-type">PLD_Order</span>              = <span class="hljs-number">0x0</span>)
-
-            })
-        }
-    }
-
-    <span class="hljs-type">Scope</span> (\_SB.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">HS06</span>)
-    {
-        <span class="hljs-type">Method</span> (_UPC, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _UPC: USB Port Capabilities</span>
-        {
-            <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">Package</span> ()
-                {
-                    <span class="hljs-number">0x00</span>,
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>
-                })
-            }
-
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GUPC</span> (<span class="hljs-type">Zero</span>))
-        }
-
-        <span class="hljs-type">Method</span> (_PLD, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _PLD: Physical Location of Device</span>
-        {
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GPLD</span> (<span class="hljs-type">Zero</span>, <span class="hljs-type">Zero</span>))
-        }
-    }
-
-    <span class="hljs-type">Scope</span> (\_SB.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">HS07</span>)
-    {
-        <span class="hljs-type">Method</span> (_UPC, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _UPC: USB Port Capabilities</span>
-        {
-            <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">Package</span> ()
-                {
-                    <span class="hljs-number">0xFF</span>,
-                    <span class="hljs-number">0xFF</span>, 
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>
-                })
-            }
-
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GUPC</span> (<span class="hljs-type">One</span>))
-        }
-
-        <span class="hljs-type">Method</span> (_PLD, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _PLD: Physical Location of Device</span>
-        {
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GPLD</span> (<span class="hljs-type">Zero</span>, <span class="hljs-number">0x07</span>))
-        }
-    }
-
-    <span class="hljs-type">Scope</span> (\_SB.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">HS08</span>)
-    {
-        <span class="hljs-type">Method</span> (_UPC, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _UPC: USB Port Capabilities</span>
-        {
-            <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">Package</span> ()
-                {
-                    <span class="hljs-number">0x00</span>,
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>
-                })
-            }
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GUPC</span> (<span class="hljs-type">One</span>))
-        }
-
-        <span class="hljs-type">Method</span> (_PLD, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _PLD: Physical Location of Device</span>
-        {
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GPLD</span> (<span class="hljs-type">Zero</span>, <span class="hljs-number">0x08</span>))
-        }
-    }
-
-    <span class="hljs-type">Scope</span> (\_SB.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">HS09</span>)
-    {
-        <span class="hljs-type">Method</span> (_UPC, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _UPC: USB Port Capabilities</span>
-        {
-            <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">Package</span> ()
-                {
-                    <span class="hljs-number">0xFF</span>,
-                    <span class="hljs-number">0x09</span>, 
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>
-                })
-            }
-            <span class="hljs-type">Return</span> (<span class="hljs-type">TUPC</span> (<span class="hljs-number">0x09</span>))
-        }
-
-        <span class="hljs-type">Method</span> (_PLD, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _PLD: Physical Location of Device</span>
-        {
-            <span class="hljs-type">Return</span> (<span class="hljs-type">TPLD</span> (<span class="hljs-type">One</span>, <span class="hljs-number">0x09</span>))
-        }
-    }
-
-    <span class="hljs-type">Scope</span> (\_SB.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">HS10</span>)
-    {
-        <span class="hljs-type">Method</span> (_UPC, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _UPC: USB Port Capabilities</span>
-        {
-            <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">Package</span> ()
-                {
-                    <span class="hljs-number">0x00</span>,
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>
-                })
-            }
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GUPC</span> (<span class="hljs-type">One</span>))
-        }
-
-        <span class="hljs-type">Method</span> (_PLD, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _PLD: Physical Location of Device</span>
-        {
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GPLD</span> (<span class="hljs-type">Zero</span>, <span class="hljs-number">0x0A</span>))
-        }
-    }
-
-    <span class="hljs-type">Scope</span> (\_SB.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">USR1</span>)
-    {
-        <span class="hljs-type">Method</span> (_UPC, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _UPC: USB Port Capabilities</span>
-        {
-            <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">Package</span> ()
-                {
-                    <span class="hljs-number">0x00</span>,
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>
-                })
-            }
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GUPC</span> (<span class="hljs-type">Zero</span>))
-        }
-
-        <span class="hljs-type">Method</span> (_PLD, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _PLD: Physical Location of Device</span>
-        {
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GPLD</span> (<span class="hljs-type">Zero</span>, <span class="hljs-type">Zero</span>))
-        }
-    }
-
-    <span class="hljs-type">Scope</span> (\_SB.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">USR2</span>)
-    {
-        <span class="hljs-type">Method</span> (_UPC, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _UPC: USB Port Capabilities</span>
-        {
-            <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">Package</span> ()
-                {
-                    <span class="hljs-number">0x00</span>,
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>
-                })
-            }
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GUPC</span> (<span class="hljs-type">Zero</span>))
-        }
-
-        <span class="hljs-type">Method</span> (_PLD, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _PLD: Physical Location of Device</span>
-        {
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GPLD</span> (<span class="hljs-type">Zero</span>, <span class="hljs-type">Zero</span>))
-        }
-    }
-
-    <span class="hljs-type">Scope</span> (\_SB.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">SS01</span>)
-    {
-        <span class="hljs-type">Method</span> (_UPC, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _UPC: USB Port Capabilities</span>
-        {
-            <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">Package</span> ()
-                {
-                    <span class="hljs-number">0xFF</span>,
-                    <span class="hljs-number">0x03</span>, 
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>
-                })
-            }
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GUPC</span> (<span class="hljs-type">One</span>))
-        }
-
-        <span class="hljs-type">Method</span> (_PLD, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _PLD: Physical Location of Device</span>
-        {
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GPLD</span> (<span class="hljs-type">One</span>, <span class="hljs-type">One</span>))
-        }
-    }
-
-    <span class="hljs-type">Scope</span> (\_SB.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">SS02</span>)
-    {
-        <span class="hljs-type">Method</span> (_UPC, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _UPC: USB Port Capabilities</span>
-        {
-            <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">Package</span> ()
-                {
-                    <span class="hljs-number">0x00</span>,
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>
-                })
-            }
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GUPC</span> (<span class="hljs-type">One</span>))
-        }
-
-        <span class="hljs-type">Method</span> (_PLD, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _PLD: Physical Location of Device</span>
-        {
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GPLD</span> (<span class="hljs-type">Zero</span>, <span class="hljs-number">0x04</span>))
-        }
-    }
-
-    <span class="hljs-type">Scope</span> (\_SB.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">SS03</span>)
-    {
-        <span class="hljs-type">Method</span> (_UPC, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _UPC: USB Port Capabilities</span>
-        {
-            <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">Package</span> ()
-                {
-                    <span class="hljs-number">0xFF</span>,
-                    <span class="hljs-number">0x03</span>, 
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>
-                })
-            }
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GUPC</span> (<span class="hljs-type">One</span>))
-        }
-
-        <span class="hljs-type">Method</span> (_PLD, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _PLD: Physical Location of Device</span>
-        {
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GPLD</span> (<span class="hljs-type">One</span>, <span class="hljs-number">0x02</span>))
-        }
-    }
-
-    <span class="hljs-type">Scope</span> (\_SB.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">SS04</span>)
-    {
-        <span class="hljs-type">Method</span> (_UPC, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _UPC: USB Port Capabilities</span>
-        {
-            <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">Package</span> ()
-                {
-                    <span class="hljs-number">0xFF</span>,
-                    <span class="hljs-number">0x03</span>, 
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>
-                })
-            }
-            <span class="hljs-type">If</span> ((<span class="hljs-type">CBID</span> == <span class="hljs-number">0x07A6</span>))
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">GUPC</span> (<span class="hljs-type">Zero</span>))
-            }
-            <span class="hljs-type">Else</span>
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">GUPC</span> (<span class="hljs-type">One</span>))
-            }
-        }
-
-        <span class="hljs-type">Method</span> (_PLD, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _PLD: Physical Location of Device</span>
-        {
-            <span class="hljs-type">If</span> ((<span class="hljs-type">CBID</span> == <span class="hljs-number">0x07A6</span>))
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">GPLD</span> (<span class="hljs-type">Zero</span>, <span class="hljs-type">Zero</span>))
-            }
-            <span class="hljs-type">Else</span>
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">GPLD</span> (<span class="hljs-type">One</span>, <span class="hljs-number">0x03</span>))
-            }
-        }
-    }
-
-    <span class="hljs-type">Scope</span> (\_SB.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">SS05</span>)
-    {
-        <span class="hljs-type">Method</span> (_UPC, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _UPC: USB Port Capabilities</span>
-        {
-            <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">Package</span> ()
-                {
-                    <span class="hljs-number">0x00</span>,
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>
-                })
-            }
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GUPC</span> (<span class="hljs-type">Zero</span>))
-        }
-
-        <span class="hljs-type">Method</span> (_PLD, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _PLD: Physical Location of Device</span>
-        {
-            <span class="hljs-type">Return</span> (<span class="hljs-type">GPLD</span> (<span class="hljs-type">Zero</span>, <span class="hljs-type">Zero</span>))
-        }
-    }
-
-    <span class="hljs-type">Scope</span> (\_SB.<span class="hljs-type">PCI0</span>.<span class="hljs-type">XHC</span>.<span class="hljs-type">RHUB</span>.<span class="hljs-type">SS06</span>)
-    {
-        <span class="hljs-type">Method</span> (_UPC, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _UPC: USB Port Capabilities</span>
-        {
-            <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
-            {
-                <span class="hljs-type">Return</span> (<span class="hljs-type">Package</span> ()
-                {
-                    <span class="hljs-number">0xFF</span>,
-                    <span class="hljs-number">0x09</span>, 
-                    <span class="hljs-number">0x00</span>, 
-                    <span class="hljs-number">0x00</span>
-                })
-            }
-            <span class="hljs-type">Return</span> (<span class="hljs-type">TUPC</span> (<span class="hljs-number">0x09</span>))
-        }
-
-        <span class="hljs-type">Method</span> (_PLD, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _PLD: Physical Location of Device</span>
-        {
-            <span class="hljs-type">Return</span> (<span class="hljs-type">TPLD</span> (<span class="hljs-type">One</span>, <span class="hljs-number">0x09</span>))
-        }
-    }
-}
+                                <pre><code class="lang-swift">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;
+&lt;!<span class="hljs-type">DOCTYPE</span> plist <span class="hljs-type">PUBLIC</span> <span class="hljs-string">&quot;-//Apple//DTD PLIST 1.0//EN&quot;</span> <span class="hljs-string">&quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;</span>&gt;
+&lt;plist version=<span class="hljs-string">&quot;1.0&quot;</span>&gt;
+&lt;dict&gt;
+    &lt;key&gt;<span class="hljs-type">ACPI</span>&lt;/key&gt;
+    &lt;dict&gt;
+        &lt;key&gt;<span class="hljs-type">Patch</span>&lt;/key&gt;
+        &lt;array&gt;
+            &lt;dict&gt;
+                &lt;key&gt;<span class="hljs-type">Comment</span>&lt;/key&gt;
+                &lt;string&gt;<span class="hljs-type">OSID</span> to <span class="hljs-type">XSID</span>&lt;/string&gt;
+                &lt;key&gt;<span class="hljs-type">Count</span>&lt;/key&gt;
+                &lt;integer&gt;<span class="hljs-number">0</span>&lt;/integer&gt;
+                &lt;key&gt;<span class="hljs-type">Enabled</span>&lt;/key&gt;
+                &lt;<span class="hljs-literal">true</span>/&gt;
+                &lt;key&gt;<span class="hljs-type">Find</span>&lt;/key&gt;
+                &lt;data&gt;
+                <span class="hljs-type">T1NJRA</span>==
+                &lt;/data&gt;
+                &lt;key&gt;<span class="hljs-type">Limit</span>&lt;/key&gt;
+                &lt;integer&gt;<span class="hljs-number">0</span>&lt;/integer&gt;
+                &lt;key&gt;<span class="hljs-type">Mask</span>&lt;/key&gt;
+                &lt;data&gt;
+                &lt;/data&gt;
+                &lt;key&gt;<span class="hljs-type">OemTableId</span>&lt;/key&gt;
+                &lt;data&gt;
+                &lt;/data&gt;
+                &lt;key&gt;<span class="hljs-type">Replace</span>&lt;/key&gt;
+                &lt;data&gt;
+                <span class="hljs-type">WFNJRA</span>==
+                &lt;/data&gt;
+                &lt;key&gt;<span class="hljs-type">ReplaceMask</span>&lt;/key&gt;
+                &lt;data&gt;
+                &lt;/data&gt;
+                &lt;key&gt;<span class="hljs-type">Skip</span>&lt;/key&gt;
+                &lt;integer&gt;<span class="hljs-number">0</span>&lt;/integer&gt;
+                &lt;key&gt;<span class="hljs-type">TableLength</span>&lt;/key&gt;
+                &lt;integer&gt;<span class="hljs-number">0</span>&lt;/integer&gt;
+                &lt;key&gt;<span class="hljs-type">TableSignature</span>&lt;/key&gt;
+                &lt;data&gt;
+                &lt;/data&gt;
+            &lt;/dict&gt;
+            &lt;dict&gt;
+                &lt;key&gt;<span class="hljs-type">Comment</span>&lt;/key&gt;
+                &lt;string&gt;<span class="hljs-type">OSIF</span> to <span class="hljs-type">XSIF</span>&lt;/string&gt;
+                &lt;key&gt;<span class="hljs-type">Count</span>&lt;/key&gt;
+                &lt;integer&gt;<span class="hljs-number">0</span>&lt;/integer&gt;
+                &lt;key&gt;<span class="hljs-type">Enabled</span>&lt;/key&gt;
+                &lt;<span class="hljs-literal">true</span>/&gt;
+                &lt;key&gt;<span class="hljs-type">Find</span>&lt;/key&gt;
+                &lt;data&gt;
+                <span class="hljs-type">T1NJRg</span>==
+                &lt;/data&gt;
+                &lt;key&gt;<span class="hljs-type">Limit</span>&lt;/key&gt;
+                &lt;integer&gt;<span class="hljs-number">0</span>&lt;/integer&gt;
+                &lt;key&gt;<span class="hljs-type">Mask</span>&lt;/key&gt;
+                &lt;data&gt;
+                &lt;/data&gt;
+                &lt;key&gt;<span class="hljs-type">OemTableId</span>&lt;/key&gt;
+                &lt;data&gt;
+                &lt;/data&gt;
+                &lt;key&gt;<span class="hljs-type">Replace</span>&lt;/key&gt;
+                &lt;data&gt;
+                <span class="hljs-type">WFNJRg</span>==
+                &lt;/data&gt;
+                &lt;key&gt;<span class="hljs-type">ReplaceMask</span>&lt;/key&gt;
+                &lt;data&gt;
+                &lt;/data&gt;
+                &lt;key&gt;<span class="hljs-type">Skip</span>&lt;/key&gt;
+                &lt;integer&gt;<span class="hljs-number">0</span>&lt;/integer&gt;
+                &lt;key&gt;<span class="hljs-type">TableLength</span>&lt;/key&gt;
+                &lt;integer&gt;<span class="hljs-number">0</span>&lt;/integer&gt;
+                &lt;key&gt;<span class="hljs-type">TableSignature</span>&lt;/key&gt;
+                &lt;data&gt;
+                &lt;/data&gt;
+            &lt;/dict&gt;
+        &lt;/array&gt;
+    &lt;/dict&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
 </code></pre>
 
                                 
@@ -3306,12 +2778,12 @@
 
             
                 
-                <a href="SSDT-CB-01_XHC.html" class="navigation navigation-prev " aria-label="Previous page: SSDT-CB-01_XHC.dsl">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 04-操作系统补丁">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../17-禁止PCI设备/" class="navigation navigation-next " aria-label="Next page: 17-禁止PCI设备">
+                <a href="操作系统更名.html" class="navigation navigation-next " aria-label="Next page: 操作系统更名.plist">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -3322,7 +2794,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SSDT-xh_OEMBD_XHC.dsl","level":"1.18.2","depth":2,"next":{"title":"17-禁止PCI设备","level":"1.19","depth":1,"path":"17-禁止PCI设备/README.md","ref":"17-禁止PCI设备/README.md","articles":[{"title":"SSDT-RP01.PXSX-disbale.dsl","level":"1.19.1","depth":2,"path":"17-禁止PCI设备/SSDT-RP01.PXSX-disbale.md","ref":"17-禁止PCI设备/SSDT-RP01.PXSX-disbale.md","articles":[]}]},"previous":{"title":"SSDT-CB-01_XHC.dsl","level":"1.18.1","depth":2,"path":"16-ACPI定制USB端口/SSDT-CB-01_XHC.md","ref":"16-ACPI定制USB端口/SSDT-CB-01_XHC.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"16-ACPI定制USB端口/SSDT-xh_OEMBD_XHC.md","mtime":"2020-05-06T02:32:25.870Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-06T02:34:01.465Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"操作系统补丁前置更名.plist","level":"1.6.1","depth":2,"next":{"title":"操作系统更名.plist","level":"1.6.2","depth":2,"path":"04-操作系统补丁/操作系统更名.md","ref":"04-操作系统补丁/操作系统更名.md","articles":[]},"previous":{"title":"04-操作系统补丁","level":"1.6","depth":1,"path":"04-操作系统补丁/README.md","ref":"04-操作系统补丁/README.md","articles":[{"title":"操作系统补丁前置更名.plist","level":"1.6.1","depth":2,"path":"04-操作系统补丁/操作系统补丁前置更名.md","ref":"04-操作系统补丁/操作系统补丁前置更名.md","articles":[]},{"title":"操作系统更名.plist","level":"1.6.2","depth":2,"path":"04-操作系统补丁/操作系统更名.md","ref":"04-操作系统补丁/操作系统更名.md","articles":[]},{"title":"SSDT-OC-XOSI.dsl","level":"1.6.3","depth":2,"path":"04-操作系统补丁/SSDT-OC-XOSI.md","ref":"04-操作系统补丁/SSDT-OC-XOSI.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"04-操作系统补丁/操作系统补丁前置更名.md","mtime":"2020-05-06T02:32:25.854Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-06T02:34:01.465Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
