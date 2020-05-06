@@ -41,6 +41,7 @@
         * [SSDT-AWAC.dsl](03-二进制更名与预置变量/补丁库/SSDT-AWAC.md)
         * [SSDT-RTC_Y-AWAC_N.dsl](03-二进制更名与预置变量/补丁库/SSDT-RTC_Y-AWAC_N.md)
 * [04-操作系统补丁](04-操作系统补丁/README.md)
+    * [操作系统补丁前置更名.plist](04-操作系统补丁/操作系统补丁前置更名.md)
     * [操作系统更名.plist](04-操作系统补丁/操作系统更名.md)
     * [SSDT-OC-XOSI.dsl](04-操作系统补丁/SSDT-OC-XOSI.md)
 * [05-注入设备](05-注入设备/README.md)
