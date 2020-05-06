@@ -152,6 +152,8 @@
     * [19-1-Dell机器特殊补丁](19-品牌机器特殊补丁/19-1-Dell机器特殊补丁/README.md)
         * [SSDT-OCWork-dell.dsl](19-品牌机器特殊补丁/19-1-Dell机器特殊补丁/SSDT-OCWork-dell.md)
     * [19-2-小新PRO13特殊补丁](19-品牌机器特殊补丁/19-2-小新PRO13特殊补丁/README.md)
+        * [SSDT-OCPublic-Merge.dsl](19-品牌机器特殊补丁/19-1-Dell机器特殊补丁/SSDT-OCPublic-Merge.md)
+        * [SSDT-RMCF-PS2Map-LenovoPRO13.dsl](19-品牌机器特殊补丁/19-1-Dell机器特殊补丁/SSDT-RMCF-PS2Map-LenovoPRO13.md)
 * [20-I2C专用部件](20-I2C专用部件/README.md)
     * [SSDT-OCI2C-TPXX-chao7000.dsl](20-I2C专用部件/SSDT-OCI2C-TPXX-chao7000.md)
     * [SSDT-OCI2C-TPXX-dell5480.dsl](20-I2C专用部件/SSDT-OCI2C-TPXX-dell5480.md)
