@@ -68,6 +68,7 @@
         * [SSDT-SMBU.dsl](05-注入设备/05-3-SBUS_SMBU补丁/SSDT-SMBU.md)
 * [06-添加缺失的部件](06-添加缺失的部件/README.md)
     * [SSDT-DMAC.dsl](06-添加缺失的部件/SSDT-DMAC.md)
+    * [SSDT-IMEI.dsl](06-添加缺失的部件/SSDT-IMEI.md)
     * [SSDT-MCHC.dsl](06-添加缺失的部件/SSDT-MCHC.md)
     * [SSDT-MEM2.dsl](06-添加缺失的部件/SSDT-MEM2.md)
     * [SSDT-PMCR.dsl](06-添加缺失的部件/SSDT-PMCR.md)
