@@ -7,7 +7,7 @@
 ## 在线手册
 
 本仓库依赖 GitBook 并使用 GitHub Actions 构建了 Pages 服务和 pdf 手册。
-  - [https://ocbook.hackintosh.online](https://ocbook.hackintosh.online)
+  - [https://ocbook.hackintosh.online](https://ocbook.tlhub.cn)
   - [OpenCore 部件库](https://cdn.jsdelivr.net/gh/daliansky/OC-little/docs/OpenCore部件库.pdf)
 
 ## 主要内容
