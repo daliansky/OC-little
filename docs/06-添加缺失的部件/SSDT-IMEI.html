@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>SSDT-SLPB.dsl · GitBook</title>
+        <title>SSDT-IMEI.dsl · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="SSDT-XSPI.html" />
+    <link rel="next" href="SSDT-MCHC.html" />
     
     
-    <link rel="prev" href="SSDT-PWRB.html" />
+    <link rel="prev" href="SSDT-DMAC.html" />
     
 
     </head>
@@ -1112,7 +1112,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.2" data-path="SSDT-IMEI.html">
+        <li class="chapter active" data-level="1.8.2" data-path="SSDT-IMEI.html">
             
                 <a href="SSDT-IMEI.html">
             
@@ -1190,7 +1190,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.8.8" data-path="SSDT-SLPB.html">
+        <li class="chapter " data-level="1.8.8" data-path="SSDT-SLPB.html">
             
                 <a href="SSDT-SLPB.html">
             
@@ -2700,7 +2700,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >SSDT-SLPB.dsl</a>
+        <a href=".." >SSDT-IMEI.dsl</a>
     </h1>
 </div>
 
@@ -2715,30 +2715,22 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <pre><code class="lang-swift"><span class="hljs-comment">//Add SLPB </span>
-<span class="hljs-type">DefinitionBlock</span>(<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;SSDT&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-string">&quot;OCLT&quot;</span>, <span class="hljs-string">&quot;PNP0C0E&quot;</span>, <span class="hljs-number">0</span>)
+                                <pre><code class="lang-swift"><span class="hljs-comment">/*
+ * Only necessary when no IMEI device (with any name) is present in the DSDT and a custom device-id
+ * is needed to be set via DeviceProperties (some Sandy Bridge or Ivy Bridge configurations).
+ */</span>
+<span class="hljs-type">DefinitionBlock</span> (<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;SSDT&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-string">&quot;ACDT&quot;</span>, <span class="hljs-string">&quot;IMEI&quot;</span>, <span class="hljs-number">0x00000000</span>)
 {
-    <span class="hljs-comment">//search PNP0C0E</span>
-    <span class="hljs-type">Scope</span> (\_SB)
+    <span class="hljs-type">External</span> (_SB_.<span class="hljs-type">PCI0</span>, <span class="hljs-type">DeviceObj</span>)
+
+    <span class="hljs-type">Scope</span> (_SB.<span class="hljs-type">PCI0</span>)
     {
-        <span class="hljs-type">Device</span> (<span class="hljs-type">SLPB</span>)
+        <span class="hljs-type">Device</span> (<span class="hljs-type">IMEI</span>)
         {
-            <span class="hljs-type">Name</span> (_HID, <span class="hljs-type">EisaId</span> (<span class="hljs-string">&quot;PNP0C0E&quot;</span>))
-            <span class="hljs-type">Method</span> (_STA, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)
-            {
-                <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
-                {
-                    <span class="hljs-type">Return</span> (<span class="hljs-number">0x0B</span>)
-                }
-                <span class="hljs-type">Else</span>
-                {
-                    <span class="hljs-type">Return</span> (<span class="hljs-type">Zero</span>)
-                }
-            }
+            <span class="hljs-type">Name</span> (_ADR, <span class="hljs-number">0x00160000</span>)  <span class="hljs-comment">// _ADR: Address</span>
         }
     }
 }
-<span class="hljs-comment">//EOF</span>
 </code></pre>
 
                                 
@@ -2767,12 +2759,12 @@
 
             
                 
-                <a href="SSDT-PWRB.html" class="navigation navigation-prev " aria-label="Previous page: SSDT-PWRB.dsl">
+                <a href="SSDT-DMAC.html" class="navigation navigation-prev " aria-label="Previous page: SSDT-DMAC.dsl">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="SSDT-XSPI.html" class="navigation navigation-next " aria-label="Next page: SSDT-XSPI.dsl">
+                <a href="SSDT-MCHC.html" class="navigation navigation-next " aria-label="Next page: SSDT-MCHC.dsl">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -2783,7 +2775,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SSDT-SLPB.dsl","level":"1.8.8","depth":2,"next":{"title":"SSDT-XSPI.dsl","level":"1.8.9","depth":2,"path":"06-添加缺失的部件/SSDT-XSPI.md","ref":"06-添加缺失的部件/SSDT-XSPI.md","articles":[]},"previous":{"title":"SSDT-PWRB.dsl","level":"1.8.7","depth":2,"path":"06-添加缺失的部件/SSDT-PWRB.md","ref":"06-添加缺失的部件/SSDT-PWRB.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"06-添加缺失的部件/SSDT-SLPB.md","mtime":"2020-05-23T03:27:33.641Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-23T03:28:52.022Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"SSDT-IMEI.dsl","level":"1.8.2","depth":2,"next":{"title":"SSDT-MCHC.dsl","level":"1.8.3","depth":2,"path":"06-添加缺失的部件/SSDT-MCHC.md","ref":"06-添加缺失的部件/SSDT-MCHC.md","articles":[]},"previous":{"title":"SSDT-DMAC.dsl","level":"1.8.1","depth":2,"path":"06-添加缺失的部件/SSDT-DMAC.md","ref":"06-添加缺失的部件/SSDT-DMAC.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"06-添加缺失的部件/SSDT-IMEI.md","mtime":"2020-05-23T03:27:33.641Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-23T03:28:52.022Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
