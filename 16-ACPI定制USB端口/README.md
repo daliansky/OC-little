@@ -46,6 +46,7 @@ _UPC, Package ()
    |  `0x08`  | USB Type `C` **(只有 USB 2)** |
    |  `0x09`  | USB Type `C` **(带有转向器)** |
    |  `0x0A`  | USB Type `C` **(不带转向器)** |
+   |  `0xFF`  | 内置 |
 
    > 如果 USB-C 正反两面插入在 Hackintool 都显示为同一个端口就说明这个端口有转向器
    >
