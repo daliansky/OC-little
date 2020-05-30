@@ -75,7 +75,6 @@
     * [SSDT-PPMC.dsl](06-添加缺失的部件/SSDT-PPMC.md)
     * [SSDT-PWRB.dsl](06-添加缺失的部件/SSDT-PWRB.md)
     * [SSDT-SLPB.dsl](06-添加缺失的部件/SSDT-SLPB.md)
-    * [SSDT-XSPI.dsl](06-添加缺失的部件/SSDT-XSPI.md)
 * [07-PS2键盘映射](07-PS2键盘映射/README.md)
     * [ApplePS2ToADBMap.h](07-PS2键盘映射/ApplePS2ToADBMap.md)
     * [SSDT-RMCF-MouseAsTrackpad.dsl](07-PS2键盘映射/SSDT-RMCF-MouseAsTrackpad.md)
