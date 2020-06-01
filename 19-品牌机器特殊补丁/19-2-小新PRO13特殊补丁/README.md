@@ -24,7 +24,6 @@ Replace:  584E4C46
 - ***SSDT-PNLF-CFL*** ——参见《PNLF注入方法》
 - ***SSDT-BKeyQ38Q39-LenovoPRO13*** ——参见《亮度快捷键》
 - ***SSDT-PMCR*** ——参见《添加缺失的部件》
-- ***SSDT-XSPI*** ——参见《添加缺失的部件》
 - ***SSDT-SBUS*** ——参见《SBUS/SMBU补丁》
 - ***SSDT-OCBAT1-lenovoPRO13*** ——参见《电池补丁》
 - ***SSDT-I2CxConf*** ——参见《I2C专用部件》
