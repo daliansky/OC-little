@@ -2712,10 +2712,18 @@
         <span class="hljs-type">OperationRegion</span> (<span class="hljs-type">DE01</span>, <span class="hljs-type">PCI_Config</span>, <span class="hljs-number">0x50</span>, <span class="hljs-number">1</span>)
         <span class="hljs-type">Field</span> (<span class="hljs-type">DE01</span>, <span class="hljs-type">AnyAcc</span>, <span class="hljs-type">NoLock</span>, <span class="hljs-type">Preserve</span>)
         {
-                ,   <span class="hljs-number">1</span>, 
-                ,   <span class="hljs-number">3</span>, 
+                ,   <span class="hljs-number">4</span>, 
             <span class="hljs-type">DDDD</span>,   <span class="hljs-number">1</span>
         }
+        <span class="hljs-comment">//possible start</span>
+        <span class="hljs-type">Method</span> (_STA, <span class="hljs-number">0</span>, <span class="hljs-type">Serialized</span>)
+        {
+            <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
+            {
+                <span class="hljs-type">Return</span> (<span class="hljs-type">Zero</span>)
+            }
+        }
+        <span class="hljs-comment">//possible end</span>
     }
 
     <span class="hljs-type">Scope</span> (\)
@@ -2771,7 +2779,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SSDT-RP01.PXSX-disbale.dsl","level":"1.19.1","depth":2,"next":{"title":"18-ACPIDebug","level":"1.20","depth":1,"path":"18-ACPIDebug/README.md","ref":"18-ACPIDebug/README.md","articles":[{"title":"SSDT-BKeyQxx-Debug.dsl","level":"1.20.1","depth":2,"path":"18-ACPIDebug/SSDT-BKeyQxx-Debug.md","ref":"18-ACPIDebug/SSDT-BKeyQxx-Debug.md","articles":[]},{"title":"SSDT-RMDT.dsl","level":"1.20.2","depth":2,"path":"18-ACPIDebug/SSDT-RMDT.md","ref":"18-ACPIDebug/SSDT-RMDT.md","articles":[]}]},"previous":{"title":"17-禁止PCI设备","level":"1.19","depth":1,"path":"17-禁止PCI设备/README.md","ref":"17-禁止PCI设备/README.md","articles":[{"title":"SSDT-RP01.PXSX-disbale.dsl","level":"1.19.1","depth":2,"path":"17-禁止PCI设备/SSDT-RP01.PXSX-disbale.md","ref":"17-禁止PCI设备/SSDT-RP01.PXSX-disbale.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"17-禁止PCI设备/SSDT-RP01.PXSX-disbale.md","mtime":"2020-06-07T12:06:25.942Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-07T12:08:26.362Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"SSDT-RP01.PXSX-disbale.dsl","level":"1.19.1","depth":2,"next":{"title":"18-ACPIDebug","level":"1.20","depth":1,"path":"18-ACPIDebug/README.md","ref":"18-ACPIDebug/README.md","articles":[{"title":"SSDT-BKeyQxx-Debug.dsl","level":"1.20.1","depth":2,"path":"18-ACPIDebug/SSDT-BKeyQxx-Debug.md","ref":"18-ACPIDebug/SSDT-BKeyQxx-Debug.md","articles":[]},{"title":"SSDT-RMDT.dsl","level":"1.20.2","depth":2,"path":"18-ACPIDebug/SSDT-RMDT.md","ref":"18-ACPIDebug/SSDT-RMDT.md","articles":[]}]},"previous":{"title":"17-禁止PCI设备","level":"1.19","depth":1,"path":"17-禁止PCI设备/README.md","ref":"17-禁止PCI设备/README.md","articles":[{"title":"SSDT-RP01.PXSX-disbale.dsl","level":"1.19.1","depth":2,"path":"17-禁止PCI设备/SSDT-RP01.PXSX-disbale.md","ref":"17-禁止PCI设备/SSDT-RP01.PXSX-disbale.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"17-禁止PCI设备/SSDT-RP01.PXSX-disbale.md","mtime":"2020-07-13T02:26:50.693Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-13T02:28:34.612Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

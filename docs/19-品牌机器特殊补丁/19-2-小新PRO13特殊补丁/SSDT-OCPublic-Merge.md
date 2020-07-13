@@ -1,3 +1,4 @@
+```swift
 // This is an integrated file
 // 
 DefinitionBlock ("", "SSDT", 2, "OCLT", "OC-Merge", 0x00001000)
@@ -79,3 +80,4 @@ DefinitionBlock ("", "SSDT", 2, "OCLT", "OC-Merge", 0x00001000)
         }
     }
 }
+```
