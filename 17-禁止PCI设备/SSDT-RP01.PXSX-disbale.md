@@ -9,10 +9,18 @@ DefinitionBlock ("", "SSDT", 2, "OCLT", "noRPxx", 0)
         OperationRegion (DE01, PCI_Config, 0x50, 1)
         Field (DE01, AnyAcc, NoLock, Preserve)
         {
-                ,   1, 
-                ,   3, 
+                ,   4, 
             DDDD,   1
         }
+        //possible start
+        Method (_STA, 0, Serialized)
+        {
+            If (_OSI ("Darwin"))
+            {
+                Return (Zero)
+            }
+        }
+        //possible end
     }
     
     Scope (\)

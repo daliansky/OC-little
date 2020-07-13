@@ -5,7 +5,7 @@
 - 某些情况下，我们希望禁用某个 PCI 设备。比如，PCI 总线的 SD 卡通常无法驱动，即使驱动了也几乎不能正常工作。这种情况下，我们可以通过自定义 SSDT 补丁禁用这个设备。
 - 这些设备有以下特征：
   - 它是某个PCI **父设备** 的 **子设备**
-  - **父设备** 定义了一些 `PCI_Config` **或者 `SystemMemory`** 类型的变量，其中第 `55` 位为设备运行属性
+  - **父设备** 定义了一些 `PCI_Config` **或者 `SystemMemory`** 类型的变量，其中偏移量0x55数据的第 `D4` 位为设备运行属性
   - **子设备** 地址： `Name (_ADR, Zero)`  
 
 ## 设备名称
@@ -28,10 +28,18 @@
       OperationRegion (DE01, PCI_Config, 0x50, 0x01)
       Field (DE01, AnyAcc, NoLock, Preserve)
       {
-              ,   1,
-              ,   3,
+              ,   4,
           DDDD,   1
       }
+  		//possible start
+  		Method (_STA, 0, Serialized)
+  		{
+  				If (_OSI ("Darwin"))
+  				{
+  					Return (Zero)
+  				}
+  		}
+  		//possible end
   }  
   Scope (\)
   {
@@ -46,6 +54,7 @@
 
 - 如果 **父设备** 存在多个 **子设备** ，请 **谨慎使用** 本方法。
 - 使用时请将示例中的 `RP01` 替换为被禁用设备所属 **父设备** 名称，参考示例。
+- 如果被禁用设备已经包括了 `_STA` 方法，忽略 *possible start* 至 *possible end* 内容，见示例注释部分。
 
 ## 感谢
 
