@@ -290,7 +290,7 @@ DefinitionBlock ("", "SSDT", 2, "OCLT", "BATT", 0)
             }
             Else
             {
-                Return (\_SB.PCI0.LPCB.EC0.XMRD ())
+                Return (\_SB.PCI0.LPCB.EC0.XMRD (Arg0, Arg1, Arg2, Arg3))
             }
         }
 
@@ -389,7 +389,7 @@ DefinitionBlock ("", "SSDT", 2, "OCLT", "BATT", 0)
             }
             Else
             {
-                Return (\_SB.PCI0.LPCB.EC0.XMWR ())
+                Return (\_SB.PCI0.LPCB.EC0.XMWR (Arg0, Arg1, Arg2, Arg3))
             }
         }
     }
