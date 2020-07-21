@@ -28,23 +28,23 @@
 // Find:    5f51 3444
 // Replace: 5851 3444
 //
-// BFCC to XFCC:
-// Find:    4246 434300
-// Replace: 5846 434300
-//
 // BATW to XATW:
 // Find:    4241 545701
 // Replace: 5841 545701
+//
+// BFCC to XFCC:
+// Find:    42464343 00
+// Replace: 58464343 00
 //
 DefinitionBlock ("", "SSDT", 2, "OCLT", "NTFY", 0)
 {
     External (\_SB.PCI0.LPCB.EC, DeviceObj)
     External (\_SB.PCI0.LPCB.EC.BATC, DeviceObj)
     //
-    External (\_SB.PCI0.LPCB.EC.BAT0.B0ST, IntObj)
     External (\_SB.PCI0.LPCB.EC.BAT1.XB1S, IntObj)
-    External (\_SB.PCI0.LPCB.EC.BAT1.B1ST, IntObj)
     External (\_SB.PCI0.LPCB.EC.BAT1.SBLI, IntObj)
+    External (\_SB.PCI0.LPCB.EC.BAT0.B0ST, IntObj)
+    External (\_SB.PCI0.LPCB.EC.BAT1.B1ST, IntObj)
     //
     External (\_SB.PCI0.LPCB.EC.CLPM, MethodObj)
     External (\_SB.PCI0.LPCB.EC.HKEY.MHKQ, MethodObj)
@@ -61,8 +61,8 @@ DefinitionBlock ("", "SSDT", 2, "OCLT", "NTFY", 0)
     External (\_SB.PCI0.LPCB.EC.XQ4B, MethodObj)
     External (\_SB.PCI0.LPCB.EC.XQ4C, MethodObj)
     External (\_SB.PCI0.LPCB.EC.XQ4D, MethodObj)
-    External (\_SB.PCI0.LPCB.EC.XFCC, MethodObj)
     External (\_SB.PCI0.LPCB.EC.XATW, MethodObj)
+    External (\_SB.PCI0.LPCB.EC.XFCC, MethodObj)
 
     Scope (\_SB.PCI0.LPCB.EC)
     {
@@ -84,6 +84,35 @@ DefinitionBlock ("", "SSDT", 2, "OCLT", "NTFY", 0)
             Else
             {
                 \_SB.PCI0.LPCB.EC.XQ22 ()
+            }
+        }
+        
+        Method (_Q24, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
+        {
+            If (_OSI ("Darwin"))
+            {
+                CLPM ()
+                Notify (BATC, 0x80) // Status Change
+            }
+            Else
+            {
+                \_SB.PCI0.LPCB.EC.XQ24 ()
+            }
+        }
+            
+        Method (_Q25, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
+        {
+            If (_OSI ("Darwin"))
+            {
+                If ((^BAT1.B1ST & ^BAT1.XB1S))
+                {
+                    CLPM ()
+                    Notify (BATC, 0x80) // Status Change
+                }
+            }
+            Else
+            {
+                \_SB.PCI0.LPCB.EC.XQ25 ()
             }
         }
         
@@ -172,55 +201,6 @@ DefinitionBlock ("", "SSDT", 2, "OCLT", "NTFY", 0)
             }
         }
         
-        Method (_Q24, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
-        {
-            If (_OSI ("Darwin"))
-            {
-                CLPM ()
-                Notify (BATC, 0x80) // Status Change
-            }
-            Else
-            {
-                \_SB.PCI0.LPCB.EC.XQ24 ()
-            }
-        }
-            
-        Method (_Q25, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
-        {
-            If (_OSI ("Darwin"))
-            {
-                If ((^BAT1.B1ST & ^BAT1.XB1S))
-                {
-                    CLPM ()
-                    Notify (BATC, 0x80) // Status Change
-                }
-            }
-            Else
-            {
-                \_SB.PCI0.LPCB.EC.XQ25 ()
-            }
-        }
-            
-        Method (BFCC, 0, NotSerialized)
-        {
-            If (_OSI ("Darwin"))
-            {
-                If (\_SB.PCI0.LPCB.EC.BAT0.B0ST)
-                {
-                    Notify (BATC, 0x81) // Information Change
-                }
-
-                If (\_SB.PCI0.LPCB.EC.BAT1.B1ST)
-                {
-                    Notify (BATC, 0x81) // Information Change
-                }
-            }
-            Else
-            {
-                \_SB.PCI0.LPCB.EC.XFCC ()
-            }
-        }
-        
         Method (BATW, 1, NotSerialized)
         {
             If (_OSI ("Darwin"))
@@ -247,6 +227,26 @@ DefinitionBlock ("", "SSDT", 2, "OCLT", "NTFY", 0)
             Else
             {
                 \_SB.PCI0.LPCB.EC.XATW (Arg0)
+            }
+        }
+        
+        Method (BFCC, 0, NotSerialized)
+        {
+            If (_OSI ("Darwin"))
+            {
+                If (\_SB.PCI0.LPCB.EC.BAT0.B0ST)
+                {
+                    Notify (BATC, 0x81)
+                }
+
+                If (\_SB.PCI0.LPCB.EC.BAT1.B1ST)
+                {
+                    Notify (BATC, 0x81)
+                }
+            }
+            Else
+            {
+                \_SB.PCI0.LPCB.EC.XFCC ()
             }
         }
     }

@@ -3,121 +3,114 @@
 ## 说明
 
 - 请阅读`附件`《ThinkPad 电池系统》。
-- 确认主电池路径是 `\_SB.PCI0.`**`LPC`**`.EC.BAT0` 或者 `\_SB.PCI0.`**`LPCB`**`.EC.BAT0`，非两者，本章内容仅供参考。
-- 可能用到的更名
+- 确认 `主电池` 路径是 `\_SB.PCI0.`**`LPC`**`.EC.BAT0` 或者 `\_SB.PCI0.`**`LPCB`**`.EC.BAT0`，非两者，本章内容仅供参考。
+- 以下分三种情况说明电池补丁的使用方法。
+
+### 单电池系统更名和补丁
+
+- 更名：
   - TP 电池基本更名
   - TP 电池 `Mutex` 置 `0` 更名
-  - TP 禁止 `BAT1` 更名
-  - TP 双物理电池 `Notify` 更名
-- 可能用到的补丁
-  - ***SSDT-OCBAT0-TP***
-  - ***SSDT-OCBATC-TP-`LPC`***
-  - ***SSDT-OCBATC-TP-`LPCB`***
+- 补丁
+  - `主电池`补丁 -- ***SSDT-OCBAT0-TP******
 
-## 更名和补丁
+### 双电池系统一块物理电池更名和补丁
 
-- 单电池系统
+- 更名
+  - TP 电池基本更名
+  - TP 电池 `Mutex` 置 `0` 更名
+  - `BAT1` 禁用更名 `_STA to XSTA` 
+  - **注意**：请正确使用 `Count` ， `Skip` ， `TableSignature` ，并通过system-DSDT验证 `_STA to XSTA` 位置是否正确
+- 补丁
+  
+  - `主电池`补丁 -- ***SSDT-OCBAT0-TP****** 
+  - `BAT1`禁用补丁 -- ***SSDT-OCBAT1-disable-`LPC`*** 【或者 ***SSDT-OCBAT1-disable-`LPCB`*** 】
 
-  - 更名：
-    - TP 电池基本更名
-    - TP 电池 `Mutex` 置 `0` 更名
-  - 补丁
-    - ***SSDT-OCBAT0-TP***
+### 双电池系统二块物理电池更名和补丁
 
-- 双电池系统一块物理电池
-
-  - 更名
-    - TP 电池基本更名
-    - TP 电池 `Mutex` 置 `0` 更名
-    - TP 禁止 `BAT1` 更名
-  - 补丁
-    - ***SSDT-OCBAT0-TP***
-
-- 双电池系统二块物理电池
-
-  - 更名
-    - TP 电池基本更名
-    - TP 电池 `Mutex` 置 `0` 更名
-    - TP 双物理电池 `Notify` 更名
-  - 补丁
-    - ***SSDT-OCBAT0-TP***
-    - ***SSDT-OCBATC-TP-`LPC`*** 或者 ***SSDT-OCBATC-TP-`LPCB`***
-    - ***SSDT-NTFY***
-  - 加载顺序
-    - 主电池补丁 -- ***SSDT-OCBAT0-TP***
-    - `BATC`补丁 -- ***SSDT-OCBATC-TP-`LPC`*** 或者 ***SSDT-OCBATC-TP-`LPCB`***
-    - `Notify`补丁 -- ***SSDT-NTFY***
+- 更名
+  - TP 电池基本更名
+  - TP 电池 `Mutex` 置 `0` 更名
+  - `Notify` 更名
+- 补丁
+  - `主电池`补丁 --***SSDT-OCBAT0-TP******
+  - `BATC`补丁 -- ***SSDT-OCBATC-TP-`LPC`*** 【或者 ***SSDT-OCBATC-TP-`LPCB`*** 、***SSDT-OCBATC-TP-`_BIX`*** 】
+  - `Notify`补丁 -- ***SSDT-Notify-`LPC`*** 【或者 ***SSDT-Notify-`LPCB`*** 、 ***SSDT-Notify-`BFCC`*** 】
+  - **注意**：
+    - 选用 `BATC`补丁时，7代+机器使用 ***SSDT-OCBATC-TP-`_BIX`*** 
+    - 选用 `Notify`补丁时，7代+机器使用 ***SSDT-Notify-`BFCC`*** 
+    - 选用 `Notify`补丁时，应当检查补丁里的 `_Q22`， `_Q24`， `_Q25`， `_Q4A`， `_Q4B`， `_Q4C`， `_Q4D`，`BATW`，`BFCC` 等内容是否与原始 `ACPI` 对应内容一致，如果不一致请修正补丁相应内容
+- 加载顺序
+  - `主电池`补丁
+  - `BATC`补丁
+  - `Notify`补丁
 
 ## 注意事项
 
-- ***SSDT-OCBAT0-TP*** 是主电池补丁。选用时根据机器型号选择对应的补丁。
-
-- 选用更名和补丁时，应注意 `LPC` 和 `LPCB` 的区别。
-
-- `TP 禁止 BAT1 更名` 样本未验证所有 Thinkpad 机器，请尝试。
-
+- ***SSDT-OCBAT0-TP****** 是 `主电池` 补丁。选用时根据机器型号选择对应的补丁。
+- 选用补丁时，应注意 `LPC` 和 `LPCB` 的区别。
 - 是否需要 `TP 电池 Mutex 置 0 更名`，自行尝试。
 
-- 双物理电池需要更名 `Notify (...BAT0, ...)` 为 `Notify (...BATC, ...)`，更名 `Notify (...BAT1, ...)` 为 `Notify (...BATC, ...)`，如果直接使用更名的话会造成在其它操作系统无法恢复，从而影响其它操作系统 (如 `Windows`)。因此需要重写涉及 `Notify (...BAT0, ...)` 和 `Notify (...BAT1, ...)` 的方法，示例如下：
+## `Notify` 补丁示例【仅 `Method (_Q22` ...部分】
 
-  > T580 原文
+> T580 原文
 
-  ```Swift
-  Method (_Q22, 0, NotSerialized)  /* _Qxx: EC Query, xx=0x00-0xFF */
-  {
-      CLPM ()
-      If (HB0A)
-      {
-          Notify (BAT0, 0x80) /* Status Change */
-      }
-  
-      If (HB1A)
-      {
-          Notify (BAT1, 0x80) /* Status Change */
-      }
-  }
-  ```
+```Swift
+Method (_Q22, 0, NotSerialized)  /* _Qxx: EC Query, xx=0x00-0xFF */
+{
+    CLPM ()
+    If (HB0A)
+    {
+        Notify (BAT0, 0x80) /* Status Change */
+    }
 
-  > 重写
+    If (HB1A)
+    {
+        Notify (BAT1, 0x80) /* Status Change */
+    }
+}
+```
 
-  ```swift
-  /*
-   * For ACPI Patch:
-   * _Q22 to XQ22:
-   * Find:    5f51 3232
-   * Replace: 5851 3232
-   */
-  Method (_Q22, 0, NotSerialized)  /* _Qxx: EC Query, xx=0x00-0xFF */
-  {
-      If (_OSI ("Darwin"))
-      {
-          CLPM ()
-          If (HB0A)
-          {
-              Notify (BATC, 0x80) /* Status Change */
-          }
-  
-          If (HB1A)
-          {
-              Notify (BATC, 0x80) /* Status Change */
-          }
-      }
-      Else
-      {
-          \_SB.PCI0.LPCB.EC.XQ22 ()
-      }
-  }
-  ```
+> 重写
 
-  ***详见 `Notify` 补丁 -- `SSDT-NTFY.dsl`***
+```swift
+/*
+ * For ACPI Patch:
+ * _Q22 to XQ22:
+ * Find:    5f51 3232
+ * Replace: 5851 3232
+ */
+Method (_Q22, 0, NotSerialized)  /* _Qxx: EC Query, xx=0x00-0xFF */
+{
+    If (_OSI ("Darwin"))
+    {
+        CLPM ()
+        If (HB0A)
+        {
+            Notify (BATC, 0x80) /* Status Change */
+        }
 
-  > 已验证机器为`ThinkPad T580`，补丁和更名如下：
+        If (HB1A)
+        {
+            Notify (BATC, 0x80) /* Status Change */
+        }
+    }
+    Else
+    {
+        \_SB.PCI0.LPCB.EC.XQ22 ()
+    }
+}
+```
 
-  - **SSDT-OCBAT0-TP_tx80_x1c6th**
-  - **SSDT-OCBATC-TP-LPCB**
-  - **SSDT-NTFY**
-  - **TP电池基本更名**
-  - **TP双物理电池Notify更名-LPCB**
+详见 `Notify` 补丁 --  ***SSDT-Notify-`BFCC`*** 
+
+> 已验证机器为`ThinkPad T580`，补丁和更名如下：
+
+- **SSDT-OCBAT0-TP_tx80_x1c6th** 
+- **SSDT-OCBATC-TP-LPCB** 
+- **SSDT-Notify-BFCC** 
+- **TP电池基本更名** 
+- **Notify更名** 
 
 ### 附件：ThinkPad电池系统
 

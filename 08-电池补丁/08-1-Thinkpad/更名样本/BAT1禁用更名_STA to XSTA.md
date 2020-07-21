@@ -1,4 +1,4 @@
-```properties
+```swift
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -9,14 +9,14 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>disableBAT1:X230,T430s</string>
+				<string>disableBAT1:WTX30,WTX40,X260,X1C2014,X1C2016</string>
 				<key>Count</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>
-				AKAPXEg4RFJwSEIx
+				X1NUQQ==
 				</data>
 				<key>Limit</key>
 				<integer>0</integer>
@@ -28,29 +28,30 @@
 				</data>
 				<key>Replace</key>
 				<data>
-				AKQAo6Ojo6Ojo6Oj
+				WFNUQQ==
 				</data>
 				<key>ReplaceMask</key>
 				<data>
 				</data>
 				<key>Skip</key>
-				<integer>0</integer>
+				<integer>12</integer>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
 				<data>
+				RFNEVA==
 				</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>disableBAT1:T430,W530</string>
+				<string>disableBAT1:WTX50,WTX60,X1C2015</string>
 				<key>Count</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>
-				AKBPBFxIOERS
+				X1NUQQ==
 				</data>
 				<key>Limit</key>
 				<integer>0</integer>
@@ -62,29 +63,30 @@
 				</data>
 				<key>Replace</key>
 				<data>
-				AKQAo6Ojo6Oj
+				WFNUQQ==
 				</data>
 				<key>ReplaceMask</key>
 				<data>
 				</data>
 				<key>Skip</key>
-				<integer>0</integer>
+				<integer>11</integer>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
 				<data>
+				RFNEVA==
 				</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>disableBAT1:T440</string>
+				<string>disableBAT1:T470,T470s</string>
 				<key>Count</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>
-				AKBCBkg4RFI=
+				X1NUQQ==
 				</data>
 				<key>Limit</key>
 				<integer>0</integer>
@@ -96,29 +98,30 @@
 				</data>
 				<key>Replace</key>
 				<data>
-				AKQAo6Ojo6M=
+				WFNUQQ==
 				</data>
 				<key>ReplaceMask</key>
 				<data>
 				</data>
 				<key>Skip</key>
-				<integer>0</integer>
+				<integer>36</integer>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
 				<data>
+				RFNEVA==
 				</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>disableBAT1:TP-other</string>
+				<string>disableBAT1:X270</string>
 				<key>Count</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>
-				AKBAB1xIOERS
+				X1NUQQ==
 				</data>
 				<key>Limit</key>
 				<integer>0</integer>
@@ -130,17 +133,18 @@
 				</data>
 				<key>Replace</key>
 				<data>
-				AKQAo6Ojo6Oj
+				WFNUQQ==
 				</data>
 				<key>ReplaceMask</key>
 				<data>
 				</data>
 				<key>Skip</key>
-				<integer>0</integer>
+				<integer>35</integer>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
 				<data>
+				RFNEVA==
 				</data>
 			</dict>
 		</array>
