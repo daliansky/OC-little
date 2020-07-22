@@ -23,7 +23,7 @@ jobs:
 
       - name: Setup Calibre Env
         run:
-          sudo apt-get install calibre
+          sudo apt-get update -y && sudo apt-get install calibre --fix-missing
 
       - name: Build
         run: |
