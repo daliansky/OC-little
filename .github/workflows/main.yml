@@ -23,6 +23,7 @@ jobs:
 
       - name: Setup Calibre Env
         run:
+          sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
           sudo apt-get install calibre --fix-missing
 
       - name: Build
