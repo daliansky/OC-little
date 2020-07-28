@@ -305,7 +305,7 @@ DefinitionBlock ("", "SSDT", 2, "OCLT", "BAT0", 0)
           }
           Else
           {
-            Return (\_SB.PCI0.LPCB.EC0.XMBR())
+            Return (\_SB.PCI0.LPCB.EC0.XMBR(Arg0, Arg1, Arg2))
           }
         }
         
@@ -401,7 +401,7 @@ DefinitionBlock ("", "SSDT", 2, "OCLT", "BAT0", 0)
           }
           Else
           {
-            Return (\_SB.PCI0.LPCB.EC0.XMBW())
+            Return (\_SB.PCI0.LPCB.EC0.XMBW(Arg0, Arg1, Arg2, Arg3, Arg4))
           }
         }   
     
@@ -549,7 +549,7 @@ DefinitionBlock ("", "SSDT", 2, "OCLT", "BAT0", 0)
           }
           Else
           {
-            Return (\_SB.PCI0.LPCB.EC0.XCSB())
+            Return (\_SB.PCI0.LPCB.EC0.XCSB(Arg0, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6))
           }
         }
     }

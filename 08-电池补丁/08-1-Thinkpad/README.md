@@ -4,7 +4,7 @@
 
 - 请阅读`附件`《ThinkPad 电池系统》。
 - 确认 `主电池` 路径是 `\_SB.PCI0.`**`LPC`**`.EC.BAT0` 或者 `\_SB.PCI0.`**`LPCB`**`.EC.BAT0`，非两者，本章内容仅供参考。
-- 以下分三种情况说明电池补丁的使用方法。
+- 以下分 **三种情况** 说明电池补丁的使用方法。
 
 ### 单电池系统更名和补丁
 
@@ -20,7 +20,8 @@
   - TP 电池基本更名
   - TP 电池 `Mutex` 置 `0` 更名
   - `BAT1` 禁用更名 `_STA to XSTA` 
-  - **注意**：请正确使用 `Count` ， `Skip` ， `TableSignature` ，并通过system-DSDT验证 `_STA to XSTA` 位置是否正确
+  
+    **注意**：请正确使用 `Count` ， `Skip` ， `TableSignature` ，并通过system-DSDT验证 `_STA to XSTA` 位置是否正确
 - 补丁
   
   - `主电池`补丁 -- ***SSDT-OCBAT0-TP****** 
@@ -35,11 +36,12 @@
 - 补丁
   - `主电池`补丁 --***SSDT-OCBAT0-TP******
   - `BATC`补丁 -- ***SSDT-OCBATC-TP-`LPC`*** 【或者 ***SSDT-OCBATC-TP-`LPCB`*** 、***SSDT-OCBATC-TP-`_BIX`*** 】
-  - `Notify`补丁 -- ***SSDT-Notify-`LPC`*** 【或者 ***SSDT-Notify-`LPCB`*** 、 ***SSDT-Notify-`BFCC`*** 】
-  - **注意**：
+  - `Notify`补丁 -- ***SSDT-Notify-`LPC`*** 【或者 ***SSDT-Notify-`LPCB`*** 】
+  
+    **注意**：
+  
     - 选用 `BATC`补丁时，7代+机器使用 ***SSDT-OCBATC-TP-`_BIX`*** 
-    - 选用 `Notify`补丁时，7代+机器使用 ***SSDT-Notify-`BFCC`*** 
-    - 选用 `Notify`补丁时，应当检查补丁里的 `_Q22`， `_Q24`， `_Q25`， `_Q4A`， `_Q4B`， `_Q4C`， `_Q4D`，`BATW`，`BFCC` 等内容是否与原始 `ACPI` 对应内容一致，如果不一致请修正补丁相应内容
+    - 选用 `Notify`补丁时，应当 **仔细** 检查补丁里的 `_Q22`， `_Q24`， `_Q25`， `_Q4A`， `_Q4B`， `_Q4C`， `_Q4D`，`BATW`，`BFCC` 等内容是否与原始 `ACPI` 对应内容一致，如果不一致请修正补丁相应内容。比如：3代机器的 `_Q4C` 的内容和样本内容不同；4代、5代、6代、7代机器无 `_Q4C` ；7代+机器有 `BFCC` 。等等......。样本文件 ***SSDT-Notify-`LPCB`*** 仅适用于T580 。
 - 加载顺序
   - `主电池`补丁
   - `BATC`补丁
@@ -107,8 +109,8 @@ Method (_Q22, 0, NotSerialized)  /* _Qxx: EC Query, xx=0x00-0xFF */
 > 已验证机器为`ThinkPad T580`，补丁和更名如下：
 
 - **SSDT-OCBAT0-TP_tx80_x1c6th** 
-- **SSDT-OCBATC-TP-LPCB** 
-- **SSDT-Notify-BFCC** 
+- **SSDT-OCBATC-TP-`LPCB`** 
+- **SSDT-Notify-`LPCB`** 
 - **TP电池基本更名** 
 - **Notify更名** 
 

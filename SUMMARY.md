@@ -84,7 +84,6 @@
 * [08-电池补丁](08-电池补丁/README.md)
     * [08-1-Thinkpad](08-电池补丁/08-1-Thinkpad/README.md)
         * 各机型电池补丁
-            * [SSDT-Notify-BFCC.dsl](08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-Notify-BFCC.md)
             * [SSDT-Notify-LPC.dsl](08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-Notify-LPC.md)
             * [SSDT-Notify-LPCB.dsl](08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-Notify-LPCB.md)
             * [SSDT-OCBAT0-TP_e30_s30.dsl](08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBAT0-TP_e30_s30.md)
