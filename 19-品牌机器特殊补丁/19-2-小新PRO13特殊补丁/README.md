@@ -21,6 +21,7 @@ Replace:  584E4C46
 ## 其他补丁(参考)
 
 - ***SSDT-PLUG-_SB.PR00*** ——参见《注入X86》
+- ***SSDT-EC*** ——参见《仿冒设备—仿冒EC》
 - ***SSDT-PNLF-CFL*** ——参见《PNLF注入方法》
 - ***SSDT-BKeyQ38Q39-LenovoPRO13*** ——参见《亮度快捷键》
 - ***SSDT-PMCR*** ——参见《添加缺失的部件》
@@ -46,13 +47,12 @@ Replace:  584E4C46
 
 #### 合并的补丁
 
-- ***SSDT-EC*** ——原补丁位于《仿冒设备—仿冒EC》
 - ***SSDT-EC-USBX*** ——来自OC官方补丁示例的 **USBX** 部分
 - ***SSDT-ALS0*** ——原补丁位于《仿冒设备—仿冒环境光传感器》
 - ***SSDT-MCHC*** ——原补丁位于《添加缺失的部件》
 
 #### 注意事项
 
-- ***SSDT-OCPublic-Merge*** 适用于所有机器。合并补丁中的EC部分被置于 `_SB` 下，如果由此出现问题请恢复原补丁方法。
+- ***SSDT-OCPublic-Merge*** 适用于所有机器。
 - 使用 ***SSDT-OCPublic-Merge*** 后，上述 **<u>合并的补丁</u>** 所列补丁不再适用。
 
