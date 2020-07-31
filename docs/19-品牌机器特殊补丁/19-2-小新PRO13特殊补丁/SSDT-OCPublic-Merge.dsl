@@ -7,7 +7,6 @@ DefinitionBlock ("", "SSDT", 2, "OCLT", "OC-Merge", 0x00001000)
         Method(_SB.HELP)
         {
             Store("This is an integrated file", Debug)
-            Store("It includes SSDT-EC.aml and is located at _SB", Debug)
             Store("It includes SSDT-USBX.aml", Debug)
             Store("It includes SSDT-ALS0.aml", Debug)
             Store("It includes SSDT-MCHC.aml", Debug)
@@ -18,11 +17,6 @@ DefinitionBlock ("", "SSDT", 2, "OCLT", "OC-Merge", 0x00001000)
     {
         If (_OSI ("Darwin"))
         {
-            Device (EC)
-            {
-                Name (_HID, "ACID0001")
-            }
-            //
             Device (USBX)
             {
                 Name (_ADR, Zero)
