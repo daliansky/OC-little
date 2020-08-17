@@ -6,7 +6,7 @@
 
 - @penghubingzhou：[https://www.penghubingzhou.cn](https://www.penghubingzhou.cn)
 
-- @Bat.bat：[https://github.com/williambj1/VoodooI2C-PreRelease/blob/master/触摸板补充.md#iv-查看-ioregisteryexplorer-里-voodooi2c-是否正常加载](https://github.com/williambj1/VoodooI2C-PreRelease/blob/master/触摸板补充.md#iv-查看-ioregisteryexplorer-里-voodooi2c-是否正常加载)
+- @神楽小白(GZ小白):[https://blog.gzxiaobai.cn/](https://blog.gzxiaobai.cn/)
 
 - VoodooI2C 官方文档：[https://voodooi2c.github.io/#GPIO%20Pinning/GPIO%20Pinning](https://voodooi2c.github.io/#GPIO%20Pinning/GPIO%20Pinning)
 
