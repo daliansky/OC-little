@@ -11,6 +11,16 @@ Replace:  584E4C46
 
 ## 特殊补丁
 
+### LED 重置补丁
+
+**SSDT-ThinkPad-LED**
+
+修复 ThinkPad A 面的红色 LED 和 电源键按钮的 LED 在睡眠唤醒后仍然会闪烁的问题；保存 <kbd>F4</kbd> 麦克风指示灯的状态并在睡眠唤醒后恢复。
+
+注：该补丁不可和 `SSDT-EXT3-LedReset-TP` 补丁混用。在 DSDT 中搜索 `TTS`，如果存在 `Method (_TTS` 则使用 `SSDT-EXT3-LedReset-TP`，否则使用 `SSDT-ThinkPad-LED`。
+
+> 致谢： @junaedahmed （麦克风状态指示灯） @Sniki （电源 LED）
+
 ### ThinkPad 触控板属性注入和小红点防漂移补丁
 
 ThinkPad 的触摸板和小红点属于 ELAN 类型、使用 `Synaptics` 协议通过 SMBus 连接。由于目前没有可以在 macOS 下稳定使用的 SMBus 驱动，只能使用 VoodooPS2。在使用 VoodooPS2 时，为了启用 VoodooPS2 中内置的 ThinkPad 优化，需要通过 SSDT 注入触控板属性。
