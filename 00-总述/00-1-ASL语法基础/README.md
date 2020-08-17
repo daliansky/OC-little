@@ -189,7 +189,7 @@ Store (0, Local0)
 Local0 = 0
 
 Store (Local0, Local1)
-Local0 = Local1
+Local1 = Local0
 ```
 
 ## ASL 运算函数
