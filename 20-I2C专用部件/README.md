@@ -5,13 +5,10 @@
 本方法提供一种对 I2C 设备实施 Hotpatch 补丁的解决方案。本方法不涉及 I2C 补丁具体过程和细节。有关更多的 I2C 方面内容详见：
 
 - @penghubingzhou：[https://www.penghubingzhou.cn](https://www.penghubingzhou.cn)
-
 - @神楽小白(GZ小白):[https://blog.gzxiaobai.cn/](https://blog.gzxiaobai.cn/)
-
+- @神楽小白(GZ小白)的触摸板热补丁范例库:[https://github.com/GZXiaoBai/Hackintosh-TouchPad-Hotpatch](https://github.com/GZXiaoBai/Hackintosh-TouchPad-Hotpatch)
 - VoodooI2C 官方文档：[https://voodooi2c.github.io/#GPIO%20Pinning/GPIO%20Pinning](https://voodooi2c.github.io/#GPIO%20Pinning/GPIO%20Pinning)
-
 - VoodooI2C 官方支持帖 [https://www.tonymacx86.com/threads/voodooi2c-help-and-support.243378/](https://www.tonymacx86.com/threads/voodooi2c-help-and-support.243378/)
-
 - Q群：`837538729` (1 群已满)，`921143329` (2 群)
 
 ## 补丁原理和过程
