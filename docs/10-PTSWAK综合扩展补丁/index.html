@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="SSDT-EXT3-LedReset-TP.html" />
+    <link rel="next" href="SSDT-EXT3-LedReset-TP.md" />
     
     
     <link rel="prev" href="../09-禁用EHCx/SSDT-EHCx_OFF.html" />
@@ -1732,9 +1732,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.12.1" data-path="SSDT-EXT3-LedReset-TP.html">
+        <li class="chapter " data-level="1.12.1" data-path="SSDT-EXT3-LedReset-TP.md">
             
-                <a href="SSDT-EXT3-LedReset-TP.html">
+                <span>
             
                     
                     SSDT-EXT3-LedReset-TP.dsl
@@ -1758,9 +1758,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12.3" data-path="SSDT-PTSWAK.html">
+        <li class="chapter " data-level="1.12.3" data-path="SSDT-PTSWAK.md">
             
-                <a href="SSDT-PTSWAK.html">
+                <span>
             
                     
                     SSDT-PTSWAK.dsl
@@ -2761,12 +2761,9 @@
 </li>
 <li><p>&#x7EFC;&#x5408;&#x8865;&#x4E01;&#x662F;&#x4E00;&#x4E2A;&#x6846;&#x67B6;&#xFF0C;&#x5B83;&#x5305;&#x62EC;&#xFF1A;</p>
 <ul>
-<li><p>&#x5C4F;&#x853D;&#x72EC;&#x663E;&#x63A5;&#x53E3; <code>_ON</code>, <code>_OFF</code>&#x3002;</p>
-</li>
-<li><p>4 &#x4E2A;&#x6269;&#x5C55;&#x8865;&#x4E01;&#x63A5;&#x53E3; <code>EXT1</code>, <code>EXT2</code>, <code>EXT3</code> &#x548C; <code>EXT4</code> &#x3002;</p>
-</li>
-<li><p>&#x5B9A;&#x4E49;&#x5F3A;&#x5236;&#x7761;&#x7720;&#x4F20;&#x9012;&#x53C2;&#x6570; <code>FNOK</code> &#x548C; <code>MODE</code> &#xFF0C;&#x8BE6;&#x89C1;&#x300A;PNP0C0E&#x7761;&#x7720;&#x4FEE;&#x6B63;&#x65B9;&#x6CD5;&#x300B;&#x3002;</p>
-</li>
+<li>&#x5C4F;&#x853D;&#x72EC;&#x663E;&#x63A5;&#x53E3; <code>_ON</code>, <code>_OFF</code>&#x3002;</li>
+<li>6 &#x4E2A;&#x6269;&#x5C55;&#x8865;&#x4E01;&#x63A5;&#x53E3; <code>EXT1</code>, <code>EXT2</code>, <code>EXT3</code>, <code>EXT4</code> , <code>EXT5</code> &#x548C; <code>EXT6</code>&#x3002;</li>
+<li>&#x5B9A;&#x4E49;&#x5F3A;&#x5236;&#x7761;&#x7720;&#x4F20;&#x9012;&#x53C2;&#x6570; <code>FNOK</code> &#x548C; <code>MODE</code> &#xFF0C;&#x8BE6;&#x89C1;&#x300A;PNP0C0E&#x7761;&#x7720;&#x4FEE;&#x6B63;&#x65B9;&#x6CD5;&#x300B;&#x3002;</li>
 <li><p>&#x5B9A;&#x4E49;&#x8C03;&#x8BD5;&#x53C2;&#x6570; <code>TPTS</code> &#x548C; <code>TWAK</code> &#xFF0C;&#x7528;&#x4E8E;&#x5728;&#x7761;&#x7720;&#x548C;&#x5524;&#x9192;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4FA6;&#x6D4B;&#x3001;&#x8DDF;&#x8E2A; <code>Arg0</code> &#x53D8;&#x5316;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x5728;&#x4EAE;&#x5EA6;&#x5FEB;&#x6377;&#x952E;&#x8865;&#x4E01;&#x91CC;&#x6DFB;&#x52A0;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
 <pre><code class="lang-Swift">...
 <span class="hljs-comment">/* &#x67D0;&#x6309;&#x952E;&#xFF1A; */</span>
@@ -2775,7 +2772,7 @@
 ...
 </code></pre>
 <p>&#x5F53;&#x6309;&#x4E0B;&#x4EAE;&#x5EA6;&#x5FEB;&#x6377;&#x952E;&#x540E;&#xFF0C;&#x80FD;&#x591F;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x4E0A;&#x770B;&#x5230;&#x524D;&#x4E00;&#x6B21;&#x7761;&#x7720;&#x3001;&#x5524;&#x9192;&#x540E; <code>Arg0</code> &#x7684;&#x503C;&#x3002;</p>
-<p>&#x6CE8;&#xFF1A;&#x8C03;&#x8BD5;ACPI&#x9700;&#x8981;&#x5B89;&#x88C5;&#x9A71;&#x52A8;ACPIDebug.kext&#xFF0C;&#x6DFB;&#x52A0;&#x8865;&#x4E01;SSDT-RMDT&#xFF0C;&#x4EE5;&#x53CA;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x8C03;&#x8BD5;&#x8865;&#x4E01;&#x3002;&#x5177;&#x4F53;&#x65B9;&#x6CD5;&#x53C2;&#x89C1;&#x300A;ACPIDebug&#x300B;&#x3002;</p>
+<p>&#x6CE8;&#xFF1A;&#x8C03;&#x8BD5;ACPI&#x9700;&#x8981;&#x5B89;&#x88C5;&#x9A71;&#x52A8; ACPIDebug.kext&#xFF0C;&#x6DFB;&#x52A0;&#x8865;&#x4E01; SSDT-RMDT&#xFF0C;&#x4EE5;&#x53CA;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x8C03;&#x8BD5;&#x8865;&#x4E01;&#x3002;&#x5177;&#x4F53;&#x65B9;&#x6CD5;&#x53C2;&#x89C1;&#x300A;ACPIDebug&#x300B;&#x3002;</p>
 </li>
 </ul>
 </li>
@@ -2804,15 +2801,28 @@
 </code></pre>
 </li>
 </ul>
+<p>&#x5982;&#x679C; DSDT &#x4E2D;&#x5B58;&#x5728; <code>_TTS</code> &#x4E5F;&#x9700;&#x8981;&#x5BF9;&#x5176;&#x66F4;&#x540D;&#xFF1B;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x65E0;&#x9700;&#x66F4;&#x540D;&#x3002;&#x4F9D;&#x636E;&#x539F;&#x59CB; DSDT &#x5185;&#x5BB9;&#x9009;&#x62E9;&#x6B63;&#x786E;&#x7684;&#x66F4;&#x540D;&#xFF0C;&#x5982;&#xFF1A;</p>
+<ul>
+<li><p><code>_TTS</code> to <code>ZTTS(1,N)</code>:</p>
+<pre><code class="lang-Swift">  <span class="hljs-type">Method</span> (_TTS, <span class="hljs-number">1</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">/* _WAK: Wake */</span>
+  {
+</code></pre>
+</li>
+<li><p><code>_TTS</code> to <code>ZTTS(1,S)</code>:</p>
+<pre><code class="lang-Swift">  <span class="hljs-type">Method</span> (_TTS, <span class="hljs-number">1</span>, <span class="hljs-type">Serialized</span>)  <span class="hljs-comment">/* _WAK: Wake */</span>
+  {
+</code></pre>
+</li>
+</ul>
 <h2 id="&#x8865;&#x4E01;">&#x8865;&#x4E01;</h2>
 <ul>
-<li><p><strong><em>SSDT-PTSWAK</em></strong> &#x2014;&#x2014; &#x7EFC;&#x5408;&#x8865;&#x4E01;&#x3002;</p>
+<li><p><strong><em>SSDT-PTSWAKTTS</em></strong> &#x2014;&#x2014; &#x7EFC;&#x5408;&#x8865;&#x4E01;&#x3002;</p>
 </li>
 <li><p><strong><em>SSDT-EXT1-FixShutdown</em></strong> &#x2014;&#x2014; <code>EXT1</code> &#x6269;&#x5C55;&#x8865;&#x4E01;&#x3002; &#x4FEE;&#x590D;&#x56E0; XHC &#x63A7;&#x5236;&#x5668;&#x5BFC;&#x81F4;&#x7684;&#x5173;&#x673A;&#x53D8;&#x91CD;&#x542F;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x539F;&#x7406;&#x662F;&#x5F53; <code>_PTS</code> &#x4E2D;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x4E3A; <code>5</code> &#x65F6;&#x5C06; <code>XHC.PMEE</code> &#x7F6E; 0&#x3002;&#x8BE5;&#x8865;&#x4E01;&#x4E0E; Clover &#x7684; <code>FixShutdown</code> &#x6548;&#x679C;&#x7B49;&#x540C;&#x3002;&#x90E8;&#x5206; XPS / ThinkPad &#x673A;&#x5668;&#x4F1A;&#x9700;&#x8981;&#x8FD9;&#x4E2A;&#x8865;&#x4E01;&#x3002;</p>
 </li>
-<li><p><strong><em>SSDT-EXT3-LedReset-TP</em></strong> &#x2014;&#x2014; <code>EXT3</code> &#x6269;&#x5C55;&#x8865;&#x4E01;&#x3002; &#x89E3;&#x51B3; TP &#x673A;&#x5668;&#x5524;&#x9192;&#x540E;&#x547C;&#x5438;&#x706F;&#x672A;&#x6062;&#x590D;&#x6B63;&#x5E38;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
-</li>
 <li><p><strong><em>SSDT-EXT4-WakeScreen</em></strong> &#x2014;&#x2014; <code>EXT4</code> &#x6269;&#x5C55;&#x8865;&#x4E01;&#x3002;&#x89E3;&#x51B3;&#x67D0;&#x4E9B;&#x673A;&#x5668;&#x5524;&#x9192;&#x540E;&#x9700;&#x6309;&#x4EFB;&#x610F;&#x952E;&#x4EAE;&#x5C4F;&#x7684;&#x95EE;&#x9898;&#x3002;&#x4F7F;&#x7528;&#x65F6;&#x5E94;&#x67E5;&#x8BE2; <code>PNP0C0D</code> &#x8BBE;&#x5907;&#x540D;&#x79F0;&#x548C;&#x8DEF;&#x5F84;&#x662F;&#x5426;&#x5DF2;&#x5B58;&#x5728;&#x8865;&#x4E01;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x5982; <code>_SB.PCI0.LPCB.LID0</code>&#x3002;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x81EA;&#x884C;&#x6DFB;&#x52A0;&#x3002;</p>
+</li>
+<li><p><strong><em>SSDT-EXT5-TP-LED</em></strong> &#x2014;&#x2014; <code>EXT5</code> &#x6269;&#x5C55;&#x8865;&#x4E01;&#x3002; &#x89E3;&#x51B3; ThinkPad &#x673A;&#x5668;&#x5524;&#x9192;&#x540E; A &#x9762;&#x547C;&#x5438;&#x706F;&#x548C;&#x7535;&#x6E90;&#x952E;&#x547C;&#x5438;&#x706F;&#x672A;&#x6062;&#x590D;&#x6B63;&#x5E38;&#x7684;&#x95EE;&#x9898;&#xFF1B;&#x4FEE;&#x590D;&#x5728; ThinkPad &#x8001;&#x673A;&#x578B;&#x4E0A;&#x5524;&#x9192;&#x540E; <kbd>F4</kbd> &#x9EA6;&#x514B;&#x98CE;&#x6307;&#x793A;&#x706F;&#x72B6;&#x6001;&#x4E0D;&#x6B63;&#x5E38;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
 </li>
 </ul>
 <h2 id="&#x6CE8;&#x610F;">&#x6CE8;&#x610F;</h2>
@@ -2849,7 +2859,7 @@
                 </a>
                 
                 
-                <a href="SSDT-EXT3-LedReset-TP.html" class="navigation navigation-next " aria-label="Next page: SSDT-EXT3-LedReset-TP.dsl">
+                <a href="SSDT-EXT3-LedReset-TP.md" class="navigation navigation-next " aria-label="Next page: SSDT-EXT3-LedReset-TP.dsl">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -2860,7 +2870,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"10-PTSWAK综合扩展补丁","level":"1.12","depth":1,"next":{"title":"SSDT-EXT3-LedReset-TP.dsl","level":"1.12.1","depth":2,"path":"10-PTSWAK综合扩展补丁/SSDT-EXT3-LedReset-TP.md","ref":"10-PTSWAK综合扩展补丁/SSDT-EXT3-LedReset-TP.md","articles":[]},"previous":{"title":"SSDT-EHCx_OFF.dsl","level":"1.11.3","depth":2,"path":"09-禁用EHCx/SSDT-EHCx_OFF.md","ref":"09-禁用EHCx/SSDT-EHCx_OFF.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"10-PTSWAK综合扩展补丁/README.md","mtime":"2020-08-17T09:45:32.736Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-17T09:47:11.189Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"10-PTSWAK综合扩展补丁","level":"1.12","depth":1,"next":{"title":"SSDT-EXT3-LedReset-TP.dsl","level":"1.12.1","depth":2,"path":"10-PTSWAK综合扩展补丁/SSDT-EXT3-LedReset-TP.md","ref":"10-PTSWAK综合扩展补丁/SSDT-EXT3-LedReset-TP.md","articles":[]},"previous":{"title":"SSDT-EHCx_OFF.dsl","level":"1.11.3","depth":2,"path":"09-禁用EHCx/SSDT-EHCx_OFF.md","ref":"09-禁用EHCx/SSDT-EHCx_OFF.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"10-PTSWAK综合扩展补丁/README.md","mtime":"2020-08-20T23:48:46.793Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-20T23:50:16.202Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
