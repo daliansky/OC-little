@@ -6,6 +6,7 @@
     * [00-2-SSDT补丁加载顺序](00-总述/00-2-SSDT补丁加载顺序/README.md)
         * [SSDT-XXXX-1.dsl](00-总述/00-2-SSDT补丁加载顺序/SSDT-XXXX-1.md)
         * [SSDT-XXXX-2.dsl](00-总述/00-2-SSDT补丁加载顺序/SSDT-XXXX-2.md)
+    * [00-3-ACPI表单](00-总述/00-3-ACPI表单/README.md)
 * [01-关于AOAC](01-关于AOAC/README.md)
     * [01-1-禁止S3睡眠](01-关于AOAC/01-1-禁止S3睡眠/README.md)
         * [_S3更名XS3.plist](01-关于AOAC/01-1-禁止S3睡眠/_S3更名XS3.md)
