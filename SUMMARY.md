@@ -7,6 +7,7 @@
         * [SSDT-XXXX-1.dsl](00-总述/00-2-SSDT补丁加载顺序/SSDT-XXXX-1.md)
         * [SSDT-XXXX-2.dsl](00-总述/00-2-SSDT补丁加载顺序/SSDT-XXXX-2.md)
     * [00-3-ACPI表单](00-总述/00-3-ACPI表单/README.md)
+    * [00-4-ASL-AML对照表](03-二进制更名与预置变量/03-2-ASL-AML对照表/ASL-AML对照表.md)
 * [01-关于AOAC](01-关于AOAC/README.md)
     * [01-1-禁止S3睡眠](01-关于AOAC/01-1-禁止S3睡眠/README.md)
         * [_S3更名XS3.plist](01-关于AOAC/01-1-禁止S3睡眠/_S3更名XS3.md)
@@ -37,7 +38,6 @@
     * [03-1-OCI2C-GPIO补丁](03-二进制更名与预置变量/03-1-OCI2C-GPIO补丁/README.md)
         * [SSDT-OCGPI0-GPEN.dsl](03-二进制更名与预置变量/03-1-OCI2C-GPIO补丁/SSDT-OCGPI0-GPEN.md)
         * [SSDT-OCGPI0-GPHD.dsl](03-二进制更名与预置变量/03-1-OCI2C-GPIO补丁/SSDT-OCGPI0-GPHD.md)
-    * [03-2-ASL-AML对照表](03-二进制更名与预置变量/03-2-ASL-AML对照表/ASL-AML对照表.md)
     * 补丁库
         * [SSDT-AWAC.dsl](03-二进制更名与预置变量/补丁库/SSDT-AWAC.md)
         * [SSDT-RTC_Y-AWAC_N.dsl](03-二进制更名与预置变量/补丁库/SSDT-RTC_Y-AWAC_N.md)
