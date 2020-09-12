@@ -6,16 +6,19 @@
 
 ## 在线手册
 
-本仓库依赖 GitBook 并使用 GitHub Actions 构建了 Pages 服务和 pdf 手册。
-  - [https://ocbook.tlhub.cn](https://ocbook.tlhub.cn)
-  - [OpenCore 部件库](https://cdn.jsdelivr.net/gh/daliansky/OC-little/docs/OpenCore部件库.pdf)
+本仓库依赖 GitBook 并使用 GitHub Actions 构建了 Pages 服务和 PDF 手册。
+
+- [https://ocbook.tlhub.cn](https://ocbook.tlhub.cn)
+- [OpenCore 部件库](https://cdn.jsdelivr.net/gh/daliansky/OC-little/docs/OpenCore部件库.pdf)
 
 ## 主要内容
 
-- **总述**
+0. **总述**
 
-  1. `ASL`语法基础
-  2. `SSDT` 补丁加载顺序
+   1. ASL 语法基础
+   2. SSDT 补丁加载顺序
+   3. ACPI 表单
+   4. ASL-AML 对照表
 
 1. **关于`AOAC`**
 
@@ -32,11 +35,10 @@
    2. RTC0
    3. 键盘无法输入的应急解决方案 `PS2N`
    4. 仿冒环境光传感器
-   
+
 3. **二进制更名与预置变量**
 
    1. OC `I2C-GPIO` 补丁
-   2. ASL-AML 对照表
 
 4. **操作系统补丁**
 
@@ -115,8 +117,4 @@
   - @大勇-小新air13-OC-划水小白
   - ......
 
-- Thanks for:
-  - [Acidanthera](https://github.com/acidanthera) Maintaining:
-    - [AppleSupportPkg](https://github.com/acidanthera/AppleSupportPkg)
-    - [MacInfoPkg](https://github.com/acidanthera/MacInfoPkg)
-    - [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg)
+- **Thanks for [Acidanthera](https://github.com/acidanthera) maintaining [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg)**
