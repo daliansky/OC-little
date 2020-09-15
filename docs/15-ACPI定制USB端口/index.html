@@ -1,0 +1,2825 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>15-ACPI定制USB端口 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="SSDT-CB-01_XHC.html" />
+    
+    
+    <link rel="prev" href="../14-CMOS相关/14-1-CMOS内存和RTCMemoryFixup/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    OpenCore 部件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../00-总述/">
+            
+                <a href="../00-总述/">
+            
+                    
+                    00-总述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../00-总述/00-1-ASL语法基础/">
+            
+                <a href="../00-总述/00-1-ASL语法基础/">
+            
+                    
+                    00-1-ASL语法基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../00-总述/00-2-SSDT补丁加载顺序/">
+            
+                <a href="../00-总述/00-2-SSDT补丁加载顺序/">
+            
+                    
+                    00-2-SSDT补丁加载顺序
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../00-总述/00-2-SSDT补丁加载顺序/SSDT-XXXX-1.html">
+            
+                <a href="../00-总述/00-2-SSDT补丁加载顺序/SSDT-XXXX-1.html">
+            
+                    
+                    SSDT-XXXX-1.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../00-总述/00-2-SSDT补丁加载顺序/SSDT-XXXX-2.html">
+            
+                <a href="../00-总述/00-2-SSDT补丁加载顺序/SSDT-XXXX-2.html">
+            
+                    
+                    SSDT-XXXX-2.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../00-总述/00-3-ACPI表单/">
+            
+                <a href="../00-总述/00-3-ACPI表单/">
+            
+                    
+                    00-3-ACPI表单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../03-二进制更名与预置变量/03-2-ASL-AML对照表/ASL-AML对照表.md">
+            
+                <span>
+            
+                    
+                    00-4-ASL-AML对照表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../01-关于AOAC/">
+            
+                <a href="../01-关于AOAC/">
+            
+                    
+                    01-关于AOAC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../01-关于AOAC/01-1-禁止S3睡眠/">
+            
+                <a href="../01-关于AOAC/01-1-禁止S3睡眠/">
+            
+                    
+                    01-1-禁止S3睡眠
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../01-关于AOAC/01-1-禁止S3睡眠/_S3更名XS3.html">
+            
+                <a href="../01-关于AOAC/01-1-禁止S3睡眠/_S3更名XS3.html">
+            
+                    
+                    _S3更名XS3.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../01-关于AOAC/01-1-禁止S3睡眠/SSDT-MethodS3-disable.html">
+            
+                <a href="../01-关于AOAC/01-1-禁止S3睡眠/SSDT-MethodS3-disable.html">
+            
+                    
+                    SSDT-MethodS3-disable.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../01-关于AOAC/01-1-禁止S3睡眠/SSDT-NameS3-disable.html">
+            
+                <a href="../01-关于AOAC/01-1-禁止S3睡眠/SSDT-NameS3-disable.html">
+            
+                    
+                    SSDT-NameS3-disable.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../01-关于AOAC/01-2-AOAC禁止独显/">
+            
+                <a href="../01-关于AOAC/01-2-AOAC禁止独显/">
+            
+                    
+                    01-2-AOAC禁止独显
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../01-关于AOAC/01-2-AOAC禁止独显/SSDT-NDGP_OFF-AOAC.html">
+            
+                <a href="../01-关于AOAC/01-2-AOAC禁止独显/SSDT-NDGP_OFF-AOAC.html">
+            
+                    
+                    SSDT-NDGP_OFF-AOAC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../01-关于AOAC/01-2-AOAC禁止独显/SSDT-NDGP_PS3-AOAC.html">
+            
+                <a href="../01-关于AOAC/01-2-AOAC禁止独显/SSDT-NDGP_PS3-AOAC.html">
+            
+                    
+                    SSDT-NDGP_PS3-AOAC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../01-关于AOAC/01-3-电源空闲管理/">
+            
+                <a href="../01-关于AOAC/01-3-电源空闲管理/">
+            
+                    
+                    01-3-电源空闲管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../01-关于AOAC/01-3-电源空闲管理/SSDT-DeepIdle.html">
+            
+                <a href="../01-关于AOAC/01-3-电源空闲管理/SSDT-DeepIdle.html">
+            
+                    
+                    SSDT-DeepIdle.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../01-关于AOAC/01-4-AOAC唤醒方法/">
+            
+                <a href="../01-关于AOAC/01-4-AOAC唤醒方法/">
+            
+                    
+                    01-4-AOAC唤醒方法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../01-关于AOAC/01-4-AOAC唤醒方法/SSDT-LIDpatch-AOAC.html">
+            
+                <a href="../01-关于AOAC/01-4-AOAC唤醒方法/SSDT-LIDpatch-AOAC.html">
+            
+                    
+                    SSDT-LIDpatch-AOAC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../01-关于AOAC/01-4-AOAC唤醒方法/SSDT-PCI0.LPCB-Wake-AOAC.html">
+            
+                <a href="../01-关于AOAC/01-4-AOAC唤醒方法/SSDT-PCI0.LPCB-Wake-AOAC.html">
+            
+                    
+                    SSDT-PCI0.LPCB-Wake-AOAC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../01-关于AOAC/01-5-设置ASPM工作模式/">
+            
+                <a href="../01-关于AOAC/01-5-设置ASPM工作模式/">
+            
+                    
+                    01-5-设置ASPM工作模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.5.1" data-path="../01-关于AOAC/01-5-设置ASPM工作模式/SSDT-PCI0.RPXX-ASPM.html">
+            
+                <a href="../01-关于AOAC/01-5-设置ASPM工作模式/SSDT-PCI0.RPXX-ASPM.html">
+            
+                    
+                    SSDT-PCI0.RPXX-ASPM.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../01-关于AOAC/01-6-睡眠自动关闭蓝牙WIFI/">
+            
+                <a href="../01-关于AOAC/01-6-睡眠自动关闭蓝牙WIFI/">
+            
+                    
+                    01-6-睡眠自动关闭蓝牙WIFI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../02-仿冒设备/">
+            
+                <a href="../02-仿冒设备/">
+            
+                    
+                    02-仿冒设备
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../02-仿冒设备/02-1-仿冒EC/">
+            
+                <a href="../02-仿冒设备/02-1-仿冒EC/">
+            
+                    
+                    02-1-仿冒EC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../02-仿冒设备/02-1-仿冒EC/SSDT-EC.html">
+            
+                <a href="../02-仿冒设备/02-1-仿冒EC/SSDT-EC.html">
+            
+                    
+                    SSDT-EC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../02-仿冒设备/02-2-RTC0/">
+            
+                <a href="../02-仿冒设备/02-2-RTC0/">
+            
+                    
+                    02-2-RTC0
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../02-仿冒设备/02-2-RTC0/SSDT-RTC0.html">
+            
+                <a href="../02-仿冒设备/02-2-RTC0/SSDT-RTC0.html">
+            
+                    
+                    SSDT-RTC0.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../02-仿冒设备/02-3-键盘无法输入的应急解决方案PS2N/">
+            
+                <a href="../02-仿冒设备/02-3-键盘无法输入的应急解决方案PS2N/">
+            
+                    
+                    02-3-键盘无法输入的应急解决方案PS2N
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../02-仿冒设备/02-3-键盘无法输入的应急解决方案PS2N/SSDT-PS2N.html">
+            
+                <a href="../02-仿冒设备/02-3-键盘无法输入的应急解决方案PS2N/SSDT-PS2N.html">
+            
+                    
+                    SSDT-PS2N.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../02-仿冒设备/02-4-仿冒环境光传感器/">
+            
+                <a href="../02-仿冒设备/02-4-仿冒环境光传感器/">
+            
+                    
+                    02-4-仿冒环境光传感器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="../02-仿冒设备/02-4-仿冒环境光传感器/SSDT-ALS0.html">
+            
+                <a href="../02-仿冒设备/02-4-仿冒环境光传感器/SSDT-ALS0.html">
+            
+                    
+                    SSDT-ALS0.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="../02-仿冒设备/02-4-仿冒环境光传感器/SSDT-ALSD.html">
+            
+                <a href="../02-仿冒设备/02-4-仿冒环境光传感器/SSDT-ALSD.html">
+            
+                    
+                    SSDT-ALSD.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../03-二进制更名与预置变量/">
+            
+                <a href="../03-二进制更名与预置变量/">
+            
+                    
+                    03-二进制更名与预置变量
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../03-二进制更名与预置变量/03-1-OCI2C-GPIO补丁/">
+            
+                <a href="../03-二进制更名与预置变量/03-1-OCI2C-GPIO补丁/">
+            
+                    
+                    03-1-OCI2C-GPIO补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../03-二进制更名与预置变量/03-1-OCI2C-GPIO补丁/SSDT-OCGPI0-GPEN.html">
+            
+                <a href="../03-二进制更名与预置变量/03-1-OCI2C-GPIO补丁/SSDT-OCGPI0-GPEN.html">
+            
+                    
+                    SSDT-OCGPI0-GPEN.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../03-二进制更名与预置变量/03-1-OCI2C-GPIO补丁/SSDT-OCGPI0-GPHD.html">
+            
+                <a href="../03-二进制更名与预置变量/03-1-OCI2C-GPIO补丁/SSDT-OCGPI0-GPHD.html">
+            
+                    
+                    SSDT-OCGPI0-GPHD.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" >
+            
+                <span>
+            
+                    
+                    补丁库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../03-二进制更名与预置变量/补丁库/SSDT-AWAC.html">
+            
+                <a href="../03-二进制更名与预置变量/补丁库/SSDT-AWAC.html">
+            
+                    
+                    SSDT-AWAC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../03-二进制更名与预置变量/补丁库/SSDT-RTC_Y-AWAC_N.html">
+            
+                <a href="../03-二进制更名与预置变量/补丁库/SSDT-RTC_Y-AWAC_N.html">
+            
+                    
+                    SSDT-RTC_Y-AWAC_N.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../04-操作系统补丁/">
+            
+                <a href="../04-操作系统补丁/">
+            
+                    
+                    04-操作系统补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../04-操作系统补丁/操作系统补丁前置更名.html">
+            
+                <a href="../04-操作系统补丁/操作系统补丁前置更名.html">
+            
+                    
+                    操作系统补丁前置更名.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../04-操作系统补丁/操作系统更名.html">
+            
+                <a href="../04-操作系统补丁/操作系统更名.html">
+            
+                    
+                    操作系统更名.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../04-操作系统补丁/SSDT-OC-XOSI.html">
+            
+                <a href="../04-操作系统补丁/SSDT-OC-XOSI.html">
+            
+                    
+                    SSDT-OC-XOSI.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../05-注入设备/">
+            
+                <a href="../05-注入设备/">
+            
+                    
+                    05-注入设备
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../05-注入设备/05-1-注入X86/">
+            
+                <a href="../05-注入设备/05-1-注入X86/">
+            
+                    
+                    05-1-注入X86
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1.1" data-path="../05-注入设备/05-1-注入X86/SSDT-PLUG-_PR.CPU0.html">
+            
+                <a href="../05-注入设备/05-1-注入X86/SSDT-PLUG-_PR.CPU0.html">
+            
+                    
+                    SSDT-PLUG-_PR.CPU0.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.2" data-path="../05-注入设备/05-1-注入X86/SSDT-PLUG-_PR.P000.html">
+            
+                <a href="../05-注入设备/05-1-注入X86/SSDT-PLUG-_PR.P000.html">
+            
+                    
+                    SSDT-PLUG-_PR.P000.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.3" data-path="../05-注入设备/05-1-注入X86/SSDT-PLUG-_PR.PR00.html">
+            
+                <a href="../05-注入设备/05-1-注入X86/SSDT-PLUG-_PR.PR00.html">
+            
+                    
+                    SSDT-PLUG-_PR.PR00.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.4" data-path="../05-注入设备/05-1-注入X86/SSDT-PLUG-_SB.CPU0.html">
+            
+                <a href="../05-注入设备/05-1-注入X86/SSDT-PLUG-_SB.CPU0.html">
+            
+                    
+                    SSDT-PLUG-_SB.CPU0.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.5" data-path="../05-注入设备/05-1-注入X86/SSDT-PLUG-_SB.P000.html">
+            
+                <a href="../05-注入设备/05-1-注入X86/SSDT-PLUG-_SB.P000.html">
+            
+                    
+                    SSDT-PLUG-_SB.P000.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.6" data-path="../05-注入设备/05-1-注入X86/SSDT-PLUG-_SB.PR00.html">
+            
+                <a href="../05-注入设备/05-1-注入X86/SSDT-PLUG-_SB.PR00.html">
+            
+                    
+                    SSDT-PLUG-_SB.PR00.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.7" data-path="../05-注入设备/05-1-注入X86/SSDT-PLUG-SCK0.C000.html">
+            
+                <a href="../05-注入设备/05-1-注入X86/SSDT-PLUG-SCK0.C000.html">
+            
+                    
+                    SSDT-PLUG-SCK0.C000.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.8" data-path="../05-注入设备/05-1-注入X86/SSDT-PLUG-SCK0.CPU0.html">
+            
+                <a href="../05-注入设备/05-1-注入X86/SSDT-PLUG-SCK0.CPU0.html">
+            
+                    
+                    SSDT-PLUG-SCK0.CPU0.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../05-注入设备/05-2-PNLF注入方法/">
+            
+                <a href="../05-注入设备/05-2-PNLF注入方法/">
+            
+                    
+                    05-2-PNLF注入方法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.2.1" data-path="../05-注入设备/05-2-PNLF注入方法/ACPI亮度补丁/ACPI亮度补丁.html">
+            
+                <a href="../05-注入设备/05-2-PNLF注入方法/ACPI亮度补丁/ACPI亮度补丁.html">
+            
+                    
+                    ACPI亮度补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.2.1.1" data-path="../05-注入设备/05-2-PNLF注入方法/ACPI亮度补丁/SSDT-PNLF-ACPI.html">
+            
+                <a href="../05-注入设备/05-2-PNLF注入方法/ACPI亮度补丁/SSDT-PNLF-ACPI.html">
+            
+                    
+                    SSDT-PNLF-ACPI.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.1.2" data-path="../05-注入设备/05-2-PNLF注入方法/ACPI亮度补丁/修改图示.html">
+            
+                <a href="../05-注入设备/05-2-PNLF注入方法/ACPI亮度补丁/修改图示.html">
+            
+                    
+                    修改图示
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.2" >
+            
+                <span>
+            
+                    
+                    定制亮度补丁
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.2.2.1" data-path="../05-注入设备/05-2-PNLF注入方法/定制亮度补丁/SSDT-PNLF-CFL.html">
+            
+                <a href="../05-注入设备/05-2-PNLF注入方法/定制亮度补丁/SSDT-PNLF-CFL.html">
+            
+                    
+                    SSDT-PNLF-CFL.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.2.2" data-path="../05-注入设备/05-2-PNLF注入方法/定制亮度补丁/SSDT-PNLF-Haswell_Broadwell.html">
+            
+                <a href="../05-注入设备/05-2-PNLF注入方法/定制亮度补丁/SSDT-PNLF-Haswell_Broadwell.html">
+            
+                    
+                    SSDT-PNLF-Haswell_Broadwell.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.2.3" data-path="../05-注入设备/05-2-PNLF注入方法/定制亮度补丁/SSDT-PNLF-SKL_KBL.html">
+            
+                <a href="../05-注入设备/05-2-PNLF注入方法/定制亮度补丁/SSDT-PNLF-SKL_KBL.html">
+            
+                    
+                    SSDT-PNLF-SKL_KBL.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.2.4" data-path="../05-注入设备/05-2-PNLF注入方法/定制亮度补丁/SSDT-PNLF-SNB_IVY.html">
+            
+                <a href="../05-注入设备/05-2-PNLF注入方法/定制亮度补丁/SSDT-PNLF-SNB_IVY.html">
+            
+                    
+                    SSDT-PNLF-SNB_IVY.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../05-注入设备/05-3-SBUS_SMBU补丁/">
+            
+                <a href="../05-注入设备/05-3-SBUS_SMBU补丁/">
+            
+                    
+                    05-3-SBUS/SMBU补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.3.1" data-path="../05-注入设备/05-3-SBUS_SMBU补丁/SSDT-SBUS.html">
+            
+                <a href="../05-注入设备/05-3-SBUS_SMBU补丁/SSDT-SBUS.html">
+            
+                    
+                    SSDT-SBUS.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3.2" data-path="../05-注入设备/05-3-SBUS_SMBU补丁/SSDT-SMBU.html">
+            
+                <a href="../05-注入设备/05-3-SBUS_SMBU补丁/SSDT-SMBU.html">
+            
+                    
+                    SSDT-SMBU.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../06-添加缺失的部件/">
+            
+                <a href="../06-添加缺失的部件/">
+            
+                    
+                    06-添加缺失的部件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../06-添加缺失的部件/SSDT-DMAC.html">
+            
+                <a href="../06-添加缺失的部件/SSDT-DMAC.html">
+            
+                    
+                    SSDT-DMAC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../06-添加缺失的部件/SSDT-IMEI.html">
+            
+                <a href="../06-添加缺失的部件/SSDT-IMEI.html">
+            
+                    
+                    SSDT-IMEI.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../06-添加缺失的部件/SSDT-MCHC.html">
+            
+                <a href="../06-添加缺失的部件/SSDT-MCHC.html">
+            
+                    
+                    SSDT-MCHC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../06-添加缺失的部件/SSDT-MEM2.html">
+            
+                <a href="../06-添加缺失的部件/SSDT-MEM2.html">
+            
+                    
+                    SSDT-MEM2.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../06-添加缺失的部件/SSDT-PMCR.html">
+            
+                <a href="../06-添加缺失的部件/SSDT-PMCR.html">
+            
+                    
+                    SSDT-PMCR.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../06-添加缺失的部件/SSDT-PPMC.html">
+            
+                <a href="../06-添加缺失的部件/SSDT-PPMC.html">
+            
+                    
+                    SSDT-PPMC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../06-添加缺失的部件/SSDT-PWRB.html">
+            
+                <a href="../06-添加缺失的部件/SSDT-PWRB.html">
+            
+                    
+                    SSDT-PWRB.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../06-添加缺失的部件/SSDT-SLPB.html">
+            
+                <a href="../06-添加缺失的部件/SSDT-SLPB.html">
+            
+                    
+                    SSDT-SLPB.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../07-PS2键盘映射/">
+            
+                <a href="../07-PS2键盘映射/">
+            
+                    
+                    07-PS2键盘映射
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../07-PS2键盘映射/ApplePS2ToADBMap.html">
+            
+                <a href="../07-PS2键盘映射/ApplePS2ToADBMap.html">
+            
+                    
+                    ApplePS2ToADBMap.h
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../07-PS2键盘映射/SSDT-RMCF-MouseAsTrackpad.html">
+            
+                <a href="../07-PS2键盘映射/SSDT-RMCF-MouseAsTrackpad.html">
+            
+                    
+                    SSDT-RMCF-MouseAsTrackpad.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../07-PS2键盘映射/SSDT-RMCF-PS2Map-AtoZ.html">
+            
+                <a href="../07-PS2键盘映射/SSDT-RMCF-PS2Map-AtoZ.html">
+            
+                    
+                    SSDT-RMCF-PS2Map-AtoZ.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../07-PS2键盘映射/SSDT-RMCF-PS2Map-dell.html">
+            
+                <a href="../07-PS2键盘映射/SSDT-RMCF-PS2Map-dell.html">
+            
+                    
+                    SSDT-RMCF-PS2Map-dell.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../07-PS2键盘映射/SSDT-RMCF-PS2Map-LenovoIWL.html">
+            
+                <a href="../07-PS2键盘映射/SSDT-RMCF-PS2Map-LenovoIWL.html">
+            
+                    
+                    SSDT-RMCF-PS2Map-LenovoIWL.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../08-电池补丁/">
+            
+                <a href="../08-电池补丁/">
+            
+                    
+                    08-电池补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../08-电池补丁/08-1-Thinkpad/">
+            
+                <a href="../08-电池补丁/08-1-Thinkpad/">
+            
+                    
+                    08-1-Thinkpad
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1.1" >
+            
+                <span>
+            
+                    
+                    各机型电池补丁
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1.1.1" data-path="../08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-Notify-LPC.html">
+            
+                <a href="../08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-Notify-LPC.html">
+            
+                    
+                    SSDT-Notify-LPC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.1.2" data-path="../08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-Notify-LPCB.html">
+            
+                <a href="../08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-Notify-LPCB.html">
+            
+                    
+                    SSDT-Notify-LPCB.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.1.3" data-path="../08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBAT0-TP_e30_s30.html">
+            
+                <a href="../08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBAT0-TP_e30_s30.html">
+            
+                    
+                    SSDT-OCBAT0-TP_e30_s30.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.1.4" data-path="../08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBAT0-TP_re80_tx70_x1c5th_s12017_p51.html">
+            
+                <a href="../08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBAT0-TP_re80_tx70_x1c5th_s12017_p51.html">
+            
+                    
+                    SSDT-OCBAT0-TP_re80_tx70_x1c5th_s12017_p51.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.1.5" data-path="../08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBAT0-TP_tx80_x1c6th.html">
+            
+                <a href="../08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBAT0-TP_tx80_x1c6th.html">
+            
+                    
+                    SSDT-OCBAT0-TP_tx80_x1c6th.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.1.6" data-path="../08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBAT0-TP_wtx20-60_e40-70_x1c1th-3th.html">
+            
+                <a href="../08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBAT0-TP_wtx20-60_e40-70_x1c1th-3th.html">
+            
+                    
+                    SSDT-OCBAT0-TP_wtx20-60_e40-70_x1c1th-3th.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.1.7" data-path="../08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBAT1-disable-LPC.html">
+            
+                <a href="../08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBAT1-disable-LPC.html">
+            
+                    
+                    SSDT-OCBAT1-disable-LPC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.1.8" data-path="../08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBAT1-disable-LPCB.html">
+            
+                <a href="../08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBAT1-disable-LPCB.html">
+            
+                    
+                    SSDT-OCBAT1-disable-LPCB.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.1.9" data-path="../08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBATC-TP-_BIX.html">
+            
+                <a href="../08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBATC-TP-_BIX.html">
+            
+                    
+                    SSDT-OCBATC-TP-_BIX.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.1.10" data-path="../08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBATC-TP-LPC.html">
+            
+                <a href="../08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBATC-TP-LPC.html">
+            
+                    
+                    SSDT-OCBATC-TP-LPC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.1.11" data-path="../08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBATC-TP-LPCB.html">
+            
+                <a href="../08-电池补丁/08-1-Thinkpad/各机型电池补丁/SSDT-OCBATC-TP-LPCB.html">
+            
+                    
+                    SSDT-OCBATC-TP-LPCB.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.2" >
+            
+                <span>
+            
+                    
+                    更名样本
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1.2.1" data-path="../08-电池补丁/08-1-Thinkpad/更名样本/TP电池基本更名.html">
+            
+                <a href="../08-电池补丁/08-1-Thinkpad/更名样本/TP电池基本更名.html">
+            
+                    
+                    TP电池基本更名.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.2.2" data-path="../08-电池补丁/08-1-Thinkpad/更名样本/TP电池Mutex置0更名.html">
+            
+                <a href="../08-电池补丁/08-1-Thinkpad/更名样本/TP电池Mutex置0更名.html">
+            
+                    
+                    TP电池Mutex置0更名.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.2.3" data-path="../08-电池补丁/08-1-Thinkpad/更名样本/BAT1禁用更名_STA to XSTA.html">
+            
+                <a href="../08-电池补丁/08-1-Thinkpad/更名样本/BAT1禁用更名_STA to XSTA.html">
+            
+                    
+                    BAT1禁用更名_STA to XSTA.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.2.4" data-path="../08-电池补丁/08-1-Thinkpad/更名样本/Notify更名.html">
+            
+                <a href="../08-电池补丁/08-1-Thinkpad/更名样本/Notify更名.html">
+            
+                    
+                    Notify更名.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" >
+            
+                <span>
+            
+                    
+                    08-2-其它品牌
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.1" data-path="../08-电池补丁/08-2-其它品牌/SSDT-OCBAT0-ASUS_FL5900U.html">
+            
+                <a href="../08-电池补丁/08-2-其它品牌/SSDT-OCBAT0-ASUS_FL5900U.html">
+            
+                    
+                    SSDT-OCBAT0-ASUS_FL5900U.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.2" data-path="../08-电池补丁/08-2-其它品牌/SSDT-OCBAT0-HP_840_G3.html">
+            
+                <a href="../08-电池补丁/08-2-其它品牌/SSDT-OCBAT0-HP_840_G3.html">
+            
+                    
+                    SSDT-OCBAT0-HP_840_G3.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.3" data-path="../08-电池补丁/08-2-其它品牌/SSDT-OCBAT0-HP_Pavilion-15.html">
+            
+                <a href="../08-电池补丁/08-2-其它品牌/SSDT-OCBAT0-HP_Pavilion-15.html">
+            
+                    
+                    SSDT-OCBAT0-HP_Pavilion-15.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.4" data-path="../08-电池补丁/08-2-其它品牌/SSDT-OCBAT0-HP_Z66-14ProG2.html">
+            
+                <a href="../08-电池补丁/08-2-其它品牌/SSDT-OCBAT0-HP_Z66-14ProG2.html">
+            
+                    
+                    SSDT-OCBAT0-HP_Z66-14ProG2.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.5" data-path="../08-电池补丁/08-2-其它品牌/SSDT-OCBAT0-Thunderobot-Air2-911-9750h.html">
+            
+                <a href="../08-电池补丁/08-2-其它品牌/SSDT-OCBAT0-Thunderobot-Air2-911-9750h.html">
+            
+                    
+                    SSDT-OCBAT0-Thunderobot-Air2-911-9750h.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.6" data-path="../08-电池补丁/08-2-其它品牌/SSDT-OCBAT1-lenovoPRO13.html">
+            
+                <a href="../08-电池补丁/08-2-其它品牌/SSDT-OCBAT1-lenovoPRO13.html">
+            
+                    
+                    SSDT-OCBAT1-lenovoPRO13.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../09-禁用EHCx/">
+            
+                <a href="../09-禁用EHCx/">
+            
+                    
+                    09-禁用EHCx
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../09-禁用EHCx/SSDT-EHC1_OFF.html">
+            
+                <a href="../09-禁用EHCx/SSDT-EHC1_OFF.html">
+            
+                    
+                    SSDT-EHC1_OFF.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../09-禁用EHCx/SSDT-EHC2_OFF.html">
+            
+                <a href="../09-禁用EHCx/SSDT-EHC2_OFF.html">
+            
+                    
+                    SSDT-EHC2_OFF.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../09-禁用EHCx/SSDT-EHCx_OFF.html">
+            
+                <a href="../09-禁用EHCx/SSDT-EHCx_OFF.html">
+            
+                    
+                    SSDT-EHCx_OFF.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../10-PTSWAK综合扩展补丁/">
+            
+                <a href="../10-PTSWAK综合扩展补丁/">
+            
+                    
+                    10-PTSWAK综合扩展补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../10-PTSWAK综合扩展补丁/SSDT-EXT3-LedReset-TP.md">
+            
+                <span>
+            
+                    
+                    SSDT-EXT3-LedReset-TP.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../10-PTSWAK综合扩展补丁/SSDT-EXT4-WakeScreen.html">
+            
+                <a href="../10-PTSWAK综合扩展补丁/SSDT-EXT4-WakeScreen.html">
+            
+                    
+                    SSDT-EXT4-WakeScreen.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../10-PTSWAK综合扩展补丁/SSDT-PTSWAK.md">
+            
+                <span>
+            
+                    
+                    SSDT-PTSWAK.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../10-PTSWAK综合扩展补丁/综合补丁更名.html">
+            
+                <a href="../10-PTSWAK综合扩展补丁/综合补丁更名.html">
+            
+                    
+                    综合补丁更名.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../11-PNP0C0E睡眠修正方法/">
+            
+                <a href="../11-PNP0C0E睡眠修正方法/">
+            
+                    
+                    11-PNP0C0E睡眠修正方法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../11-PNP0C0E睡眠修正方法/SSDT-FnF4_Q13-X1C5th.html">
+            
+                <a href="../11-PNP0C0E睡眠修正方法/SSDT-FnF4_Q13-X1C5th.html">
+            
+                    
+                    SSDT-FnF4_Q13-X1C5th.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../11-PNP0C0E睡眠修正方法/SSDT-FnInsert_BTNV-dell.html">
+            
+                <a href="../11-PNP0C0E睡眠修正方法/SSDT-FnInsert_BTNV-dell.html">
+            
+                    
+                    SSDT-FnInsert_BTNV-dell.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../11-PNP0C0E睡眠修正方法/SSDT-LIDpatch.html">
+            
+                <a href="../11-PNP0C0E睡眠修正方法/SSDT-LIDpatch.html">
+            
+                    
+                    SSDT-LIDpatch.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../11-PNP0C0E睡眠修正方法/睡眠按键和_LID更名.html">
+            
+                <a href="../11-PNP0C0E睡眠修正方法/睡眠按键和_LID更名.html">
+            
+                    
+                    睡眠按键和_LID更名.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../12-060D补丁/">
+            
+                <a href="../12-060D补丁/">
+            
+                    
+                    12-060D补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../12-060D补丁/12-1-普通的060D补丁/">
+            
+                <a href="../12-060D补丁/12-1-普通的060D补丁/">
+            
+                    
+                    12-1-普通的060D补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1.1" data-path="../12-060D补丁/12-1-普通的060D补丁/SSDT-GPRW.html">
+            
+                <a href="../12-060D补丁/12-1-普通的060D补丁/SSDT-GPRW.html">
+            
+                    
+                    SSDT-GPRW.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.1.2" data-path="../12-060D补丁/12-1-普通的060D补丁/SSDT-UPRW.html">
+            
+                <a href="../12-060D补丁/12-1-普通的060D补丁/SSDT-UPRW.html">
+            
+                    
+                    SSDT-UPRW.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.1.3" data-path="../12-060D补丁/12-1-普通的060D补丁/Name-0D更名.html">
+            
+                <a href="../12-060D补丁/12-1-普通的060D补丁/Name-0D更名.html">
+            
+                    
+                    Name-0D更名.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.1.4" data-path="../12-060D补丁/12-1-普通的060D补丁/Name-6D更名.html">
+            
+                <a href="../12-060D补丁/12-1-普通的060D补丁/Name-6D更名.html">
+            
+                    
+                    Name-6D更名.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../12-060D补丁/12-2-惠普特殊的060D补丁/">
+            
+                <a href="../12-060D补丁/12-2-惠普特殊的060D补丁/">
+            
+                    
+                    12-2-惠普特殊的060D补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.2.1" data-path="../12-060D补丁/12-2-惠普特殊的060D补丁/SSDT-0D6D-HP.html">
+            
+                <a href="../12-060D补丁/12-2-惠普特殊的060D补丁/SSDT-0D6D-HP.html">
+            
+                    
+                    SSDT-0D6D-HP.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../13-仿冒以太网和重置以太网BSD Name/">
+            
+                <a href="../13-仿冒以太网和重置以太网BSD Name/">
+            
+                    
+                    13-仿冒以太网和重置以太网BSD Name
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../13-仿冒以太网和重置以太网BSD Name/SSDT-LAN.html">
+            
+                <a href="../13-仿冒以太网和重置以太网BSD Name/SSDT-LAN.html">
+            
+                    
+                    SSDT-LAN.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../13-仿冒以太网和重置以太网BSD Name/清除所有网络.md">
+            
+                <span>
+            
+                    
+                    清除所有网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../14-CMOS相关/">
+            
+                <a href="../14-CMOS相关/">
+            
+                    
+                    14-CMOS相关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../14-CMOS相关/14-1-CMOS内存和RTCMemoryFixup/">
+            
+                <a href="../14-CMOS相关/14-1-CMOS内存和RTCMemoryFixup/">
+            
+                    
+                    14-1-CMOS内存和RTCMemoryFixup
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.17" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    15-ACPI定制USB端口
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="SSDT-CB-01_XHC.html">
+            
+                <a href="SSDT-CB-01_XHC.html">
+            
+                    
+                    SSDT-CB-01_XHC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="SSDT-xh_OEMBD_XHC.html">
+            
+                <a href="SSDT-xh_OEMBD_XHC.html">
+            
+                    
+                    SSDT-xh_OEMBD_XHC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../16-禁止PCI设备/">
+            
+                <a href="../16-禁止PCI设备/">
+            
+                    
+                    16-禁止PCI设备
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../16-禁止PCI设备/SSDT-RP01.PXSX-disbale.html">
+            
+                <a href="../16-禁止PCI设备/SSDT-RP01.PXSX-disbale.html">
+            
+                    
+                    SSDT-RP01.PXSX-disbale.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../17-ACPIDebug/">
+            
+                <a href="../17-ACPIDebug/">
+            
+                    
+                    17-ACPIDebug
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="../17-ACPIDebug/SSDT-BKeyQxx-Debug.html">
+            
+                <a href="../17-ACPIDebug/SSDT-BKeyQxx-Debug.html">
+            
+                    
+                    SSDT-BKeyQxx-Debug.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.2" data-path="../17-ACPIDebug/SSDT-RMDT.html">
+            
+                <a href="../17-ACPIDebug/SSDT-RMDT.html">
+            
+                    
+                    SSDT-RMDT.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../18-品牌机器特殊补丁/">
+            
+                <a href="../18-品牌机器特殊补丁/">
+            
+                    
+                    18-品牌机器特殊补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="../18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/">
+            
+                <a href="../18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/">
+            
+                    
+                    18-1-Dell机器特殊补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1.1" data-path="../18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/SSDT-OCWork-dell.html">
+            
+                <a href="../18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/SSDT-OCWork-dell.html">
+            
+                    
+                    SSDT-OCWork-dell.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2" data-path="../18-品牌机器特殊补丁/18-2-小新PRO13特殊补丁/">
+            
+                <a href="../18-品牌机器特殊补丁/18-2-小新PRO13特殊补丁/">
+            
+                    
+                    18-2-小新PRO13特殊补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.2.1" data-path="../18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/SSDT-OCPublic-Merge.md">
+            
+                <span>
+            
+                    
+                    SSDT-OCPublic-Merge.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2.2" data-path="../18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/SSDT-RMCF-PS2Map-LenovoPRO13.md">
+            
+                <span>
+            
+                    
+                    SSDT-RMCF-PS2Map-LenovoPRO13.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="../19-I2C专用部件/">
+            
+                <a href="../19-I2C专用部件/">
+            
+                    
+                    19-I2C专用部件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="../19-I2C专用部件/SSDT-OCI2C-TPXX-chao7000.html">
+            
+                <a href="../19-I2C专用部件/SSDT-OCI2C-TPXX-chao7000.html">
+            
+                    
+                    SSDT-OCI2C-TPXX-chao7000.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.2" data-path="../19-I2C专用部件/SSDT-OCI2C-TPXX-dell5480.html">
+            
+                <a href="../19-I2C专用部件/SSDT-OCI2C-TPXX-dell5480.html">
+            
+                    
+                    SSDT-OCI2C-TPXX-dell5480.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.3" data-path="../19-I2C专用部件/SSDT-OCI2C-TPXX-LenovoIWL.html">
+            
+                <a href="../19-I2C专用部件/SSDT-OCI2C-TPXX-LenovoIWL.html">
+            
+                    
+                    SSDT-OCI2C-TPXX-LenovoIWL.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.4" data-path="../19-I2C专用部件/SSDT-OCI2C-TPXX-lenovoPRO13.html">
+            
+                <a href="../19-I2C专用部件/SSDT-OCI2C-TPXX-lenovoPRO13.html">
+            
+                    
+                    SSDT-OCI2C-TPXX-lenovoPRO13.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5" data-path="../19-I2C专用部件/SSDT-OCGPI0-GPEN.html">
+            
+                <a href="../19-I2C专用部件/SSDT-OCGPI0-GPEN.html">
+            
+                    
+                    SSDT-OCGPI0-GPEN.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.6" data-path="../19-I2C专用部件/SSDT-I2CxConf.html">
+            
+                <a href="../19-I2C专用部件/SSDT-I2CxConf.html">
+            
+                    
+                    SSDT-I2CxConf.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.7" data-path="../19-I2C专用部件/SSDT-OCGPI0-GPHD.html">
+            
+                <a href="../19-I2C专用部件/SSDT-OCGPI0-GPHD.html">
+            
+                    
+                    SSDT-OCGPI0-GPHD.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="../20-声卡IRQ补丁/README.md">
+            
+                <span>
+            
+                    
+                    20-声卡IRQ补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.22.1" data-path="../20-声卡IRQ补丁/SSDT-HPET_RTC_TIMR-fix.md">
+            
+                <span>
+            
+                    
+                    SSDT-HPET_RTC_TIMR-fix.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.2" data-path="../20-声卡IRQ补丁/SSDT-IPIC.md">
+            
+                <span>
+            
+                    
+                    SSDT-IPIC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="../21-SSDT屏蔽独显方法/README.md">
+            
+                <span>
+            
+                    
+                    21-SSDT屏蔽独显方法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.23.1" data-path="../21-SSDT屏蔽独显方法/SSDT-NDGP_OFF.md">
+            
+                <span>
+            
+                    
+                    SSDT-NDGP_OFF.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.2" data-path="../21-SSDT屏蔽独显方法/SSDT-NDGP_PS3.md">
+            
+                <span>
+            
+                    
+                    SSDT-NDGP_PS3.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="../常见驱动加载顺序/">
+            
+                <a href="../常见驱动加载顺序/">
+            
+                    
+                    常见驱动加载顺序
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.1" data-path="../常见驱动加载顺序/config-1-Lilu-SMC-WEG-ALC驱动列表.html">
+            
+                <a href="../常见驱动加载顺序/config-1-Lilu-SMC-WEG-ALC驱动列表.html">
+            
+                    
+                    config-1-Lilu-SMC-WEG-ALC驱动列表.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.2" data-path="../常见驱动加载顺序/config-2-PS2键盘驱动列表.html">
+            
+                <a href="../常见驱动加载顺序/config-2-PS2键盘驱动列表.html">
+            
+                    
+                    config-2-PS2键盘驱动列表.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.3" data-path="../常见驱动加载顺序/config-3-BCM无线和蓝牙驱动列表.html">
+            
+                <a href="../常见驱动加载顺序/config-3-BCM无线和蓝牙驱动列表.html">
+            
+                    
+                    config-3-BCM无线和蓝牙驱动列表.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.4" data-path="../常见驱动加载顺序/config-4-I2C驱动列表.html">
+            
+                <a href="../常见驱动加载顺序/config-4-I2C驱动列表.html">
+            
+                    
+                    config-4-I2C驱动列表.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.5" data-path="../常见驱动加载顺序/config-5-PS2Smart键盘驱动列表.html">
+            
+                <a href="../常见驱动加载顺序/config-5-PS2Smart键盘驱动列表.html">
+            
+                    
+                    config-5-PS2Smart键盘驱动列表.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >15-ACPI定制USB端口</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="acpi&#x5B9A;&#x5236;usb&#x7AEF;&#x53E3;">ACPI&#x5B9A;&#x5236;USB&#x7AEF;&#x53E3;</h1>
+<h2 id="&#x63CF;&#x8FF0;">&#x63CF;&#x8FF0;</h2>
+<ul>
+<li>&#x672C;&#x65B9;&#x6CD5;&#x901A;&#x8FC7;&#x4FEE;&#x6539; ACPI &#x6587;&#x4EF6;&#x5B9E;&#x73B0;USB&#x7AEF;&#x53E3;&#x7684;&#x5B9A;&#x5236;&#x3002;</li>
+<li>&#x672C;&#x65B9;&#x6CD5;&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B;&#x9700;&#x8981; drop &#x67D0;&#x4E2A; ACPI &#x6587;&#x4EF6;&#x3002;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;OpenCore <strong>&#x4E0D;&#x5EFA;&#x8BAE;</strong> &#x8FD9;&#x6837;&#x505A;&#xFF0C;&#x5B9A;&#x5236; USB &#x7AEF;&#x53E3;&#x4E00;&#x822C;&#x4F7F;&#x7528; <strong><em>Hackintool.app</em></strong> &#x5DE5;&#x5177;&#x3002;</li>
+<li>&#x672C;&#x65B9;&#x6CD5;&#x732E;&#x7ED9;&#x7231;&#x597D;&#x8005;&#x4EEC;&#x3002;</li>
+</ul>
+<h2 id="&#x9002;&#x7528;&#x8303;&#x56F4;">&#x9002;&#x7528;&#x8303;&#x56F4;</h2>
+<ul>
+<li>XHC &#x4EE5;&#x53CA;&#x5B83;&#x7684; <code>_UPC</code> &#x5B58;&#x5728;&#x4E8E;&#x5355;&#x72EC;&#x7684; ACPI &#x6587;&#x4EF6;&#x4E2D;</li>
+<li>&#x6B64;&#x65B9;&#x6CD5;&#x4E0D;&#x9002;&#x7528;&#x4E8E; <code>_UPC</code> &#x5B58;&#x5728;&#x4E8E; DSDT &#x4E2D;&#x7684;&#x8BBE;&#x5907; (e.g. &#x534E;&#x7855;)</li>
+</ul>
+<h2 id="upc-&#x89C4;&#x8303;"><code>_UPC</code> &#x89C4;&#x8303;</h2>
+<pre><code class="lang-Swift">_UPC, <span class="hljs-type">Package</span> ()
+{
+    xxxx,
+    yyyy,
+    <span class="hljs-number">0x00</span>,
+    <span class="hljs-number">0x00</span>
+}
+</code></pre>
+<h3 id="&#x89E3;&#x91CA;">&#x89E3;&#x91CA;</h3>
+<ol>
+<li><p><strong><code>xxxx</code></strong></p>
+<ul>
+<li><code>0x00</code> &#x4EE3;&#x8868;&#x8FD9;&#x4E2A;&#x7AEF;&#x53E3;&#x4E0D;&#x5B58;&#x5728;</li>
+<li>&#x5176;&#x4ED6;&#x503C; (&#x901A;&#x5E38;&#x4E3A; <code>0x0F</code>) &#x4EE3;&#x8868;&#x8FD9;&#x4E2A;&#x7AEF;&#x53E3;&#x5B58;&#x5728;</li>
+</ul>
+</li>
+<li><p><strong><code>yyyy</code></strong></p>
+<p><strong><code>yyyy</code></strong> &#x5904;&#x5B9A;&#x4E49;&#x7684;&#x662F;&#x7AEF;&#x53E3;&#x7684;&#x7C7B;&#x578B;, &#x53C2;&#x8003;&#x4E0B;&#x8868;</p>
+<p>| <strong><code>yyyy</code></strong> | &#x7AEF;&#x53E3;&#x7C7B;&#x578B;                      |
+| :------: | ----------------------------- |
+|  <code>0x00</code>  | USB Type <code>A</code>                  |
+|  <code>0x01</code>  | USB <code>Mini-AB</code>                 |
+|  <code>0x02</code>  | USB &#x667A;&#x80FD;&#x5361;                    |
+|  <code>0x03</code>  | USB 3 &#x6807;&#x51C6; Type <code>A</code>           |
+|  <code>0x04</code>  | USB 3 &#x6807;&#x51C6; Type <code>B</code>           |
+|  <code>0x05</code>  | USB 3 <code>Micro-B</code>               |
+|  <code>0x06</code>  | USB 3 <code>Micro-AB</code>              |
+|  <code>0x07</code>  | USB 3 <code>Power-B</code>               |
+|  <code>0x08</code>  | USB Type <code>C</code> <strong>(&#x53EA;&#x6709; USB 2)</strong> |
+|  <code>0x09</code>  | USB Type <code>C</code> <strong>(&#x5E26;&#x6709;&#x8F6C;&#x5411;&#x5668;)</strong> |
+|  <code>0x0A</code>  | USB Type <code>C</code> <strong>(&#x4E0D;&#x5E26;&#x8F6C;&#x5411;&#x5668;)</strong> |
+|  <code>0xFF</code>  | &#x5185;&#x7F6E; |</p>
+<blockquote>
+<p>&#x5982;&#x679C; USB-C &#x6B63;&#x53CD;&#x4E24;&#x9762;&#x63D2;&#x5165;&#x5728; Hackintool &#x90FD;&#x663E;&#x793A;&#x4E3A;&#x540C;&#x4E00;&#x4E2A;&#x7AEF;&#x53E3;&#x5C31;&#x8BF4;&#x660E;&#x8FD9;&#x4E2A;&#x7AEF;&#x53E3;&#x6709;&#x8F6C;&#x5411;&#x5668;</p>
+<p>&#x53CD;&#x4E4B;&#xFF0C;&#x5982;&#x679C;&#x6B63;&#x53CD;&#x4E24;&#x9762;&#x5360;&#x7528;&#x4E86;&#x4E24;&#x4E2A;&#x7AEF;&#x53E3;&#x5C31;&#x8BF4;&#x660E;&#x6CA1;&#x6709;&#x8F6C;&#x5411;&#x5668;</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="usb&#x5B9A;&#x5236;&#x8FC7;&#x7A0B;">USB&#x5B9A;&#x5236;&#x8FC7;&#x7A0B;</h2>
+<ul>
+<li><p>&#x6E05;&#x9664;&#x5176;&#x4ED6;&#x5B9A;&#x5236;&#x65B9;&#x6CD5;&#x7684;&#x8865;&#x4E01;&#x3001;&#x9A71;&#x52A8;&#x7B49;&#x3002;</p>
+</li>
+<li><p>drop ACPI&#x6587;&#x4EF6;</p>
+<ul>
+<li><p>&#x786E;&#x8BA4; XHC &#x5E76;&#x5305;&#x62EC; <code>_UPC</code> &#x7684; ACPI &#x6587;&#x4EF6;</p>
+<blockquote>
+<p>&#x5982; dell5480 &#x7684; <strong><em>SSDT-2-xh_OEMBD.aml</em></strong></p>
+<p>&#x5982; &#x5C0F;&#x65B0; PRO13&#xFF08;i5&#xFF09;&#x7684; <strong><em>SSDT-8-CB-01.aml</em></strong> &#xFF08;&#x65E0;&#x72EC;&#x663E;&#x673A;&#x5668;&#x662F; <strong><em>SSDT-6-CB-01.aml</em></strong> &#xFF09;</p>
+</blockquote>
+</li>
+<li><p><code>config\ACPI\Block\</code> &#x4EE5; <code>TableLength</code> &#xFF08;&#x5341;&#x8FDB;&#x5236;&#xFF09;&#x548C; <code>TableSignature</code> &#x65B9;&#x5F0F; drop ACPI &#x6587;&#x4EF6;&#x3002;&#x5982;&#xFF1A;</p>
+<p><strong>dell5480</strong>&#xFF1A; <strong><code>TableLength</code></strong> = <code>2001</code>&#xFF0C; <strong><code>TableSignature</code></strong> = <code>53534454</code>&#xFF08;SSDT&#xFF09;</p>
+<p><strong>&#x5C0F;&#x65B0;PRO13&#xFF08;i5&#xFF09;</strong>&#xFF1A; <strong><code>TableLength</code></strong> = <code>12565</code>&#xFF0C; <strong><code>TableSignature</code></strong> = <code>53534454</code>&#xFF08;SSDT&#xFF09;</p>
+</li>
+</ul>
+</li>
+<li><p>&#x5B9A;&#x5236; SSDT &#x8865;&#x4E01;&#x6587;&#x4EF6;</p>
+<ul>
+<li><p>&#x5C06;&#x9700;&#x8981; drop &#x7684;&#x539F;&#x59CB; ACPI &#x6587;&#x4EF6;&#x62D6;&#x5230;&#x684C;&#x9762;&#xFF0C;<strong>&#x5EFA;&#x8BAE;&#xFF1A;</strong></p>
+<ul>
+<li>&#x53E6;&#x5B58;&#x4E3A; <code>.asl / .dsl</code> &#x683C;&#x5F0F;</li>
+<li>&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x540D;&#x3002;&#x5982;&#xFF1A; <strong><em>SSDT-xh_OEMBD_XHC.dsl</em></strong>, <strong><em>SSDT-CB-01_XHC.dsl</em></strong></li>
+<li>&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x5185;&#x7684; <code>OEM Table ID</code> &#x4E3A;&#x81EA;&#x5DF1;&#x559C;&#x6B22;&#x7684;&#x540D;&#x5B57;&#x3002;</li>
+<li>&#x6392;&#x9664;&#x9519;&#x8BEF;&#x3002;</li>
+</ul>
+</li>
+<li><p>SSDT &#x6587;&#x4EF6;&#x4E2D;&#x6240;&#x6709;&#x7AEF;&#x53E3;&#x7684; <code>_UPC</code> &#x6700;&#x524D;&#x7AEF;&#x6DFB;&#x52A0;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-Swift"><span class="hljs-type">Method</span> (_UPC, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)
+{
+    <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
+    {
+        <span class="hljs-type">Return</span> (<span class="hljs-type">Package</span> ()
+        {
+            xxxx,
+            yyyy,
+            <span class="hljs-number">0x00</span>,
+            <span class="hljs-number">0x00</span>
+        })
+    }
+    <span class="hljs-comment">/* &#x4EE5;&#x4E0B;&#x662F;&#x539F;&#x5185;&#x5BB9; */</span>
+    ...
+}
+</code></pre>
+</li>
+<li><p>&#x6839;&#x636E; <code>_UPC</code> &#x89C4;&#x8303;&#x5B9A;&#x5236; USB &#x7AEF;&#x53E3;&#x3002;&#x5373;&#xFF0C;&#x4FEE;&#x6B63; xxxx&#x3001;yyyy &#x7684;&#x503C;&#x3002;</p>
+<ul>
+<li>&#x5982;&#x679C;&#x7AEF;&#x53E3;&#x4E0D;&#x5B58;&#x5728;<ul>
+<li><strong><code>xxxx</code></strong> = <code>0x00</code></li>
+<li><strong><code>yyyy</code></strong> = <code>0x00</code></li>
+</ul>
+</li>
+<li>&#x5982;&#x679C;&#x7AEF;&#x53E3;&#x5B58;&#x5728;<ul>
+<li><strong><code>xxxx</code></strong> = <code>0xFF</code></li>
+<li><strong><code>yyyy</code></strong></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>&#x53C2;&#x8003;&#x4E0A;&#x6587;&#x7684;&#x8868;&#x683C;</p>
+</blockquote>
+</li>
+<li><p>&#x6392;&#x9519;&#x3001;&#x7F16;&#x8BD1;&#x3001;&#x8865;&#x4E01;&#x6587;&#x4EF6;&#x653E;&#x81F3; <code>ACPI</code> &#x3001;&#x6DFB;&#x52A0;&#x8865;&#x4E01;&#x5217;&#x8868;&#x3002;</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x53C2;&#x8003;&#x793A;&#x4F8B;">&#x53C2;&#x8003;&#x793A;&#x4F8B;</h3>
+<ul>
+<li><strong><em>SSDT-xh_OEMBD_XHC</em></strong></li>
+<li><strong><em>SSDT-CB-01_XHC</em></strong></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../14-CMOS相关/14-1-CMOS内存和RTCMemoryFixup/" class="navigation navigation-prev " aria-label="Previous page: 14-1-CMOS内存和RTCMemoryFixup">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="SSDT-CB-01_XHC.html" class="navigation navigation-next " aria-label="Next page: SSDT-CB-01_XHC.dsl">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"15-ACPI定制USB端口","level":"1.17","depth":1,"next":{"title":"SSDT-CB-01_XHC.dsl","level":"1.17.1","depth":2,"path":"15-ACPI定制USB端口/SSDT-CB-01_XHC.md","ref":"15-ACPI定制USB端口/SSDT-CB-01_XHC.md","articles":[]},"previous":{"title":"14-1-CMOS内存和RTCMemoryFixup","level":"1.16.1","depth":2,"path":"14-CMOS相关/14-1-CMOS内存和RTCMemoryFixup/README.md","ref":"14-CMOS相关/14-1-CMOS内存和RTCMemoryFixup/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"15-ACPI定制USB端口/README.md","mtime":"2020-09-15T10:31:00.814Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-15T10:32:33.663Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
