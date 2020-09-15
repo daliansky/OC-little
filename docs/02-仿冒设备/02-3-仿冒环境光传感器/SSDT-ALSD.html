@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>02-4-仿冒环境光传感器 · GitBook</title>
+        <title>SSDT-ALSD.dsl · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="SSDT-ALS0.html" />
+    <link rel="next" href="../../03-二进制更名与预置变量/" />
     
     
-    <link rel="prev" href="../02-3-键盘无法输入的应急解决方案PS2N/SSDT-PS2N.html" />
+    <link rel="prev" href="SSDT-ALS0.html" />
     
 
     </head>
@@ -527,44 +527,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="../02-3-键盘无法输入的应急解决方案PS2N/">
-            
-                <a href="../02-3-键盘无法输入的应急解决方案PS2N/">
-            
-                    
-                    02-3-键盘无法输入的应急解决方案PS2N
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.4.3.1" data-path="../02-3-键盘无法输入的应急解决方案PS2N/SSDT-PS2N.html">
-            
-                <a href="../02-3-键盘无法输入的应急解决方案PS2N/SSDT-PS2N.html">
-            
-                    
-                    SSDT-PS2N.dsl
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.4.4" data-path="./">
+        <li class="chapter " data-level="1.4.3" data-path="./">
             
                 <a href="./">
             
                     
-                    02-4-仿冒环境光传感器
+                    02-3-仿冒环境光传感器
             
                 </a>
             
@@ -573,7 +541,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.4.1" data-path="SSDT-ALS0.html">
+        <li class="chapter " data-level="1.4.3.1" data-path="SSDT-ALS0.html">
             
                 <a href="SSDT-ALS0.html">
             
@@ -586,7 +554,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4.2" data-path="SSDT-ALSD.html">
+        <li class="chapter active" data-level="1.4.3.2" data-path="SSDT-ALSD.html">
             
                 <a href="SSDT-ALSD.html">
             
@@ -2771,7 +2739,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >02-4-仿冒环境光传感器</a>
+        <a href="../.." >SSDT-ALSD.dsl</a>
     </h1>
 </div>
 
@@ -2786,69 +2754,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x4EFF;&#x5192;&#x73AF;&#x5883;&#x5149;&#x4F20;&#x611F;&#x5668;">&#x4EFF;&#x5192;&#x73AF;&#x5883;&#x5149;&#x4F20;&#x611F;&#x5668;</h1>
-<h2 id="&#x7EFC;&#x8FF0;">&#x7EFC;&#x8FF0;</h2>
-<p>&#x4ECE; <code>macOS Catalina</code> &#x5F00;&#x59CB;&#xFF0C;&#x7B14;&#x8BB0;&#x672C;&#x8BBE;&#x5907;&#x9700;&#x8981;&#x4EFF;&#x5192;&#x73AF;&#x5883;&#x5149;&#x4F20;&#x611F;&#x5668; <code>ALS0</code> &#x6765;&#x5B9E;&#x73B0;&#x4EAE;&#x5EA6;&#x4FDD;&#x5B58;&#x548C;&#x81EA;&#x52A8;&#x4EAE;&#x5EA6;&#x8C03;&#x8282;&#xFF0C;&#x9700;&#x8981;&#x8BF4;&#x660E;&#x7684;&#x662F;&#x53EA;&#x6709;&#x771F;&#x6B63;&#x62E5;&#x6709;&#x73AF;&#x5883;&#x5149;&#x4F20;&#x611F;&#x5668;&#x786C;&#x4EF6;&#x7684;&#x673A;&#x5668;&#x624D;&#x80FD;&#x5B9E;&#x73B0;&#x771F;&#x6B63;&#x610F;&#x4E49;&#x4E0A;&#x7684;&#x81EA;&#x52A8;&#x4EAE;&#x5EA6;&#x8C03;&#x8282;&#x3002;</p>
-<h2 id="&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h2>
-<p>&#x5206;&#x4E3A;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x539F;&#x59CB; <code>ACPI</code> &#x5B58;&#x5728;&#x73AF;&#x5883;&#x5149;&#x4F20;&#x611F;&#x5668;&#x8BBE;&#x5907;&#x63A5;&#x53E3;&#x548C;&#x4E0D;&#x5B58;&#x5728;&#x73AF;&#x5883;&#x5149;&#x4F20;&#x611F;&#x5668;&#x8BBE;&#x5907;&#x63A5;&#x53E3;&#x3002;&#x9996;&#x5148;&#x5728;&#x539F;&#x59CB; <code>ACPI</code> &#x91CC;&#x9762;&#x67E5;&#x627E; <code>ACPI0008</code>&#xFF0C;&#x5982;&#x679C;&#x53EF;&#x4EE5;&#x67E5;&#x5230;&#x76F8;&#x5173;&#x8BBE;&#x5907;&#xFF0C;&#x4E00;&#x822C;&#x662F; <code>ALSD</code>&#xFF0C;&#x5219;&#x8BF4;&#x660E;&#x5B58;&#x5728;&#x73AF;&#x5883;&#x5149;&#x4F20;&#x611F;&#x5668;&#x8BBE;&#x5907;&#x63A5;&#x53E3;&#xFF0C;&#x5426;&#x5219;&#x5373;&#x4E3A;&#x4E0D;&#x5B58;&#x5728;&#x73AF;&#x5883;&#x5149;&#x4F20;&#x611F;&#x5668;&#x8BBE;&#x5907;&#x63A5;&#x53E3;&#x3002;</p>
-<h3 id="&#x5B58;&#x5728;&#x73AF;&#x5883;&#x5149;&#x4F20;&#x611F;&#x5668;&#x8BBE;&#x5907;&#x63A5;&#x53E3;">&#x5B58;&#x5728;&#x73AF;&#x5883;&#x5149;&#x4F20;&#x611F;&#x5668;&#x8BBE;&#x5907;&#x63A5;&#x53E3;</h3>
-<blockquote>
-<p>&#x6848;&#x4F8B;</p>
-</blockquote>
-<pre><code class="lang-swift"><span class="hljs-type">Device</span> (<span class="hljs-type">ALSD</span>)
-{
-  <span class="hljs-type">Name</span> (_HID, <span class="hljs-string">&quot;ACPI0008&quot;</span> <span class="hljs-comment">/* Ambient Light Sensor Device */</span>)  <span class="hljs-comment">// _HID: Hardware ID</span>
-  <span class="hljs-type">Method</span> (_STA, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _STA: Status</span>
-  {
-    <span class="hljs-type">If</span> ((<span class="hljs-type">ALSE</span> == <span class="hljs-number">0x02</span>))
-    {
-      <span class="hljs-type">Return</span> (<span class="hljs-number">0x0B</span>)
-    }
-
-    <span class="hljs-type">Return</span> (<span class="hljs-type">Zero</span>)
-  }
-
-  <span class="hljs-type">Method</span> (_ALI, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)  <span class="hljs-comment">// _ALI: Ambient Light Illuminance</span>
-  {
-    <span class="hljs-type">Return</span> (((<span class="hljs-type">LHIH</span> &lt;&lt; <span class="hljs-number">0x08</span>) | <span class="hljs-type">LLOW</span>))
-  }
-
-  <span class="hljs-type">Name</span> (_ALR, <span class="hljs-type">Package</span> (<span class="hljs-number">0x05</span>)  <span class="hljs-comment">// _ALR: Ambient Light Response</span>
-  {
-    <span class="hljs-type">Package</span> (<span class="hljs-number">0x02</span>)
-    {
-      <span class="hljs-number">0x46</span>,
-      <span class="hljs-type">Zero</span>
-    },
-
-    <span class="hljs-type">Package</span> (<span class="hljs-number">0x02</span>)
-    {
-      <span class="hljs-number">0x49</span>,
-      <span class="hljs-number">0x0A</span>
-    },
-
-    <span class="hljs-type">Package</span> (<span class="hljs-number">0x02</span>)
-    {
-      <span class="hljs-number">0x55</span>,
-      <span class="hljs-number">0x50</span>
-    },
-
-    <span class="hljs-type">Package</span> (<span class="hljs-number">0x02</span>)
-    {
-      <span class="hljs-number">0x64</span>,
-      <span class="hljs-number">0x012C</span>
-    },
-
-    <span class="hljs-type">Package</span> (<span class="hljs-number">0x02</span>)
-    {
-      <span class="hljs-number">0x96</span>,
-      <span class="hljs-number">0x03E8</span>
-    }
-  })
-}
-</code></pre>
-<p>&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x9884;&#x7F6E;&#x53D8;&#x91CF;&#x53E6;&#x5176; <code>_STA</code> &#x65B9;&#x6CD5;&#x8FD4;&#x56DE; <code>0x0B</code> &#x4EE5;&#x542F;&#x7528;&#x539F;&#x59CB; <code>ACPI</code> &#x5B58;&#x5728;&#x7684;&#x73AF;&#x5883;&#x4F20;&#x611F;&#x5668;&#x8BBE;&#x5907;&#xFF0C;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-swift"><span class="hljs-type">DefinitionBlock</span> (<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;SSDT&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-string">&quot;OCLT&quot;</span>, <span class="hljs-string">&quot;ALSD&quot;</span>, <span class="hljs-number">0</span>)
+                                <pre><code class="lang-swift"><span class="hljs-type">DefinitionBlock</span> (<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;SSDT&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-string">&quot;OCLT&quot;</span>, <span class="hljs-string">&quot;ALSD&quot;</span>, <span class="hljs-number">0</span>)
 {
     <span class="hljs-type">External</span> (<span class="hljs-type">ALSE</span>, <span class="hljs-type">IntObj</span>)
 
@@ -2864,47 +2770,6 @@
     }
 }
 </code></pre>
-<h3 id="&#x4E0D;&#x5B58;&#x5728;&#x73AF;&#x5883;&#x5149;&#x4F20;&#x611F;&#x5668;&#x8BBE;&#x5907;&#x63A5;&#x53E3;">&#x4E0D;&#x5B58;&#x5728;&#x73AF;&#x5883;&#x5149;&#x4F20;&#x611F;&#x5668;&#x8BBE;&#x5907;&#x63A5;&#x53E3;</h3>
-<p>&#x5BF9;&#x4E8E;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x4EFF;&#x5192;&#x4E00;&#x4E2A; <code>ALS0</code> &#x8BBE;&#x5907;&#x5373;&#x53EF;&#xFF0C;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-swift"><span class="hljs-type">DefinitionBlock</span> (<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;SSDT&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-string">&quot;ACDT&quot;</span>, <span class="hljs-string">&quot;ALS0&quot;</span>, <span class="hljs-number">0</span>)
-{
-    <span class="hljs-type">Scope</span> (_SB)
-    {
-        <span class="hljs-type">Device</span> (<span class="hljs-type">ALS0</span>)
-        {
-            <span class="hljs-type">Name</span> (_HID, <span class="hljs-string">&quot;ACPI0008&quot;</span>)
-            <span class="hljs-type">Name</span> (_CID, <span class="hljs-string">&quot;smc-als&quot;</span>)
-            <span class="hljs-type">Name</span> (_ALI, <span class="hljs-number">0x012C</span>)
-            <span class="hljs-type">Name</span> (_ALR, <span class="hljs-type">Package</span> (<span class="hljs-number">0x01</span>)
-            {
-                <span class="hljs-type">Package</span> (<span class="hljs-number">0x02</span>)
-                {
-                    <span class="hljs-number">0x64</span>,
-                    <span class="hljs-number">0x012C</span>
-                }
-            })
-            <span class="hljs-type">Method</span> (_STA, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)
-            {
-                <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
-                {
-                    <span class="hljs-type">Return</span> (<span class="hljs-number">0x0F</span>)
-                }
-                <span class="hljs-type">Else</span>
-                {
-                    <span class="hljs-type">Return</span> (<span class="hljs-type">Zero</span>)
-                }
-            }
-        }
-    }
-}
-</code></pre>
-<h2 id="&#x6CE8;&#x610F;">&#x6CE8;&#x610F;</h2>
-<ul>
-<li>&#x4EFB;&#x4F55;&#x60C5;&#x51B5;&#x4E0B;&#x4EFF;&#x5192;&#x8BBE;&#x5907;&#x90FD;&#x662F;&#x5B89;&#x5168;&#x4E14;&#x6709;&#x6548;&#x7684;&#xFF0C;&#x5373;&#x4F7F;&#x539F;&#x59CB; <code>ACPI</code> &#x4E2D;&#x5B58;&#x5728;&#x73AF;&#x5883;&#x5149;&#x4F20;&#x611F;&#x5668;&#x8BBE;&#x5907;&#x63A5;&#x53E3;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4EFF;&#x5192; <code>ALS0</code>&#x3002;</li>
-<li>&#x88AB;&#x4FEE;&#x6B63;&#x7684; <code>&#x53D8;&#x91CF;</code> &#x53EF;&#x80FD;&#x5B58;&#x5728;&#x4E8E;&#x591A;&#x4E2A;&#x5730;&#x65B9;&#xFF0C;&#x5BF9;&#x5B83;&#x4FEE;&#x6B63;&#x540E;&#xFF0C;&#x5728;&#x8FBE;&#x5230;&#x6211;&#x4EEC;&#x9884;&#x671F;&#x6548;&#x679C;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x6709;&#x53EF;&#x80FD;&#x5F71;&#x54CD;&#x5230;&#x5230;&#x5176;&#x4ED6;&#x90E8;&#x4EF6;&#x3002;</li>
-<li>&#x539F;&#x59CB; <code>ACPI</code> &#x4E2D;&#x5B58;&#x5728;&#x73AF;&#x5883;&#x5149;&#x4F20;&#x611F;&#x5668;&#x8BBE;&#x5907;&#x65F6;&#xFF0C;&#x5176;&#x540D;&#x79F0;&#x53EF;&#x80FD;&#x4E0D;&#x662F; <code>ALSD</code>&#xFF0C;&#x6BD4;&#x5982; <code>ALS0</code>&#xFF0C;&#x4E0D;&#x8FC7;&#x81F3;&#x4ECA;&#x6CA1;&#x53D1;&#x73B0;&#x6709;&#x5176;&#x5B83;&#x540D;&#x79F0;&#x3002;</li>
-<li>&#x539F;&#x59CB; <code>ACPI</code> &#x4E2D;&#x5B58;&#x5728;&#x73AF;&#x5883;&#x5149;&#x4F20;&#x611F;&#x5668;&#x8BBE;&#x5907;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x7528;&#x9884;&#x7F6E;&#x53D8;&#x91CF;&#x65B9;&#x6CD5;&#x5F3A;&#x5236;&#x542F;&#x7528;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x539F;&#x59CB; <code>ACPI</code> &#x4E2D;&#x662F;&#x5426;&#x5B58;&#x5728; <code>_SB.INI</code>&#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728;&#x8BF7;&#x4F7F;&#x7528;&#x4EFF;&#x5192; <code>ALS0</code> &#x65B9;&#x6CD5;&#x3002;</li>
-</ul>
 
                                 
                                 </section>
@@ -2932,12 +2797,12 @@
 
             
                 
-                <a href="../02-3-键盘无法输入的应急解决方案PS2N/SSDT-PS2N.html" class="navigation navigation-prev " aria-label="Previous page: SSDT-PS2N.dsl">
+                <a href="SSDT-ALS0.html" class="navigation navigation-prev " aria-label="Previous page: SSDT-ALS0.dsl">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="SSDT-ALS0.html" class="navigation navigation-next " aria-label="Next page: SSDT-ALS0.dsl">
+                <a href="../../03-二进制更名与预置变量/" class="navigation navigation-next " aria-label="Next page: 03-二进制更名与预置变量">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -2948,7 +2813,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"02-4-仿冒环境光传感器","level":"1.4.4","depth":2,"next":{"title":"SSDT-ALS0.dsl","level":"1.4.4.1","depth":3,"path":"02-仿冒设备/02-4-仿冒环境光传感器/SSDT-ALS0.md","ref":"02-仿冒设备/02-4-仿冒环境光传感器/SSDT-ALS0.md","articles":[]},"previous":{"title":"SSDT-PS2N.dsl","level":"1.4.3.1","depth":3,"path":"02-仿冒设备/02-3-键盘无法输入的应急解决方案PS2N/SSDT-PS2N.md","ref":"02-仿冒设备/02-3-键盘无法输入的应急解决方案PS2N/SSDT-PS2N.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"02-仿冒设备/02-4-仿冒环境光传感器/README.md","mtime":"2020-09-15T11:39:36.088Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-15T11:41:27.340Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"SSDT-ALSD.dsl","level":"1.4.3.2","depth":3,"next":{"title":"03-二进制更名与预置变量","level":"1.5","depth":1,"path":"03-二进制更名与预置变量/README.md","ref":"03-二进制更名与预置变量/README.md","articles":[{"title":"03-1-OCI2C-GPIO补丁","level":"1.5.1","depth":2,"path":"03-二进制更名与预置变量/03-1-OCI2C-GPIO补丁/README.md","ref":"03-二进制更名与预置变量/03-1-OCI2C-GPIO补丁/README.md","articles":[{"title":"SSDT-OCGPI0-GPEN.dsl","level":"1.5.1.1","depth":3,"path":"03-二进制更名与预置变量/03-1-OCI2C-GPIO补丁/SSDT-OCGPI0-GPEN.md","ref":"03-二进制更名与预置变量/03-1-OCI2C-GPIO补丁/SSDT-OCGPI0-GPEN.md","articles":[]},{"title":"SSDT-OCGPI0-GPHD.dsl","level":"1.5.1.2","depth":3,"path":"03-二进制更名与预置变量/03-1-OCI2C-GPIO补丁/SSDT-OCGPI0-GPHD.md","ref":"03-二进制更名与预置变量/03-1-OCI2C-GPIO补丁/SSDT-OCGPI0-GPHD.md","articles":[]}]},{"title":"补丁库","level":"1.5.2","depth":2,"ref":"","articles":[{"title":"SSDT-AWAC.dsl","level":"1.5.2.1","depth":3,"path":"03-二进制更名与预置变量/补丁库/SSDT-AWAC.md","ref":"03-二进制更名与预置变量/补丁库/SSDT-AWAC.md","articles":[]},{"title":"SSDT-RTC_Y-AWAC_N.dsl","level":"1.5.2.2","depth":3,"path":"03-二进制更名与预置变量/补丁库/SSDT-RTC_Y-AWAC_N.md","ref":"03-二进制更名与预置变量/补丁库/SSDT-RTC_Y-AWAC_N.md","articles":[]}]}]},"previous":{"title":"SSDT-ALS0.dsl","level":"1.4.3.1","depth":3,"path":"02-仿冒设备/02-3-仿冒环境光传感器/SSDT-ALS0.md","ref":"02-仿冒设备/02-3-仿冒环境光传感器/SSDT-ALS0.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"02-仿冒设备/02-3-仿冒环境光传感器/SSDT-ALSD.md","mtime":"2020-09-15T14:32:40.505Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-15T14:34:10.411Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
