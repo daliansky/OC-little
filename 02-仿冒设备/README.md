@@ -43,12 +43,6 @@
     ```
   
 - 示例
-  - ***SSDT-PS2N*** — 仿冒点输入设备，见《键盘无法输入的应急解决方案PS2N》
-
-    - 原始点输入设备名称：PS2M、MOU、MSS* 等
-
-    - _CID：PNP0F13，PNP0F03，PNP0F0E，PNP0F0B，PNP0F12
-
   - ***SSDT-RTC0*** — 仿冒RTC
 
     - 原始设备名称：RTC
