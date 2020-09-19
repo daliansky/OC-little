@@ -23,7 +23,6 @@ Replace:  584E4C46
 - ***SSDT-PLUG-_SB.PR00*** ——参见《注入X86》
 - ***SSDT-EC*** ——参见《仿冒设备—仿冒EC》
 - ***SSDT-PNLF-CFL*** ——参见《PNLF注入方法》
-- ***SSDT-BKeyQ38Q39-LenovoPRO13*** ——参见《亮度快捷键》
 - ***SSDT-PMCR*** ——参见《添加缺失的部件》
 - ***SSDT-SBUS*** ——参见《SBUS/SMBU补丁》
 - ***SSDT-OCBAT1-lenovoPRO13*** ——参见《电池补丁》
@@ -34,6 +33,7 @@ Replace:  584E4C46
 - ***SSDT-RTC_Y-AWAC_N*** ——参见《二进制更名与预置变量》
 - ***SSDT-RMCF-PS2Map-LenovoPRO13*** ——本章补丁，参见《PS2键盘映射》
 - ***SSDT-OCPublic-Merge*** ——本章补丁，参见 **附件** 说明
+- ***SSDT-BATS-PRO13*** ——参见《电池补丁》
 
 **注**：以上补丁所要求的更名在对应补丁文件的注释里。
 

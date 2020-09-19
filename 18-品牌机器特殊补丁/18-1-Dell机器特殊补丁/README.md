@@ -6,18 +6,14 @@
   - `Device` ：ECDV【PNP0C09】
   - `Device` ：LID0【PNP0C0D】
   - `Method` ：OSID
-  - `Method` ：BRT6
   - `Method` ：BTNV
 
 ## 特殊补丁
 
 - ***SSDT-OCWork-dell***
-  - ***亮度快捷键*** 补丁需要本补丁才能正常工作。
-  - 修改补丁里的 `ACSE` 可以设置工作模式。
+  - 补丁里的 `ACSE` 可以设置工作模式。
     - `\_SB.ACSE` = 0为 win7 模式，在此模式下，机器睡眠期间呼吸灯闪烁。
     - `\_SB.ACSE` = 1为 win8 模式，在此模式下，机器睡眠期间呼吸灯灭。
-
-  **注**： ***操作系统补丁*** 同样可以让 ***亮度快捷键*** 补丁工作。通常情况下不建议使用 ***操作系统补丁*** 。
 
 - 修复 Fn+Insert 功能键的补丁组合
   
@@ -31,7 +27,6 @@
 - ***SSDT-EC*** ——参见《仿冒EC》
 - ***SSDT-PLUG-xxx*** ——参见《注入X86》
 - ***SSDT-PNLF-xxx*** ——参见《PNLF注入方法》
-- ***SSDT-BKeyBRT6-Dell*** ——参见《亮度快捷键》
 - ***SSDT-GPRW*** ——参见《0D6D补丁》
 - ***SSDT-ALS0*** ——参见《仿冒环境光传感器》
 - ***SSDT-MCHC*** ——参见《添加缺失的部件》
