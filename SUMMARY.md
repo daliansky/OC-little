@@ -170,3 +170,4 @@
     * [config-3-BCM无线和蓝牙驱动列表.plist](常见驱动加载顺序/config-3-BCM无线和蓝牙驱动列表.md)
     * [config-4-I2C驱动列表.plist](常见驱动加载顺序/config-4-I2C驱动列表.md)
     * [config-5-PS2Smart键盘驱动列表.plist](常见驱动加载顺序/config-5-PS2Smart键盘驱动列表.md)
+    * [config-6-Intel无线和蓝牙驱动列表.plist](常见驱动加载顺序/config-6-Intel无线和蓝牙驱动列表.md)
