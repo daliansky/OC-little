@@ -10,13 +10,13 @@
 				<key>Arch</key>
 				<string>x86_64</string>
 				<key>BundlePath</key>
-				<string>AirportBrcmFixup.kext</string>
+				<string>AirportItlwm.kext</string>
 				<key>Comment</key>
-				<string>WIFI</string>
+				<string>intelWIFI</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
-				<string>Contents/MacOS/AirportBrcmFixup</string>
+				<string>Contents/MacOS/AirportItlwm</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -28,13 +28,13 @@
 				<key>Arch</key>
 				<string>x86_64</string>
 				<key>BundlePath</key>
-				<string>BrcmBluetoothInjector.kext</string>
+				<string>IntelBluetoothInjector.kext</string>
 				<key>Comment</key>
-				<string>BrcmBluetooth</string>
+				<string>IntelBluetoothInjector</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
-				<string></string>
+				<string>Contents/MacOS/IntelBluetoothInjector</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -46,31 +46,13 @@
 				<key>Arch</key>
 				<string>x86_64</string>
 				<key>BundlePath</key>
-				<string>BrcmFirmwareData.kext</string>
+				<string>IntelBluetoothFirmware.kext</string>
 				<key>Comment</key>
-				<string>BrcmBluetooth</string>
+				<string>IntelBluetoothFirmware</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
-				<string>Contents/MacOS/BrcmFirmwareData</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>x86_64</string>
-				<key>BundlePath</key>
-				<string>BrcmPatchRAM2.kext</string>
-				<key>Comment</key>
-				<string>BrcmBluetooth</string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/BrcmPatchRAM2</string>
+				<string>Contents/MacOS/IntelBluetoothFirmware</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>

@@ -2588,6 +2588,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.24.6" data-path="../../常见驱动加载顺序/config-6-Intel无线和蓝牙驱动列表.html">
+            
+                <a href="../../常见驱动加载顺序/config-6-Intel无线和蓝牙驱动列表.html">
+            
+                    
+                    config-6-Intel无线和蓝牙驱动列表.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2645,7 +2658,6 @@
 <li><code>Device</code> &#xFF1A;ECDV&#x3010;PNP0C09&#x3011;</li>
 <li><code>Device</code> &#xFF1A;LID0&#x3010;PNP0C0D&#x3011;</li>
 <li><code>Method</code> &#xFF1A;OSID</li>
-<li><code>Method</code> &#xFF1A;BRT6</li>
 <li><code>Method</code> &#xFF1A;BTNV</li>
 </ul>
 </li>
@@ -2654,14 +2666,12 @@
 <ul>
 <li><p><strong><em>SSDT-OCWork-dell</em></strong></p>
 <ul>
-<li><strong><em>&#x4EAE;&#x5EA6;&#x5FEB;&#x6377;&#x952E;</em></strong> &#x8865;&#x4E01;&#x9700;&#x8981;&#x672C;&#x8865;&#x4E01;&#x624D;&#x80FD;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x3002;</li>
-<li>&#x4FEE;&#x6539;&#x8865;&#x4E01;&#x91CC;&#x7684; <code>ACSE</code> &#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x5DE5;&#x4F5C;&#x6A21;&#x5F0F;&#x3002;<ul>
+<li>&#x8865;&#x4E01;&#x91CC;&#x7684; <code>ACSE</code> &#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x5DE5;&#x4F5C;&#x6A21;&#x5F0F;&#x3002;<ul>
 <li><code>\_SB.ACSE</code> = 0&#x4E3A; win7 &#x6A21;&#x5F0F;&#xFF0C;&#x5728;&#x6B64;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x673A;&#x5668;&#x7761;&#x7720;&#x671F;&#x95F4;&#x547C;&#x5438;&#x706F;&#x95EA;&#x70C1;&#x3002;</li>
 <li><code>\_SB.ACSE</code> = 1&#x4E3A; win8 &#x6A21;&#x5F0F;&#xFF0C;&#x5728;&#x6B64;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x673A;&#x5668;&#x7761;&#x7720;&#x671F;&#x95F4;&#x547C;&#x5438;&#x706F;&#x706D;&#x3002;</li>
 </ul>
 </li>
 </ul>
-<p><strong>&#x6CE8;</strong>&#xFF1A; <strong><em>&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8865;&#x4E01;</em></strong> &#x540C;&#x6837;&#x53EF;&#x4EE5;&#x8BA9; <strong><em>&#x4EAE;&#x5EA6;&#x5FEB;&#x6377;&#x952E;</em></strong> &#x8865;&#x4E01;&#x5DE5;&#x4F5C;&#x3002;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; <strong><em>&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8865;&#x4E01;</em></strong> &#x3002;</p>
 </li>
 <li><p>&#x4FEE;&#x590D; Fn+Insert &#x529F;&#x80FD;&#x952E;&#x7684;&#x8865;&#x4E01;&#x7EC4;&#x5408;</p>
 <ul>
@@ -2677,7 +2687,6 @@
 <li><strong><em>SSDT-EC</em></strong> &#x2014;&#x2014;&#x53C2;&#x89C1;&#x300A;&#x4EFF;&#x5192;EC&#x300B;</li>
 <li><strong><em>SSDT-PLUG-xxx</em></strong> &#x2014;&#x2014;&#x53C2;&#x89C1;&#x300A;&#x6CE8;&#x5165;X86&#x300B;</li>
 <li><strong><em>SSDT-PNLF-xxx</em></strong> &#x2014;&#x2014;&#x53C2;&#x89C1;&#x300A;PNLF&#x6CE8;&#x5165;&#x65B9;&#x6CD5;&#x300B;</li>
-<li><strong><em>SSDT-BKeyBRT6-Dell</em></strong> &#x2014;&#x2014;&#x53C2;&#x89C1;&#x300A;&#x4EAE;&#x5EA6;&#x5FEB;&#x6377;&#x952E;&#x300B;</li>
 <li><strong><em>SSDT-GPRW</em></strong> &#x2014;&#x2014;&#x53C2;&#x89C1;&#x300A;0D6D&#x8865;&#x4E01;&#x300B;</li>
 <li><strong><em>SSDT-ALS0</em></strong> &#x2014;&#x2014;&#x53C2;&#x89C1;&#x300A;&#x4EFF;&#x5192;&#x73AF;&#x5883;&#x5149;&#x4F20;&#x611F;&#x5668;&#x300B;</li>
 <li><strong><em>SSDT-MCHC</em></strong> &#x2014;&#x2014;&#x53C2;&#x89C1;&#x300A;&#x6DFB;&#x52A0;&#x7F3A;&#x5931;&#x7684;&#x90E8;&#x4EF6;&#x300B;</li>
@@ -2730,7 +2739,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"18-1-Dell机器特殊补丁","level":"1.20.1","depth":2,"next":{"title":"SSDT-OCWork-dell.dsl","level":"1.20.1.1","depth":3,"path":"18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/SSDT-OCWork-dell.md","ref":"18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/SSDT-OCWork-dell.md","articles":[]},"previous":{"title":"18-品牌机器特殊补丁","level":"1.20","depth":1,"path":"18-品牌机器特殊补丁/README.md","ref":"18-品牌机器特殊补丁/README.md","articles":[{"title":"18-1-Dell机器特殊补丁","level":"1.20.1","depth":2,"path":"18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/README.md","ref":"18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/README.md","articles":[{"title":"SSDT-OCWork-dell.dsl","level":"1.20.1.1","depth":3,"path":"18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/SSDT-OCWork-dell.md","ref":"18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/SSDT-OCWork-dell.md","articles":[]}]},{"title":"18-2-小新PRO13特殊补丁","level":"1.20.2","depth":2,"path":"18-品牌机器特殊补丁/18-2-小新PRO13特殊补丁/README.md","ref":"18-品牌机器特殊补丁/18-2-小新PRO13特殊补丁/README.md","articles":[{"title":"SSDT-OCPublic-Merge.dsl","level":"1.20.2.1","depth":3,"path":"18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/SSDT-OCPublic-Merge.md","ref":"18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/SSDT-OCPublic-Merge.md","articles":[]},{"title":"SSDT-RMCF-PS2Map-LenovoPRO13.dsl","level":"1.20.2.2","depth":3,"path":"18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/SSDT-RMCF-PS2Map-LenovoPRO13.md","ref":"18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/SSDT-RMCF-PS2Map-LenovoPRO13.md","articles":[]}]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/README.md","mtime":"2020-09-16T09:28:53.001Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-16T09:30:16.371Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"18-1-Dell机器特殊补丁","level":"1.20.1","depth":2,"next":{"title":"SSDT-OCWork-dell.dsl","level":"1.20.1.1","depth":3,"path":"18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/SSDT-OCWork-dell.md","ref":"18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/SSDT-OCWork-dell.md","articles":[]},"previous":{"title":"18-品牌机器特殊补丁","level":"1.20","depth":1,"path":"18-品牌机器特殊补丁/README.md","ref":"18-品牌机器特殊补丁/README.md","articles":[{"title":"18-1-Dell机器特殊补丁","level":"1.20.1","depth":2,"path":"18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/README.md","ref":"18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/README.md","articles":[{"title":"SSDT-OCWork-dell.dsl","level":"1.20.1.1","depth":3,"path":"18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/SSDT-OCWork-dell.md","ref":"18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/SSDT-OCWork-dell.md","articles":[]}]},{"title":"18-2-小新PRO13特殊补丁","level":"1.20.2","depth":2,"path":"18-品牌机器特殊补丁/18-2-小新PRO13特殊补丁/README.md","ref":"18-品牌机器特殊补丁/18-2-小新PRO13特殊补丁/README.md","articles":[{"title":"SSDT-OCPublic-Merge.dsl","level":"1.20.2.1","depth":3,"path":"18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/SSDT-OCPublic-Merge.md","ref":"18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/SSDT-OCPublic-Merge.md","articles":[]},{"title":"SSDT-RMCF-PS2Map-LenovoPRO13.dsl","level":"1.20.2.2","depth":3,"path":"18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/SSDT-RMCF-PS2Map-LenovoPRO13.md","ref":"18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/SSDT-RMCF-PS2Map-LenovoPRO13.md","articles":[]}]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/README.md","mtime":"2020-09-19T06:09:20.611Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-19T06:10:45.526Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
