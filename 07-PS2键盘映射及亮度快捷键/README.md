@@ -3,7 +3,9 @@
 ## 描述
 
 - 通过键盘映射可以实现某个按键被按下后产生另一个按键的效果。比如，可以指定按下 `A/a` 后，打印输出的是 `Z/z`。再比如，指定 `F2` 实现原来 `F10` 的功能。
-- **2.17** 版的 **VoodooPS2Controller.kext** 已经包括了快捷键调节亮度方法【 `Notify (^^^GFX0.DD1F, 0x86)` 和 `Notify (^^^GFX0.DD1F, 0x87)` 】，无需采用传统的亮度快捷键补丁；如果无效请参考本章内容指定 2 个按键映射到 `F14`, `F15`，以实现快捷键调节亮度功能。
+- 新版【9月30日】 **VoodooPS2Controller.kext** 将亮度快捷键部分分离出独立驱动 **BrightnessKeys.kext** 并由它提供方法 `Notify (^^^GFX0.***, 0x86)` 和 `Notify (^^^GFX0.***, 0x87)` ，传统的亮度快捷键补丁不再需要。如果新的驱动无效请参考本章内容指定 2 个按键映射到 `F14`, `F15`，以实现快捷键调节亮度功能。
+  - **VoodooPS2Controller.kext** ：https://github.com/acidanthera/VoodooPS2
+  - **BrightnessKeys.kext** ：https://github.com/acidanthera/BrightnessKeys
 - 不是所有按键都可以实现映射，只有 MAC 系统下能够捕捉到 `PS2 扫描码` 的按键才可以映射。
 
 ## 要求
