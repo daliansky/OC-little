@@ -7,7 +7,6 @@ DefinitionBlock("", "SSDT", 2, "OCLT", "FnInsert", 0)
 {
     External(_SB.PCI9.FNOK, IntObj)
     External(_SB.PCI9.MODE, IntObj)
-    External(_SB.LID0, DeviceObj)
     External(_SB.XTNV, MethodObj)
     
     Scope (_SB)
@@ -31,7 +30,7 @@ DefinitionBlock("", "SSDT", 2, "OCLT", "FnInsert", 0)
                     {
                         \_SB.PCI9.FNOK =0
                     }
-                    Notify (\_SB.LID0, 0x80)
+                    \_SB.XTNV(0x03, Arg1)
                 }
             }
             Else
