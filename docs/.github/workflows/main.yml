@@ -52,6 +52,7 @@ jobs:
       
       - name: ocbook commit
         run: |
+          touch docs/CNAME
           echo "ocbook.tlhub.cn" > docs/CNAME
           rm -rf docs/*.pdf
           rm -rf ocbook/*
