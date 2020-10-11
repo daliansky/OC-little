@@ -58,7 +58,7 @@ jobs:
       - name: OCBOOK PUSH
         uses: ad-m/github-push-action@v0.6.0
         with:
-          github_token: ${{ secrets.OCBOOK }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           directory: ocbook
           force: true
           branch: master
