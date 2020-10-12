@@ -6,6 +6,8 @@
 - 新版【9月30日】 **VoodooPS2Controller.kext** 将亮度快捷键部分分离出独立驱动 **BrightnessKeys.kext** 并由它提供方法 `Notify (^^^GFX0.***, 0x86)` 和 `Notify (^^^GFX0.***, 0x87)` ，传统的亮度快捷键补丁不再需要。如果新的驱动无效请参考本章内容指定 2 个按键映射到 `F14`, `F15`，以实现快捷键调节亮度功能。
   - **VoodooPS2Controller.kext** ：https://github.com/acidanthera/VoodooPS2
   - **BrightnessKeys.kext** ：https://github.com/acidanthera/BrightnessKeys
+  
+  **注意**：dell 机器需要 `SSDT-OCWork-dell` 或者 `操作系统补丁` 才能解除对 `Notify (^^^GFX0.***, 0x86)` 和 `Notify (^^^GFX0.***,0x87)` 的限制，让 **BrightnessKeys.kext** 正常工作，参考《Dell机器特殊补丁》。
 - 不是所有按键都可以实现映射，只有 MAC 系统下能够捕捉到 `PS2 扫描码` 的按键才可以映射。
 
 ## 要求
