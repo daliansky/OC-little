@@ -42,24 +42,3 @@ jobs:
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: OCBOOK COMMIT
-        run: |
-          git clone -q https://github.com/athlonreg/ocbook.git --depth=1
-          rm -rf ocbook/*
-          touch ocbook/CNAME
-          echo "ocbook.tlhub.cn" > ocbook/CNAME
-          cp -Rf docs/* ocbook/
-          cd ocbook && git add .
-          git config --local user.email "15563836030@163.com"
-          git config --local user.name "athlonreg"
-          git commit -m "Update by GitHub Actions" -a
-
-      - name: OCBOOK PUSH
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          directory: ocbook
-          force: true
-          branch: master
-          repository: athlonreg/ocbook
