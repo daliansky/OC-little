@@ -105,7 +105,7 @@
    4. config-4-I2C 驱动列表
    5. config-5-PS2Smart 键盘驱动列表
    6. config-6-Intel 无线和蓝牙驱动列表
-   7. config-7-PS2+I2C 驱动混合列表
+   7. config-7-I2C+PS2 驱动列表
 
 ### Credits
 

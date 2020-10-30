@@ -8,35 +8,29 @@
   - `Method` ：OSID
   - `Method` ：BTNV
 
+## 特殊更名
+
+PNLF renamed XNLF
+
+```text
+Find:     504E4C46
+Replace:  584E4C46
+```
+
+一些 Dell 机器的 DSDT 存在变量 `PNLF` ， `PNLF` 和亮度补丁名称相同有可能发生冲突，固使用以上更名规避之。
+
 ## 特殊补丁
 
-- ***SSDT-OCWork-dell***
-  - 改变 `ACOS` 、 `ACSE` 可以让机器工作在不同的模式
+- ***SSDT-OCWork-dell*** 
+  - 多数 Dell 机器都存在 `OSID` 方法， `OSID` 方法包括了2个变量 `ACOS` 和 `ACOS` ，这2个变量决定了机器的工作模式。比如，只有 `ACOS` >= `0x20` 时，ACPI 的亮度快捷键方法才起作用。以下列举2个变量和工作模式的几种关系。有关 `OSID` 方法的详细内容请查看 DSDT 的 `Method (OSID...` 。
+    - `ACOS` >= `0x20` ，亮度快捷键工作
     - `ACOS` = `0x80` ，`ACSE` = 0 为 win7 模式，在此模式下，机器睡眠期间呼吸灯闪烁
     - `ACOS` = `0x80` ，`ACSE` = 1 为 win8 模式，在此模式下，机器睡眠期间呼吸灯灭
-    - `ACOS` > `0x20` ，亮度快捷键工作
-    
-    - 其他工作模式请查看 DSDT 的 `Method (OSID...` 有关内容
-  - 多数 dell 机器的亮度快捷键受控于 `OSID` 方法，而 `OSID` 的 **返回值** 取决于操作系统本身或者使用 **本补丁** 修正其 **返回值** 【 `ACOS` > `0x20` 】
-  
+  - `OSID` 方法里的2个变量的具体内容取决于操作系统本身，黑苹果状态下必须使用 **操作系统补丁** 或者使用 **本补丁** 才能改变这2个变量满足特定要求。
+
 - 修复 Fn+Insert 功能键的补丁组合
   
   - ***SSDT-PTSWAK***   参见《PTSWAK综合扩展补丁》
-  - ***SSDT-EXT4-WakeScreen***   参见《PTSWAK综合扩展补丁》
+  - ***SSDT-EXT3-WakeScreen***   参见《PTSWAK综合扩展补丁》
   - ***SSDT-LIDpatch***   参见《PNP0C0E睡眠修正方法》
   - ***SSDT-FnInsert_BTNV-dell***   参见《PNP0C0E睡眠修正方法》
-
-## 其他补丁(参考)
-
-- ***SSDT-EC*** ——参见《仿冒EC》
-- ***SSDT-PLUG-xxx*** ——参见《注入X86》
-- ***SSDT-PNLF-xxx*** ——参见《PNLF注入方法》
-- ***SSDT-GPRW*** ——参见《0D6D补丁》
-- ***SSDT-ALS0*** ——参见《仿冒环境光传感器》
-- ***SSDT-MCHC*** ——参见《添加缺失的部件》
-- ***SSDT-SBUS*** ——参见《SBUS/SMBU补丁》
-- ***SSDT-OCI2C-TPXX-dell5480*** ——参见《I2C专用部件》，适用于 `dell_Latitude5480`
-- ***SSDT-RMCF-MouseAsTrackpad*** ——参见《PS2键盘映射》
-- ***SSDT-RP01.PXSX-disbale*** ——参见《禁止PCI设备》，用于禁止 `dell_Latitude5480` 的SD卡
-
-**注**：以上补丁所要求的更名在对应补丁文件的注释里。
