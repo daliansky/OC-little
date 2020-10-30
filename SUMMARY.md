@@ -184,7 +184,6 @@
     * [config-1-Lilu-SMC-WEG-ALC驱动列表.plist](常见驱动加载顺序/config-1-Lilu-SMC-WEG-ALC驱动列表.md)
     * [config-2-PS2键盘驱动列表.plist](常见驱动加载顺序/config-2-PS2键盘驱动列表.md)
     * [config-3-BCM无线和蓝牙驱动列表.plist](常见驱动加载顺序/config-3-BCM无线和蓝牙驱动列表.md)
-    * [config-4-I2C驱动列表.plist](常见驱动加载顺序/config-4-I2C驱动列表.md)
+    * [config-4-I2C+PS2驱动列表.plist](常见驱动加载顺序/config-4-I2C+PS2驱动列表.md)
     * [config-5-PS2Smart键盘驱动列表.plist](常见驱动加载顺序/config-5-PS2Smart键盘驱动列表.md)
     * [config-6-Intel无线和蓝牙驱动列表.plist](常见驱动加载顺序/config-6-Intel无线和蓝牙驱动列表.md)
-    * [config-7-PS2+I2C驱动混合列表.plist](常见驱动加载顺序/config-7-PS2+I2C驱动混合列表.md)
