@@ -14,7 +14,7 @@ This repository relies on GitBook and utilises Github Actions to build Page serv
 
 0. **Overview**
 
-   1. ASL basic grammar
+   1. Basic ACPI Source Language
    2. SSDT load sequence
    3. ACPI form
    4. ASL-AML comparison table
@@ -23,7 +23,7 @@ This repository relies on GitBook and utilises Github Actions to build Page serv
 
    1. Prevent `S3` sleep
    2. `AOAC` disable discrete graphics card
-   3. Power management Deep idle
+   3. Power management deep idle
    4. `AOAC` wake patch
    5. Set `ASPM` state
    6. Automatically disable `WIFI` when sleep
@@ -34,7 +34,7 @@ This repository relies on GitBook and utilises Github Actions to build Page serv
    2. RTC0
    3. Fake Ambient Light Sensor (ALS)
 
-3. **Binary Rename & Preset Variables**
+3. **Binary Renames & Preset Variables**
 
    1. OC `I2C-GPIO` patch
    2. Related patches
@@ -108,7 +108,7 @@ This repository relies on GitBook and utilises Github Actions to build Page serv
 ### Credits
 
 - Special credit to：
-  - @XianWu write this ACPI componet patches that useable to **[OpenCore](https://github.com/acidanthera/OpenCorePkg)** 
+  - @XianWu write these ACPI componet patches that useable to **[OpenCore](https://github.com/acidanthera/OpenCorePkg)** 
   - @Bat.bat, @DalianSky, @athlonreg, @iStar丶Forever their proofreading and finalisation.
 
 - Credit to：
