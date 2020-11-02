@@ -31,9 +31,12 @@
     - **补丁方法**：`ACPI\Quirks\FadtEnableReset` = `true` 
     
     - **说明**：[`ACPI规范`](https://www.acpica.org/documentation) 以 **FADT** 来定义与配置和电源管理相关的各种静态系统信息，在机器的 ACPI 表单中以 **FACP.aml** 表单出现。 **FACP.aml** 表单表征的信息有 RTC时钟，电源和睡眠按键，电源管理等。目前和黑苹果有关的有以下几个方面：
+    
     - 重启和关机不正常的，尝试使用本补丁
       
     - 按下 **电源键** 无法呼出 “重新启动、睡眠、取消、关机” 菜单的，尝试使用本补丁
+      
+      **注意**：如果 `ACPI\Quirks\FadtEnableReset` = `true` 依然无法呼出 “重新启动、睡眠、取消、关机” 菜单，尝试添加 ***SSDT-PMCR*** 。 ***SSDT-PMCR*** 位于 OC-little 的《添加缺失的部件》。
       
     - **FACP.aml** 表单的 `Low Power S0 Idle` 、`Hardware Reduced` 表征了机器类型，决定了电源管理方式。如果 `Low Power S0 Idle` = `1` 则表明机器属于 `AOAC` 。有关 `AOAC` 方面的内容参见《关于AOAC》。
     
@@ -54,4 +57,3 @@
     - **补丁方法**：全局更名使所有 ACPI 表单的 `EC` 名称、路径和 `Namepath` 一致
     - **说明**：个别机器（如 **Lenovo yoga-s740**）的 **ECDT.aml** 表单的 `Namepath` 与其他 ACPI 表单的 `EC` 名称不一致，这会导致机器在引导过程中出现 ACPI 错误。本补丁方法可以较好的解决 ACPI 报错问题。
     - **注意**：并非所有机器都有这个表单
-
