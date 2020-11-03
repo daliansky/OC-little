@@ -37,10 +37,10 @@ characters, and not begin with digitals. Just check any DSDT/SSDT, no exceptions
 
    `xxxx` parameters refer to `File Name`、`OEMID`、`Table ID`、`OEM Version`. The third parameter is based on the second parameter. As shown above, if the second parameter is **`DSDT`**, in turn, the third parameter is`0x02`. Other parameters are free to fill in.
 
-2. Those functions and variables begin with `_` are reserved by operating systems. that is why some ASL tables contain `_T_X` trigger warnings after decompilation.
+2. Those methods and variables begin with `_` are reserved by operating systems. that is why some ASL tables contain `_T_X` trigger warnings after decompilation.
 
    
-3. `Method` defines functions, functions can be defined followed by `Device` or `Scope`. As such, functions cannot be defined without `Scope`, and the instances listed below are **invalid**.
+3. `Method` can be defined followed by `Device` or `Scope`. As such, `method` cannot be defined without `Scope`, and the instances listed below are **invalid**.
 
    ```swift
    Method (xxxx, 0, NotSerialized)
@@ -104,7 +104,7 @@ characters, and not begin with digitals. Just check any DSDT/SSDT, no exceptions
       }
       ```
 
-      Yes, functions can be placed here. Caution, functions begin with **`_`** are reserved by operating systems.
+      Yes, methods can be placed here. Caution, methods begin with **`_`** are reserved by operating systems.
 
 5. `Device (xxxx)` also can be recognised as a scope, it cotains various descriptions to devices, e.g. `_ADR`,`_CID`,`_UID`,`_DSM`,`_STA`.
 
@@ -114,9 +114,9 @@ characters, and not begin with digitals. Just check any DSDT/SSDT, no exceptions
 
 8. For better understanding, ACPI releases `ASL+(ASL2.0)`, it introduces C language's `+-*/=`, `<<`, `>>` and logical judgment `==`, `!=` etc.
 
-9. Maximally 7 parameters can be passed within a function, expressed by using `Arg0`~`Arg6`, not allow to customise.
+9. Methods in ASL can accept up to 7 arguments; they are represented by `Arg0` to `Arg6` and cannot be customised.
 
-10. Maximally 8 functions can be applied within a local variable, expressed by using `Local0`~`Local7`. Definition is not necessary, but should be initialised, in other words, assignment is needed.
+10. Local Variables in ASL can accept up to 8 arguments；they are represented by `Local0`~`Local7`. Definitions is not necessary, but should be initialised, in other words, assignment is needed.
 
 ## ASL Common Type of Data
 
@@ -229,9 +229,9 @@ Read `ACPI Specification` for details
 
 Only two results from logical calculation - `0` or `1`
 
-## ASL Definition of Function
+## ASL Definition of Method
 
-1. Define Function
+1. Define a Method
 
    ```swift
    Method (TEST)
@@ -240,7 +240,7 @@ Only two results from logical calculation - `0` or `1`
    }
    ```
 
-2. Define a function contains 2 parameters, and apply local variables`Local0`~`Local7`
+2. Define a method contains 2 parameters, and apply local variables`Local0`~`Local7`
 
    Numbers of parameters are defaulted as `0`
 
@@ -254,7 +254,7 @@ Only two results from logical calculation - `0` or `1`
    ```
 
 
-3. Define a function contains a return value
+3. Define a method contains a return value
   
    ```swift
    Method (MADD, 2)
@@ -274,7 +274,7 @@ Only two results from logical calculation - `0` or `1`
    Store (MADD (1, 2), Local0)  /* Legacy ASL */
    ```
 
-4. Define serialised function
+4. Define serialised method
 
    If not define `Serialized` or `NotSerialized`, default as `NotSerialized`
 
@@ -288,7 +288,7 @@ Only two results from logical calculation - `0` or `1`
    }
    ```
 
-   It looks like `multi-thread synchronisation`. In other words, only one instance can be existed in the memory when the function is stated as `Serialized`. Normally the application create one object, for example:
+   It looks like `multi-thread synchronisation`. In other words, only one instance can be existed in the memory when the method is stated as `Serialized`. Normally the application create one object, for example:
 
    ```swift
    Method (TEST, Serialized)
@@ -297,7 +297,7 @@ Only two results from logical calculation - `0` or `1`
    }
    ```
 
-   If we state `TEST` shown above，and call it from two different functions:
+   If we state `TEST` shown above，and call it from two different methods:
 
    ```swift
    Device (Dev1)
