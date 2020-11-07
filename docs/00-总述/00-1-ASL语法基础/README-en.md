@@ -2,7 +2,7 @@
 
 > This guide is quoted from PCBeta, Published at 2011-11-21 11:16:20,Author:suhetao.
 >
-> Markdowned and proofreaded by Bat.bat(williambj1) on 2020-2-14.
+> Markdowned and proofread by Bat.bat(williambj1) on 2020-2-14.
 >
 > <http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=944566&archive=2&extra=page%3D1&page=1>
 
