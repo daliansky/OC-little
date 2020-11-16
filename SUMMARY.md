@@ -160,6 +160,8 @@
         * [SSDT-ThinkPad_ClickPad.dsl](18-品牌机器特殊补丁/18-3-ThinkPad机器专用补丁/SSDT-ThinkPad_ClickPad.md)
         * [SSDT-ThinkPad_ClickPad+PS2Map-AtoZ.dsl](18-品牌机器特殊补丁/18-3-ThinkPad机器专用补丁/SSDT-ThinkPad_ClickPad+PS2Map-AtoZ.md)
         * [SSDT-ThinkPad_TrackPad.dsl](18-品牌机器特殊补丁/18-3-ThinkPad机器专用补丁/SSDT-ThinkPad_TrackPad.md)
+    * [18-4-Asus机器特殊补丁](18-品牌机器特殊补丁/18-4-Asus机器特殊补丁/README.md)
+        * [SSDT-OCWork-asus.dsl](18-品牌机器特殊补丁/18-4-Asus机器特殊补丁/SSDT-OCWork-asus.md)
 * [19-I2C专用部件](19-I2C专用部件/README.md)
     * [SSDT-OCI2C-TPXX-chao7000.dsl](19-I2C专用部件/SSDT-OCI2C-TPXX-chao7000.md)
     * [SSDT-OCI2C-TPXX-dell5480.dsl](19-I2C专用部件/SSDT-OCI2C-TPXX-dell5480.md)

@@ -7,7 +7,7 @@
   - **VoodooPS2Controller.kext** ：https://github.com/acidanthera/VoodooPS2
   - **BrightnessKeys.kext** ：https://github.com/acidanthera/BrightnessKeys
   
-  **注意**：dell 机器需要 `SSDT-OCWork-dell` 或者 `操作系统补丁` 才能解除对 `Notify (^^^GFX0.***, 0x86)` 和 `Notify (^^^GFX0.***,0x87)` 的限制，让 **BrightnessKeys.kext** 正常工作，参考《Dell机器特殊补丁》。
+  **注意**：一些 dell 机器和 asus 机器需要 `SSDT-OCWork-***` 或者 `操作系统补丁` 才能解除对 `Notify (^^^GFX0.***, 0x86)` 和 `Notify (^^^GFX0.***,0x87)` 的限制，让 **BrightnessKeys.kext** 正常工作。详细内容请参考《Dell机器特殊补丁》、《Asus机器特殊补丁》。
 - 不是所有按键都可以实现映射，只有 MAC 系统下能够捕捉到 `PS2 扫描码` 的按键才可以映射。
 
 ## 要求
