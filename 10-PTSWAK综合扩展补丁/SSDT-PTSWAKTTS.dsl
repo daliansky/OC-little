@@ -81,13 +81,17 @@ DefinitionBlock("", "SSDT", 2, "OCLT", "PTSWAK", 0)
             {
                 EXT1(Arg0)
             }
+        }
+
+        ZPTS(Arg0)
+        
+        If (_OSI ("Darwin"))
+        {
             If (CondRefOf(EXT2))
             {
                 EXT2(Arg0)
             }
         }
-
-        ZPTS(Arg0)
     }
 
     Method (_WAK, 1, NotSerialized) //Method (_WAK, 1, Serialized)
@@ -101,6 +105,8 @@ DefinitionBlock("", "SSDT", 2, "OCLT", "PTSWAK", 0)
                 \_SB.PCI9.FNOK =0
                 Arg0 = 3
             }
+            If (Arg0 < 1 || Arg0 > 5)
+            { Arg0 = 3 }
 
             If (CondRefOf (\DGPU._OFF))
             {
@@ -111,13 +117,16 @@ DefinitionBlock("", "SSDT", 2, "OCLT", "PTSWAK", 0)
             {
                 EXT3(Arg0)
             }
+        }
+
+        Local0 = ZWAK(Arg0)
+        If (_OSI ("Darwin"))
+        {
             If (CondRefOf(EXT4))
             {
                 EXT4(Arg0)
             }
         }
-
-        Local0 = ZWAK(Arg0)
         Return (Local0)
     }
 
@@ -129,15 +138,19 @@ DefinitionBlock("", "SSDT", 2, "OCLT", "PTSWAK", 0)
             {
                 EXT5(Arg0)
             }
-            If (CondRefOf(EXT6))
-            {
-                EXT6(Arg0)
-            }
         }
 
         If (CondRefOf(ZTTS))
         {
             ZTTS(Arg0)
+        }
+        
+        If (_OSI ("Darwin"))
+        {
+            If (CondRefOf(EXT6))
+            {
+                EXT6(Arg0)
+            }
         }
     }
 }

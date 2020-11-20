@@ -77,7 +77,7 @@
 
 - ***SSDT-EXT1-FixShutdown*** —— `EXT1` 扩展补丁。 修复因 XHC 控制器导致的关机变重启的问题，原理是当 `_PTS` 中传入的参数为 `5` 时将 `XHC.PMEE` 置 0。该补丁与 Clover 的 `FixShutdown` 效果等同。部分 XPS / ThinkPad 机器会需要这个补丁。
 
-- ***SSDT-EXT4-WakeScreen*** —— `EXT4` 扩展补丁。解决某些机器唤醒后需按任意键亮屏的问题。使用时应查询 `PNP0C0D` 设备名称和路径是否已存在补丁文件中，如 `_SB.PCI0.LPCB.LID0`。如果不存在自行添加。
+- ***SSDT-EXT3-WakeScreen*** —— `EXT4` 扩展补丁。解决某些机器唤醒后需按任意键亮屏的问题。使用时应查询 `PNP0C0D` 设备名称和路径是否已存在补丁文件中，如 `_SB.PCI0.LPCB.LID0`。如果不存在自行添加。
 
 - ***SSDT-EXT5-TP-LED*** —— `EXT5` 扩展补丁。 解决 ThinkPad 机器唤醒后 A 面呼吸灯和电源键呼吸灯未恢复正常的问题；修复在 ThinkPad 老机型上唤醒后 <kbd>F4</kbd> 麦克风指示灯状态不正常的问题。
 
