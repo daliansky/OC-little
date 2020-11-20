@@ -4,8 +4,7 @@
 DefinitionBlock("", "SSDT", 2, "ACDT", "AOACWake", 0)
 {
     External(_SB.PCI0.LPCB, DeviceObj)
-    External(_SB.PCI0.LPCB.H_EC._Q0D, MethodObj)
-    External(_SB.PCI0.LPCB.H_EC._Q0A, MethodObj)
+    External(_WAK, MethodObj)
     
     Scope (_SB.PCI0.LPCB)
     {
@@ -13,9 +12,8 @@ DefinitionBlock("", "SSDT", 2, "ACDT", "AOACWake", 0)
         {
             Method (_PS0, 0, Serialized)
             {
-                \_SB.PCI0.LPCB.H_EC._Q0D()
-                //
-                \_SB.PCI0.LPCB.H_EC._Q0A()
+                \_WAK (0x03)
+                //It is possible to customize the power data recovery method
             }
             
             Method (_PS3, 0, Serialized)
@@ -25,5 +23,5 @@ DefinitionBlock("", "SSDT", 2, "ACDT", "AOACWake", 0)
         }
     }
 }
+//EOF
 ```
-
