@@ -1842,9 +1842,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12.2" data-path="SSDT-EXT4-WakeScreen.html">
+        <li class="chapter " data-level="1.12.2" data-path="SSDT-EXT4-WakeScreen.md">
             
-                <a href="SSDT-EXT4-WakeScreen.html">
+                <span>
             
                     
                     SSDT-EXT4-WakeScreen.dsl
@@ -2909,150 +2909,163 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <pre><code class="lang-swift"><span class="hljs-comment">// Overriding _PTS and _WAK</span>
-<span class="hljs-comment">// In config ACPI, _PTS to ZPTS(1,N)</span>
-<span class="hljs-comment">// Find:     5F50545301</span>
-<span class="hljs-comment">// Replace:  5A50545301</span>
-<span class="hljs-comment">// or </span>
-<span class="hljs-comment">// In config ACPI, _PTS to ZPTS(1,S)</span>
-<span class="hljs-comment">// Find:     5F50545309</span>
-<span class="hljs-comment">// Replace:  5A50545309</span>
-<span class="hljs-comment">//</span>
-<span class="hljs-comment">// In config ACPI, _WAK to ZWAK(1,N)</span>
-<span class="hljs-comment">// Find:     5F57414B01</span>
-<span class="hljs-comment">// Replace:  5A57414B01</span>
-<span class="hljs-comment">// or</span>
-<span class="hljs-comment">// In config ACPI, _WAK to ZWAK(1,S)</span>
-<span class="hljs-comment">// Find:     5F57414B09</span>
-<span class="hljs-comment">// Replace:  5A57414B09</span>
-<span class="hljs-comment">//</span>
-<span class="hljs-comment">// In config ACPI, _TTS to ZTTS(1,N)</span>
-<span class="hljs-comment">// Find:     5F54545301</span>
-<span class="hljs-comment">// Replace:  5A54545301</span>
-<span class="hljs-comment">// or</span>
-<span class="hljs-comment">// In config ACPI, _TTS to ZTTS(1,S)</span>
-<span class="hljs-comment">// Find:     5F54545309</span>
-<span class="hljs-comment">// Replace:  5A54545309</span>
-<span class="hljs-comment">//</span>
-<span class="hljs-type">DefinitionBlock</span>(<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;SSDT&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-string">&quot;OCLT&quot;</span>, <span class="hljs-string">&quot;PTSWAK&quot;</span>, <span class="hljs-number">0</span>)
+                                <pre><code class="lang-dsl">// Overriding _PTS and _WAK
+// In config ACPI, _PTS to ZPTS(1,N)
+// Find:     5F50545301
+// Replace:  5A50545301
+// or 
+// In config ACPI, _PTS to ZPTS(1,S)
+// Find:     5F50545309
+// Replace:  5A50545309
+//
+// In config ACPI, _WAK to ZWAK(1,N)
+// Find:     5F57414B01
+// Replace:  5A57414B01
+// or
+// In config ACPI, _WAK to ZWAK(1,S)
+// Find:     5F57414B09
+// Replace:  5A57414B09
+//
+// In config ACPI, _TTS to ZTTS(1,N)
+// Find:     5F54545301
+// Replace:  5A54545301
+// or
+// In config ACPI, _TTS to ZTTS(1,S)
+// Find:     5F54545309
+// Replace:  5F54545309
+//
+DefinitionBlock(&quot;&quot;, &quot;SSDT&quot;, 2, &quot;OCLT&quot;, &quot;PTSWAK&quot;, 0)
 {
-    <span class="hljs-type">External</span>(<span class="hljs-type">ZPTS</span>, <span class="hljs-type">MethodObj</span>)
-    <span class="hljs-type">External</span>(<span class="hljs-type">ZWAK</span>, <span class="hljs-type">MethodObj</span>)
-    <span class="hljs-type">External</span>(<span class="hljs-type">ZTTS</span>, <span class="hljs-type">MethodObj</span>)
-    <span class="hljs-type">External</span>(<span class="hljs-type">EXT1</span>, <span class="hljs-type">MethodObj</span>)
-    <span class="hljs-type">External</span>(<span class="hljs-type">EXT2</span>, <span class="hljs-type">MethodObj</span>)
-    <span class="hljs-type">External</span>(<span class="hljs-type">EXT3</span>, <span class="hljs-type">MethodObj</span>)
-    <span class="hljs-type">External</span>(<span class="hljs-type">EXT4</span>, <span class="hljs-type">MethodObj</span>)
-    <span class="hljs-type">External</span>(<span class="hljs-type">EXT5</span>, <span class="hljs-type">MethodObj</span>)
-    <span class="hljs-type">External</span>(<span class="hljs-type">EXT6</span>, <span class="hljs-type">MethodObj</span>)
-    <span class="hljs-type">External</span>(<span class="hljs-type">DGPU</span>._ON, <span class="hljs-type">MethodObj</span>)
-    <span class="hljs-type">External</span>(<span class="hljs-type">DGPU</span>._OFF, <span class="hljs-type">MethodObj</span>)
+    External(ZPTS, MethodObj)
+    External(ZWAK, MethodObj)
+    External(ZTTS, MethodObj)
+    External(EXT1, MethodObj)
+    External(EXT2, MethodObj)
+    External(EXT3, MethodObj)
+    External(EXT4, MethodObj)
+    External(EXT5, MethodObj)
+    External(EXT6, MethodObj)
+    External(DGPU._ON, MethodObj)
+    External(DGPU._OFF, MethodObj)
 
-    <span class="hljs-type">Scope</span> (_SB)
+    Scope (_SB)
     {
-        <span class="hljs-type">Device</span> (<span class="hljs-type">PCI9</span>)
+        Device (PCI9)
         {
-            <span class="hljs-type">Name</span> (_ADR, <span class="hljs-type">Zero</span>)
-            <span class="hljs-type">Name</span> (<span class="hljs-type">FNOK</span>, <span class="hljs-type">Zero</span>)
-            <span class="hljs-type">Name</span> (<span class="hljs-type">MODE</span>, <span class="hljs-type">Zero</span>)
-            <span class="hljs-comment">//</span>
-            <span class="hljs-type">Name</span> (<span class="hljs-type">TPTS</span>, <span class="hljs-type">Zero</span>)
-            <span class="hljs-type">Name</span> (<span class="hljs-type">TWAK</span>, <span class="hljs-type">Zero</span>)
-            <span class="hljs-type">Method</span> (_STA, <span class="hljs-number">0</span>, <span class="hljs-type">NotSerialized</span>)
+            Name (_ADR, Zero)
+            Name (FNOK, Zero)
+            Name (MODE, Zero)
+            //
+            Name (TPTS, Zero)
+            Name (TWAK, Zero)
+            Method (_STA, 0, NotSerialized)
             {
-                <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
+                If (_OSI (&quot;Darwin&quot;))
                 {
-                    <span class="hljs-type">Return</span> (<span class="hljs-number">0x0F</span>)
+                    Return (0x0F)
                 }
-                <span class="hljs-type">Else</span>
+                Else
                 {
-                    <span class="hljs-type">Return</span> (<span class="hljs-type">Zero</span>)
+                    Return (Zero)
                 }
             }
         }
     }
 
-    <span class="hljs-type">Method</span> (_PTS, <span class="hljs-number">1</span>, <span class="hljs-type">NotSerialized</span>) <span class="hljs-comment">//Method (_PTS, 1, Serialized)</span>
+    Method (_PTS, 1, NotSerialized) //Method (_PTS, 1, Serialized)
     {
-        <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
+        If (_OSI (&quot;Darwin&quot;))
         {
-            \_SB.<span class="hljs-type">PCI9</span>.<span class="hljs-type">TPTS</span> = <span class="hljs-type">Arg0</span>
+            \_SB.PCI9.TPTS = Arg0
 
-            <span class="hljs-keyword">if</span>(\_SB.<span class="hljs-type">PCI9</span>.<span class="hljs-type">FNOK</span> ==<span class="hljs-number">1</span>)
+            if(\_SB.PCI9.FNOK ==1)
             {
-                <span class="hljs-type">Arg0</span> = <span class="hljs-number">3</span>
+                Arg0 = 3
             }
 
-            <span class="hljs-type">If</span> (<span class="hljs-type">CondRefOf</span> (\<span class="hljs-type">DGPU</span>._ON))
+            If (CondRefOf (\DGPU._ON))
             {
-                \<span class="hljs-type">DGPU</span>._ON ()
+                \DGPU._ON ()
             }
 
-            <span class="hljs-type">If</span> (<span class="hljs-type">CondRefOf</span>(<span class="hljs-type">EXT1</span>))
+            If (CondRefOf(EXT1))
             {
-                <span class="hljs-type">EXT1</span>(<span class="hljs-type">Arg0</span>)
-            }
-            <span class="hljs-type">If</span> (<span class="hljs-type">CondRefOf</span>(<span class="hljs-type">EXT2</span>))
-            {
-                <span class="hljs-type">EXT2</span>(<span class="hljs-type">Arg0</span>)
+                EXT1(Arg0)
             }
         }
 
-        <span class="hljs-type">ZPTS</span>(<span class="hljs-type">Arg0</span>)
+        ZPTS(Arg0)
+
+        If (_OSI (&quot;Darwin&quot;))
+        {
+            If (CondRefOf(EXT2))
+            {
+                EXT2(Arg0)
+            }
+        }
     }
 
-    <span class="hljs-type">Method</span> (_WAK, <span class="hljs-number">1</span>, <span class="hljs-type">NotSerialized</span>) <span class="hljs-comment">//Method (_WAK, 1, Serialized)</span>
+    Method (_WAK, 1, NotSerialized) //Method (_WAK, 1, Serialized)
     {
-        <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
+        If (_OSI (&quot;Darwin&quot;))
         {
-            \_SB.<span class="hljs-type">PCI9</span>.<span class="hljs-type">TWAK</span> = <span class="hljs-type">Arg0</span>
+            \_SB.PCI9.TWAK = Arg0
 
-            <span class="hljs-keyword">if</span>(\_SB.<span class="hljs-type">PCI9</span>.<span class="hljs-type">FNOK</span> ==<span class="hljs-number">1</span>)
+            if(\_SB.PCI9.FNOK ==1)
             {
-                \_SB.<span class="hljs-type">PCI9</span>.<span class="hljs-type">FNOK</span> =<span class="hljs-number">0</span>
-                <span class="hljs-type">Arg0</span> = <span class="hljs-number">3</span>
+                \_SB.PCI9.FNOK =0
+                Arg0 = 3
+            }
+            If (Arg0 &lt; 1 || Arg0 &gt; 5)
+            { Arg0 = 3 }
+
+            If (CondRefOf (\DGPU._OFF))
+            {
+                \DGPU._OFF ()
             }
 
-            <span class="hljs-type">If</span> (<span class="hljs-type">CondRefOf</span> (\<span class="hljs-type">DGPU</span>._OFF))
+            If (CondRefOf(EXT3))
             {
-                \<span class="hljs-type">DGPU</span>._OFF ()
-            }
-
-            <span class="hljs-type">If</span> (<span class="hljs-type">CondRefOf</span>(<span class="hljs-type">EXT3</span>))
-            {
-                <span class="hljs-type">EXT3</span>(<span class="hljs-type">Arg0</span>)
-            }
-            <span class="hljs-type">If</span> (<span class="hljs-type">CondRefOf</span>(<span class="hljs-type">EXT4</span>))
-            {
-                <span class="hljs-type">EXT4</span>(<span class="hljs-type">Arg0</span>)
+                EXT3(Arg0)
             }
         }
 
-        <span class="hljs-type">Local0</span> = <span class="hljs-type">ZWAK</span>(<span class="hljs-type">Arg0</span>)
-        <span class="hljs-type">Return</span> (<span class="hljs-type">Local0</span>)
+        Local0 = ZWAK(Arg0)
+        If (_OSI (&quot;Darwin&quot;))
+        {
+            If (CondRefOf(EXT4))
+            {
+                EXT4(Arg0)
+            }
+        }
+        Return (Local0)
     }
 
-    <span class="hljs-type">Method</span> (_TTS, <span class="hljs-number">1</span>, <span class="hljs-type">NotSerialized</span>) <span class="hljs-comment">//Method (_TTS, 1, Serialized)</span>
+    Method (_TTS, 1, NotSerialized) //Method (_TTS, 1, Serialized)
     {
-        <span class="hljs-type">If</span> (_OSI (<span class="hljs-string">&quot;Darwin&quot;</span>))
+        If (_OSI (&quot;Darwin&quot;))
         {
-            <span class="hljs-type">If</span> (<span class="hljs-type">CondRefOf</span>(<span class="hljs-type">EXT5</span>))
+            If (CondRefOf(EXT5))
             {
-                <span class="hljs-type">EXT5</span>(<span class="hljs-type">Arg0</span>)
-            }
-            <span class="hljs-type">If</span> (<span class="hljs-type">CondRefOf</span>(<span class="hljs-type">EXT6</span>))
-            {
-                <span class="hljs-type">EXT6</span>(<span class="hljs-type">Arg0</span>)
+                EXT5(Arg0)
             }
         }
 
-        <span class="hljs-type">If</span> (<span class="hljs-type">CondRefOf</span>(<span class="hljs-type">ZTTS</span>))
+        If (CondRefOf(ZTTS))
         {
-            <span class="hljs-type">ZTTS</span>(<span class="hljs-type">Arg0</span>)
+            ZTTS(Arg0)
+        }
+
+        If (_OSI (&quot;Darwin&quot;))
+        {
+            If (CondRefOf(EXT6))
+            {
+                EXT6(Arg0)
+            }
         }
     }
 }
-<span class="hljs-comment">//EOF</span>
+//EOF
 </code></pre>
 
                                 
@@ -3097,7 +3110,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SSDT-PTSWAKTTS.dsl","level":"1.12.4","depth":2,"next":{"title":"综合补丁更名.plist","level":"1.12.5","depth":2,"path":"10-PTSWAK综合扩展补丁/综合补丁更名.md","ref":"10-PTSWAK综合扩展补丁/综合补丁更名.md","articles":[]},"previous":{"title":"SSDT-EXT5-TP-LED.dsl","level":"1.12.3","depth":2,"path":"10-PTSWAK综合扩展补丁/SSDT-EXT5-TP-LED.md","ref":"10-PTSWAK综合扩展补丁/SSDT-EXT5-TP-LED.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"10-PTSWAK综合扩展补丁/SSDT-PTSWAKTTS.md","mtime":"2020-11-16T17:13:58.152Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-16T17:15:33.204Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"SSDT-PTSWAKTTS.dsl","level":"1.12.4","depth":2,"next":{"title":"综合补丁更名.plist","level":"1.12.5","depth":2,"path":"10-PTSWAK综合扩展补丁/综合补丁更名.md","ref":"10-PTSWAK综合扩展补丁/综合补丁更名.md","articles":[]},"previous":{"title":"SSDT-EXT5-TP-LED.dsl","level":"1.12.3","depth":2,"path":"10-PTSWAK综合扩展补丁/SSDT-EXT5-TP-LED.md","ref":"10-PTSWAK综合扩展补丁/SSDT-EXT5-TP-LED.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"10-PTSWAK综合扩展补丁/SSDT-PTSWAKTTS.md","mtime":"2020-11-20T09:34:32.166Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-20T09:36:13.600Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
