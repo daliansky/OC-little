@@ -20,7 +20,7 @@
 - You may need to disable or enable a component to solve a spcific problem. The methods are:
   - `Binary Renames & Preset Variables`-----the binary rename method is espcially effective. **Caution**, you should evaluate the negative impacts for multi-systems, since the binary rename applys for all systems.
   
-  - The `Fake Devices` method is reliable. **Recommend** 。
+  - The `Fake Devices` method is reliable. **Recommend** 
 
 ## Important Patches
 
