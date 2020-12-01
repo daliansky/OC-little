@@ -28,16 +28,16 @@ This repository relies on GitBook and utilises Github Actions to build Page serv
    5. Set `ASPM` state
    6. Automatically disable `WIFI` when sleep
 
-2. **Fake Devices**
+2. **Binary Renames & Preset Variables**
+
+   1. OC `I2C-GPIO` patch
+   2. Related patches
+
+3. **Fake Devices**
 
    1. Fake `EC`
    2. RTC0
    3. Fake Ambient Light Sensor (ALS)
-
-3. **Binary Renames & Preset Variables**
-
-   1. OC `I2C-GPIO` patch
-   2. Related patches
 
 4. **OS Patch**
 
