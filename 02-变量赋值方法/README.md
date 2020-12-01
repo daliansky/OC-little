@@ -339,5 +339,66 @@ Else
       IM01 = XM01 /* 同原始ACPI变量的路径 */
 }
 ```
+### 示例5
+
+使用将设备原始 `_STA` 方法 (Method) 引用为 `IntObj` 对其赋值操作来更改设备状态的使能位。
+
+某原文：可使用本方法操作的实例
+
+```Swift
+Method (_STA, 0, NotSerialized)
+{
+    If ((XXXX == Zero))
+    {
+        Return (Zero)
+    }
+    Return (0x0F)
+}
+
+Method (_STA, 0, NotSerialized)
+{
+    Return (0x0F)
+}
+
+Name (_STA, 0x0F)
+
+```
+可以看出以上例举的`_STA`方法中仅包含返回设备状态的使能位和根据条件判断返回的使能位，若要不使用重命名和更改条件的预置变量可在自定义SSDT中可直接将`_STA`方法引用为`IntObj`
+
+操作例举禁用某设备：
+```Swift
+
+External (_SB_.PCI0.XXXX._STA, IntObj)
+
+\_SB.PCI0.XXXX._STA = Zero 
+
+```
+`_STA`方法的使能位具体设置请参阅 **ASL 语言基础** 
+
+之所以本方法在实际运用中能有效，主要是因为在ACPI规范中`_STA`方法的在操作系统OSPM模块对设备状态评估和初始化的优先级高于`_INI _ADR _HID`且`_STA`的返回值本身也是整数`Integer`
+
+某原文：不可使用本方法的操作实例
+
+```Swift
+Method (_STA, 0, NotSerialized)
+{
+    ECTP (Zero)
+    If (XXXX == One)
+    {
+        Return (0x0F)
+    {
+    
+    Return (Zero)
+}
+
+Method (_STA, 0, NotSerialized)
+{
+    ^^^GFX0.CLKF = 0x03
+    Return (Zero)
+}
+```
+从综上例举可看出原 `_STA` 方法除了设置了条件设备状态使能位以外，还包含了其他操作 `方法调用 ECTP (Zero）` 和 `赋值操作 ^^^GFX0.CLKF = 0x03`，
+使用本方法将会导致原`_STA`方法中的其他引用和操作失效而出现错误(非ACPI Error)
+
 
 **风险**：OC引导其他系统时可能无法恢复 `XM01`。
