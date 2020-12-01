@@ -28,7 +28,7 @@ This repository relies on GitBook and utilises Github Actions to build Page serv
    5. Set `ASPM` state
    6. Automatically disable `WIFI` when sleep
 
-2. **Binary Renames & Preset Variables**
+2. **Variable Assignment**
 
    1. OC `I2C-GPIO` patch
    2. Related patches
