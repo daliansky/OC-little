@@ -339,6 +339,8 @@ Else
       IM01 = XM01 /* 同原始ACPI变量的路径 */
 }
 ```
+**风险**：OC引导其他系统时可能无法恢复 `XM01`。
+
 ### 示例5
 
 使用将设备原始 `_STA` 方法 (Method) 引用为 `IntObj` 对其赋值操作来更改设备状态的使能位。
@@ -400,5 +402,63 @@ Method (_STA, 0, NotSerialized)
 从综上例举可看出原 `_STA` 方法除了设置了条件设备状态使能位以外，还包含了其他操作 `方法调用 ECTP (Zero）` 和 `赋值操作 ^^^GFX0.CLKF = 0x03`，
 使用本方法将会导致原`_STA`方法中的其他引用和操作失效而出现错误(非ACPI Error)
 
+### 示例6
 
-**风险**：OC引导其他系统时可能无法恢复 `XM01`。
+- 通过预置变量法 (将 `\SS3` `\SS4_` 赋值为 Zero) 屏蔽所有 `GPRW` 调用者设备的唤醒能力
+
+**补丁**：
+
+```Swift
+External (SS3_, IntObj)
+External (SS4_, IntObj)
+
+If (_OSI ("Darwin"))
+{
+    \SS3 = Zero
+    \SS4 = Zero
+}
+        
+```
+**补丁原理**：
+
+某原文：DSDT中的内容
+
+```Swift
+Name (SS1, Zero)
+Name (SS2, Zero)
+Name (SS3, One)  // 声明整数对象 SS3 为 1 （后被\SS3 = Zero 赋值为 0）
+Name (SS4, One)  // 声明整数对象 SS4 为 1 （后被\SS4 = Zero 赋值为 0）
+
+Name (PRWP, Package (0x02) 
+{
+    Zero, // PRWP 索引 0 = GpeInfo          (通用事件寄存器）
+    Zero  // PRWP 索引 1 = LowestSleepState (定义设备可唤醒电脑的最低系统睡眠状态 S3 或 S4)
+})
+
+Method (GPRW, 2, NotSerialized)
+{
+    PRWP [Zero] = Arg0       // 调用者将 Arg0 (0x69 或 0x6D 或其它 GpeInfo ) 赋值给 PRWP 索引 0
+    Local0 = (SS1 << One)    // 初始化Local0 = 0
+    Local0 |= (SS2 << 0x02)  // 同上
+    Local0 |= (SS3 << 0x03)  // SS3 左移字节3位 = 0x08 按位或后赋值给Local0 (0x08) 若 SS3 = 0 则位移运算无效
+    Local0 |= (SS4 << 0x04)  // SS4 左移字节4位 = 0x10 按位或后赋值给Local0 (0x10 + 0x08 = 0x18) SS4 = 0 则位移运算无效
+    If (((One << Arg1) & Local0))    // 经上逻辑运算后Local0 = 0x18，条件中Arg1为调用者的LowestSleepState (0x03 或 0x04)
+                                     // 而(One << Arg1 & Local0) 则可理解为 If ((0x08 & 0x18) || (0x10 & 0x18)) {}
+                                     // 若Local0 = 0 则此条件永不成立
+    {
+        PRWP [One] = Arg1    // 将 LowestSleepState 赋值给 PRWP 索引 1
+    }
+    Else
+    {
+        Local0 >>= One 
+        
+        FindSetLeftBit (Local0, PRWP [One])
+    }
+
+    Return (PRWP)   // 返回结果 Package PRWP
+}
+```
+**注意事项**：
+
+- 此方法与`SSDT-GPRW.aml` 相比缺点为无法禁用特定共享 GPE 事件的设备集的唤醒能力 (如 0x6D, 0x0D, 0x69, 0x09 或其它GpeInfo) 补丁生效后所有GPRW方法的调用设备都会丧失睡眠唤醒能力
+但从实际应用角度 0D,6D 补丁的本质便是修复睡眠即醒问题正常情况共享 GPE L69 或 L09 的设备通常不会触发设备唤醒 使用上与`SSDT-GPRW.aml`也无本质区别，
