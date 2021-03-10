@@ -1,3 +1,4 @@
+```dsl
 //
 DefinitionBlock ("", "SSDT", 2, "ACDT", "BATS", 0)
 {
@@ -108,3 +109,4 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "BATS", 0)
     } // BAT1
 }
 //EOF
+```

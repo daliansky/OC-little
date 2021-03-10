@@ -25,8 +25,7 @@ This repository relies on GitBook and utilises Github Actions to build Page serv
    2. `AOAC` disable discrete graphics card
    3. Power management deep idle
    4. `AOAC` wake patch
-   5. Set `ASPM` state
-   6. Automatically disable `WIFI` when sleep
+   5. Auto power off bluetooth `WIFI` while sleep
 
 2. **Preset Variable**
 
@@ -77,7 +76,9 @@ This repository relies on GitBook and utilises Github Actions to build Page serv
 
 15. **`ACPI` Patch `USB` Ports**
 
-16. **Disable `PCI` Devices**
+16. **Disable `PCI` Devices and Set `ASPM` state**
+    1. Disable `PCI` Devices
+    2. Set `ASPM` state
 
 17. **ACPIDebug**
 
