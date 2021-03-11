@@ -48,22 +48,61 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "BATS", 0)
                 0xFFFFFFFF, 
             })
             // Check your _BST method for similiar condition of EC accessibility
-            If (\_SB.PCI0.LPCB.H_EC.ECAV)
+            If (_OSI ("Darwin"))
             {
-                //PKG1 [One]  = B1B2 (B1T1, B1T2)
-                PKG1 [0x02] = B1B2 (FUSL, FUSH)
-                PKG1 [0x03] = B1B2 (BMIL, BMIH)
-                PKG1 [0x04] = B1B2 (FMVL, FMVH)
-                PKG1 [0x05] = B1B2 (HIDL, HIDH)
-                PKG1 [0x06] = B1B2 (DAVL, DAVH)
-            }
+                If (\_SB.PCI0.LPCB.H_EC.ECAV)
+                {
+                    /*
+                    PKG1 [One] = B1B2 (B1T1, B1T2)
+                    */
+                    PKG1 [0x02] = B1B2 (FUSL, FUSH)
+                    PKG1 [0x03] = B1B2 (BMIL, BMIH)
+                    PKG1 [0x04] = B1B2 (FMVL, FMVH)
+                    PKG1 [0x05] = B1B2 (HIDL, HIDH)
+                    PKG1 [0x06] = B1B2 (DAVL, DAVH)
+                }
 
-            Return (PKG1)
+                Return (PKG1)
+            }
         } // CBIS
 
         Method (CBSS, 0, Serialized)
         {
-            Return (Buffer (Zero){})
+            Name (PKG1, Package (0x08)
+            {
+                // Temperature (0x10), AppleSmartBattery format
+                0xFFFFFFFF, 
+                // TimeToFull (0x11), minutes (0xFF)
+                0xFFFFFFFF, 
+                // TimeToEmpty (0x12), minutes (0)
+                0xFFFFFFFF, 
+                // ChargeLevel (0x13), percentage
+                0xFFFFFFFF, 
+                // AverageRate (0x14), mA (signed)
+                0xFFFFFFFF, 
+                // ChargingCurrent (0x15), mA
+                0xFFFFFFFF, 
+                // ChargingVoltage (0x16), mV
+                0xFFFFFFFF, 
+                0xFFFFFFFF
+            })
+            If (_OSI ("Darwin"))
+            {
+                If (\_SB.PCI0.LPCB.H_EC.ECAV)
+                {
+                    /*
+                    PKG1 [Zero] = B1B2 (BTM1, BTM2)
+                    PKG1 [One] = B1B2 (BCL1, BCL2)
+                    PKG1 [0x02] = B1B2 (BCW1, BCW2)
+                    PKG1 [0x03] = B1B2 (BPR1, BPR2)
+                    PKG1 [0x04] = B1B2 (BAR1, BAR2)
+                    PKG1 [0x05] = B1B2 (BCC1, BCC2)
+                    PKG1 [0x06] = B1B2 (BCV1, BCV2)
+                    */
+                }
+
+                Return (PKG1)
+            }
         } // CBSS
         
     } // BAT1

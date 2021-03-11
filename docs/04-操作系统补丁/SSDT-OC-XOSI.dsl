@@ -31,7 +31,7 @@ DefinitionBlock("", "SSDT", 2, "OCLT", "OC-XOSI", 0)
                         //"Windows 2019"  //  = Win10 version 1903
                 )
             {
-                Return (0xFFFFFFFF)
+                Return (Ones)
             }
             
             Else
