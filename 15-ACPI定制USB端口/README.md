@@ -63,11 +63,13 @@ _UPC, Package ()
     >
     > 如 小新 PRO13（i5）的 ***SSDT-8-CB-01.aml*** （无独显机器是 ***SSDT-6-CB-01.aml*** ）
 
-  - `config\ACPI\Block\` 以 `TableLength` （十进制）和 `TableSignature` 方式 drop ACPI 文件。如：
+  - `config\ACPI\Delete\` 以 `TableLength` （十进制）和 `TableSignature` 方式 drop ACPI 文件。如：
 
     **dell5480**： **`TableLength`** = `2001`， **`TableSignature`** = `53534454`（SSDT）
 
     **小新PRO13（i5）**： **`TableLength`** = `12565`， **`TableSignature`** = `53534454`（SSDT）
+    
+    **TableLength**可以从该aml文件的表头处`Length`中得到。
 
 - 定制 SSDT 补丁文件
 
