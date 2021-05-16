@@ -1,5 +1,16 @@
 # 电池热补丁收录及方法指导
 
+## 前言
+
+在黑苹果中，大部分电脑都可以通过：
+SMCBatteryManager.kext
+驱动你的电池电量显示
+
+如很不幸，上述驱动无法驱动您的电池信息，你可能需要
+一：SMCBatteryManager.kext+ECEnabler.kext组合读取EC操作区域，让macOS支持1byte以上的字节
+
+如果上述方法还是不行，请阅读下面的ACPI部分
+
 ## 电池热补丁收录
 
 本项目收录了部分笔记本的 OpenCore 电池热补丁(如 ThinkPad 系列笔记本)，供大家参考使用
