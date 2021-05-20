@@ -50,12 +50,7 @@ This repository relies on GitBook and utilises Github Actions to build Page serv
 
 7. **PS2 Keyboard Mapping & Brightness Function Key@OC-xlivans**
 
-8. **Battery Patch**
-
-   1. Thinkpad
-   2. Other brands
-   3. Battery status indicator patch
-   4. Examples
+8. **Laptop Battery Driver**
 
 9.  **Disable EHCx**
 
@@ -77,6 +72,7 @@ This repository relies on GitBook and utilises Github Actions to build Page serv
 15. **`ACPI` Patch `USB` Ports**
 
 16. **Disable `PCI` Devices and Set `ASPM` state**
+
     1. Disable `PCI` Devices
     2. Set `ASPM` state
 
@@ -92,9 +88,15 @@ This repository relies on GitBook and utilises Github Actions to build Page serv
 
 20. **Disable Discrete Graphics Card Through `SSDT`**
 
+21. **Audio card `IRQ` patch**
+
 **Reserved Patches**
 
-   1. Audio card `IRQ` patch
+   1. Bettery Patch
+      1. Thinkpad
+      2. Other brands
+      3. Battery status indicator patch
+      4. Examples
    2. `CMOS` reset patch
 
 **Common Drives Load Lists**

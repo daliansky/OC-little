@@ -11,6 +11,10 @@ Replace:  584E4C46
 
 ## 特殊补丁
 
+### 亮度快捷键限制解除补丁：SSDT-OCWork-TP
+
+一些早期 Thinkpad（三代、四代、五代）机器的亮度快捷键（ `_Q14` 、 `_Q15` ）受限于 `NBCF` 变量，默认情况下（ `NBCF=0` ）亮度快捷键不工作。本补丁可解除 `NBCF` 对亮度快捷键的限制使其正常工作。
+
 ### ThinkPad 触控板属性注入和小红点防漂移补丁
 
 ThinkPad 的触摸板和小红点属于 ELAN 类型、使用 `Synaptics` 协议通过 SMBus 连接。由于目前没有可以在 macOS 下稳定使用的 SMBus 驱动，只能使用 VoodooPS2。在使用 VoodooPS2 时，为了启用 VoodooPS2 中内置的 ThinkPad 优化，需要通过 SSDT 注入触控板属性。
