@@ -1,0 +1,4177 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>ApplePS2ToADBMap.h · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="SSDT-RMCF-MouseAsTrackpad.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    OpenCore 部件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../00-总述/">
+            
+                <a href="../00-总述/">
+            
+                    
+                    00-总述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../00-总述/00-1-ASL语法基础/">
+            
+                <a href="../00-总述/00-1-ASL语法基础/">
+            
+                    
+                    00-1-ASL语法基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../00-总述/00-2-SSDT补丁加载顺序/">
+            
+                <a href="../00-总述/00-2-SSDT补丁加载顺序/">
+            
+                    
+                    00-2-SSDT补丁加载顺序
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../00-总述/00-2-SSDT补丁加载顺序/SSDT-XXXX-1.html">
+            
+                <a href="../00-总述/00-2-SSDT补丁加载顺序/SSDT-XXXX-1.html">
+            
+                    
+                    SSDT-XXXX-1.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../00-总述/00-2-SSDT补丁加载顺序/SSDT-XXXX-2.html">
+            
+                <a href="../00-总述/00-2-SSDT补丁加载顺序/SSDT-XXXX-2.html">
+            
+                    
+                    SSDT-XXXX-2.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../00-总述/00-3-ACPI表单/">
+            
+                <a href="../00-总述/00-3-ACPI表单/">
+            
+                    
+                    00-3-ACPI表单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../03-二进制更名与预置变量/03-2-ASL-AML对照表/ASL-AML对照表.md">
+            
+                <span>
+            
+                    
+                    00-4-ASL-AML对照表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../01-关于AOAC/">
+            
+                <a href="../01-关于AOAC/">
+            
+                    
+                    01-关于AOAC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../01-关于AOAC/01-1-禁止S3睡眠/">
+            
+                <a href="../01-关于AOAC/01-1-禁止S3睡眠/">
+            
+                    
+                    01-1-禁止S3睡眠
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../01-关于AOAC/01-1-禁止S3睡眠/_S3更名XS3.html">
+            
+                <a href="../01-关于AOAC/01-1-禁止S3睡眠/_S3更名XS3.html">
+            
+                    
+                    _S3更名XS3.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../01-关于AOAC/01-1-禁止S3睡眠/SSDT-MethodS3-disable.html">
+            
+                <a href="../01-关于AOAC/01-1-禁止S3睡眠/SSDT-MethodS3-disable.html">
+            
+                    
+                    SSDT-MethodS3-disable.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../01-关于AOAC/01-1-禁止S3睡眠/SSDT-NameS3-disable.html">
+            
+                <a href="../01-关于AOAC/01-1-禁止S3睡眠/SSDT-NameS3-disable.html">
+            
+                    
+                    SSDT-NameS3-disable.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../01-关于AOAC/01-2-AOAC禁止独显/">
+            
+                <a href="../01-关于AOAC/01-2-AOAC禁止独显/">
+            
+                    
+                    01-2-AOAC禁止独显
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../01-关于AOAC/01-2-AOAC禁止独显/SSDT-NDGP_OFF-AOAC.html">
+            
+                <a href="../01-关于AOAC/01-2-AOAC禁止独显/SSDT-NDGP_OFF-AOAC.html">
+            
+                    
+                    SSDT-NDGP_OFF-AOAC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../01-关于AOAC/01-2-AOAC禁止独显/SSDT-NDGP_PS3-AOAC.html">
+            
+                <a href="../01-关于AOAC/01-2-AOAC禁止独显/SSDT-NDGP_PS3-AOAC.html">
+            
+                    
+                    SSDT-NDGP_PS3-AOAC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../01-关于AOAC/01-3-电源空闲管理/">
+            
+                <a href="../01-关于AOAC/01-3-电源空闲管理/">
+            
+                    
+                    01-3-电源空闲管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../01-关于AOAC/01-3-电源空闲管理/SSDT-DeepIdle.html">
+            
+                <a href="../01-关于AOAC/01-3-电源空闲管理/SSDT-DeepIdle.html">
+            
+                    
+                    SSDT-DeepIdle.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../01-关于AOAC/01-4-AOAC唤醒方法/">
+            
+                <a href="../01-关于AOAC/01-4-AOAC唤醒方法/">
+            
+                    
+                    01-4-AOAC唤醒方法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../01-关于AOAC/01-4-AOAC唤醒方法/SSDT-PCI0.LPCB-Wake-AOAC.html">
+            
+                <a href="../01-关于AOAC/01-4-AOAC唤醒方法/SSDT-PCI0.LPCB-Wake-AOAC.html">
+            
+                    
+                    SSDT-PCI0.LPCB-Wake-AOAC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../01-关于AOAC/01-5-睡眠自动关闭蓝牙WIFI/">
+            
+                <a href="../01-关于AOAC/01-5-睡眠自动关闭蓝牙WIFI/">
+            
+                    
+                    01-5-睡眠自动关闭蓝牙WIFI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../02-仿冒设备/README.md">
+            
+                <span>
+            
+                    
+                    02-仿冒设备
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../02-仿冒设备/02-1-仿冒EC/README.md">
+            
+                <span>
+            
+                    
+                    02-1-仿冒EC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../02-仿冒设备/02-1-仿冒EC/SSDT-EC.md">
+            
+                <span>
+            
+                    
+                    SSDT-EC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../02-仿冒设备/02-2-RTC0/README.md">
+            
+                <span>
+            
+                    
+                    02-2-RTC0
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../02-仿冒设备/02-2-RTC0/SSDT-RTC0.md">
+            
+                <span>
+            
+                    
+                    SSDT-RTC0.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../02-仿冒设备/02-3-仿冒环境光传感器/README.md">
+            
+                <span>
+            
+                    
+                    02-3-仿冒环境光传感器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../02-仿冒设备/02-3-仿冒环境光传感器/SSDT-ALS0.md">
+            
+                <span>
+            
+                    
+                    SSDT-ALS0.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.2" data-path="../02-仿冒设备/02-3-仿冒环境光传感器/SSDT-ALSD.md">
+            
+                <span>
+            
+                    
+                    SSDT-ALSD.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../03-二进制更名与预置变量/README.md">
+            
+                <span>
+            
+                    
+                    03-二进制更名与预置变量
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../03-二进制更名与预置变量/03-1-OCI2C-GPIO补丁/README.md">
+            
+                <span>
+            
+                    
+                    03-1-OCI2C-GPIO补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../03-二进制更名与预置变量/03-1-OCI2C-GPIO补丁/SSDT-OCGPI0-GPEN.md">
+            
+                <span>
+            
+                    
+                    SSDT-OCGPI0-GPEN.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../03-二进制更名与预置变量/03-1-OCI2C-GPIO补丁/SSDT-OCGPI0-GPHD.md">
+            
+                <span>
+            
+                    
+                    SSDT-OCGPI0-GPHD.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" >
+            
+                <span>
+            
+                    
+                    补丁库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../03-二进制更名与预置变量/补丁库/SSDT-AWAC.md">
+            
+                <span>
+            
+                    
+                    SSDT-AWAC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../03-二进制更名与预置变量/补丁库/SSDT-RTC_Y-AWAC_N.md">
+            
+                <span>
+            
+                    
+                    SSDT-RTC_Y-AWAC_N.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../04-操作系统补丁/">
+            
+                <a href="../04-操作系统补丁/">
+            
+                    
+                    04-操作系统补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../04-操作系统补丁/操作系统补丁前置更名.html">
+            
+                <a href="../04-操作系统补丁/操作系统补丁前置更名.html">
+            
+                    
+                    操作系统补丁前置更名.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../04-操作系统补丁/操作系统更名.html">
+            
+                <a href="../04-操作系统补丁/操作系统更名.html">
+            
+                    
+                    操作系统更名.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../04-操作系统补丁/SSDT-OC-XOSI.html">
+            
+                <a href="../04-操作系统补丁/SSDT-OC-XOSI.html">
+            
+                    
+                    SSDT-OC-XOSI.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../05-注入设备/">
+            
+                <a href="../05-注入设备/">
+            
+                    
+                    05-注入设备
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../05-注入设备/05-1-注入X86/">
+            
+                <a href="../05-注入设备/05-1-注入X86/">
+            
+                    
+                    05-1-注入X86
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1.1" data-path="../05-注入设备/05-1-注入X86/SSDT-PLUG-_PR.CPU0.html">
+            
+                <a href="../05-注入设备/05-1-注入X86/SSDT-PLUG-_PR.CPU0.html">
+            
+                    
+                    SSDT-PLUG-_PR.CPU0.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.2" data-path="../05-注入设备/05-1-注入X86/SSDT-PLUG-_PR.P000.html">
+            
+                <a href="../05-注入设备/05-1-注入X86/SSDT-PLUG-_PR.P000.html">
+            
+                    
+                    SSDT-PLUG-_PR.P000.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.3" data-path="../05-注入设备/05-1-注入X86/SSDT-PLUG-_PR.PR00.html">
+            
+                <a href="../05-注入设备/05-1-注入X86/SSDT-PLUG-_PR.PR00.html">
+            
+                    
+                    SSDT-PLUG-_PR.PR00.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.4" data-path="../05-注入设备/05-1-注入X86/SSDT-PLUG-_SB.CPU0.html">
+            
+                <a href="../05-注入设备/05-1-注入X86/SSDT-PLUG-_SB.CPU0.html">
+            
+                    
+                    SSDT-PLUG-_SB.CPU0.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.5" data-path="../05-注入设备/05-1-注入X86/SSDT-PLUG-_SB.P000.html">
+            
+                <a href="../05-注入设备/05-1-注入X86/SSDT-PLUG-_SB.P000.html">
+            
+                    
+                    SSDT-PLUG-_SB.P000.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.6" data-path="../05-注入设备/05-1-注入X86/SSDT-PLUG-_SB.PR00.html">
+            
+                <a href="../05-注入设备/05-1-注入X86/SSDT-PLUG-_SB.PR00.html">
+            
+                    
+                    SSDT-PLUG-_SB.PR00.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.7" data-path="../05-注入设备/05-1-注入X86/SSDT-PLUG-SCK0.C000.html">
+            
+                <a href="../05-注入设备/05-1-注入X86/SSDT-PLUG-SCK0.C000.html">
+            
+                    
+                    SSDT-PLUG-SCK0.C000.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.8" data-path="../05-注入设备/05-1-注入X86/SSDT-PLUG-SCK0.CPU0.html">
+            
+                <a href="../05-注入设备/05-1-注入X86/SSDT-PLUG-SCK0.CPU0.html">
+            
+                    
+                    SSDT-PLUG-SCK0.CPU0.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../05-注入设备/05-2-PNLF注入方法/">
+            
+                <a href="../05-注入设备/05-2-PNLF注入方法/">
+            
+                    
+                    05-2-PNLF注入方法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.2.1" data-path="../05-注入设备/05-2-PNLF注入方法/ACPI亮度补丁/ACPI亮度补丁.html">
+            
+                <a href="../05-注入设备/05-2-PNLF注入方法/ACPI亮度补丁/ACPI亮度补丁.html">
+            
+                    
+                    ACPI亮度补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.2.1.1" data-path="../05-注入设备/05-2-PNLF注入方法/ACPI亮度补丁/SSDT-PNLF-ACPI.html">
+            
+                <a href="../05-注入设备/05-2-PNLF注入方法/ACPI亮度补丁/SSDT-PNLF-ACPI.html">
+            
+                    
+                    SSDT-PNLF-ACPI.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.1.2" data-path="../05-注入设备/05-2-PNLF注入方法/ACPI亮度补丁/修改图示.html">
+            
+                <a href="../05-注入设备/05-2-PNLF注入方法/ACPI亮度补丁/修改图示.html">
+            
+                    
+                    修改图示
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.2" >
+            
+                <span>
+            
+                    
+                    定制亮度补丁
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.2.2.1" data-path="../05-注入设备/05-2-PNLF注入方法/定制亮度补丁/SSDT-PNLF-CFL.html">
+            
+                <a href="../05-注入设备/05-2-PNLF注入方法/定制亮度补丁/SSDT-PNLF-CFL.html">
+            
+                    
+                    SSDT-PNLF-CFL.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.2.2" data-path="../05-注入设备/05-2-PNLF注入方法/定制亮度补丁/SSDT-PNLF-Haswell_Broadwell.html">
+            
+                <a href="../05-注入设备/05-2-PNLF注入方法/定制亮度补丁/SSDT-PNLF-Haswell_Broadwell.html">
+            
+                    
+                    SSDT-PNLF-Haswell_Broadwell.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.2.3" data-path="../05-注入设备/05-2-PNLF注入方法/定制亮度补丁/SSDT-PNLF-SKL_KBL.html">
+            
+                <a href="../05-注入设备/05-2-PNLF注入方法/定制亮度补丁/SSDT-PNLF-SKL_KBL.html">
+            
+                    
+                    SSDT-PNLF-SKL_KBL.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.2.4" data-path="../05-注入设备/05-2-PNLF注入方法/定制亮度补丁/SSDT-PNLF-SNB_IVY.html">
+            
+                <a href="../05-注入设备/05-2-PNLF注入方法/定制亮度补丁/SSDT-PNLF-SNB_IVY.html">
+            
+                    
+                    SSDT-PNLF-SNB_IVY.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../05-注入设备/05-3-SBUS_SMBU补丁/">
+            
+                <a href="../05-注入设备/05-3-SBUS_SMBU补丁/">
+            
+                    
+                    05-3-SBUS/SMBU补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.3.1" data-path="../05-注入设备/05-3-SBUS_SMBU补丁/SSDT-SBUS.html">
+            
+                <a href="../05-注入设备/05-3-SBUS_SMBU补丁/SSDT-SBUS.html">
+            
+                    
+                    SSDT-SBUS.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3.2" data-path="../05-注入设备/05-3-SBUS_SMBU补丁/SSDT-SMBU.html">
+            
+                <a href="../05-注入设备/05-3-SBUS_SMBU补丁/SSDT-SMBU.html">
+            
+                    
+                    SSDT-SMBU.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../06-添加缺失的部件/">
+            
+                <a href="../06-添加缺失的部件/">
+            
+                    
+                    06-添加缺失的部件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../06-添加缺失的部件/SSDT-DMAC.html">
+            
+                <a href="../06-添加缺失的部件/SSDT-DMAC.html">
+            
+                    
+                    SSDT-DMAC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../06-添加缺失的部件/SSDT-IMEI.html">
+            
+                <a href="../06-添加缺失的部件/SSDT-IMEI.html">
+            
+                    
+                    SSDT-IMEI.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../06-添加缺失的部件/SSDT-MCHC.html">
+            
+                <a href="../06-添加缺失的部件/SSDT-MCHC.html">
+            
+                    
+                    SSDT-MCHC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../06-添加缺失的部件/SSDT-MEM2.html">
+            
+                <a href="../06-添加缺失的部件/SSDT-MEM2.html">
+            
+                    
+                    SSDT-MEM2.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../06-添加缺失的部件/SSDT-PMCR.html">
+            
+                <a href="../06-添加缺失的部件/SSDT-PMCR.html">
+            
+                    
+                    SSDT-PMCR.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../06-添加缺失的部件/SSDT-PPMC.html">
+            
+                <a href="../06-添加缺失的部件/SSDT-PPMC.html">
+            
+                    
+                    SSDT-PPMC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../06-添加缺失的部件/SSDT-PWRB.html">
+            
+                <a href="../06-添加缺失的部件/SSDT-PWRB.html">
+            
+                    
+                    SSDT-PWRB.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../06-添加缺失的部件/SSDT-SLPB.html">
+            
+                <a href="../06-添加缺失的部件/SSDT-SLPB.html">
+            
+                    
+                    SSDT-SLPB.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    07-PS2键盘映射及亮度快捷键
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.9.1" data-path="ApplePS2ToADBMap.html">
+            
+                <a href="ApplePS2ToADBMap.html">
+            
+                    
+                    ApplePS2ToADBMap.h
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="SSDT-RMCF-MouseAsTrackpad.html">
+            
+                <a href="SSDT-RMCF-MouseAsTrackpad.html">
+            
+                    
+                    SSDT-RMCF-MouseAsTrackpad.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="SSDT-RMCF-PS2Map-AtoZ.html">
+            
+                <a href="SSDT-RMCF-PS2Map-AtoZ.html">
+            
+                    
+                    SSDT-RMCF-PS2Map-AtoZ.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="SSDT-RMCF-PS2Map-dell.html">
+            
+                <a href="SSDT-RMCF-PS2Map-dell.html">
+            
+                    
+                    SSDT-RMCF-PS2Map-dell.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="SSDT-RMCF-PS2Map-LenovoIWL.html">
+            
+                <a href="SSDT-RMCF-PS2Map-LenovoIWL.html">
+            
+                    
+                    SSDT-RMCF-PS2Map-LenovoIWL.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../08-笔记本电池驱动/">
+            
+                <a href="../08-笔记本电池驱动/">
+            
+                    
+                    08-笔记本电池驱动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../09-禁用EHCx/">
+            
+                <a href="../09-禁用EHCx/">
+            
+                    
+                    09-禁用EHCx
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../09-禁用EHCx/SSDT-EHC1_OFF.html">
+            
+                <a href="../09-禁用EHCx/SSDT-EHC1_OFF.html">
+            
+                    
+                    SSDT-EHC1_OFF.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../09-禁用EHCx/SSDT-EHC2_OFF.html">
+            
+                <a href="../09-禁用EHCx/SSDT-EHC2_OFF.html">
+            
+                    
+                    SSDT-EHC2_OFF.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../09-禁用EHCx/SSDT-EHCx_OFF.html">
+            
+                <a href="../09-禁用EHCx/SSDT-EHCx_OFF.html">
+            
+                    
+                    SSDT-EHCx_OFF.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../10-PTSWAK综合扩展补丁/">
+            
+                <a href="../10-PTSWAK综合扩展补丁/">
+            
+                    
+                    10-PTSWAK综合扩展补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../10-PTSWAK综合扩展补丁/SSDT-EXT1-FixShutdown.html">
+            
+                <a href="../10-PTSWAK综合扩展补丁/SSDT-EXT1-FixShutdown.html">
+            
+                    
+                    SSDT-EXT1-FixShutdown.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../10-PTSWAK综合扩展补丁/SSDT-EXT3-WakeScreen.html">
+            
+                <a href="../10-PTSWAK综合扩展补丁/SSDT-EXT3-WakeScreen.html">
+            
+                    
+                    SSDT-EXT3-WakeScreen.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../10-PTSWAK综合扩展补丁/SSDT-EXT5-TP-LED.html">
+            
+                <a href="../10-PTSWAK综合扩展补丁/SSDT-EXT5-TP-LED.html">
+            
+                    
+                    SSDT-EXT5-TP-LED.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../10-PTSWAK综合扩展补丁/SSDT-PTSWAKTTS.html">
+            
+                <a href="../10-PTSWAK综合扩展补丁/SSDT-PTSWAKTTS.html">
+            
+                    
+                    SSDT-PTSWAKTTS.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../10-PTSWAK综合扩展补丁/综合补丁更名.html">
+            
+                <a href="../10-PTSWAK综合扩展补丁/综合补丁更名.html">
+            
+                    
+                    综合补丁更名.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../11-PNP0C0E睡眠修正方法/">
+            
+                <a href="../11-PNP0C0E睡眠修正方法/">
+            
+                    
+                    11-PNP0C0E睡眠修正方法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../11-PNP0C0E睡眠修正方法/SSDT-FnF4_Q13-X1C5th.html">
+            
+                <a href="../11-PNP0C0E睡眠修正方法/SSDT-FnF4_Q13-X1C5th.html">
+            
+                    
+                    SSDT-FnF4_Q13-X1C5th.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../11-PNP0C0E睡眠修正方法/SSDT-FnInsert_BTNV-dell.html">
+            
+                <a href="../11-PNP0C0E睡眠修正方法/SSDT-FnInsert_BTNV-dell.html">
+            
+                    
+                    SSDT-FnInsert_BTNV-dell.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../11-PNP0C0E睡眠修正方法/SSDT-LIDpatch.html">
+            
+                <a href="../11-PNP0C0E睡眠修正方法/SSDT-LIDpatch.html">
+            
+                    
+                    SSDT-LIDpatch.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../11-PNP0C0E睡眠修正方法/睡眠按键和_LID更名.html">
+            
+                <a href="../11-PNP0C0E睡眠修正方法/睡眠按键和_LID更名.html">
+            
+                    
+                    睡眠按键和_LID更名.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../12-060D补丁/">
+            
+                <a href="../12-060D补丁/">
+            
+                    
+                    12-060D补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../12-060D补丁/12-1-普通的060D补丁/">
+            
+                <a href="../12-060D补丁/12-1-普通的060D补丁/">
+            
+                    
+                    12-1-普通的060D补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1.1" data-path="../12-060D补丁/12-1-普通的060D补丁/SSDT-GPRW.html">
+            
+                <a href="../12-060D补丁/12-1-普通的060D补丁/SSDT-GPRW.html">
+            
+                    
+                    SSDT-GPRW.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.1.2" data-path="../12-060D补丁/12-1-普通的060D补丁/SSDT-UPRW.html">
+            
+                <a href="../12-060D补丁/12-1-普通的060D补丁/SSDT-UPRW.html">
+            
+                    
+                    SSDT-UPRW.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.1.3" data-path="../12-060D补丁/12-1-普通的060D补丁/Name-0D更名.html">
+            
+                <a href="../12-060D补丁/12-1-普通的060D补丁/Name-0D更名.html">
+            
+                    
+                    Name-0D更名.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.1.4" data-path="../12-060D补丁/12-1-普通的060D补丁/Name-6D更名.html">
+            
+                <a href="../12-060D补丁/12-1-普通的060D补丁/Name-6D更名.html">
+            
+                    
+                    Name-6D更名.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../12-060D补丁/12-2-惠普特殊的060D补丁/">
+            
+                <a href="../12-060D补丁/12-2-惠普特殊的060D补丁/">
+            
+                    
+                    12-2-惠普特殊的060D补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.2.1" data-path="../12-060D补丁/12-2-惠普特殊的060D补丁/SSDT-0D6D-HP.html">
+            
+                <a href="../12-060D补丁/12-2-惠普特殊的060D补丁/SSDT-0D6D-HP.html">
+            
+                    
+                    SSDT-0D6D-HP.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../13-仿冒以太网和重置以太网BSD Name/">
+            
+                <a href="../13-仿冒以太网和重置以太网BSD Name/">
+            
+                    
+                    13-仿冒以太网和重置以太网BSD Name
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../13-仿冒以太网和重置以太网BSD Name/SSDT-LAN.html">
+            
+                <a href="../13-仿冒以太网和重置以太网BSD Name/SSDT-LAN.html">
+            
+                    
+                    SSDT-LAN.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../13-仿冒以太网和重置以太网BSD Name/清除所有网络.md">
+            
+                <span>
+            
+                    
+                    清除所有网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../14-CMOS相关/">
+            
+                <a href="../14-CMOS相关/">
+            
+                    
+                    14-CMOS相关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../14-CMOS相关/14-1-CMOS内存和RTCMemoryFixup/">
+            
+                <a href="../14-CMOS相关/14-1-CMOS内存和RTCMemoryFixup/">
+            
+                    
+                    14-1-CMOS内存和RTCMemoryFixup
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../15-ACPI定制USB端口/">
+            
+                <a href="../15-ACPI定制USB端口/">
+            
+                    
+                    15-ACPI定制USB端口
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../15-ACPI定制USB端口/SSDT-CB-01_XHC.html">
+            
+                <a href="../15-ACPI定制USB端口/SSDT-CB-01_XHC.html">
+            
+                    
+                    SSDT-CB-01_XHC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="../15-ACPI定制USB端口/SSDT-xh_OEMBD_XHC.html">
+            
+                <a href="../15-ACPI定制USB端口/SSDT-xh_OEMBD_XHC.html">
+            
+                    
+                    SSDT-xh_OEMBD_XHC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" >
+            
+                <span>
+            
+                    
+                    16-禁止PCI设备及设置ASPM工作模式
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../16-禁止PCI设备及设置ASPM工作模式/16-1-禁止PCI设备/">
+            
+                <a href="../16-禁止PCI设备及设置ASPM工作模式/16-1-禁止PCI设备/">
+            
+                    
+                    16-1-禁止PCI设备
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1.1" data-path="../16-禁止PCI设备及设置ASPM工作模式/16-1-禁止PCI设备/SSDT-RP01.PXSX-disbale.html">
+            
+                <a href="../16-禁止PCI设备及设置ASPM工作模式/16-1-禁止PCI设备/SSDT-RP01.PXSX-disbale.html">
+            
+                    
+                    SSDT-RP01.PXSX-disbale.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.2" data-path="../16-禁止PCI设备及设置ASPM工作模式/16-2-设置ASPM工作模式/readme.MD.md">
+            
+                <span>
+            
+                    
+                    16-2-设置ASPM工作模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.2.1" data-path="../16-禁止PCI设备及设置ASPM工作模式/16-2-设置ASPM工作模式/SSDT-PCI0.RPXX-ASPM.html">
+            
+                <a href="../16-禁止PCI设备及设置ASPM工作模式/16-2-设置ASPM工作模式/SSDT-PCI0.RPXX-ASPM.html">
+            
+                    
+                    SSDT-PCI0.RPXX-ASPM.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../17-ACPIDebug/">
+            
+                <a href="../17-ACPIDebug/">
+            
+                    
+                    17-ACPIDebug
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="../17-ACPIDebug/SSDT-BKeyQxx-Debug.html">
+            
+                <a href="../17-ACPIDebug/SSDT-BKeyQxx-Debug.html">
+            
+                    
+                    SSDT-BKeyQxx-Debug.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.2" data-path="../17-ACPIDebug/SSDT-RMDT.html">
+            
+                <a href="../17-ACPIDebug/SSDT-RMDT.html">
+            
+                    
+                    SSDT-RMDT.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../18-品牌机器特殊补丁/">
+            
+                <a href="../18-品牌机器特殊补丁/">
+            
+                    
+                    18-品牌机器特殊补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="../18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/">
+            
+                <a href="../18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/">
+            
+                    
+                    18-1-Dell机器特殊补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1.1" data-path="../18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/SSDT-OCWork-dell.html">
+            
+                <a href="../18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/SSDT-OCWork-dell.html">
+            
+                    
+                    SSDT-OCWork-dell.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2" data-path="../18-品牌机器特殊补丁/18-2-小新PRO13特殊补丁/">
+            
+                <a href="../18-品牌机器特殊补丁/18-2-小新PRO13特殊补丁/">
+            
+                    
+                    18-2-小新PRO13特殊补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.2.1" data-path="../18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/SSDT-OCPublic-Merge.md">
+            
+                <span>
+            
+                    
+                    SSDT-OCPublic-Merge.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2.2" data-path="../18-品牌机器特殊补丁/18-1-Dell机器特殊补丁/SSDT-RMCF-PS2Map-LenovoPRO13.md">
+            
+                <span>
+            
+                    
+                    SSDT-RMCF-PS2Map-LenovoPRO13.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3" data-path="../18-品牌机器特殊补丁/18-3-ThinkPad机器专用补丁/">
+            
+                <a href="../18-品牌机器特殊补丁/18-3-ThinkPad机器专用补丁/">
+            
+                    
+                    18-3-ThinkPad机器专用补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.3.1" data-path="../18-品牌机器特殊补丁/18-3-ThinkPad机器专用补丁/SSDT-OCWork-TP.html">
+            
+                <a href="../18-品牌机器特殊补丁/18-3-ThinkPad机器专用补丁/SSDT-OCWork-TP.html">
+            
+                    
+                    SSDT-OCWork-TP.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3.2" data-path="../18-品牌机器特殊补丁/18-3-ThinkPad机器专用补丁/SSDT-ThinkPad_ClickPad.html">
+            
+                <a href="../18-品牌机器特殊补丁/18-3-ThinkPad机器专用补丁/SSDT-ThinkPad_ClickPad.html">
+            
+                    
+                    SSDT-ThinkPad_ClickPad.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3.3" data-path="../18-品牌机器特殊补丁/18-3-ThinkPad机器专用补丁/SSDT-ThinkPad_ClickPad+PS2Map-AtoZ.html">
+            
+                <a href="../18-品牌机器特殊补丁/18-3-ThinkPad机器专用补丁/SSDT-ThinkPad_ClickPad+PS2Map-AtoZ.html">
+            
+                    
+                    SSDT-ThinkPad_ClickPad+PS2Map-AtoZ.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3.4" data-path="../18-品牌机器特殊补丁/18-3-ThinkPad机器专用补丁/SSDT-ThinkPad_TrackPad.html">
+            
+                <a href="../18-品牌机器特殊补丁/18-3-ThinkPad机器专用补丁/SSDT-ThinkPad_TrackPad.html">
+            
+                    
+                    SSDT-ThinkPad_TrackPad.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.4" data-path="../18-品牌机器特殊补丁/18-4-Asus机器特殊补丁/">
+            
+                <a href="../18-品牌机器特殊补丁/18-4-Asus机器特殊补丁/">
+            
+                    
+                    18-4-Asus机器特殊补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.4.1" data-path="../18-品牌机器特殊补丁/18-4-Asus机器特殊补丁/SSDT-OCWork-asus.html">
+            
+                <a href="../18-品牌机器特殊补丁/18-4-Asus机器特殊补丁/SSDT-OCWork-asus.html">
+            
+                    
+                    SSDT-OCWork-asus.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="../19-I2C专用部件/">
+            
+                <a href="../19-I2C专用部件/">
+            
+                    
+                    19-I2C专用部件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="../19-I2C专用部件/SSDT-OCI2C-TPXX-chao7000.html">
+            
+                <a href="../19-I2C专用部件/SSDT-OCI2C-TPXX-chao7000.html">
+            
+                    
+                    SSDT-OCI2C-TPXX-chao7000.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.2" data-path="../19-I2C专用部件/SSDT-OCI2C-TPXX-dell5480.html">
+            
+                <a href="../19-I2C专用部件/SSDT-OCI2C-TPXX-dell5480.html">
+            
+                    
+                    SSDT-OCI2C-TPXX-dell5480.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.3" data-path="../19-I2C专用部件/SSDT-OCI2C-TPXX-LenovoIWL.html">
+            
+                <a href="../19-I2C专用部件/SSDT-OCI2C-TPXX-LenovoIWL.html">
+            
+                    
+                    SSDT-OCI2C-TPXX-LenovoIWL.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.4" data-path="../19-I2C专用部件/SSDT-OCI2C-TPXX-lenovoPRO13.html">
+            
+                <a href="../19-I2C专用部件/SSDT-OCI2C-TPXX-lenovoPRO13.html">
+            
+                    
+                    SSDT-OCI2C-TPXX-lenovoPRO13.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5" data-path="../19-I2C专用部件/SSDT-OCI2C-TPXX-yoga_s740.html">
+            
+                <a href="../19-I2C专用部件/SSDT-OCI2C-TPXX-yoga_s740.html">
+            
+                    
+                    SSDT-OCI2C-TPXX-yoga_s740.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.6" data-path="../19-I2C专用部件/SSDT-OCGPI0-GPEN.html">
+            
+                <a href="../19-I2C专用部件/SSDT-OCGPI0-GPEN.html">
+            
+                    
+                    SSDT-OCGPI0-GPEN.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.7" data-path="../19-I2C专用部件/SSDT-OCGPI0-GPHD.html">
+            
+                <a href="../19-I2C专用部件/SSDT-OCGPI0-GPHD.html">
+            
+                    
+                    SSDT-OCGPI0-GPHD.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.8" data-path="../19-I2C专用部件/SSDT-I2CxConf.html">
+            
+                <a href="../19-I2C专用部件/SSDT-I2CxConf.html">
+            
+                    
+                    SSDT-I2CxConf.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.9" data-path="../19-I2C专用部件/SSDT-OCI2C1-TP01-xps9300.html">
+            
+                <a href="../19-I2C专用部件/SSDT-OCI2C1-TP01-xps9300.html">
+            
+                    
+                    SSDT-OCI2C1-TP01-xps9300.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.10" data-path="../19-I2C专用部件/SSDT-OCI2C0-TP02-xps9300.html">
+            
+                <a href="../19-I2C专用部件/SSDT-OCI2C0-TP02-xps9300.html">
+            
+                    
+                    SSDT-OCI2C0-TP02-xps9300.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="../20-SSDT屏蔽独显方法/">
+            
+                <a href="../20-SSDT屏蔽独显方法/">
+            
+                    
+                    20-SSDT屏蔽独显方法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.22.1" data-path="../20-SSDT屏蔽独显方法/SSDT-NDGP_OFF.html">
+            
+                <a href="../20-SSDT屏蔽独显方法/SSDT-NDGP_OFF.html">
+            
+                    
+                    SSDT-NDGP_OFF.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.2" data-path="../20-SSDT屏蔽独显方法/SSDT-NDGP_PS3.html">
+            
+                <a href="../20-SSDT屏蔽独显方法/SSDT-NDGP_PS3.html">
+            
+                    
+                    SSDT-NDGP_PS3.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="../保留部件/声卡IRQ补丁/README.md">
+            
+                <span>
+            
+                    
+                    21-声卡IRQ补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.23.1" data-path="../21-声卡IRQ补丁/SSDT-HPET_RTC_TIMR-fix.html">
+            
+                <a href="../21-声卡IRQ补丁/SSDT-HPET_RTC_TIMR-fix.html">
+            
+                    
+                    SSDT-HPET_RTC_TIMR-fix.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.2" data-path="../21-声卡IRQ补丁/SSDT-IPIC.html">
+            
+                <a href="../21-声卡IRQ补丁/SSDT-IPIC.html">
+            
+                    
+                    SSDT-IPIC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="../保留部件/">
+            
+                <a href="../保留部件/">
+            
+                    
+                    保留部件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.1" data-path="../保留部件/电池补丁/">
+            
+                <a href="../保留部件/电池补丁/">
+            
+                    
+                    电池补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.1.1" data-path="../保留部件/电池补丁/Thinkpad/">
+            
+                <a href="../保留部件/电池补丁/Thinkpad/">
+            
+                    
+                    Thinkpad
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.1.1.1" >
+            
+                <span>
+            
+                    
+                    各机型电池补丁
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.1.1.1.1" data-path="../保留部件/电池补丁/Thinkpad/各机型电池补丁/SSDT-Notify-LPC.html">
+            
+                <a href="../保留部件/电池补丁/Thinkpad/各机型电池补丁/SSDT-Notify-LPC.html">
+            
+                    
+                    SSDT-Notify-LPC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.1.1.2" data-path="../保留部件/电池补丁/Thinkpad/各机型电池补丁/SSDT-Notify-LPCB.html">
+            
+                <a href="../保留部件/电池补丁/Thinkpad/各机型电池补丁/SSDT-Notify-LPCB.html">
+            
+                    
+                    SSDT-Notify-LPCB.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.1.1.3" data-path="../保留部件/电池补丁/Thinkpad/各机型电池补丁/SSDT-OCBAT0-TP_e30_s30.html">
+            
+                <a href="../保留部件/电池补丁/Thinkpad/各机型电池补丁/SSDT-OCBAT0-TP_e30_s30.html">
+            
+                    
+                    SSDT-OCBAT0-TP_e30_s30.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.1.1.4" data-path="../保留部件/电池补丁/Thinkpad/各机型电池补丁/SSDT-OCBAT0-TP_re80_tx70_x1c5th_s12017_p51.html">
+            
+                <a href="../保留部件/电池补丁/Thinkpad/各机型电池补丁/SSDT-OCBAT0-TP_re80_tx70_x1c5th_s12017_p51.html">
+            
+                    
+                    SSDT-OCBAT0-TP_re80_tx70_x1c5th_s12017_p51.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.1.1.5" data-path="../保留部件/电池补丁/Thinkpad/各机型电池补丁/SSDT-OCBAT0-TP_tx80_x1c6th.html">
+            
+                <a href="../保留部件/电池补丁/Thinkpad/各机型电池补丁/SSDT-OCBAT0-TP_tx80_x1c6th.html">
+            
+                    
+                    SSDT-OCBAT0-TP_tx80_x1c6th.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.1.1.6" data-path="../保留部件/电池补丁/Thinkpad/各机型电池补丁/SSDT-OCBAT0-TP_wtx20-60_e40-70_x1c1th-3th.html">
+            
+                <a href="../保留部件/电池补丁/Thinkpad/各机型电池补丁/SSDT-OCBAT0-TP_wtx20-60_e40-70_x1c1th-3th.html">
+            
+                    
+                    SSDT-OCBAT0-TP_wtx20-60_e40-70_x1c1th-3th.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.1.1.7" data-path="../保留部件/电池补丁/Thinkpad/各机型电池补丁/SSDT-OCBAT0-X1E_GEN3.html">
+            
+                <a href="../保留部件/电池补丁/Thinkpad/各机型电池补丁/SSDT-OCBAT0-X1E_GEN3.html">
+            
+                    
+                    SSDT-OCBAT0-X1E_GEN3.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.1.1.8" data-path="../保留部件/电池补丁/Thinkpad/各机型电池补丁/SSDT-OCBAT1-disable-LPC.html">
+            
+                <a href="../保留部件/电池补丁/Thinkpad/各机型电池补丁/SSDT-OCBAT1-disable-LPC.html">
+            
+                    
+                    SSDT-OCBAT1-disable-LPC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.1.1.9" data-path="../保留部件/电池补丁/Thinkpad/各机型电池补丁/SSDT-OCBAT1-disable-LPCB.html">
+            
+                <a href="../保留部件/电池补丁/Thinkpad/各机型电池补丁/SSDT-OCBAT1-disable-LPCB.html">
+            
+                    
+                    SSDT-OCBAT1-disable-LPCB.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.1.1.10" data-path="../保留部件/电池补丁/Thinkpad/各机型电池补丁/SSDT-OCBATC-TP-_BIX.html">
+            
+                <a href="../保留部件/电池补丁/Thinkpad/各机型电池补丁/SSDT-OCBATC-TP-_BIX.html">
+            
+                    
+                    SSDT-OCBATC-TP-_BIX.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.1.1.11" data-path="../保留部件/电池补丁/Thinkpad/各机型电池补丁/SSDT-OCBATC-TP-LPC.html">
+            
+                <a href="../保留部件/电池补丁/Thinkpad/各机型电池补丁/SSDT-OCBATC-TP-LPC.html">
+            
+                    
+                    SSDT-OCBATC-TP-LPC.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.1.1.12" data-path="../保留部件/电池补丁/Thinkpad/各机型电池补丁/SSDT-OCBATC-TP-LPCB.html">
+            
+                <a href="../保留部件/电池补丁/Thinkpad/各机型电池补丁/SSDT-OCBATC-TP-LPCB.html">
+            
+                    
+                    SSDT-OCBATC-TP-LPCB.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.1.2" >
+            
+                <span>
+            
+                    
+                    更名样本
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.1.1.2.1" data-path="../保留部件/电池补丁/Thinkpad/更名样本/TP电池基本更名.html">
+            
+                <a href="../保留部件/电池补丁/Thinkpad/更名样本/TP电池基本更名.html">
+            
+                    
+                    TP电池基本更名.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.1.2.2" data-path="../保留部件/电池补丁/Thinkpad/更名样本/TP电池Mutex置0更名.html">
+            
+                <a href="../保留部件/电池补丁/Thinkpad/更名样本/TP电池Mutex置0更名.html">
+            
+                    
+                    TP电池Mutex置0更名.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.1.2.3" data-path="../保留部件/电池补丁/Thinkpad/更名样本/BAT1禁用更名_STA to XSTA.html">
+            
+                <a href="../保留部件/电池补丁/Thinkpad/更名样本/BAT1禁用更名_STA to XSTA.html">
+            
+                    
+                    BAT1禁用更名_STA to XSTA.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.1.2.4" data-path="../保留部件/电池补丁/Thinkpad/更名样本/Notify更名.html">
+            
+                <a href="../保留部件/电池补丁/Thinkpad/更名样本/Notify更名.html">
+            
+                    
+                    Notify更名.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.2" >
+            
+                <span>
+            
+                    
+                    其它品牌
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.1.2.1" data-path="../保留部件/电池补丁/其它品牌/SSDT-OCBAT0-ASUS_FL5900U.html">
+            
+                <a href="../保留部件/电池补丁/其它品牌/SSDT-OCBAT0-ASUS_FL5900U.html">
+            
+                    
+                    SSDT-OCBAT0-ASUS_FL5900U.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.2.2" data-path="../保留部件/电池补丁/其它品牌/SSDT-OCBAT0-HP_840_G3.html">
+            
+                <a href="../保留部件/电池补丁/其它品牌/SSDT-OCBAT0-HP_840_G3.html">
+            
+                    
+                    SSDT-OCBAT0-HP_840_G3.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.2.3" data-path="../保留部件/电池补丁/其它品牌/SSDT-OCBAT0-HP_Pavilion-15.html">
+            
+                <a href="../保留部件/电池补丁/其它品牌/SSDT-OCBAT0-HP_Pavilion-15.html">
+            
+                    
+                    SSDT-OCBAT0-HP_Pavilion-15.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.2.4" data-path="../保留部件/电池补丁/其它品牌/SSDT-OCBAT0-HP_Z66-14ProG2.html">
+            
+                <a href="../保留部件/电池补丁/其它品牌/SSDT-OCBAT0-HP_Z66-14ProG2.html">
+            
+                    
+                    SSDT-OCBAT0-HP_Z66-14ProG2.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.2.5" data-path="../保留部件/电池补丁/其它品牌/SSDT-OCBAT0-Thunderobot-Air2-911-9750h.html">
+            
+                <a href="../保留部件/电池补丁/其它品牌/SSDT-OCBAT0-Thunderobot-Air2-911-9750h.html">
+            
+                    
+                    SSDT-OCBAT0-Thunderobot-Air2-911-9750h.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.2.6" data-path="../保留部件/电池补丁/其它品牌/SSDT-OCBAT1-lenovoPRO13.html">
+            
+                <a href="../保留部件/电池补丁/其它品牌/SSDT-OCBAT1-lenovoPRO13.html">
+            
+                    
+                    SSDT-OCBAT1-lenovoPRO13.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.2.7" data-path="../保留部件/电池补丁/其它品牌/SSDT-OCBAT0-X2100定制机.html">
+            
+                <a href="../保留部件/电池补丁/其它品牌/SSDT-OCBAT0-X2100定制机.html">
+            
+                    
+                    SSDT-OCBAT0-X2100定制机.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.3" data-path="../保留部件/电池补丁/电池信息辅助补丁/">
+            
+                <a href="../保留部件/电池补丁/电池信息辅助补丁/">
+            
+                    
+                    电池信息辅助补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.1.3.1" data-path="../保留部件/电池补丁/电池信息辅助补丁/SSDT-BATS-PRO13.html">
+            
+                <a href="../保留部件/电池补丁/电池信息辅助补丁/SSDT-BATS-PRO13.html">
+            
+                    
+                    SSDT-BATS-PRO13.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.3.2" data-path="../保留部件/电池补丁/电池信息辅助补丁/SSDT-BATS官方.html">
+            
+                <a href="../保留部件/电池补丁/电池信息辅助补丁/SSDT-BATS官方.html">
+            
+                    
+                    SSDT-BATS官方.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.4" >
+            
+                <span>
+            
+                    
+                    说明示例
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.1.4.1" data-path="../保留部件/电池补丁/说明示例/DSDT.html">
+            
+                <a href="../保留部件/电池补丁/说明示例/DSDT.html">
+            
+                    
+                    DSDT.aml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.4.2" data-path="../保留部件/电池补丁/说明示例/SSDT-1-CB-01.html">
+            
+                <a href="../保留部件/电池补丁/说明示例/SSDT-1-CB-01.html">
+            
+                    
+                    SSDT-1-CB-01.aml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.1.4.3" data-path="../保留部件/电池补丁/说明示例/SSDT-BATT.md">
+            
+                <span>
+            
+                    
+                    SSDT-BATT.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.2" data-path="../保留部件/CMOS重置补丁/">
+            
+                <a href="../保留部件/CMOS重置补丁/">
+            
+                    
+                    CMOS重置补丁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.2.1" data-path="../保留部件/CMOS重置补丁/SSDT-RTC0-NoFlags.html">
+            
+                <a href="../保留部件/CMOS重置补丁/SSDT-RTC0-NoFlags.html">
+            
+                    
+                    SSDT-RTC0-NoFlags.dsl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="../常见驱动加载顺序/">
+            
+                <a href="../常见驱动加载顺序/">
+            
+                    
+                    常见驱动加载顺序
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.25.1" data-path="../常见驱动加载顺序/config-1-Lilu-SMC-WEG-ALC驱动列表.html">
+            
+                <a href="../常见驱动加载顺序/config-1-Lilu-SMC-WEG-ALC驱动列表.html">
+            
+                    
+                    config-1-Lilu-SMC-WEG-ALC驱动列表.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.2" data-path="../常见驱动加载顺序/config-2-PS2键盘驱动列表.html">
+            
+                <a href="../常见驱动加载顺序/config-2-PS2键盘驱动列表.html">
+            
+                    
+                    config-2-PS2键盘驱动列表.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.3" data-path="../常见驱动加载顺序/config-3-BCM无线和蓝牙驱动列表.html">
+            
+                <a href="../常见驱动加载顺序/config-3-BCM无线和蓝牙驱动列表.html">
+            
+                    
+                    config-3-BCM无线和蓝牙驱动列表.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.4" data-path="../常见驱动加载顺序/config-4-I2C+PS2驱动列表.html">
+            
+                <a href="../常见驱动加载顺序/config-4-I2C+PS2驱动列表.html">
+            
+                    
+                    config-4-I2C+PS2驱动列表.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.5" data-path="../常见驱动加载顺序/config-5-PS2Smart键盘驱动列表.html">
+            
+                <a href="../常见驱动加载顺序/config-5-PS2Smart键盘驱动列表.html">
+            
+                    
+                    config-5-PS2Smart键盘驱动列表.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.6" data-path="../常见驱动加载顺序/config-6-Intel无线和蓝牙驱动列表.html">
+            
+                <a href="../常见驱动加载顺序/config-6-Intel无线和蓝牙驱动列表.html">
+            
+                    
+                    config-6-Intel无线和蓝牙驱动列表.plist
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >ApplePS2ToADBMap.h</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <pre><code class="lang-c"><span class="hljs-comment">/*
+ * Copyright (c) 1998-2000 Apple Computer, Inc. All rights reserved.
+ *
+ * @APPLE_LICENSE_HEADER_START@
+ * 
+ * The contents of this file constitute Original Code as defined in and
+ * are subject to the Apple Public Source License Version 1.1 (the
+ * &quot;License&quot;).  You may not use this file except in compliance with the
+ * License.  Please obtain a copy of the License at
+ * http://www.apple.com/publicsource and read it before using this file.
+ * 
+ * This Original Code and all software distributed under the License are
+ * distributed on an &quot;AS IS&quot; basis, WITHOUT WARRANTY OF ANY KIND, EITHER
+ * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
+ * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT.  Please see the
+ * License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * @APPLE_LICENSE_HEADER_END@
+ */</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> _APPLEPS2TOADBMAP_H</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> _APPLEPS2TOADBMAP_H</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> PROBOOK</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> DEADKEY                 0x80</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">if</span> 0</span>
+<span class="hljs-comment">// These ADB codes are for normal NX key brightness (broken in 10.12)</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> BRIGHTNESS_DOWN         0x91</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> BRIGHTNESS_UP           0x90</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">else</span></span>
+<span class="hljs-comment">// These ADB codes are for F14/F15 (works in 10.12)</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> BRIGHTNESS_DOWN         0x6b</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> BRIGHTNESS_UP           0x71</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ADB_CONVERTER_LEN       256 * 2     <span class="hljs-comment">// 0x00~0xff : normal key , 0x100~0x1ff : extended key</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ADB_CONVERTER_EX_START  256</span>
+
+<span class="hljs-comment">// PS/2 scancode reference : USB HID to PS/2 Scan Code Translation Table PS/2 Set 1 columns</span>
+<span class="hljs-comment">// http://download.microsoft.com/download/1/6/1/161ba512-40e2-4cc9-843a-923143f3456c/translate.pdf</span>
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> UInt8 PS2ToADBMapStock[ADB_CONVERTER_LEN] =
+{
+<span class="hljs-comment">/*  ADB        AT  ANSI Key-Legend
+    ======================== */</span>
+    DEADKEY,<span class="hljs-comment">// 00</span>
+    <span class="hljs-number">0x35</span>,   <span class="hljs-comment">// 01  Escape</span>
+    <span class="hljs-number">0x12</span>,   <span class="hljs-comment">// 02  1!</span>
+    <span class="hljs-number">0x13</span>,   <span class="hljs-comment">// 03  2@</span>
+    <span class="hljs-number">0x14</span>,   <span class="hljs-comment">// 04  3#</span>
+    <span class="hljs-number">0x15</span>,   <span class="hljs-comment">// 05  4$</span>
+    <span class="hljs-number">0x17</span>,   <span class="hljs-comment">// 06  5%</span>
+    <span class="hljs-number">0x16</span>,   <span class="hljs-comment">// 07  6^</span>
+    <span class="hljs-number">0x1a</span>,   <span class="hljs-comment">// 08  7&amp;</span>
+    <span class="hljs-number">0x1c</span>,   <span class="hljs-comment">// 09  8*</span>
+    <span class="hljs-number">0x19</span>,   <span class="hljs-comment">// 0a  9(</span>
+    <span class="hljs-number">0x1d</span>,   <span class="hljs-comment">// 0b  0)</span>
+    <span class="hljs-number">0x1b</span>,   <span class="hljs-comment">// 0c  -_</span>
+    <span class="hljs-number">0x18</span>,   <span class="hljs-comment">// 0d  =+</span>
+    <span class="hljs-number">0x33</span>,   <span class="hljs-comment">// 0e  Backspace</span>
+    <span class="hljs-number">0x30</span>,   <span class="hljs-comment">// 0f  Tab</span>
+    <span class="hljs-number">0x0c</span>,   <span class="hljs-comment">// 10  qQ</span>
+    <span class="hljs-number">0x0d</span>,   <span class="hljs-comment">// 11  wW</span>
+    <span class="hljs-number">0x0e</span>,   <span class="hljs-comment">// 12  eE</span>
+    <span class="hljs-number">0x0f</span>,   <span class="hljs-comment">// 13  rR</span>
+    <span class="hljs-number">0x11</span>,   <span class="hljs-comment">// 14  tT</span>
+    <span class="hljs-number">0x10</span>,   <span class="hljs-comment">// 15  yY</span>
+    <span class="hljs-number">0x20</span>,   <span class="hljs-comment">// 16  uU</span>
+    <span class="hljs-number">0x22</span>,   <span class="hljs-comment">// 17  iI</span>
+    <span class="hljs-number">0x1f</span>,   <span class="hljs-comment">// 18  oO</span>
+    <span class="hljs-number">0x23</span>,   <span class="hljs-comment">// 19  pP</span>
+    <span class="hljs-number">0x21</span>,   <span class="hljs-comment">// 1a  [{</span>
+    <span class="hljs-number">0x1e</span>,   <span class="hljs-comment">// 1b  ]}</span>
+    <span class="hljs-number">0x24</span>,   <span class="hljs-comment">// 1c  Return</span>
+    <span class="hljs-number">0x3b</span>,   <span class="hljs-comment">// 1d  Left Control</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 1e  aA</span>
+    <span class="hljs-number">0x01</span>,   <span class="hljs-comment">// 1f  sS</span>
+    <span class="hljs-number">0x02</span>,   <span class="hljs-comment">// 20  dD</span>
+    <span class="hljs-number">0x03</span>,   <span class="hljs-comment">// 21  fF</span>
+    <span class="hljs-number">0x05</span>,   <span class="hljs-comment">// 22  gG</span>
+    <span class="hljs-number">0x04</span>,   <span class="hljs-comment">// 23  hH</span>
+    <span class="hljs-number">0x26</span>,   <span class="hljs-comment">// 24  jJ</span>
+    <span class="hljs-number">0x28</span>,   <span class="hljs-comment">// 25  kK</span>
+    <span class="hljs-number">0x25</span>,   <span class="hljs-comment">// 26  lL</span>
+    <span class="hljs-number">0x29</span>,   <span class="hljs-comment">// 27  ;:</span>
+    <span class="hljs-number">0x27</span>,   <span class="hljs-comment">// 28  &apos;&quot;</span>
+    <span class="hljs-number">0x32</span>,   <span class="hljs-comment">// 29  `~</span>
+    <span class="hljs-number">0x38</span>,   <span class="hljs-comment">// 2a  Left Shift</span>
+    <span class="hljs-number">0x2a</span>,   <span class="hljs-comment">// 2b  \| , Europe 1(ISO)</span>
+    <span class="hljs-number">0x06</span>,   <span class="hljs-comment">// 2c  zZ</span>
+    <span class="hljs-number">0x07</span>,   <span class="hljs-comment">// 2d  xX</span>
+    <span class="hljs-number">0x08</span>,   <span class="hljs-comment">// 2e  cC</span>
+    <span class="hljs-number">0x09</span>,   <span class="hljs-comment">// 2f  vV</span>
+    <span class="hljs-number">0x0b</span>,   <span class="hljs-comment">// 30  bB</span>
+    <span class="hljs-number">0x2d</span>,   <span class="hljs-comment">// 31  nN</span>
+    <span class="hljs-number">0x2e</span>,   <span class="hljs-comment">// 32  mM</span>
+    <span class="hljs-number">0x2b</span>,   <span class="hljs-comment">// 33  ,&lt;</span>
+    <span class="hljs-number">0x2f</span>,   <span class="hljs-comment">// 34  .&gt;</span>
+    <span class="hljs-number">0x2c</span>,   <span class="hljs-comment">// 35  /?</span>
+    <span class="hljs-number">0x3c</span>,   <span class="hljs-comment">// 36  Right Shift</span>
+    <span class="hljs-number">0x43</span>,   <span class="hljs-comment">// 37  Keypad *</span>
+    <span class="hljs-number">0x3a</span>,   <span class="hljs-comment">// 38  Left Alt</span>
+    <span class="hljs-number">0x31</span>,   <span class="hljs-comment">// 39  Space</span>
+    <span class="hljs-number">0x39</span>,   <span class="hljs-comment">// 3a  Caps Lock</span>
+    <span class="hljs-number">0x7a</span>,   <span class="hljs-comment">// 3b  F1</span>
+    <span class="hljs-number">0x78</span>,   <span class="hljs-comment">// 3c  F2</span>
+    <span class="hljs-number">0x63</span>,   <span class="hljs-comment">// 3d  F3</span>
+    <span class="hljs-number">0x76</span>,   <span class="hljs-comment">// 3e  F4</span>
+    <span class="hljs-number">0x60</span>,   <span class="hljs-comment">// 3f  F5</span>
+    <span class="hljs-number">0x61</span>,   <span class="hljs-comment">// 40  F6</span>
+    <span class="hljs-number">0x62</span>,   <span class="hljs-comment">// 41  F7</span>
+    <span class="hljs-number">0x64</span>,   <span class="hljs-comment">// 42  F8</span>
+    <span class="hljs-number">0x65</span>,   <span class="hljs-comment">// 43  F9</span>
+    <span class="hljs-number">0x6d</span>,   <span class="hljs-comment">// 44  F10</span>
+    <span class="hljs-number">0x47</span>,   <span class="hljs-comment">// 45  Num Lock</span>
+    <span class="hljs-number">0x6b</span>,   <span class="hljs-comment">// 46  Scroll Lock</span>
+    <span class="hljs-number">0x59</span>,   <span class="hljs-comment">// 47  Keypad 7 Home</span>
+    <span class="hljs-number">0x5b</span>,   <span class="hljs-comment">// 48  Keypad 8 Up</span>
+    <span class="hljs-number">0x5c</span>,   <span class="hljs-comment">// 49  Keypad 9 PageUp</span>
+    <span class="hljs-number">0x4e</span>,   <span class="hljs-comment">// 4a  Keypad -</span>
+    <span class="hljs-number">0x56</span>,   <span class="hljs-comment">// 4b  Keypad 4 Left</span>
+    <span class="hljs-number">0x57</span>,   <span class="hljs-comment">// 4c  Keypad 5</span>
+    <span class="hljs-number">0x58</span>,   <span class="hljs-comment">// 4d  Keypad 6 Right</span>
+    <span class="hljs-number">0x45</span>,   <span class="hljs-comment">// 4e  Keypad +</span>
+    <span class="hljs-number">0x53</span>,   <span class="hljs-comment">// 4f  Keypad 1 End</span>
+    <span class="hljs-number">0x54</span>,   <span class="hljs-comment">// 50  Keypad 2 Down</span>
+    <span class="hljs-number">0x55</span>,   <span class="hljs-comment">// 51  Keypad 3 PageDn</span>
+    <span class="hljs-number">0x52</span>,   <span class="hljs-comment">// 52  Keypad 0 Insert</span>
+    <span class="hljs-number">0x41</span>,   <span class="hljs-comment">// 53  Keypad . Delete</span>
+    <span class="hljs-number">0x44</span>,   <span class="hljs-comment">// 54  SysReq</span>
+    <span class="hljs-number">0x46</span>,   <span class="hljs-comment">// 55</span>
+    <span class="hljs-number">0x0a</span>,   <span class="hljs-comment">// 56  Europe 2(ISO)</span>
+    <span class="hljs-number">0x67</span>,   <span class="hljs-comment">// 57  F11</span>
+    <span class="hljs-number">0x6f</span>,   <span class="hljs-comment">// 58  F12</span>
+    <span class="hljs-number">0x51</span>,   <span class="hljs-comment">// 59  Keypad =</span>
+    DEADKEY,<span class="hljs-comment">// 5a</span>
+    DEADKEY,<span class="hljs-comment">// 5b</span>
+    <span class="hljs-number">0x5f</span>,   <span class="hljs-comment">// 5c  Keyboard Int&apos;l 6 (PC9800 Keypad , )</span>
+    DEADKEY,<span class="hljs-comment">// 5d</span>
+    DEADKEY,<span class="hljs-comment">// 5e</span>
+    DEADKEY,<span class="hljs-comment">// 5f</span>
+    DEADKEY,<span class="hljs-comment">// 60</span>
+    DEADKEY,<span class="hljs-comment">// 61</span>
+    DEADKEY,<span class="hljs-comment">// 62</span>
+    DEADKEY,<span class="hljs-comment">// 63</span>
+    <span class="hljs-number">0x69</span>,   <span class="hljs-comment">// 64  F13</span>
+    <span class="hljs-number">0x6b</span>,   <span class="hljs-comment">// 65  F14</span>
+    <span class="hljs-number">0x71</span>,   <span class="hljs-comment">// 66  F15</span>
+    <span class="hljs-number">0x6a</span>,   <span class="hljs-comment">// 67  F16</span>
+    <span class="hljs-number">0x40</span>,   <span class="hljs-comment">// 68  F17</span>
+    <span class="hljs-number">0x4f</span>,   <span class="hljs-comment">// 69  F18</span>
+    <span class="hljs-number">0x50</span>,   <span class="hljs-comment">// 6a  F19</span>
+    <span class="hljs-number">0x5a</span>,   <span class="hljs-comment">// 6b  F20</span>
+    DEADKEY,<span class="hljs-comment">// 6c  F21</span>
+    DEADKEY,<span class="hljs-comment">// 6d  F22</span>
+    DEADKEY,<span class="hljs-comment">// 6e  F23</span>
+    DEADKEY,<span class="hljs-comment">// 6f</span>
+    <span class="hljs-number">0x68</span>,   <span class="hljs-comment">// 70  Keyboard Intl&apos;2 (Japanese Katakana/Hiragana)</span>
+    DEADKEY,<span class="hljs-comment">// 71</span>
+    DEADKEY,<span class="hljs-comment">// 72</span>
+    <span class="hljs-number">0x5e</span>,   <span class="hljs-comment">// 73  Keyboard Int&apos;l 1 (Japanese Ro)</span>
+    DEADKEY,<span class="hljs-comment">// 74</span>
+    DEADKEY,<span class="hljs-comment">// 75</span>
+    DEADKEY,<span class="hljs-comment">// 76  F24 , Keyboard Lang 5 (Japanese Zenkaku/Hankaku)</span>
+    <span class="hljs-number">0x68</span>,   <span class="hljs-comment">// 77  Keyboard Lang 4 (Japanese Hiragana)</span>
+    <span class="hljs-number">0x68</span>,   <span class="hljs-comment">// 78  Keyboard Lang 3 (Japanese Katakana)</span>
+    <span class="hljs-number">0x68</span>,   <span class="hljs-comment">// 79  Keyboard Int&apos;l 4 (Japanese Henkan)</span>
+    DEADKEY,<span class="hljs-comment">// 7a</span>
+    <span class="hljs-number">0x66</span>,   <span class="hljs-comment">// 7b  Keyboard Int&apos;l 5 (Japanese Muhenkan)</span>
+    DEADKEY,<span class="hljs-comment">// 7c</span>
+    <span class="hljs-number">0x5d</span>,   <span class="hljs-comment">// 7d  Keyboard Int&apos;l 3 (Japanese Yen)</span>
+    <span class="hljs-number">0x5f</span>,   <span class="hljs-comment">// 7e  Keypad , (Brazilian Keypad .)</span>
+    DEADKEY,<span class="hljs-comment">// 7f </span>
+    DEADKEY,<span class="hljs-comment">// 80 </span>
+    DEADKEY,<span class="hljs-comment">// 81 </span>
+    DEADKEY,<span class="hljs-comment">// 82 </span>
+    DEADKEY,<span class="hljs-comment">// 83 </span>
+    DEADKEY,<span class="hljs-comment">// 84 </span>
+    DEADKEY,<span class="hljs-comment">// 85 </span>
+    DEADKEY,<span class="hljs-comment">// 86 </span>
+    DEADKEY,<span class="hljs-comment">// 87 </span>
+    DEADKEY,<span class="hljs-comment">// 88 </span>
+    DEADKEY,<span class="hljs-comment">// 89 </span>
+    DEADKEY,<span class="hljs-comment">// 8a </span>
+    DEADKEY,<span class="hljs-comment">// 8b </span>
+    DEADKEY,<span class="hljs-comment">// 8c </span>
+    DEADKEY,<span class="hljs-comment">// 8d </span>
+    DEADKEY,<span class="hljs-comment">// 8e </span>
+    DEADKEY,<span class="hljs-comment">// 8f </span>
+    DEADKEY,<span class="hljs-comment">// 90 </span>
+    DEADKEY,<span class="hljs-comment">// 91 </span>
+    DEADKEY,<span class="hljs-comment">// 92 </span>
+    DEADKEY,<span class="hljs-comment">// 93 </span>
+    DEADKEY,<span class="hljs-comment">// 94 </span>
+    DEADKEY,<span class="hljs-comment">// 95 </span>
+    DEADKEY,<span class="hljs-comment">// 96 </span>
+    DEADKEY,<span class="hljs-comment">// 97 </span>
+    DEADKEY,<span class="hljs-comment">// 98 </span>
+    DEADKEY,<span class="hljs-comment">// 99 </span>
+    DEADKEY,<span class="hljs-comment">// 9a </span>
+    DEADKEY,<span class="hljs-comment">// 9b </span>
+    DEADKEY,<span class="hljs-comment">// 9c </span>
+    DEADKEY,<span class="hljs-comment">// 9d </span>
+    DEADKEY,<span class="hljs-comment">// 9e </span>
+    DEADKEY,<span class="hljs-comment">// 9f </span>
+    DEADKEY,<span class="hljs-comment">// a0 </span>
+    DEADKEY,<span class="hljs-comment">// a1 </span>
+    DEADKEY,<span class="hljs-comment">// a2 </span>
+    DEADKEY,<span class="hljs-comment">// a3 </span>
+    DEADKEY,<span class="hljs-comment">// a4 </span>
+    DEADKEY,<span class="hljs-comment">// a5 </span>
+    DEADKEY,<span class="hljs-comment">// a6 </span>
+    DEADKEY,<span class="hljs-comment">// a7 </span>
+    DEADKEY,<span class="hljs-comment">// a8 </span>
+    DEADKEY,<span class="hljs-comment">// a9 </span>
+    DEADKEY,<span class="hljs-comment">// aa </span>
+    DEADKEY,<span class="hljs-comment">// ab </span>
+    DEADKEY,<span class="hljs-comment">// ac </span>
+    DEADKEY,<span class="hljs-comment">// ad </span>
+    DEADKEY,<span class="hljs-comment">// ae </span>
+    DEADKEY,<span class="hljs-comment">// af </span>
+    DEADKEY,<span class="hljs-comment">// b0 </span>
+    DEADKEY,<span class="hljs-comment">// b1 </span>
+    DEADKEY,<span class="hljs-comment">// b2 </span>
+    DEADKEY,<span class="hljs-comment">// b3 </span>
+    DEADKEY,<span class="hljs-comment">// b4 </span>
+    DEADKEY,<span class="hljs-comment">// b5 </span>
+    DEADKEY,<span class="hljs-comment">// b6 </span>
+    DEADKEY,<span class="hljs-comment">// b7 </span>
+    DEADKEY,<span class="hljs-comment">// b8 </span>
+    DEADKEY,<span class="hljs-comment">// b9 </span>
+    DEADKEY,<span class="hljs-comment">// ba </span>
+    DEADKEY,<span class="hljs-comment">// bb </span>
+    DEADKEY,<span class="hljs-comment">// bc </span>
+    DEADKEY,<span class="hljs-comment">// bd </span>
+    DEADKEY,<span class="hljs-comment">// be </span>
+    DEADKEY,<span class="hljs-comment">// bf </span>
+    DEADKEY,<span class="hljs-comment">// c0 </span>
+    DEADKEY,<span class="hljs-comment">// c1 </span>
+    DEADKEY,<span class="hljs-comment">// c2 </span>
+    DEADKEY,<span class="hljs-comment">// c3 </span>
+    DEADKEY,<span class="hljs-comment">// c4 </span>
+    DEADKEY,<span class="hljs-comment">// c5 </span>
+    DEADKEY,<span class="hljs-comment">// c6 </span>
+    DEADKEY,<span class="hljs-comment">// c7 </span>
+    DEADKEY,<span class="hljs-comment">// c8 </span>
+    DEADKEY,<span class="hljs-comment">// c9 </span>
+    DEADKEY,<span class="hljs-comment">// ca </span>
+    DEADKEY,<span class="hljs-comment">// cb </span>
+    DEADKEY,<span class="hljs-comment">// cc </span>
+    DEADKEY,<span class="hljs-comment">// cd </span>
+    DEADKEY,<span class="hljs-comment">// ce </span>
+    DEADKEY,<span class="hljs-comment">// cf </span>
+    DEADKEY,<span class="hljs-comment">// d0 </span>
+    DEADKEY,<span class="hljs-comment">// d1 </span>
+    DEADKEY,<span class="hljs-comment">// d2 </span>
+    DEADKEY,<span class="hljs-comment">// d3 </span>
+    DEADKEY,<span class="hljs-comment">// d4 </span>
+    DEADKEY,<span class="hljs-comment">// d5 </span>
+    DEADKEY,<span class="hljs-comment">// d6 </span>
+    DEADKEY,<span class="hljs-comment">// d7 </span>
+    DEADKEY,<span class="hljs-comment">// d8 </span>
+    DEADKEY,<span class="hljs-comment">// d9 </span>
+    DEADKEY,<span class="hljs-comment">// da </span>
+    DEADKEY,<span class="hljs-comment">// db </span>
+    DEADKEY,<span class="hljs-comment">// dc </span>
+    DEADKEY,<span class="hljs-comment">// dd </span>
+    DEADKEY,<span class="hljs-comment">// de </span>
+    DEADKEY,<span class="hljs-comment">// df </span>
+    DEADKEY,<span class="hljs-comment">// e0 </span>
+    DEADKEY,<span class="hljs-comment">// e1 </span>
+    DEADKEY,<span class="hljs-comment">// e2 </span>
+    DEADKEY,<span class="hljs-comment">// e3 </span>
+    DEADKEY,<span class="hljs-comment">// e4 </span>
+    DEADKEY,<span class="hljs-comment">// e5 </span>
+    DEADKEY,<span class="hljs-comment">// e6 </span>
+    DEADKEY,<span class="hljs-comment">// e7 </span>
+    DEADKEY,<span class="hljs-comment">// e8 </span>
+    DEADKEY,<span class="hljs-comment">// e9 </span>
+    DEADKEY,<span class="hljs-comment">// ea </span>
+    DEADKEY,<span class="hljs-comment">// eb </span>
+    DEADKEY,<span class="hljs-comment">// ec </span>
+    DEADKEY,<span class="hljs-comment">// ed </span>
+    DEADKEY,<span class="hljs-comment">// ee </span>
+    DEADKEY,<span class="hljs-comment">// ef </span>
+    DEADKEY,<span class="hljs-comment">// f0 </span>
+    <span class="hljs-number">0x66</span>,   <span class="hljs-comment">// f1*  Keyboard Lang 2 (Korean Hanja)</span>
+    <span class="hljs-number">0x68</span>,   <span class="hljs-comment">// f2*  Keyboard Lang 1 (Korean Hangul)</span>
+    DEADKEY,<span class="hljs-comment">// f3 </span>
+    DEADKEY,<span class="hljs-comment">// f4 </span>
+    DEADKEY,<span class="hljs-comment">// f5 </span>
+    DEADKEY,<span class="hljs-comment">// f6 </span>
+    DEADKEY,<span class="hljs-comment">// f7 </span>
+    DEADKEY,<span class="hljs-comment">// f8 </span>
+    DEADKEY,<span class="hljs-comment">// f9 </span>
+    DEADKEY,<span class="hljs-comment">// fa </span>
+    DEADKEY,<span class="hljs-comment">// fb </span>
+    DEADKEY,<span class="hljs-comment">// fc </span>
+    DEADKEY,<span class="hljs-comment">// fd </span>
+    DEADKEY,<span class="hljs-comment">// fe </span>
+    DEADKEY,<span class="hljs-comment">// ff </span>
+    DEADKEY,<span class="hljs-comment">// e0 00 </span>
+    DEADKEY,<span class="hljs-comment">// e0 01 </span>
+    DEADKEY,<span class="hljs-comment">// e0 02 </span>
+    DEADKEY,<span class="hljs-comment">// e0 03 </span>
+    DEADKEY,<span class="hljs-comment">// e0 04 </span>
+    BRIGHTNESS_DOWN,    <span class="hljs-comment">// e0 05 dell down</span>
+    BRIGHTNESS_UP,      <span class="hljs-comment">// e0 06 dell up</span>
+    DEADKEY,<span class="hljs-comment">// e0 07</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> PROBOOK</span>
+    BRIGHTNESS_UP,      <span class="hljs-comment">// e0 08 samsung up</span>
+    BRIGHTNESS_DOWN,    <span class="hljs-comment">// e0 09 samsung down</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">else</span></span>
+    DEADKEY,<span class="hljs-comment">// e0 08</span>
+    <span class="hljs-number">0x83</span>,   <span class="hljs-comment">// e0 09 Launchpad (hp Fn+F6)</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
+    <span class="hljs-number">0xa0</span>,   <span class="hljs-comment">// e0 0a Mission Control (hp Fn+F5)</span>
+    DEADKEY,<span class="hljs-comment">// e0 0b </span>
+    DEADKEY,<span class="hljs-comment">// e0 0c </span>
+    DEADKEY,<span class="hljs-comment">// e0 0d </span>
+    DEADKEY,<span class="hljs-comment">// e0 0e </span>
+    DEADKEY,<span class="hljs-comment">// e0 0f </span>
+    <span class="hljs-number">0x4d</span>,   <span class="hljs-comment">// e0 10  Scan Previous Track (hp Fn+F10)</span>
+    DEADKEY,<span class="hljs-comment">// e0 11 </span>
+    BRIGHTNESS_DOWN,    <span class="hljs-comment">// e0 12 hp down (Fn+F2)</span>
+    DEADKEY,<span class="hljs-comment">// e0 13 </span>
+    DEADKEY,<span class="hljs-comment">// e0 14 </span>
+    DEADKEY,<span class="hljs-comment">// e0 15 </span>
+    DEADKEY,<span class="hljs-comment">// e0 16 </span>
+    BRIGHTNESS_UP,      <span class="hljs-comment">// e0 17 hp up (Fn+F3)</span>
+    DEADKEY,<span class="hljs-comment">// e0 18 </span>
+    <span class="hljs-number">0x42</span>,   <span class="hljs-comment">// e0 19  Scan Next Track (hp Fn+F12)</span>
+    DEADKEY,<span class="hljs-comment">// e0 1a </span>
+    DEADKEY,<span class="hljs-comment">// e0 1b </span>
+    <span class="hljs-number">0x4c</span>,   <span class="hljs-comment">// e0 1c  Keypad Enter</span>
+    <span class="hljs-number">0x3e</span>,   <span class="hljs-comment">// e0 1d  Right Control</span>
+    DEADKEY,<span class="hljs-comment">// e0 1e </span>
+    DEADKEY,<span class="hljs-comment">// e0 1f </span>
+    <span class="hljs-number">0x4a</span>,   <span class="hljs-comment">// e0 20  Mute (hp Fn+F7)</span>
+    DEADKEY,<span class="hljs-comment">// e0 21  Calculator</span>
+    <span class="hljs-number">0x34</span>,   <span class="hljs-comment">// e0 22  Play/Pause (hp Fn+F11)</span>
+    DEADKEY,<span class="hljs-comment">// e0 23 </span>
+    DEADKEY,<span class="hljs-comment">// e0 24  Stop</span>
+    DEADKEY,<span class="hljs-comment">// e0 25 </span>
+    DEADKEY,<span class="hljs-comment">// e0 26 </span>
+    DEADKEY,<span class="hljs-comment">// e0 27 </span>
+    DEADKEY,<span class="hljs-comment">// e0 28 </span>
+    DEADKEY,<span class="hljs-comment">// e0 29 </span>
+    DEADKEY,<span class="hljs-comment">// e0 2a </span>
+    DEADKEY,<span class="hljs-comment">// e0 2b </span>
+    DEADKEY,<span class="hljs-comment">// e0 2c </span>
+    DEADKEY,<span class="hljs-comment">// e0 2d </span>
+    <span class="hljs-number">0x49</span>,   <span class="hljs-comment">// e0 2e  Volume Down (hp Fn+F8)</span>
+    DEADKEY,<span class="hljs-comment">// e0 2f </span>
+    <span class="hljs-number">0x48</span>,   <span class="hljs-comment">// e0 30  Volume Up (hp Fn+F9)</span>
+    DEADKEY,<span class="hljs-comment">// e0 31 </span>
+    DEADKEY,<span class="hljs-comment">// e0 32  WWW Home</span>
+    DEADKEY,<span class="hljs-comment">// e0 33 </span>
+    DEADKEY,<span class="hljs-comment">// e0 34 </span>
+    <span class="hljs-number">0x4b</span>,   <span class="hljs-comment">// e0 35  Keypad /</span>
+    DEADKEY,<span class="hljs-comment">// e0 36 </span>
+    <span class="hljs-number">0x69</span>,   <span class="hljs-comment">// e0 37  Print Screen</span>
+    <span class="hljs-number">0x3d</span>,   <span class="hljs-comment">// e0 38  Right Alt</span>
+    DEADKEY,<span class="hljs-comment">// e0 39 </span>
+    DEADKEY,<span class="hljs-comment">// e0 3a </span>
+    DEADKEY,<span class="hljs-comment">// e0 3b </span>
+    DEADKEY,<span class="hljs-comment">// e0 3c </span>
+    DEADKEY,<span class="hljs-comment">// e0 3d </span>
+    DEADKEY,<span class="hljs-comment">// e0 3e </span>
+    DEADKEY,<span class="hljs-comment">// e0 3f </span>
+    DEADKEY,<span class="hljs-comment">// e0 40 </span>
+    DEADKEY,<span class="hljs-comment">// e0 41 </span>
+    DEADKEY,<span class="hljs-comment">// e0 42 </span>
+    DEADKEY,<span class="hljs-comment">// e0 43 </span>
+    DEADKEY,<span class="hljs-comment">// e0 44 </span>
+    <span class="hljs-number">0x71</span>,   <span class="hljs-comment">// e0 45* Pause</span>
+    DEADKEY,<span class="hljs-comment">// e0 46* Break(Ctrl-Pause)</span>
+    <span class="hljs-number">0x73</span>,   <span class="hljs-comment">// e0 47  Home</span>
+    <span class="hljs-number">0x7e</span>,   <span class="hljs-comment">// e0 48  Up Arrow</span>
+    <span class="hljs-number">0x74</span>,   <span class="hljs-comment">// e0 49  Page Up </span>
+    DEADKEY,<span class="hljs-comment">// e0 4a </span>
+    <span class="hljs-number">0x7b</span>,   <span class="hljs-comment">// e0 4b  Left Arrow</span>
+    DEADKEY,<span class="hljs-comment">// e0 4c </span>
+    <span class="hljs-number">0x7c</span>,   <span class="hljs-comment">// e0 4d  Right Arrow</span>
+    BRIGHTNESS_UP,      <span class="hljs-comment">// e0 4e acer up</span>
+    <span class="hljs-number">0x77</span>,   <span class="hljs-comment">// e0 4f  End</span>
+    <span class="hljs-number">0x7d</span>,   <span class="hljs-comment">// e0 50  Down Arrow</span>
+    <span class="hljs-number">0x79</span>,   <span class="hljs-comment">// e0 51  Page Down</span>
+    <span class="hljs-number">0x92</span>,   <span class="hljs-comment">// e0 52  Insert = Eject</span>
+    <span class="hljs-number">0x75</span>,   <span class="hljs-comment">// e0 53  Delete</span>
+    DEADKEY,<span class="hljs-comment">// e0 54 </span>
+    DEADKEY,<span class="hljs-comment">// e0 55 </span>
+    DEADKEY,<span class="hljs-comment">// e0 56 </span>
+    DEADKEY,<span class="hljs-comment">// e0 57 </span>
+    DEADKEY,<span class="hljs-comment">// e0 58 </span>
+    BRIGHTNESS_UP,      <span class="hljs-comment">// e0 59 acer up for my acer</span>
+    DEADKEY,<span class="hljs-comment">// e0 5a </span>
+    <span class="hljs-number">0x37</span>,   <span class="hljs-comment">// e0 5b  Left GUI(Windows)</span>
+    <span class="hljs-number">0x36</span>,   <span class="hljs-comment">// e0 5c  Right GUI(Windows)</span>
+    <span class="hljs-number">0x6e</span>,   <span class="hljs-comment">// e0 5d  App( Windows context menu key )</span>
+    <span class="hljs-number">0x7f</span>,   <span class="hljs-comment">// e0 5e  System Power / Keyboard Power</span>
+    DEADKEY,<span class="hljs-comment">// e0 5f  System Sleep (hp Fn+F1)</span>
+    DEADKEY,<span class="hljs-comment">// e0 60 </span>
+    DEADKEY,<span class="hljs-comment">// e0 61 </span>
+    DEADKEY,<span class="hljs-comment">// e0 62 </span>
+    DEADKEY,<span class="hljs-comment">// e0 63  System Wake</span>
+    DEADKEY,<span class="hljs-comment">// e0 64 </span>
+    DEADKEY,<span class="hljs-comment">// e0 65  WWW Search</span>
+    DEADKEY,<span class="hljs-comment">// e0 66  WWW Favorites</span>
+    DEADKEY,<span class="hljs-comment">// e0 67  WWW Refresh</span>
+    DEADKEY,<span class="hljs-comment">// e0 68  WWW Stop</span>
+    DEADKEY,<span class="hljs-comment">// e0 69  WWW Forward</span>
+    DEADKEY,<span class="hljs-comment">// e0 6a  WWW Back</span>
+    DEADKEY,<span class="hljs-comment">// e0 6b  My Computer</span>
+    DEADKEY,<span class="hljs-comment">// e0 6c  Mail</span>
+    DEADKEY,<span class="hljs-comment">// e0 6d  Media Select</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> PROBOOK</span>
+    BRIGHTNESS_UP,      <span class="hljs-comment">// e0 6e acer up</span>
+    BRIGHTNESS_DOWN,    <span class="hljs-comment">// e0 6f acer down</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">else</span></span>
+    <span class="hljs-number">0x70</span>,   <span class="hljs-comment">// e0 6e  Video Mirror = hp Fn+F4</span>
+    DEADKEY,<span class="hljs-comment">// e0 6f  Fn+Home</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
+    DEADKEY,<span class="hljs-comment">// e0 70</span>
+    DEADKEY,<span class="hljs-comment">// e0 71 </span>
+    DEADKEY,<span class="hljs-comment">// e0 72 </span>
+    DEADKEY,<span class="hljs-comment">// e0 73 </span>
+    DEADKEY,<span class="hljs-comment">// e0 74 </span>
+    DEADKEY,<span class="hljs-comment">// e0 75 </span>
+    DEADKEY,<span class="hljs-comment">// e0 76</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> PROBOOK</span>
+    BRIGHTNESS_DOWN,    <span class="hljs-comment">// e0 77 lg down</span>
+    BRIGHTNESS_UP,      <span class="hljs-comment">// e0 78 lg up</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">else</span></span>
+    DEADKEY,<span class="hljs-comment">// e0 77</span>
+    DEADKEY,<span class="hljs-comment">// e0 78 WiFi on/off button on HP ProBook</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
+    DEADKEY,<span class="hljs-comment">// e0 79</span>
+    DEADKEY,<span class="hljs-comment">// e0 7a </span>
+    DEADKEY,<span class="hljs-comment">// e0 7b </span>
+    DEADKEY,<span class="hljs-comment">// e0 7c </span>
+    DEADKEY,<span class="hljs-comment">// e0 7d </span>
+    DEADKEY,<span class="hljs-comment">// e0 7e </span>
+    DEADKEY,<span class="hljs-comment">// e0 7f </span>
+    DEADKEY,<span class="hljs-comment">// e0 80 </span>
+    DEADKEY,<span class="hljs-comment">// e0 81 </span>
+    DEADKEY,<span class="hljs-comment">// e0 82 </span>
+    DEADKEY,<span class="hljs-comment">// e0 83 </span>
+    DEADKEY,<span class="hljs-comment">// e0 84 </span>
+    DEADKEY,<span class="hljs-comment">// e0 85 </span>
+    DEADKEY,<span class="hljs-comment">// e0 86 </span>
+    DEADKEY,<span class="hljs-comment">// e0 87 </span>
+    DEADKEY,<span class="hljs-comment">// e0 88 </span>
+    DEADKEY,<span class="hljs-comment">// e0 89 </span>
+    DEADKEY,<span class="hljs-comment">// e0 8a </span>
+    DEADKEY,<span class="hljs-comment">// e0 8b </span>
+    DEADKEY,<span class="hljs-comment">// e0 8c </span>
+    DEADKEY,<span class="hljs-comment">// e0 8d </span>
+    DEADKEY,<span class="hljs-comment">// e0 8e </span>
+    DEADKEY,<span class="hljs-comment">// e0 8f </span>
+    DEADKEY,<span class="hljs-comment">// e0 90 </span>
+    DEADKEY,<span class="hljs-comment">// e0 91 </span>
+    DEADKEY,<span class="hljs-comment">// e0 92 </span>
+    DEADKEY,<span class="hljs-comment">// e0 93 </span>
+    DEADKEY,<span class="hljs-comment">// e0 94 </span>
+    DEADKEY,<span class="hljs-comment">// e0 95 </span>
+    DEADKEY,<span class="hljs-comment">// e0 96 </span>
+    DEADKEY,<span class="hljs-comment">// e0 97 </span>
+    DEADKEY,<span class="hljs-comment">// e0 98 </span>
+    DEADKEY,<span class="hljs-comment">// e0 99 </span>
+    DEADKEY,<span class="hljs-comment">// e0 9a </span>
+    DEADKEY,<span class="hljs-comment">// e0 9b </span>
+    DEADKEY,<span class="hljs-comment">// e0 9c </span>
+    DEADKEY,<span class="hljs-comment">// e0 9d </span>
+    DEADKEY,<span class="hljs-comment">// e0 9e </span>
+    DEADKEY,<span class="hljs-comment">// e0 9f </span>
+    DEADKEY,<span class="hljs-comment">// e0 a0 </span>
+    DEADKEY,<span class="hljs-comment">// e0 a1 </span>
+    DEADKEY,<span class="hljs-comment">// e0 a2 </span>
+    DEADKEY,<span class="hljs-comment">// e0 a3 </span>
+    DEADKEY,<span class="hljs-comment">// e0 a4 </span>
+    DEADKEY,<span class="hljs-comment">// e0 a5 </span>
+    DEADKEY,<span class="hljs-comment">// e0 a6 </span>
+    DEADKEY,<span class="hljs-comment">// e0 a7 </span>
+    DEADKEY,<span class="hljs-comment">// e0 a8 </span>
+    DEADKEY,<span class="hljs-comment">// e0 a9 </span>
+    DEADKEY,<span class="hljs-comment">// e0 aa </span>
+    DEADKEY,<span class="hljs-comment">// e0 ab </span>
+    DEADKEY,<span class="hljs-comment">// e0 ac </span>
+    DEADKEY,<span class="hljs-comment">// e0 ad </span>
+    DEADKEY,<span class="hljs-comment">// e0 ae </span>
+    DEADKEY,<span class="hljs-comment">// e0 af </span>
+    DEADKEY,<span class="hljs-comment">// e0 b0 </span>
+    DEADKEY,<span class="hljs-comment">// e0 b1 </span>
+    DEADKEY,<span class="hljs-comment">// e0 b2 </span>
+    DEADKEY,<span class="hljs-comment">// e0 b3 </span>
+    DEADKEY,<span class="hljs-comment">// e0 b4 </span>
+    DEADKEY,<span class="hljs-comment">// e0 b5 </span>
+    DEADKEY,<span class="hljs-comment">// e0 b6 </span>
+    DEADKEY,<span class="hljs-comment">// e0 b7 </span>
+    DEADKEY,<span class="hljs-comment">// e0 b8 </span>
+    DEADKEY,<span class="hljs-comment">// e0 b9 </span>
+    DEADKEY,<span class="hljs-comment">// e0 ba </span>
+    DEADKEY,<span class="hljs-comment">// e0 bb </span>
+    DEADKEY,<span class="hljs-comment">// e0 bc </span>
+    DEADKEY,<span class="hljs-comment">// e0 bd </span>
+    DEADKEY,<span class="hljs-comment">// e0 be </span>
+    DEADKEY,<span class="hljs-comment">// e0 bf </span>
+    DEADKEY,<span class="hljs-comment">// e0 c0 </span>
+    DEADKEY,<span class="hljs-comment">// e0 c1 </span>
+    DEADKEY,<span class="hljs-comment">// e0 c2 </span>
+    DEADKEY,<span class="hljs-comment">// e0 c3 </span>
+    DEADKEY,<span class="hljs-comment">// e0 c4 </span>
+    DEADKEY,<span class="hljs-comment">// e0 c5 </span>
+    DEADKEY,<span class="hljs-comment">// e0 c6 </span>
+    DEADKEY,<span class="hljs-comment">// e0 c7 </span>
+    DEADKEY,<span class="hljs-comment">// e0 c8 </span>
+    DEADKEY,<span class="hljs-comment">// e0 c9 </span>
+    DEADKEY,<span class="hljs-comment">// e0 ca </span>
+    DEADKEY,<span class="hljs-comment">// e0 cb </span>
+    DEADKEY,<span class="hljs-comment">// e0 cc </span>
+    DEADKEY,<span class="hljs-comment">// e0 cd </span>
+    DEADKEY,<span class="hljs-comment">// e0 ce </span>
+    DEADKEY,<span class="hljs-comment">// e0 cf </span>
+    DEADKEY,<span class="hljs-comment">// e0 d0 </span>
+    DEADKEY,<span class="hljs-comment">// e0 d1 </span>
+    DEADKEY,<span class="hljs-comment">// e0 d2 </span>
+    DEADKEY,<span class="hljs-comment">// e0 d3 </span>
+    DEADKEY,<span class="hljs-comment">// e0 d4 </span>
+    DEADKEY,<span class="hljs-comment">// e0 d5 </span>
+    DEADKEY,<span class="hljs-comment">// e0 d6 </span>
+    DEADKEY,<span class="hljs-comment">// e0 d7 </span>
+    DEADKEY,<span class="hljs-comment">// e0 d8 </span>
+    DEADKEY,<span class="hljs-comment">// e0 d9 </span>
+    DEADKEY,<span class="hljs-comment">// e0 da </span>
+    DEADKEY,<span class="hljs-comment">// e0 db </span>
+    DEADKEY,<span class="hljs-comment">// e0 dc </span>
+    DEADKEY,<span class="hljs-comment">// e0 dd </span>
+    DEADKEY,<span class="hljs-comment">// e0 de </span>
+    DEADKEY,<span class="hljs-comment">// e0 df </span>
+    DEADKEY,<span class="hljs-comment">// e0 e0 </span>
+    DEADKEY,<span class="hljs-comment">// e0 e1 </span>
+    DEADKEY,<span class="hljs-comment">// e0 e2 </span>
+    DEADKEY,<span class="hljs-comment">// e0 e3 </span>
+    DEADKEY,<span class="hljs-comment">// e0 e4 </span>
+    DEADKEY,<span class="hljs-comment">// e0 e5 </span>
+    DEADKEY,<span class="hljs-comment">// e0 e6 </span>
+    DEADKEY,<span class="hljs-comment">// e0 e7 </span>
+    DEADKEY,<span class="hljs-comment">// e0 e8 </span>
+    DEADKEY,<span class="hljs-comment">// e0 e9 </span>
+    DEADKEY,<span class="hljs-comment">// e0 ea </span>
+    DEADKEY,<span class="hljs-comment">// e0 eb </span>
+    DEADKEY,<span class="hljs-comment">// e0 ec </span>
+    DEADKEY,<span class="hljs-comment">// e0 ed </span>
+    DEADKEY,<span class="hljs-comment">// e0 ee </span>
+    DEADKEY,<span class="hljs-comment">// e0 ef </span>
+    DEADKEY,<span class="hljs-comment">// e0 f0 // Note: codes e0f0 through e0ff are reserved for ACPI callback</span>
+    DEADKEY,<span class="hljs-comment">// e0 f1</span>
+    DEADKEY,<span class="hljs-comment">// e0 f2</span>
+    DEADKEY,<span class="hljs-comment">// e0 f3 </span>
+    DEADKEY,<span class="hljs-comment">// e0 f4 </span>
+    DEADKEY,<span class="hljs-comment">// e0 f5 </span>
+    DEADKEY,<span class="hljs-comment">// e0 f6 </span>
+    DEADKEY,<span class="hljs-comment">// e0 f7 </span>
+    DEADKEY,<span class="hljs-comment">// e0 f8 </span>
+    DEADKEY,<span class="hljs-comment">// e0 f9 </span>
+    DEADKEY,<span class="hljs-comment">// e0 fa </span>
+    DEADKEY,<span class="hljs-comment">// e0 fb </span>
+    DEADKEY,<span class="hljs-comment">// e0 fc </span>
+    DEADKEY,<span class="hljs-comment">// e0 fd </span>
+    DEADKEY,<span class="hljs-comment">// e0 fe </span>
+    DEADKEY <span class="hljs-comment">// e0 ff // End reserved</span>
+};
+
+<span class="hljs-comment">///////////////////////////////////////////////////////////////////////////////////</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// high-byte of flags are (bit number + 1) for modifier key tracking</span>
+<span class="hljs-comment">//  1: left control</span>
+<span class="hljs-comment">//  2: right control</span>
+<span class="hljs-comment">//  3: left shift</span>
+<span class="hljs-comment">//  4: right shift</span>
+<span class="hljs-comment">//  5: left alt</span>
+<span class="hljs-comment">//  6: right alt</span>
+<span class="hljs-comment">//  7: left windows</span>
+<span class="hljs-comment">//  8: right windows</span>
+<span class="hljs-comment">//  9: left Fn (e0 63 on Lenovo u430)</span>
+<span class="hljs-comment">// 10: windows context menu (usually on right)</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// low-byte is used for other purposes</span>
+<span class="hljs-comment">//  bit 0: breakless bit (set by &quot;PS2 Breakless&quot;</span>
+<span class="hljs-comment">//</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> kMaskLeftControl    0x0001</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> kMaskRightControl   0x0002</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> kMaskLeftShift      0x0004</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> kMaskRightShift     0x0008</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> kMaskLeftAlt        0x0010</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> kMaskRightAlt       0x0020</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> kMaskLeftWindows    0x0040</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> kMaskRightWindows   0x0080</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> kMaskLeftFn         0x0100</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> kMaskWindowsContext 0x0200</span>
+
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> UInt16 _PS2flagsStock[ADB_CONVERTER_LEN] =
+{
+    <span class="hljs-comment">// flags/modifier key        AT  ANSI Key-Legend</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 00</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 01  Escape</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 02  1!</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 03  2@</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 04  3#</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 05  4$</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 06  5%</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 07  6^</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 08  7&amp;</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 09  8*</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 0a  9(</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 0b  0)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 0c  -_</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 0d  =+</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 0e  Backspace</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 0f  Tab</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 10  qQ</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 11  wW</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 12  eE</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 13  rR</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 14  tT</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 15  yY</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 16  uU</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 17  iI</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 18  oO</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 19  pP</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 1a  [{</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 1b  ]}</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 1c  Return</span>
+    <span class="hljs-number">0x0100</span>, <span class="hljs-comment">// 1d  Left Control</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 1e  aA</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 1f  sS</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 20  dD</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 21  fF</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 22  gG</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 23  hH</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 24  jJ</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 25  kK</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 26  lL</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 27  ;:</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 28  &apos;&quot;</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 29  `~</span>
+    <span class="hljs-number">0x0300</span>, <span class="hljs-comment">// 2a  Left Shift</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 2b  \| , Europe 1(ISO)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 2c  zZ</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 2d  xX</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 2e  cC</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 2f  vV</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 30  bB</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 31  nN</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 32  mM</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 33  ,&lt;</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 34  .&gt;</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 35  /?</span>
+    <span class="hljs-number">0x0400</span>, <span class="hljs-comment">// 36  Right Shift</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 37  Keypad *</span>
+    <span class="hljs-number">0x0500</span>, <span class="hljs-comment">// 38  Left Alt</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 39  Space</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 3a  Caps Lock</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 3b  F1</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 3c  F2</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 3d  F3</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 3e  F4</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 3f  F5</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 40  F6</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 41  F7</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 42  F8</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 43  F9</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 44  F10</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 45  Num Lock</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 46  Scroll Lock</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 47  Keypad 7 Home</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 48  Keypad 8 Up</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 49  Keypad 9 PageUp</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 4a  Keypad -</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 4b  Keypad 4 Left</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 4c  Keypad 5</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 4d  Keypad 6 Right</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 4e  Keypad +</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 4f  Keypad 1 End</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 50  Keypad 2 Down</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 51  Keypad 3 PageDn</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 52  Keypad 0 Insert</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 53  Keypad . Delete</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 54  SysReq</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 55</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 56  Europe 2(ISO)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 57  F11</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 58  F12</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 59  Keypad =</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 5a</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 5b</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 5c  Keyboard Int&apos;l 6 (PC9800 Keypad , )</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 5d</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 5e</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 5f</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 60</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 61</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 62</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 63</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 64  F13</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 65  F14</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 66  F15</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 67  F16</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 68  F17</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 69  F18</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 6a  F19</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 6b  F20</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 6c  F21</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 6d  F22</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 6e  F23</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 6f</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 70  Keyboard Intl&apos;2 (Japanese Katakana/Hiragana)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 71</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 72</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 73  Keyboard Int&apos;l 1 (Japanese Ro)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 74</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 75</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 76  F24 , Keyboard Lang 5 (Japanese Zenkaku/Hankaku)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 77  Keyboard Lang 4 (Japanese Hiragana)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 78  Keyboard Lang 3 (Japanese Katakana)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 79  Keyboard Int&apos;l 4 (Japanese Henkan)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 7a</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 7b  Keyboard Int&apos;l 5 (Japanese Muhenkan)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 7c</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 7d  Keyboard Int&apos;l 3 (Japanese Yen)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 7e  Keypad , (Brazilian Keypad .)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 7f</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 80</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 81</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 82</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 83</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 84</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 85</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 86</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 87</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 88</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 89</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 8a</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 8b</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 8c</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 8d</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 8e</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 8f</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 90</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 91</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 92</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 93</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 94</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 95</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 96</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 97</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 98</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 99</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 9a</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 9b</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 9c</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 9d</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 9e</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// 9f</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// a0</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// a1</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// a2</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// a3</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// a4</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// a5</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// a6</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// a7</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// a8</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// a9</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// aa</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// ab</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// ac</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// ad</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// ae</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// af</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// b0</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// b1</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// b2</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// b3</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// b4</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// b5</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// b6</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// b7</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// b8</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// b9</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// ba</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// bb</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// bc</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// bd</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// be</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// bf</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// c0</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// c1</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// c2</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// c3</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// c4</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// c5</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// c6</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// c7</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// c8</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// c9</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// ca</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// cb</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// cc</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// cd</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// ce</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// cf</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// d0</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// d1</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// d2</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// d3</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// d4</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// d5</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// d6</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// d7</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// d8</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// d9</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// da</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// db</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// dc</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// dd</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// de</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// df</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e1</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e2</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e3</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e4</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e5</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e6</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e7</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e8</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e9</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// ea</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// eb</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// ec</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// ed</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// ee</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// ef</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// f0</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// f1*  Keyboard Lang 2 (Korean Hanja)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// f2*  Keyboard Lang 1 (Korean Hangul)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// f3</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// f4</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// f5</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// f6</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// f7</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// f8</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// f9</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// fa</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// fb</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// fc</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// fd</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// fe</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// ff</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 00</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 01</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 02</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 03</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 04</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 05 dell down</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 06 dell up</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 07</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> PROBOOK</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 08 samsung up</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 09 samsung down</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">else</span></span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 08</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 09 Launchpad (hp Fn+F6)</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 0a Mission Control (hp Fn+F5)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 0b</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 0c</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 0d</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 0e</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 0f</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 10  Scan Previous Track (hp Fn+F10)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 11</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 12 hp down (Fn+F2)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 13</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 14</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 15</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 16</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 17 hp up (Fn+F3)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 18</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 19  Scan Next Track (hp Fn+F12)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 1a</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 1b</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 1c  Keypad Enter</span>
+    <span class="hljs-number">0x0200</span>, <span class="hljs-comment">// e0 1d  Right Control</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 1e</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 1f</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 20  Mute (hp Fn+F7)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 21  Calculator</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 22  Play/Pause (hp Fn+F11)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 23</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 24  Stop</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 25</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 26</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 27  Fn+fkeys/fkeys toggle alternate (default Ctrl+e037)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 28</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 29</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 2a</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 2b</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 2c</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 2d</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 2e  Volume Down (hp Fn+F8)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 2f</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 30  Volume Up (hp Fn+F9)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 31</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 32  WWW Home</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 33</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 34</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 35  Keypad /</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 36</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 37  Print Screen</span>
+    <span class="hljs-number">0x0600</span>, <span class="hljs-comment">// e0 38  Right Alt</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 39</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 3a</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 3b</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 3c</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 3d</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 3e</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 3f</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 40</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 41</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 42</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 43</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 44</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 45* Pause</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 46* Break(Ctrl-Pause)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 47  Home</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 48  Up Arrow</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 49  Page Up</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 4a</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 4b  Left Arrow</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 4c</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 4d  Right Arrow</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 4e acer up</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 4f  End</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 50  Down Arrow</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 51  Page Down</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 52  Insert = Eject</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 53  Delete</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 54</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 55</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 56</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 57</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 58</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 59 acer up for my acer</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 5a</span>
+    <span class="hljs-number">0x0700</span>, <span class="hljs-comment">// e0 5b  Left GUI(Windows)</span>
+    <span class="hljs-number">0x0800</span>, <span class="hljs-comment">// e0 5c  Right GUI(Windows)</span>
+    <span class="hljs-number">0x0a00</span>, <span class="hljs-comment">// e0 5d  App( Windows context menu key )</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 5e  System Power / Keyboard Power</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 5f  System Sleep (hp Fn+F1)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 60</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 61</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 62</span>
+    <span class="hljs-number">0x0900</span>, <span class="hljs-comment">// e0 63  System Wake (Fn on Lenovo u430)</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 64</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 65  WWW Search</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 66  WWW Favorites</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 67  WWW Refresh</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 68  WWW Stop</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 69  WWW Forward</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 6a  WWW Back</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 6b  My Computer</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 6c  Mail</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 6d  Media Select</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> PROBOOK</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 6e acer up</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 6f acer down</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">else</span></span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 6e  Video Mirror = hp Fn+F4</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 6f  Fn+Home</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 70</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 71</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 72</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 73</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 74</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 75</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 76</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> PROBOOK</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 77 lg down</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 78 lg up</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">else</span></span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 77</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 78 WiFi on/off button on HP ProBook</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 79</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 7a</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 7b</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 7c</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 7d</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 7e</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 7f</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 80</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 81</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 82</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 83</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 84</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 85</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 86</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 87</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 88</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 89</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 8a</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 8b</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 8c</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 8d</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 8e</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 8f</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 90</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 91</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 92</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 93</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 94</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 95</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 96</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 97</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 98</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 99</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 9a</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 9b</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 9c</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 9d</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 9e</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 9f</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 a0</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 a1</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 a2</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 a3</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 a4</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 a5</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 a6</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 a7</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 a8</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 a9</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 aa</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 ab</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 ac</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 ad</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 ae</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 af</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 b0</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 b1</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 b2</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 b3</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 b4</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 b5</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 b6</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 b7</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 b8</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 b9</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 ba</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 bb</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 bc</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 bd</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 be</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 bf</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 c0</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 c1</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 c2</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 c3</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 c4</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 c5</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 c6</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 c7</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 c8</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 c9</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 ca</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 cb</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 cc</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 cd</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 ce</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 cf</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 d0</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 d1</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 d2</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 d3</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 d4</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 d5</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 d6</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 d7</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 d8</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 d9</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 da</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 db</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 dc</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 dd</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 de</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 df</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 e0</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 e1</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 e2</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 e3</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 e4</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 e5</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 e6</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 e7</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 e8</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 e9</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 ea</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 eb</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 ec</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 ed</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 ee</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 ef</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 f0 // Note: codes e0f0 through e0ff are reserved for ACPI callback</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 f1</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 f2</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 f3</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 f4</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 f5</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 f6</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 f7</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 f8</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 f9</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 fa</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 fb</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 fc</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 fd</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 fe</span>
+    <span class="hljs-number">0x00</span>,   <span class="hljs-comment">// e0 ff // End reserved</span>
+};
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span> <span class="hljs-comment">/* !_APPLEPS2TOADBMAP_H */</span></span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 07-PS2键盘映射及亮度快捷键">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="SSDT-RMCF-MouseAsTrackpad.html" class="navigation navigation-next " aria-label="Next page: SSDT-RMCF-MouseAsTrackpad.dsl">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ApplePS2ToADBMap.h","level":"1.9.1","depth":2,"next":{"title":"SSDT-RMCF-MouseAsTrackpad.dsl","level":"1.9.2","depth":2,"path":"07-PS2键盘映射及亮度快捷键/SSDT-RMCF-MouseAsTrackpad.md","ref":"07-PS2键盘映射及亮度快捷键/SSDT-RMCF-MouseAsTrackpad.md","articles":[]},"previous":{"title":"07-PS2键盘映射及亮度快捷键","level":"1.9","depth":1,"path":"07-PS2键盘映射及亮度快捷键/README.md","ref":"07-PS2键盘映射及亮度快捷键/README.md","articles":[{"title":"ApplePS2ToADBMap.h","level":"1.9.1","depth":2,"path":"07-PS2键盘映射及亮度快捷键/ApplePS2ToADBMap.md","ref":"07-PS2键盘映射及亮度快捷键/ApplePS2ToADBMap.md","articles":[]},{"title":"SSDT-RMCF-MouseAsTrackpad.dsl","level":"1.9.2","depth":2,"path":"07-PS2键盘映射及亮度快捷键/SSDT-RMCF-MouseAsTrackpad.md","ref":"07-PS2键盘映射及亮度快捷键/SSDT-RMCF-MouseAsTrackpad.md","articles":[]},{"title":"SSDT-RMCF-PS2Map-AtoZ.dsl","level":"1.9.3","depth":2,"path":"07-PS2键盘映射及亮度快捷键/SSDT-RMCF-PS2Map-AtoZ.md","ref":"07-PS2键盘映射及亮度快捷键/SSDT-RMCF-PS2Map-AtoZ.md","articles":[]},{"title":"SSDT-RMCF-PS2Map-dell.dsl","level":"1.9.4","depth":2,"path":"07-PS2键盘映射及亮度快捷键/SSDT-RMCF-PS2Map-dell.md","ref":"07-PS2键盘映射及亮度快捷键/SSDT-RMCF-PS2Map-dell.md","articles":[]},{"title":"SSDT-RMCF-PS2Map-LenovoIWL.dsl","level":"1.9.5","depth":2,"path":"07-PS2键盘映射及亮度快捷键/SSDT-RMCF-PS2Map-LenovoIWL.md","ref":"07-PS2键盘映射及亮度快捷键/SSDT-RMCF-PS2Map-LenovoIWL.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"07-PS2键盘映射及亮度快捷键/ApplePS2ToADBMap.md","mtime":"2021-05-20T02:09:43.772Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-20T02:11:23.741Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
