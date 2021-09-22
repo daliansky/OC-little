@@ -30,15 +30,15 @@
     
     - **补丁方法**：`ACPI\Quirks\FadtEnableReset` = `true` 
     
-    - **说明**：[`ACPI规范`](https://www.acpica.org/documentation) 以 **FADT** 来定义与配置和电源管理相关的各种静态系统信息，在机器的 ACPI 表单中以 **FACP.aml** 表单出现。 **FACP.aml** 表单表征的信息有 RTC时钟，电源和睡眠按键，电源管理等。目前和黑苹果有关的有以下几个方面：
+    - **说明**：[`ACPI规范`](https://www.acpica.org/documentation) 以 **FADT** 来定义与配置和电源管理相关的各种静态系统信息，在机器的 ACPI 表单中以 **FACP.aml** 表单出现。 **FACP.aml** 表单表征的信息有 RTC时钟，电源和睡眠按键，电源管理等。当 **FACP.aml** 表单中的 `Control Method Power Button` = `1` 时使用本补丁。目前和黑苹果有关的有以下几个方面：
     
-    - 重启和关机不正常的，尝试使用本补丁
-      
-    - 按下 **电源键** 无法呼出 “重新启动、睡眠、取消、关机” 菜单的，尝试使用本补丁
-      
-      **注意**：如果 `ACPI\Quirks\FadtEnableReset` = `true` 依然无法呼出 “重新启动、睡眠、取消、关机” 菜单，尝试添加 ***SSDT-PMCR*** 。 ***SSDT-PMCR*** 位于 OC-little 的《添加缺失的部件》。
-      
-    - **FACP.aml** 表单的 `Low Power S0 Idle` 、`Hardware Reduced` 表征了机器类型，决定了电源管理方式。如果 `Low Power S0 Idle` = `1` 则表明机器属于 `AOAC` 。有关 `AOAC` 方面的内容参见《关于AOAC》。
+      - 重启和关机不正常的，尝试使用本补丁
+    
+      - 按下 **电源键** 无法呼出 “重新启动、睡眠、取消、关机” 菜单的，尝试使用本补丁
+    
+        **注意**：如果 `ACPI\Quirks\FadtEnableReset` = `true` 依然无法呼出 “重新启动、睡眠、取消、关机” 菜单，尝试添加 ***SSDT-PMCR*** 。 ***SSDT-PMCR*** 位于 OC-little 的《添加缺失的部件》。
+    
+      - **FACP.aml** 表单的 `Low Power S0 Idle` 、`Hardware Reduced` 表征了机器类型，决定了电源管理方式。如果 `Low Power S0 Idle` = `1` 则表明机器属于 `AOAC` 。有关 `AOAC` 方面的内容参见《关于AOAC》。
     
   - **FACS.aml** 
     - **补丁方法**：`ACPI\Quirks\ResetHwSig` = `true` 
